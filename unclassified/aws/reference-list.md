@@ -12,4 +12,4 @@
 
 ### 2. Conference
 
-2. [AWS Summit Seoul 2019](https://kr-resources.awscloud.com/aws-summit-seoul-2019)
+1. [AWS Summit Seoul 2019](https://kr-resources.awscloud.com/aws-summit-seoul-2019)
