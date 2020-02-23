@@ -253,7 +253,7 @@ They are opposites, not similar entities.
 
 (*Why does every software example always involve shapes?*)
 
-→ 그저 두 개의 다른 형태를 생각해보자. 사각형과 원형.
+→ 그저 두 개의 다른 타입을 생각해보자. 사각형과 원형.
 이 두 개의 클래스의 넓이와 둘레를 구하는 함수들은 서로 다른 함축된 데이터 스트럭처 위에서 동작한다는 것은 분명해야 한다.
 그리고 그 함수들이 호출되는 방식은 동적 다형성을 통해 이뤄져야 한다는 것 또한 분명하다.
 
@@ -277,7 +277,7 @@ Wait. Slow down. What?
 
 (*OK. Sure. The object knows the implementation of its methods. Sure.*)
 
-→ 이제 그 오브젝트들을 데이터 구조들로 바꿔보자. 우리는 식별된 결합을 이용할 것이다.
+→ 이제 그 오브젝트들을 데이터 구조들로 바꿔보자. 우리는 식별된 유니온을 이용할 것이다.
 
 (*Now let’s turn those objects into data structures. We’ll use Discriminated Unions.*)
 
@@ -285,7 +285,7 @@ Wait. Slow down. What?
 
 ### 식별된 뭐요?
 
-→ 차별된 결합이다. 우리의 경우에서 그것은 그저 서로 다른 두 개의 데이터 스트럭처들이다.
+→ 식별된 유니온이다. 우리의 경우에서 그것은 그저 서로 다른 두 개의 데이터 스트럭처들이다.
 하나는 정사각형을 위한 것이고, 다른 원형을 위한 것이다.
 원형의 데이터 스트럭처에는 원의 중점과 반지름이 데이터 요소로 들어간다.
 또한 그것이 원형임을 나타내는 타입 코드를 가지고 있다.
@@ -298,7 +298,7 @@ Wait. Slow down. What?
 
 (*You mean like an enum?*)
 
-→ 물론이다. 정사각형의 데이터 스트럭처는 죄측 상단의 점과 변의 길이를 갖고 있다.
+→ 물론이다. 정사각형의 데이터 스트럭처는 좌측 상단의 점과 변의 길이를 갖고 있다.
 그것은 또한 타입 식별자를 갖고 있다 - 그 enum이다.
 
 (*Sure. The Square data structure has the top left point, and the length of the side. It also has the type discriminator – the enum.*)
@@ -307,11 +307,11 @@ Wait. Slow down. What?
 
 ### 알겠다. 두 개의 데이터 스트럭처는 타입 코드를 하나씩 갖고 있다.
 
-OK. Two data structures with a type code.
+(*OK. Two data structures with a type code.*)
 
 → 그렇다. 이제 넓이 계산 함수를 생각해보자. 그것은 내부에 스위치 문을 갖고 있을 것이다. 그렇지 않은가?
 
-Right. Now consider the area function. It's going to have a switch statement in it, isn’t it?
+(*Right. Now consider the area function. It's going to have a switch statement in it, isn’t it?*)
 
 <br/>
 
@@ -319,13 +319,13 @@ Right. Now consider the area function. It's going to have a switch statement in 
 
 (*Um. Sure, for the two different cases. One for Square and the other for Circle. And the perimeter function will need a similar switch statement*)
 
-→ 그렇다. 이제 그 두개의 시나리로의 구조를 생각해보자. 오브젝트 시나리오에서 넓이 함수의 그 두 개의 구현은 서로 독립적이고 각자의 타입에 속할 것이다. 정사각형의 넓이 함수는 정사각형에 속하고 원형의 넓이 함수는 원형에 속한다. 
+→ 그렇다. 이제 그 두 개의 시나리로의 구조를 생각해보자. 오브젝트 시나리오에서 넓이 함수의 그 두 개의 구현은 서로 독립적이고 각자의 타입에 속한다. 정사각형의 넓이 함수는 정사각형에 속하고 원형의 넓이 함수는 원형에 속한다. 
 
 (*Right again. Now think about the structure of those two scenarios. In the object scenarios the two implementations of the area function are independent of each other and belong (in some sense of the word) to the type. Square’s area function belongs to Square and Circle’s area function belongs to Circle.*)
 
 <br/>
 
-### 알겠다. 그 다음 당신이 무엇을 말할지 알 것 같다. 데이터 스트럭처 시나리오에서는 넓이 함수의 그 두 개의 구현은 같은 함수에 있으며, 그들은 타입에 속하지 않는다는 것이다.
+### 알겠다. 그 다음 당신이 무엇을 말할지 알 것 같다. 데이터 스트럭처 시나리오에서는 넓이 함수의 그 두 개의 구현은 같은 함수에 함께 있으며, 그들은 타입에 속하지 않는다는 것이다.
 
 (*OK, I see where you are going with this. In the data structure scenario the two implementations of the area function are together in the same function, they don’t “belong” (however you mean that word) to the type.*)
 
@@ -387,7 +387,7 @@ It gets better. If you want to add the Triangle type to the object scenario, wha
 
 → 데이터 스트럭처에 새로운 함수를 추가하는 것은 쉽다. 당신은 그저 그 함수를 추가하면 되고, 다른 것은 바뀌는 것이 없다.
 
-→ 클래스들이 집합에 새로운 타입을 추가하는 것은 쉽다. 당신은 그저 그 새로운 클래스를 추가하면 된다.
+→ 클래스들의 집합에 새로운 타입을 추가하는 것은 쉽다. 당신은 그저 그 새로운 클래스를 추가하면 된다.
 
 → 데이터 스트럭처에 새로운 타입을 추가하는 것은 어렵다. 당신은 각 함수를 모두 변경해야 한다.
 
