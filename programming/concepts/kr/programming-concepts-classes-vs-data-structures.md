@@ -585,6 +585,6 @@ Imagine those functions are in different source files.
 
 ---
 
-원본 출처
+### References
 
 [Robert C. Martin (Uncle Bob). (2019, June 16). Classes vs. Data Structures.](https://blog.cleancoder.com/uncle-bob/2019/06/16/ObjectsAndDataStructures.html)
