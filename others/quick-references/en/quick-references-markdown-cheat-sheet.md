@@ -336,6 +336,7 @@ Here is some text that includes a Footnote [^1] in the middle of its text. And h
 ```
 
 --- 
+
 +---------+---------+
 | Header  | Header  |
 | Column1 | Column2 |
