@@ -4,13 +4,18 @@ This topic is meant to give you a very basic overview of how Markdown works, sho
 ### Bold and Italic
 
 ```
-This text **is bold**.  
-This text *is italic*.  
+This text **is bold**.
+This text *is italic*.
+This text ***is both bold and italic***. 
 This text ~~is struck out~~.
 ```
 
-This text **is bold**.  
-This text *is italic*.  
+This text **is bold**.
+
+This text *is italic*.
+
+This text ***is both bold and italic***.
+
 This text ~~is struck out~~.
 
 ### Header Text
