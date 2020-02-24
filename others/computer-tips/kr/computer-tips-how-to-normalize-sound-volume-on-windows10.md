@@ -48,8 +48,7 @@ Windows 키를 누르고 '제어판(또는 Control Panel)'을 검색해준다. �
 
 ### 5) 개선 기능 탭 → 라우드니스 이퀄라이제이션 체크 -> 확인 버튼
 
-개선 기능 탭에서 스크롤을 맨 아래까지 내리면 '라우드니스 이퀄라이제이션'이 보인다. 이것을 체크해준다.
-그리고 마지막으로 확인 버튼을 눌러 마무리한다.
+개선 기능 탭에서 스크롤을 맨 아래까지 내리면 '라우드니스 이퀄라이제이션'이 보인다. 이것을 체크해준다. 그리고 마지막으로 확인 버튼을 눌러 마무리한다.
 
 <img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-how-to-normalize-sound-volume-on-windows10-2.5.1.png?raw=true" alt="drawing" width="480"/>
 
