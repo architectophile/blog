@@ -1,4 +1,3 @@
-
 # Markdown Features
 This topic is meant to give you a very basic overview of how Markdown works, showing some of the most frequently used operations.
 
