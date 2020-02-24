@@ -18,6 +18,8 @@ This text ***is both bold and italic***.
 
 This text ~~is struck out~~.
 
+<br/>
+
 ### Header Text
 # Header 1
 ## Header 2
