@@ -18,7 +18,7 @@
 
 ### 1) 제어판 열기
 
-Windows 키를 누르고 '제어판(또는 Control Panel)'을 검색해준다. 검색 리스트에 있는 제어판을 실행시킨다.
+키보드에서 Windows 키를 누르고 '제어판(또는 Control Panel)'을 검색해준다. 검색 리스트에 있는 제어판을 실행시킨다.
 
 <img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-how-to-normalize-sound-volume-on-windows10-2.1.1.png?raw=true" alt="drawing" width="480"/>
 
