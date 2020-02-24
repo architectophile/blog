@@ -20,35 +20,30 @@
 
 Windows 키를 누르고 '제어판(또는 Control Panel)'을 검색해준다. 검색 리스트에 있는 제어판을 실행시킨다.
 
-<img src="../images/computer-tips-how-to-normalize-sound-volume-on-windows10-2.1.1.png" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-how-to-normalize-sound-volume-on-windows10-2.1.1.png?raw=true" alt="drawing" width="480"/>
 
-<br/>
 <br/>
 
 ### 2) 하드웨어 및 소리
 
-<img src="../images/computer-tips-how-to-normalize-sound-volume-on-windows10-2.2.1.png" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-how-to-normalize-sound-volume-on-windows10-2.2.1.png?raw=true" alt="drawing" width="480"/>
 
-<br/>
 <br/>
 
 ### 3) 시스템 소리 변경
 
-<img src="../images/computer-tips-how-to-normalize-sound-volume-on-windows10-2.3.1.png" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-how-to-normalize-sound-volume-on-windows10-2.3.1.png?raw=true" alt="drawing" width="480"/>
 
-<br/>
 <br/>
 
 ### 4) 재생 탭 → 속성 클릭
 
-<img src="../images/computer-tips-how-to-normalize-sound-volume-on-windows10-2.4.1.png" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-how-to-normalize-sound-volume-on-windows10-2.4.1.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
-<br/>
 
-<img src="../images/computer-tips-how-to-normalize-sound-volume-on-windows10-2.4.2.png" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-how-to-normalize-sound-volume-on-windows10-2.4.2.png?raw=true" alt="drawing" width="480"/>
 
-<br/>
 <br/>
 
 ### 5) 개선 기능 탭 → 라우드니스 이퀄라이제이션 체크 -> 확인 버튼
@@ -56,19 +51,16 @@ Windows 키를 누르고 '제어판(또는 Control Panel)'을 검색해준다. �
 개선 기능 탭에서 스크롤을 맨 아래까지 내리면 '라우드니스 이퀄라이제이션'이 보인다. 이것을 체크해준다.
 그리고 마지막으로 확인 버튼을 눌러 마무리한다.
 
-<img src="../images/computer-tips-how-to-normalize-sound-volume-on-windows10-2.5.1.png" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-how-to-normalize-sound-volume-on-windows10-2.5.1.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
-<br/>
 
-<img src="../images/computer-tips-how-to-normalize-sound-volume-on-windows10-2.5.2.png" alt="drawing" width="480"/>
-
-<br/>
-<br/>
-
-<img src="../images/computer-tips-how-to-normalize-sound-volume-on-windows10-2.5.3.png" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-how-to-normalize-sound-volume-on-windows10-2.5.2.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
+
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-how-to-normalize-sound-volume-on-windows10-2.5.3.png?raw=true" alt="drawing" width="480"/>
+
 <br/>
 
 ## 3. 결론
