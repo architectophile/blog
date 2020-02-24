@@ -74,4 +74,4 @@ Windows 키를 누르고 '제어판(또는 Control Panel)'을 검색해준다. �
 
 ### References
 
-[Mauro Huc. (2019, July 8). How to normalize sound volume on Windows 10.](https://pureinfotech.com/normalize-sound-volume-windows-10)
+[1] [Mauro Huc. (2019, July 8). How to normalize sound volume on Windows 10.](https://pureinfotech.com/normalize-sound-volume-windows-10)
