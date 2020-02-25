@@ -142,4 +142,4 @@ Be prepred to revise decisions.
 
 ### References
 
-[Eberhard Wolff. (2019). How to Become a Great Software Architect. GOTO Berlin 2019](https://youtu.be/v_nhv6aY1Kg)
+[1] *Eberhard Wolff. (2019). [How to Become a Great Software Architect](https://youtu.be/v_nhv6aY1Kg) [GOTO Berlin 2019]*
