@@ -2,7 +2,7 @@
 
 ## 1. 서론
 
-기존에 작업하던 리포지토리를 깃헙에 새로 생성한 ***프라이빗 리포지토리(private repository)****로 옮기기 위해 푸쉬하려고 할 때 다음과 같이 ***"Repository not found."****라는 오류 메시지가 발생할 수 있다.
+기존에 작업하던 리포지토리를 깃헙에 새로 생성한 ***프라이빗 리포지토리(private repository)***로 옮기기 위해 푸쉬하려고 할 때 다음과 같이 ***"Repository not found."***라는 오류 메시지가 발생할 수 있다.
 
 ```
 remote: Repository not found.
