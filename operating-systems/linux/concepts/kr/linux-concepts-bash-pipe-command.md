@@ -96,6 +96,5 @@ $ cat /var/log/auth.log | grep sshd | less
 
 [1] *İsmail Baydan. (2018, Jan 25). [Linux Bash Pipe Command Usage with Examples For Redirection](https://www.poftut.com/linux-bash-pipe-command-usage-examples-redirection) [Web Blog]*
 
-[2] *Roslyn Michelle Cyrus. (2017, Nov 8). [PIPES, FORKS, & DUPS: UNDERSTANDING COMMAND EXECUTION AND INPUT/OUTPUT DATA FLOW](http://www.rozmichelle.com/pipes-forks-dups/#pipelines) [Web Blog]*
+[2] *GURU99. (?). [Pipe, Grep and Sort Command in Linux/Unix with Examples](https://www.guru99.com/linux-pipe-grep.html) [Web Tutorial]*
 
-[3] *GURU99. (?). [Pipe, Grep and Sort Command in Linux/Unix with Examples](https://www.guru99.com/linux-pipe-grep.html) [Web Tutorial]*
