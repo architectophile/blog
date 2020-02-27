@@ -4,7 +4,7 @@
 
 ## Overview
 
-This is the repository of the original materials and resources of ###Architectophile###\'s [blog posts](https://architectophile.tistory.com)
+This is the repository of the original materials and resources of ***Architectophile***'s [blog posts](https://architectophile.tistory.com)
 
 <br/>
 
