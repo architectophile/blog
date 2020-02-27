@@ -18,6 +18,9 @@ There are some useful things to know about the command line before you get start
 * `\` will escape a character for you. For example whitespace, if you have a space in a directory name you will need to use this before the space. E.g. `Action\ Movies`
 * `|` : `pipe(|)` concatenates two commands and feed the output of the previous command into the next command as an input.
 * `&` : `(&)` background
+* `;` : `(&)` semicolon
+* `&&` : `logical and`
+* `||` : `logical or` 
 
 <br/>
 
@@ -211,7 +214,7 @@ This will make jason the owner of the app directory.
 This will change the group of the file / directory.
 
 ```shell
-chgrp www-data app/
+chgrp mysql app/
 ``` 
 
 This will change the `app` directory group to www-data
@@ -349,7 +352,9 @@ The grep command supports regular expressions which allows special letter combin
 ### awk
 awk is a programming language useful for searching and manipulating text files.
 
-find
+<br>
+
+### find
 The find command searches a directory and subdirectories for files matching certain patterns.
 
 <br/>
