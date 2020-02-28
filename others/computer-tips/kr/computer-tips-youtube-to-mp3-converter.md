@@ -22,7 +22,7 @@
 
 [https://recordmp3.co/](https://recordmp3.co/)
 
-<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-youtube-to-mp3-converter-2.1.1.png" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-youtube-to-mp3-converter-2.1.1.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
@@ -30,13 +30,13 @@
 
 저장하고 싶은 해당 유튜브 노래 영상의 주소를 복사한다.
 
-<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-youtube-to-mp3-converter-2.2.1.png" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-youtube-to-mp3-converter-2.2.1.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
 ### 3) 유튜브 주소 붙여넣기
 
-<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-youtube-to-mp3-converter-2.3.1.png" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-youtube-to-mp3-converter-2.3.1.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
@@ -44,19 +44,19 @@
 
 원하는 유튜브 영상의 주소를 입력하고 조금 기다리면 자동으로 mp3파일로 인코딩하여 변환을 해준다. 이 때 주의할 점은 왼쪽 아래에 보이는 Download Recording 버튼을 눌러야 한다는 것이다. 중간에 있는 Download 버튼을 누를 경우 광고 사이트로 이동하니 반드시 음악을 다운로드 하기 위해서는 ***왼쪽 아래의 `Download Recording` 버튼을 누르도록*** 한다.
 
-<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-youtube-to-mp3-converter-2.4.1.png" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-youtube-to-mp3-converter-2.4.1.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
 다운로드 버튼을 클릭한 뒤 음악을 저장할 폴더를 선택하고 저장한다.
 
-<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-youtube-to-mp3-converter-2.4.2.png" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-youtube-to-mp3-converter-2.4.2.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
 이제 다운로드 된 파일을 확인하고 모바일로 옮겨주기만 하면 된다.
 
-<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-youtube-to-mp3-converter-2.4.3.png" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-youtube-to-mp3-converter-2.4.3.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
