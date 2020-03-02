@@ -23,7 +23,7 @@
 파이프 명령어는 이전 명령의 표준 출력(STDOUT)을 ***'리다이렉트(redirect)'***하여 다음 명령의 표준 입력(STDIN)으로 전달한다. 사용 문법은 아래와 같다. **command1의 출력**은 **command2의 입력**으로 들어간다.
 
 ```console
-command1 | command2
+$ command1 | command2
 ```
 
 <br/>
