@@ -28,13 +28,15 @@
 
 ### 2) 유튜브 노래의 주소 복사
 
-저장하고 싶은 해당 유튜브 노래 영상의 주소를 복사한다.
+저장하고 싶은 해당 유튜브 노래 영상 링크의 ***주소를 복사***한다.
 
 <img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-youtube-to-mp3-converter-2.2.1.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
 ### 3) 유튜브 주소 붙여넣기
+
+다시 `recordmp3.co` 웹사이트로 가서 복사된 유튜브 링크의 주소를 ***검색창에 붙여넣기*** 한다.
 
 <img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-youtube-to-mp3-converter-2.3.1.png?raw=true" alt="drawing" width="480"/>
 
@@ -65,6 +67,14 @@
 내가 좋아하는 해외 가수들의 노래가 스트리밍 어플에 없어서 유튜브로만 봐야하는 경우가 많았는데, 듣고 싶은 다양한 노래들을 [recordmp3.co](https://recordmp3.co/)에서 무료로 mp3로 파일로 저장하여 들을 수 있어서 너무 좋다.
 
 단점은 아직 모바일에서는 지원하지는 않는 것 같다. 모바일에서 브라우저를 통해 해당 사이트를 들어가면 mp3파일로 변환까지는 되는데 다운로드 버튼을 누르면 IP주소가 바뀌었다는 오류 메시지가 발생한다. 내 폰이 문제인지 모르겠지만 아무튼 나는 PC에서 파일을 다운로드하여 다시 모바일로 이동해야 하는 번거로움이 있다. 그것을 제외하고는 개인적으로 너무 편리하고 유용하다는 생각이 든다.
+
+<br/>
+
+---
+
+### References
+
+\[1\] *RecordMP3. (?). [Best Youtube to MP3 converter of 2020!](https://recordmp3.co/) [Web Page]*
 
 <br/>
 
