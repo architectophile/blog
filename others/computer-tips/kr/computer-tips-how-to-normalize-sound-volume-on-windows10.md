@@ -73,7 +73,7 @@
 
 ### References
 
-[1] *Mauro Huc. (2019, July 8). [How to normalize sound volume on Windows 10](https://pureinfotech.com/normalize-sound-volume-windows-10) [Web Blog Post]*
+\[1\] *Mauro Huc. (2019, July 8). [How to normalize sound volume on Windows 10](https://pureinfotech.com/normalize-sound-volume-windows-10) [Web Blog Post]*
 
 <br/>
 
