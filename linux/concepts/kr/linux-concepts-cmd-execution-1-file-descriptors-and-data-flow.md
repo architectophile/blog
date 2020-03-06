@@ -123,7 +123,7 @@ cherry
 
 ### References
 
-[1] *Roslyn Michelle Cyrus. (2017, Nov 8). [PIPES, FORKS, & DUPS: UNDERSTANDING COMMAND EXECUTION AND INPUT/OUTPUT DATA FLOW](http://www.rozmichelle.com/pipes-forks-dups) [Web Blog]*
+\[1\] *Roslyn Michelle Cyrus. (2017, Nov 8). [PIPES, FORKS, & DUPS: UNDERSTANDING COMMAND EXECUTION AND INPUT/OUTPUT DATA FLOW](http://www.rozmichelle.com/pipes-forks-dups) [Web Blog]*
 
 <br/>
 
