@@ -24,7 +24,7 @@
 이제 데이터 흐름에 대해 좀 더 깊게 얘기할 준비가 되었다. 우리가 터미널에서 어떤 명령을 실행시킬 때는 입력과 출력이 적절하게 처리되어야 한다. 각 명령은 어떤 데이터를 입력으로 받아야 할지 그리고 어떤 데이터를 출력으로 내보내야 할지를 알아야 한다.
 데이터 흐름의 입력(stdin을 통해 기본적으로 키보드로부터 들어오는 데이터)과 데이터 흐름의 출력(stdout을 통해 또는 오류가 발생하면 stderr를 통해 기본적으로 터미널에게 전달되는 데이터)을 나타내기 위해 아래와 같은 다이어그램을 사용할 것이다.
 
-<img src="../images/linux-concepts-cmd-execution-1-file-descriptors-and-data-flow-2.1.1.png" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/linux/concepts/images/linux-concepts-cmd-execution-1-file-descriptors-and-data-flow-2.1.1.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
@@ -46,7 +46,7 @@ ls: cannot access dir_x: No such file or directory
 
 여기에 업데이트된 다이어그램이 있는데, 이것은 데이터 출력을 위한 2가지의 스트림(stdout, stderr)을 보여주고 있다.
 
-<img src="../images/linux-concepts-cmd-execution-1-file-descriptors-and-data-flow-2.1.2.png" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/linux/concepts/images/linux-concepts-cmd-execution-1-file-descriptors-and-data-flow-2.1.2.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
@@ -68,7 +68,7 @@ dir1	file1	file2
 
 이 명령은 다음과 같이 시각화될 수 있다.
 
-<img src="../images/linux-concepts-cmd-execution-1-file-descriptors-and-data-flow-2.1.3.png" alt="drawing" width="240"/>
+<img src="https://github.com/architectophile/blog/blob/master/linux/concepts/images/linux-concepts-cmd-execution-1-file-descriptors-and-data-flow-2.1.3.png?raw=true" alt="drawing" width="240"/>
 
 <br/>
 
@@ -76,7 +76,7 @@ dir1	file1	file2
 
 이제 다음으로 볼 명령은 ***입력은 없지만 출력은 있는 명령***의 한 예로 `mv` 명령을 생각할 수 있으며, 이것은 파일을 이동시키거나 이름을 바꾸는데 사용된다. 내가 그 명령에게 이동시키거나 이름을 바꾸려고 하는 파일 또는 디렉토리의 이름을 정확히 전달하면, stdout 또는 stderr를 통해 출력 데이터는 없다. 다시 한 번 말하면, 전달되는 파일의 컨텐츠가 읽히거나 또는 사용되는 것이 아니기 때문에 전달된 파일은 입력(input)이 아니다. 명령이 성공적으로 이루어졌을 경우 다음과 같은 다이어그램을 그릴 수 있다.
 
-<img src="../images/linux-concepts-cmd-execution-1-file-descriptors-and-data-flow-2.1.4.png" alt="drawing" width="180"/>
+<img src="https://github.com/architectophile/blog/blob/master/linux/concepts/images/linux-concepts-cmd-execution-1-file-descriptors-and-data-flow-2.1.4.png?raw=true" alt="drawing" width="180"/>
 
 <br/>
 
@@ -88,7 +88,7 @@ mv: missing file operand
 Try 'mv --help' for more information.
 ```
 
-<img src="../images/linux-concepts-cmd-execution-1-file-descriptors-and-data-flow-2.1.5.png" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/linux/concepts/images/linux-concepts-cmd-execution-1-file-descriptors-and-data-flow-2.1.5.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
@@ -107,7 +107,7 @@ cherry
 
 위의 3줄의 단어는 사용자가 입력한 것이고 아래의 3줄의 단어는 `sort` 명령에 의해 정렬된 결과이다.
 
-<img src="../images/linux-concepts-cmd-execution-1-file-descriptors-and-data-flow-2.1.6.png" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/linux/concepts/images/linux-concepts-cmd-execution-1-file-descriptors-and-data-flow-2.1.6.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
