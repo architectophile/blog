@@ -1,4 +1,4 @@
-# Nginx Full Example Configuration
+# [Nginx] Full Example Configuration
 
 <br/>
 
@@ -184,3 +184,11 @@ types {
 ### References
 
 \[1\] *Nginx. (?). [Full Example Configuration](https://www.nginx.com/resources/wiki/start/topics/examples/full) [Web Document]*
+
+<br/>
+
+---
+
+### Hashtags
+
+`#nginx` `#nginx reference` `#nginx config` `#nginx configuration` `#nginx.conf`
