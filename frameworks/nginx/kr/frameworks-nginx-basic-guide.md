@@ -132,7 +132,8 @@ server {
 foo@bar:~$ nginx -s reload
 ```
 
-> **Note:** 만약 어떤 것이 예상한대로 동작하지 않을 경우, `/usr/local/nginx/logs` 또는 `/var/log/nginx` 디렉토리 안에 있는 `access.log` 또는 `error.log` 파일을 확인해 볼 수 있다.
+> ***Note:***  
+만약 어떤 것이 예상한대로 동작하지 않을 경우, `/usr/local/nginx/logs` 또는 `/var/log/nginx` 디렉토리 안에 있는 `access.log` 또는 `error.log` 파일을 확인해 볼 수 있다.
 
 <br/>
 
@@ -204,7 +205,8 @@ server {
 foo@bar:~$ nginx -s reload
 ```
 
-> **Note:** 프록시 커넥션을 설정하기 위한 많은 다양한 [디렉티브(directives)][2]가 존재한다.
+> ***Note:***  
+프록시 커넥션을 설정하기 위한 많은 다양한 [디렉티브(directives)][2]가 존재한다.
 
 <br/>
 
