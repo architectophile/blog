@@ -97,7 +97,7 @@ location / {
 위의 `location` 블록은 요청에서 URI와 비교하여 "/" 프리픽스(prefix)를 나타낸다. 매칭되는 요청에 대해서 `root` 디렉티브에 설정된 경로(path)에 해당 URI가 붙여진다. 즉, `/data/www`에 붙여져서 로컬 파일 시스템에 있는 요청된 파일에 대한 경로를 형성한다.
 만약 `location` 블록들 중에 매칭되는 것이 여러개 있다면, nginx는 그 중 가장 긴 프리픽스(prefix)를 가진 것을 선택한다. 위의 `location` 블록은 길이 1의 가장 짧은 프리픽스를 제공한다. 따라서 다른 모든 `location` 블록들이 매칭에 실패할 경우 이 블록이 사용될 것이다.
 
-이제 아래의 두 번재 `location` 블록을 추가한다.
+이제 아래의 두 번째 `location` 블록을 추가한다.
 
 ```nginx
 location /images/ {
