@@ -118,6 +118,14 @@ sftp> get -r /home/adminuser/downloads/docs /home/jason/downloads
 
 [4]: https://docs.oracle.com/cd/E26502_01/html/E29001/remotehowtoaccess-14.html
 
+<br/>
+
+---
+
+### Hashtags
+
+`#sftp` `#Secure FTP` `#sftp 사용법` `#sftp 사용방법` `#sftp 설명` `#리눅스 sftp` `#scp` `#Secure Copy` `#rsync` `#linux ssh` `#ubuntu sftp` `#linux secure shell` `#how to use sftp` `#linux secure ftp`
+
 
 
 
