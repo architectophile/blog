@@ -86,8 +86,6 @@ $ cat /var/log/auth.log | grep sshd | less
 
 <br/>
 
-
-
 <br/>
 
 ---
