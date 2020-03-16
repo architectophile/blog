@@ -126,7 +126,7 @@ foo@bar:~$ sudo cp ~/.ssh/authorized_keys /mnt/tmp/home/ubuntu/.ssh/authorized_k
 
 [1]: https://gist.github.com/tamoyal/1b7ec4d3871b343d353d
 
-\[2\] *Eddie. (2015, Nov 15). [Change key pair for ec2 instance][2] [StackOverflow answer]*
+\[2\] *Eddie. (2015, Nov 15). [Change key pair for ec2 instance][2] [StackOverflow Answer]*
 
 [2]: https://stackoverflow.com/questions/7881469/change-key-pair-for-ec2-instance
 
