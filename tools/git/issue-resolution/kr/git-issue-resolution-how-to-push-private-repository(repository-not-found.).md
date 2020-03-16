@@ -39,4 +39,4 @@ $ git push -u origin master
 
 References
 
-[1] *Stack Overflow. (2013). [Git Push ERROR: Repository not found](https://stackoverflow.com/questions/10116373/git-push-error-repository-not-found) [Stack Overflow Answers]*
+[1] *StackOverflow. (2013). [Git Push ERROR: Repository not found](https://stackoverflow.com/questions/10116373/git-push-error-repository-not-found) [StackOverflow Answers]*
