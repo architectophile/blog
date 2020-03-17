@@ -17,7 +17,7 @@
 
 실제 물리적인 파이프는 지금 설명하는 유닉스 파이프의 추상적인 개념을 설명하는데 매우 좋은 비유이다. 우리는 한 프로세스에서 시작되는 `데이터 스트림`을 독립된 공간에 들어있는 `물`이라고 생각할 수 있다. 그리고 그 물이 다음 프로세스의 공간으로 흐를 수 있는 유일한 방법은 각 공간을 파이프(pipe)로 연결하는 것이다. 이러한 방식으로, 그 `물(데이터)`은 `첫 번째 공간(프로세스)`에서 `파이프`로 흘러들어가고, 파이프 안에 물이 가득차면, 다시 그 `파이프`에서 `다음 공간(프로세스)`으로 `물(데이터)`을 흘려보낸다. 아래의 다이어그램은 이러한 데이터 흐름(data flow)을 표현한 예이다(`sort | grep ea`).
 
-<img src="../images/linux-concepts-cmd-execution-2-pipe-1.1.1.png?raw=true" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/linux/concepts/images/linux-concepts-cmd-execution-2-pipe-1.1.1.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
@@ -126,7 +126,7 @@ int main(int argc, char *argv[]) {
 
 아래는 위의 모든 과정에 대한 데이터 흐름 다이어그램이다.
 
-<img src="../images/linux-concepts-cmd-execution-2-pipe-2.1.1.png?raw=true" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/linux/concepts/images/linux-concepts-cmd-execution-2-pipe-2.1.1.png?raw=true" alt="drawing" width="480"/>
 
 > 위 예제 코드의 최종 데이터 흐름(data flow)이다. `파일 디스크립터 3`은 자식 프로세스에서 `stdin`으로 복사된 뒤에 종료되었다. 그리고 오직 `자식 프로세스`의 `stdin`만 데이터를 읽기 위해 사용되었다.
 
@@ -137,55 +137,55 @@ int main(int argc, char *argv[]) {
 위 예제 코드에서 어떤 일들이 일어나는지 알아보기 위해 다음의 다이어그램들을 살펴보자. 아래 그림들에서 선(lines)은 파일 디스크립터와 그것이 가진 포인터가 가리키는 오픈 파일 사이의 관계를 나타낸다. 그리고 이 때 화살표의 방향은 데이터 흐름의 방향을 나타낸다. 이러한 다이어그램은 부모와 자식 프로세스에게 어떤 파일 디스크립터가 필요한지를 분명하게 보여주고, 또한 메모리 누수(leak)를 막기 위해 언제 파일 디스크립터를 닫는 것이 적절한지를 알 수 있게 한다.  
 또한 명심해야 할 점은 부모 프로세스에서 실행되는 명령어들(instructions)이 자식 프로세스의 명령어들(instructions)보다 이전에 실행된다는 보장이 없기 때문에 아래의 몇몇 과정들은 서로 다른 시간에 발생할 수 있다. 아래의 다이어그램들은 명령 실행 과정에서 어떤 일들이 일어나는지에 대한 개념을 제공하기 위한 것이며, 몇몇 과정은 실행 중에 순서가 뒤바뀔 수도 있다.
 
-<img src="../images/linux-concepts-cmd-execution-2-pipe-2.2.1.png?raw=true" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/linux/concepts/images/linux-concepts-cmd-execution-2-pipe-2.2.1.png?raw=true" alt="drawing" width="480"/>
 
 > 프로그램이 시작될 때, `부모 프로세스`가 생성되고 디폴트 스트림들(default streams)이 그것의 파일 디스크립터 테이블(file descriptor table) 안에 설정된다. 화살표의 방향은 데이터의 흐름 방향을 나타낸다: `stdin`은 키보드로부터 **입력(input)**을 받고, `stdout`과 `stderr`는 **출력(output)**을 터미널로 전송한다.
 
 <br/>
 
-<img src="../images/linux-concepts-cmd-execution-2-pipe-2.2.2.png?raw=true" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/linux/concepts/images/linux-concepts-cmd-execution-2-pipe-2.2.2.png?raw=true" alt="drawing" width="480"/>
 
 > `pipe()` 함수 호출은 다음으로 사용가능한 파일 디스크립터 2개를 찾고 그것들을 생성된 `파이프(pipe)`의 **읽기 엔드(readable end)**와 **쓰기 엔드(writable end)**와 각각 연결시킨다. 이 다이어그램에서는 프로세스는 3을 통해 읽고, 4를 통해 쓸 수 있다.
 
 <br/>
 
-<img src="../images/linux-concepts-cmd-execution-2-pipe-2.2.3.png?raw=true" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/linux/concepts/images/linux-concepts-cmd-execution-2-pipe-2.2.3.png?raw=true" alt="drawing" width="480"/>
 
 > `fork()` 함수 호출은 `자식 프로세스`를 생성하는데, 그것은 함수 호출 당시의 부모 프로세스의 메모리와 파일 디스크립터 테이블을 복사한다. 이 때 `부모 프로세스`의 파일 디스크립터가 연결된 파일들(files)이 무엇이든지 간에 `자식 프로세스`의 파일 디스크립터 역시 동일한 그 파일들(files)과 연결된다.
 
 <br/>
 
-<img src="../images/linux-concepts-cmd-execution-2-pipe-2.2.4.png?raw=true" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/linux/concepts/images/linux-concepts-cmd-execution-2-pipe-2.2.4.png?raw=true" alt="drawing" width="480"/>
 
 > `부모 프로세스`는 파이프의 읽기 엔드가 필요없기 때문에 `fds[0]`을 닫는다(close). `자식 프로세스`는 `dup2()` 함수를 호출하여 디폴트로 `stdin`과 연결되어 있던 ***파일 디스크립터 0을 먼저 닫은 후에,*** `fds[0]`을 복사하여 `stdin`에 연결시킨다.
 
 <br/>
 
-<img src="../images/linux-concepts-cmd-execution-2-pipe-2.2.5.png?raw=true" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/linux/concepts/images/linux-concepts-cmd-execution-2-pipe-2.2.5.png?raw=true" alt="drawing" width="480"/>
 
 > `부모 프로세스`는 `파이프`의 **쓰기 엔드(writable end)**에 데이터를 쓴다. `자식 프로세스`는 더 이상 필요없는 `파이프`의 `파일 디스크립터(fds[0]과 fds[1])`를 닫는다(close).
 
 <br/>
 
-<img src="../images/linux-concepts-cmd-execution-2-pipe-2.2.6.png?raw=true" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/linux/concepts/images/linux-concepts-cmd-execution-2-pipe-2.2.6.png?raw=true" alt="drawing" width="480"/>
 
 > `부모 프로세스`는 모든 데이터를 다 쓰고난 뒤에 `fds[1]`을 닫는다(close). 그러면 자동으로 `EOF`가 전송되고 `자식 프로세스`에게 모든 데이터가 전송되었음을 알리게 된다.
 
 <br/>
 
-<img src="../images/linux-concepts-cmd-execution-2-pipe-2.2.7.png?raw=true" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/linux/concepts/images/linux-concepts-cmd-execution-2-pipe-2.2.7.png?raw=true" alt="drawing" width="480"/>
 
 > `자식 프로세스`는 받은 `입력(input)`에 대해서 `sort` 명령을 수행한다.
 
 <br/>
 
-<img src="../images/linux-concepts-cmd-execution-2-pipe-2.2.8.png?raw=true" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/linux/concepts/images/linux-concepts-cmd-execution-2-pipe-2.2.8.png?raw=true" alt="drawing" width="480"/>
 
 > `자식 프로세스`에서 `sort` 명령에 의해 생성된 **출력(output)**은 터미널로 전송된다. 그리고 `자식 프로세스`가 종료되면서 신호(signal)을 전송하고, 이것은 ***자식 프로세스의 종료를 기다리고 있는*** `부모 프로세스`에게 전달된다.
 
 <br/>
 
-<img src="../images/linux-concepts-cmd-execution-2-pipe-2.2.9.png?raw=true" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/linux/concepts/images/linux-concepts-cmd-execution-2-pipe-2.2.9.png?raw=true" alt="drawing" width="480"/>
 
 > `자식 프로세스`는 종료되면서 자신의 디폴트 파일 디스크립터 0, 1, 그리고 2를 모두 닫는다(close). ***자식 프로세스가 종료되고 나면*** `부모 프로세스` 또한 종료되면서 자신의 디폴트 파일 디스크립터 0, 1, 그리고 2를 모두 닫는다(close). 그러면 프로세스 실행 중에 추가적으로 사용되었던 모든 파일 디스크립터들은 닫히게 된다.
 
@@ -223,3 +223,9 @@ int main(int argc, char *argv[]) {
 ### Hashtags
 
 `#리눅스` `#유닉스` `#파이프` `#리눅스 파이프` `#리눅스 파이프란` `#리눅스 파이프 설명` `#유닉스 파이프` `#리눅스 명령` `#리눅스 명령어` `#리눅스 명령 프로세스` `#리눅스 프로세스` `#리눅스 파일 디스크립터` `#리눅스 데이터 흐름` `#리눅스 리다이렉션` `#리눅스 리디렉션` `#리눅스 명령 실행` `#linux` `#unix` `#linux pipe` `#unix pipe` `#what is pipe?` `#what is linux pipe?` `#linux pipe |` `#linux | command` `#linux |` `#pipe(|)` `#linux file descriptor` `#linux commands` `#linux command execution` `#linux file` `#linux redirection` `#linux data flow` `#stdin` `#stdout` `#stderr` `#표준 입력` `#표준 출력` `#표준 오류` `#표준 입출력`
+
+<br/>
+
+<br/>
+
+© 2020, Byeongcheol Yoo. All rights reserved.
