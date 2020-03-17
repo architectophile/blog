@@ -126,6 +126,12 @@ sftp> get -r /home/adminuser/downloads/docs /home/jason/downloads
 
 `#sftp` `#Secure FTP` `#sftp 사용법` `#sftp 사용방법` `#sftp 설명` `#리눅스 sftp` `#scp` `#Secure Copy` `#rsync` `#linux ssh` `#ubuntu sftp` `#linux secure shell` `#how to use sftp` `#linux secure ftp`
 
+<br/>
+
+<br/>
+
+© 2020, Byeongcheol Yoo. All rights reserved.
+
 
 
 
