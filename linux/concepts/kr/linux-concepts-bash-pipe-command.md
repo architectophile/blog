@@ -96,3 +96,17 @@ $ cat /var/log/auth.log | grep sshd | less
 
 [2] *GURU99. (?). [Pipe, Grep and Sort Command in Linux/Unix with Examples](https://www.guru99.com/linux-pipe-grep.html) [Web Tutorial]*
 
+<br/>
+
+---
+
+### Hashtags
+
+`#리눅스` `#유닉스` `#리눅스 명령` `#리눅스 명령어` `#리눅스 프로세스` `#리눅스 파이프` `#리눅스 리다이렉션` `#리눅스 명령 실행` `#표준 입력` `#표준 출력` `#표준 오류` `#표준 입출력` `#linux` `#unix` `#linux commands` `#linux command execution` `#linux pipe` `#linux redirection` `#stdin` `#stdout` `#stderr`
+
+<br/>
+
+<br/>
+
+© 2020, Byeongcheol Yoo. All rights reserved.
+
