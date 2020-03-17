@@ -1,4 +1,4 @@
-# [리눅스] 명령 실행 원리 1 : 파일 디스크립터와 데이터 흐름
+# [리눅스] 명령 실행 원리 1 : 파일 디스크립터(file descriptor)와 데이터 흐름(data flow)
 
 <br/>
 
@@ -133,4 +133,10 @@ cherry
 
 ### Hashtags
 
-`#리눅스` `#리눅스 명령` `#리눅스 명령어` `#리눅스 명령 프로세스` `#리눅스 프로세스` `#리눅스 파일 디스크립터` `#리눅스 데이터 흐름` `#리눅스 파이프` `#리눅스 리다이렉션` `#리눅스 명령 실행` `#linux` `#linux file descriptor` `#linux commands` `#linux command execution` `#linux file` `#linux pipe` `#linux redirection` `#linux data flow` `#stdin` `#stdout` `#stderr` `#표준 입력` `#표준 출력` `#표준 입출력` 
+`#리눅스` `#리눅스 명령` `#리눅스 명령어` `#리눅스 명령 프로세스` `#리눅스 프로세스` `#리눅스 파일 디스크립터` `#리눅스 데이터 흐름` `#리눅스 파이프` `#리눅스 리다이렉션` `#리눅스 명령 실행` `#linux` `#linux file descriptor` `#linux commands` `#linux command execution` `#linux file` `#linux pipe` `#linux redirection` `#linux data flow` `#stdin` `#stdout` `#stderr` `#표준 입력` `#표준 출력` `#표준 입출력`
+
+<br/>
+
+<br/>
+
+© 2020, Byeongcheol Yoo. All rights reserved.
