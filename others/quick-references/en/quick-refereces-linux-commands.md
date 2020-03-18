@@ -21,6 +21,10 @@ There are some useful things to know about the command line before you get start
 * `;` : `(&)` semicolon
 * `&&` : `logical and`
 * `||` : `logical or` 
+* `-` : It means to read the argument/content from STDIN (file descriptor 0)
+* `--` : It means end of command options, everything follows that are arguments
+* `>` : redirect
+* `<` : redirect
 
 <br/>
 
@@ -154,6 +158,10 @@ cat ~/.ssh/.id_rsa.pub
 ```
 
 will print out your public SSH key to the screen. 
+
+<br/>
+
+### tee
 
 <br/>
 
@@ -462,6 +470,8 @@ service nginx reload
 ```
 
 will do just that. The difference being that `reload` will continue the service running, a `restart` will stop the service, then start the service again. Giving a momentary downtime. 
+
+<br/>
 
 <br/>
 

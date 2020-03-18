@@ -7,6 +7,7 @@ There are two different contexts in Git for upstream/downstream, which are remot
 In the reference of time/history, it can be unclear, because upstream in time means downstream in history, and vice-versa. So it is better if we use the parent/child terms in place of upstream/downstream in case of time/history.
 
 
+<br/>
 
 <br/>
 

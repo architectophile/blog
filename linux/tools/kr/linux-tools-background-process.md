@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/4797050/how-to-run-node-js-as-a-background-process-and-never-die

@@ -35,8 +35,24 @@ $ git push -u origin master
 
 <br/>
 
+<br/>
+
 ---
 
-References
+### References
 
-[1] *Stack Overflow. (2013). [Git Push ERROR: Repository not found](https://stackoverflow.com/questions/10116373/git-push-error-repository-not-found) [Stack Overflow Answers]*
+\[1\] *StackOverflow. (2013). [Git Push ERROR: Repository not found](https://stackoverflow.com/questions/10116373/git-push-error-repository-not-found) [StackOverflow Answer]*
+
+<br/>
+
+---
+
+### Hashtags
+
+`#깃` `#깃헙` `#깃 프라이빗` `#깃헙 프라이빗` `#깃 에러` `#깃헙 에러` `#깃 프라이빗 리포` `#프라이빗 리포 에러` `#깃헙 프라이빗 리포` `#프라이빗 리포 오류` `#Git` `#Github` `#git error` `#Repository not found` `#git Repository not found` `#git error: Repository not found` `#git private Repository not found` `#git private` `#git private repository` `#github private` `#github private repository` `#git private repo` `#github private repo` `#git push` `#git push error` `#git push origin master` `#git push private repo` `#git push origin`
+
+<br/>
+
+<br/>
+
+© 2020, Byeongcheol Yoo. All rights reserved.

@@ -1,4 +1,4 @@
-# 배쉬 파이프(Pipe) 명령어 설명 및 사용방법
+# [리눅스] 배쉬 파이프(Pipe) 설명 및 사용방법
 
 <br/>
 
@@ -22,8 +22,8 @@
 
 파이프 명령어는 이전 명령의 표준 출력(STDOUT)을 ***'리다이렉트(redirect)'***하여 다음 명령의 표준 입력(STDIN)으로 전달한다. 사용 문법은 아래와 같다. **command1의 출력**은 **command2의 입력**으로 들어간다.
 
-```console
-command1 | command2
+```shell
+$ command1 | command2
 ```
 
 <br/>
@@ -40,7 +40,7 @@ command1 | command2
 
 그리고 다음과 같이 cat 명령을 사용하여 names.txt 라는 파일을 출력한 다음 그 출력을 다시 sort 명령의 입력으로 전달한다.
 
-```console
+```shell
 $ cat names.txt | sort
 ```
 
@@ -54,7 +54,7 @@ $ cat names.txt | sort
 
 다음과 같이 파이프로 연결하여 Grep 명령을 추가할 수 있다.
 
-```console
+```shell
 $ cat names.txt | sort | grep "a"
 ```
 
@@ -66,7 +66,7 @@ $ cat names.txt | sort | grep "a"
 
 이번 예제에서는 Grep 명령을 여러 번 연결하여 출력을 연속적으로 필터링 해보도록 한다.
 
-```console
+```shell
 $ cat names.txt | grep "a" | grep "e"
 ```
 
@@ -78,15 +78,13 @@ $ cat names.txt | grep "a" | grep "e"
 
 이번 예제에서는 로그 파일에 대해 Grep 명령과 Less 명령을 파이프로 결합하여 결과를 확인해본다.
 
-```console
+```shell
 $ cat /var/log/auth.log | grep sshd | less
 ```
 
 <img src="../images/linux-concepts-bash-pipe-command-3.4.1.png" alt="drawing" width="480"/>
 
 <br/>
-
-
 
 <br/>
 
@@ -97,4 +95,18 @@ $ cat /var/log/auth.log | grep sshd | less
 [1] *İsmail Baydan. (2018, Jan 25). [Linux Bash Pipe Command Usage with Examples For Redirection](https://www.poftut.com/linux-bash-pipe-command-usage-examples-redirection) [Web Blog]*
 
 [2] *GURU99. (?). [Pipe, Grep and Sort Command in Linux/Unix with Examples](https://www.guru99.com/linux-pipe-grep.html) [Web Tutorial]*
+
+<br/>
+
+---
+
+### Hashtags
+
+`#리눅스` `#유닉스` `#리눅스 명령` `#리눅스 명령어` `#리눅스 프로세스` `#리눅스 파이프` `#리눅스 리다이렉션` `#리눅스 명령 실행` `#표준 입력` `#표준 출력` `#표준 오류` `#표준 입출력` `#linux` `#unix` `#linux commands` `#linux command execution` `#linux pipe` `#linux redirection` `#stdin` `#stdout` `#stderr`
+
+<br/>
+
+<br/>
+
+© 2020, Byeongcheol Yoo. All rights reserved.
 
