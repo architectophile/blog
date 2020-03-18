@@ -222,7 +222,7 @@ int main(int argc, char *argv[]) {
 
 ### Hashtags
 
-`#리눅스` `#유닉스` `#파이프` `#리눅스 파이프` `#리눅스 파이프란` `#리눅스 파이프 설명` `#유닉스 파이프` `#리눅스 명령` `#리눅스 명령어` `#리눅스 명령 프로세스` `#리눅스 프로세스` `#리눅스 파일 디스크립터` `#리눅스 데이터 흐름` `#리눅스 리다이렉션` `#리눅스 리디렉션` `#리눅스 명령 실행` `#linux` `#unix` `#linux pipe` `#unix pipe` `#what is pipe?` `#what is linux pipe?` `#linux pipe |` `#linux | command` `#linux |` `#pipe(|)` `#linux file descriptor` `#linux commands` `#linux command execution` `#linux file` `#linux redirection` `#linux data flow` `#stdin` `#stdout` `#stderr` `#표준 입력` `#표준 출력` `#표준 오류` `#표준 입출력`
+`#리눅스` `#유닉스` `#파이프` `#리눅스 파이프` `#리눅스 파이프란` `#리눅스 파이프 설명` `#유닉스 파이프` `#리눅스 명령` `#리눅스 명령어` `#리눅스 명령 프로세스` `#리눅스 프로세스` `#리눅스 파일 디스크립터` `#리눅스 데이터 흐름` `#리눅스 리다이렉션` `#리눅스 리디렉션` `#리눅스 명령 실행` `#표준 입력` `#표준 출력` `#표준 오류` `#표준 입출력` `#linux` `#unix` `#linux pipe` `#unix pipe` `#what is pipe?` `#what is linux pipe?` `#linux pipe |` `#linux | command` `#linux |` `#pipe(|)` `#linux file descriptor` `#linux commands` `#linux command execution` `#linux file` `#linux redirection` `#linux data flow` `#stdin` `#stdout` `#stderr`
 
 <br/>
 
