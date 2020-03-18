@@ -56,7 +56,7 @@ if (hasOutputFile && isLastCommand) {
 
 아래에 이를 나타내는 다이어그램이 있다.
 
-<img src="../images/linux-concepts-cmd-execution-3-io-redirection-1.1.1.png?raw=true" alt="drawing" width="320"/>
+<img src="https://github.com/architectophile/blog/blob/master/linux/concepts/images/linux-concepts-cmd-execution-3-io-redirection-1.1.1.png?raw=true" alt="drawing" width="320"/>
 
 <br/>
 
@@ -81,7 +81,7 @@ $ < colors.txt sort | uniq -c | sort -r | head -3 > favcolors.txt
 
 다음은 위의 명령을 처리되는 과정을 나타내는 다이어그램이다.
 
-<img src="../images/linux-concepts-cmd-execution-3-io-redirection-2.1.1.png?raw=true" alt="drawing" width="840"/>
+<img src="https://github.com/architectophile/blog/blob/master/linux/concepts/images/linux-concepts-cmd-execution-3-io-redirection-2.1.1.png?raw=true" alt="drawing" width="840"/>
 
 <br/>
 
