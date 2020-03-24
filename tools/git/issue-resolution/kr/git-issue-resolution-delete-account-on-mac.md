@@ -89,7 +89,7 @@ $ git config --global user.email "example@email.com"
 
 ### Hashtags
 
-`#깃` `#깃헙` `#깃허브` `#깃 계정` `#깃 계정 변경` `#깃헙 계정` `#Git` `#Github` `#git account` `#git account delete` `#git account switch` `#git account change` `#git user change` `#git user switch` `#how to change git user` `#how to switch git user` `#how to switch git account` `#how to remove git credentials on macOS` `#KeyChain Access` `#git keychain` `#github keychain`
+`#깃` `#깃헙` `#깃허브` `#깃 계정` `#깃 계정 변경` `#깃헙 계정` `#깃헙 키체인` `#깃헙 키체인 삭제` `#Git` `#Github` `#git account` `#git account delete` `#git account switch` `#git account change` `#git user change` `#git user switch` `#how to change git user` `#how to switch git user` `#how to switch git account` `#how to remove git credentials on macOS` `#KeyChain Access` `#git keychain` `#github keychain`
 
 <br/>
 
