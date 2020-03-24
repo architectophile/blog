@@ -10,4 +10,4 @@ This is the repository of the original materials and resources of ***Architectop
 
 ---
 
-Copyright © 2020 Architectophile All rights reserved.
+© 2020, Byeongcheol Yoo. All rights reserved.
