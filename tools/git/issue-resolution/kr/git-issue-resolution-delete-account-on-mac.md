@@ -20,11 +20,11 @@
 
 `KeyChain Access` 툴을 실행하고 `github.com`으로 검색을 해보면 다음과 같이 기존에 저장된 계정 정보를 확인할 수 있다.
 
-<img src="../images/git-issue-resolution-delete-account-on-mac-2.1.1.png?raw=true" alt="drawing" width="648"/>
+<img src="https://github.com/architectophile/blog/blob/master/tools/git/issue-resolution/images/git-issue-resolution-delete-account-on-mac-2.1.1.png?raw=true" alt="drawing" width="648"/>
 
 <br/>
 
-<img src="../images/git-issue-resolution-delete-account-on-mac-2.1.2.png?raw=true" alt="drawing" width="648"/>
+<img src="https://github.com/architectophile/blog/blob/master/tools/git/issue-resolution/images/git-issue-resolution-delete-account-on-mac-2.1.2.png?raw=true" alt="drawing" width="648"/>
 
 <br/>
 
@@ -42,7 +42,7 @@ protocol=https
 
 그리고 다시 `KeyChain Access` 툴로 가보면 이전에 등록되어 있던 계정 정보가 삭제된 것을 확인할 수 있다.
 
-<img src="../images/git-issue-resolution-delete-account-on-mac-2.2.1.png?raw=true" alt="drawing" width="648"/>
+<img src="https://github.com/architectophile/blog/blob/master/tools/git/issue-resolution/images/git-issue-resolution-delete-account-on-mac-2.2.1.png?raw=true" alt="drawing" width="648"/>
 
 <br/>
 
@@ -64,14 +64,14 @@ $ git config --global user.email "githubaccount@email.com"
 
 이제 새로 등록된 계정으로 `git commit`과 `git push` 명령을 실행한다. 그러면 다음과 같이 새로 등록할 Github 계정의 아이디와 비밀번호를 입력하는 과정이 나타난다.
 
-<img src="../images/git-issue-resolution-delete-account-on-mac-2.4.1.png?raw=true" alt="drawing" width="648"/>
+<img src="https://github.com/architectophile/blog/blob/master/tools/git/issue-resolution/images/git-issue-resolution-delete-account-on-mac-2.4.1.png?raw=true" alt="drawing" width="648"/>
 
 <br/>
 <br/>
 
 그리고 새로운 계정으로 `git push`가 완료된 후, 다시 `KeyChain Access` 툴에 가보면 ***새로운 계정 정보가 등록된*** 것을 확인할 수 있다.
 
-<img src="../images/git-issue-resolution-delete-account-on-mac-2.4.2.png?raw=true" alt="drawing" width="648"/>
+<img src="https://github.com/architectophile/blog/blob/master/tools/git/issue-resolution/images/git-issue-resolution-delete-account-on-mac-2.4.2.png?raw=true" alt="drawing" width="648"/>
 
 <br/>
 
