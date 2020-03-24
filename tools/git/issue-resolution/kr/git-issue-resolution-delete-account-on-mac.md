@@ -50,13 +50,13 @@ protocol=https
 
 다음의 명령을 실행하여 유저네임과 이메일을 변경한다.
 
-> ***Note:***  
-이 때 user.name에는 ***Github 계정의 유저네임을 입력해야*** 나중에 `Github` 리포지토리에서 contributor로서 트랙킹하는 것이 편리하다.
-
 ```shell
 $ git config --global user.name "githubusername"
-$ git config --global user.email "example@email.com"
+$ git config --global user.email "githubaccount@email.com"
 ```
+
+> ***Note:***  
+이 때 `user.email`에는 반드시 ***Github 계정의 이메일 주소를 입력해야*** 나중에 `Github` 리포지토리에서 contributor로서 트랙킹하는 것이 가능하다.
 
 <br/>
 
