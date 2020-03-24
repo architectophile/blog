@@ -141,7 +141,7 @@ nginx는 유효하지 않은 도메인 네임을 `server_name`에 사용할 수 
 
 <br/>
 
-## 5. location 블록
+## 6. location 블록
 
 `location` 디렉티브는 서버 안의 리소스에 대한 요청을 어떻게 응답해야 할지를 설정한다. `server_name` 디렉티브가 nginx에게 해당 도메인에 대한 요청을 어떻게 처리해야 하는지 설정하는 것처럼, `location` 디렉티브는 특정 파일과 특정 디렉토리에 대한 요청을 처리한다. 예를 들면, `http://example.com/blog/`와 같은 요청에 대한 처리를 설정한다. 다음과 같은 예가 있다.
 
@@ -278,7 +278,7 @@ Nginx에서 `location` 디렉티브 안에 `네스티드 블록(nested blocks)`�
 
 <br/>
 
-## 6. location 블록의 root와 index
+## 7. location 블록의 root와 index
 
 `location` 디렉티브는 자체적인 인자값(arguments)을 갖고 있는 블록이다.
 
@@ -368,6 +368,8 @@ server {
 
 <br/>
 
+<br/>
+
 ---
 
 ### References
@@ -382,13 +384,16 @@ server {
 
 [3]: https://perldoc.perl.org/perlre.html
 
-
-
 <br/>
 
 ---
 
 ### Hashtags
 
-`#Nginx` `#Nginx Guide` `#Nginx Manual` `#nginx.conf` `#Nginx Config` `#Nginx Configuration` `#Nginx Directives` `#Nginx Blocks` `Nginx Contexts` `#nginx http` `#nginx server` `#nginx location` `#nginx proxy server` `#nginx request` `#nginx response` `#sites-available` `#sites-enabled` `#엔진엑스` `#엔진엑스 가이드` `#엔진엑스 매뉴얼` `#엔진엑스 설정` `#엔진엑스 컨피겨레이션`
+`#엔진엑스` `#엔진엑스 설정` `#엔진엑스 가이드` `#엔진엑스 매뉴얼` `#엔진엑스 설정` `#엔진엑스 컨피겨레이션` `#Nginx 설정` `#nginx 서버` `#nginx 가이드` `#nginx 매뉴얼` `#Nginx` `#Nginx Guide` `#Nginx Manual` `#nginx.conf` `#Nginx Config` `#Nginx Configuration` `#Nginx Directives` `#Nginx Blocks` `Nginx Contexts` `#nginx http` `#nginx server` `#nginx location` `#nginx proxy server` `#nginx request` `#nginx response` `#sites-available` `#sites-enabled`
 
+<br/>
+
+<br/>
+
+© 2020, Byeongcheol Yoo. All rights reserved.
