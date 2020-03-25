@@ -20,13 +20,9 @@
 
 <br/>
 
-<br/>
-
 (2) "Teminal" 또는 "터미널"을 입력한다.
 
 <img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-how-to-open-terminal-on-mac-2.1.2.png?raw=true" alt="drawing" width="480"/>
-
-<br/>
 
 <br/>
 
@@ -44,13 +40,9 @@
 
 <br/>
 
-<br/>
-
 (3) 그 안에 보이는 `Terminal` 프로그램을 더블클릭하여 연다.
 
 <img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-how-to-open-terminal-on-mac-2.2.3.png?raw=true" alt="drawing" width="480"/>
-
-<br/>
 
 <br/>
 
@@ -61,8 +53,6 @@
 (2) `Other` 폴더로 이동한다.
 
 <img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-how-to-open-terminal-on-mac-2.3.2.png?raw=true" alt="drawing" width="480"/>
-
-<br/>
 
 <br/>
 
