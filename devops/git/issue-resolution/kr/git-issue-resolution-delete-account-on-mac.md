@@ -8,7 +8,7 @@
 
 그러므로 이전 계정의 정보(credentials)을 삭제하고 새로운 계정을 추가해야 하는데, 단순히 `git config --global user.name`과 `git config --global user.email`을 수정하는 것만으로는 계정이 스위치되지 않는다.
 
-`macOS`에서는 git의 계정 정보(credentials)가 `Keychain` 툴에 저장되는데, 따라서 새로운 계정으로 변경하기 위해서는 `KeyChain` 안에 저장된 계정 정보를 삭제한 뒤, 새로운 계정을 등록해야 한다. 
+`macOS`에서는 git의 계정 정보(credentials)가 `KeyChain` 툴에 저장되는데, 따라서 새로운 계정으로 변경하기 위해서는 `KeyChain` 안에 저장된 계정 정보를 삭제한 뒤, 새로운 계정을 등록해야 한다. 
 
 이번 포스트에서는 `macOS`에서 어떻게 git 계정을 변경하는지 알아보도록 하자.
 
@@ -66,7 +66,6 @@ $ git config --global user.email "githubaccount@email.com"
 
 <img src="https://github.com/architectophile/blog/blob/master/devops/git/issue-resolution/images/git-issue-resolution-delete-account-on-mac-2.4.1.png?raw=true" alt="drawing" width="648"/>
 
-<br/>
 <br/>
 
 그리고 새로운 계정으로 `git push`가 완료된 후, 다시 `KeyChain Access` 툴에 가보면 ***새로운 계정 정보가 등록된*** 것을 확인할 수 있다.
