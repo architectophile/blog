@@ -25,7 +25,7 @@ nginx를 시작하기 위해서는 우선 실행파일(executable file)을 실�
 - quit : 우아한 종료(graceful shutdown)
 - reload : 컨피겨레이션 파일(configuration file) 다시 로딩하기
 - reopen : 로그 파일 다시 열기
-ㄴ
+
 예를 들어, nginx를 종료할 때 워커 프로세스들이 현재 처리하고 있는 요청들을 모두 완료할 때까지 기다리고 싶을 때는 다음과 같은 명령을 사용한다.
 
 ```shell
