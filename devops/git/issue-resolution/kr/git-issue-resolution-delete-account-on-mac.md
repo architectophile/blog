@@ -67,7 +67,6 @@ $ git config --global user.email "githubaccount@email.com"
 <img src="https://github.com/architectophile/blog/blob/master/devops/git/issue-resolution/images/git-issue-resolution-delete-account-on-mac-2.4.1.png?raw=true" alt="drawing" width="648"/>
 
 <br/>
-<br/>
 
 그리고 새로운 계정으로 `git push`가 완료된 후, 다시 `KeyChain Access` 툴에 가보면 ***새로운 계정 정보가 등록된*** 것을 확인할 수 있다.
 
