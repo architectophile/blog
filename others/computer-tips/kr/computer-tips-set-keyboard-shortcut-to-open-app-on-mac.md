@@ -20,7 +20,7 @@
 
 <br/>
 
-(2) Automator 앱을 실행하면 다음과 같이 새로운 작업을 만드는 창이 뜨는데 여기서 `Quick Action`을 선택한다(만약 새로운 작업 생성 창이 나타나지 않을 경우에는 `File > New`를 선택한다).
+(2) Automator 앱을 실행하면 다음과 같이 새로운 작업을 만드는 창이 뜨는데 여기서 `Quick Action`을 선택한다(만약 새로운 작업 생성 창이 나타나지 않을 경우에는 `File > New`를 선택한다.)
 
 <img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-set-keyboard-shortcut-to-open-app-on-mac-2.1.2.png?raw=true" alt="drawing" width="648"/>
 
