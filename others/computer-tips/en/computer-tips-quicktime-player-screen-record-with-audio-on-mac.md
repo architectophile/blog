@@ -16,14 +16,14 @@ First, we are going to install `Soundflower` for audio source manipulation, add 
 
 `Soundflower` is a OS X system extension that allows applications to pass audio to other applications. So we are going to use it to pass our `internal audio` to `QuickTime Player`.
 
-### 1) Go to the link below and download the Soundflower installer.  
+### 1) Go to the link below and download the Soundflower installer  
 https://www.macupdate.com/app/mac/14067/soundflower
 
 <img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.1.1.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
-### 2) Open the installation package.
+### 2) Open the installation package
 
 <img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.2.1.png?raw=true" alt="drawing" width="720"/>
 
@@ -69,7 +69,7 @@ Click on the `Install` button to finish the installation.
 
 <br/>
 
-### 4) Unblock installing the package(if the installation is failed).
+### 4) Unblock installing the package(if the installation is failed)
 
 ***If the installation is failed,*** you will see the error message that states ***A program tried to load new system extension(s) signed by "MATT INGALLS".*** It blocked the installation because the signer(MAT INGALLS) of the program is unknown to the system. So, we are going to see how to resolve this issue.  
 (But if the installation is ***succeeded***, you can ***just skip*** this step and ***go to step 5).***)
@@ -136,7 +136,7 @@ It will be installed successfully this time.
 
 <br/>
 
-### 5) Check that Soundflower is installed properly.
+### 5) Check that Soundflower is installed properly
 
 Go to `Sound` settings. And check that you have Soundflower(2ch) and Soundflower(64ch) devices installed.
 
@@ -152,7 +152,7 @@ Go to `Sound` settings. And check that you have Soundflower(2ch) and Soundflower
 
 You have installed `Soundflower` extension on your system. Now we are going to configure sound input/output devices at `Audio Midi Setup` to deliver internal audio to `QuickTime Player` appropriately.
 
-### 1) Open Audio Midi Setup.
+### 1) Open Audio Midi Setup
 
 <img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-3.1.1.png?raw=true" alt="drawing" width="720"/>
 
@@ -204,7 +204,7 @@ Rename the device to `Screen Record w/ Audio`. And select `Soundflower (2ch)` in
 
 ## 4. Sound Settings
 
-You have created and configured audio input/output devices, and make them able to pass audio input/output to other applications using Soundflower. And now we are going to 
+You have created and configured audio input/output devices, and make them able to pass audio input/output to other applications using Soundflower. And now we are going to change settings in `Sound`.
 
 ### 1) Change Output device
 
