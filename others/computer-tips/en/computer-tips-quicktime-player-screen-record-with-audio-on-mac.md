@@ -19,39 +19,39 @@ First, we are going to install `Soundflower` for audio source manipulation, add 
 ### 1) Go to the link below and download the Soundflower installer  
 https://www.macupdate.com/app/mac/14067/soundflower
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.1.1.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.1.1.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
 ### 2) Open the installation package
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.2.1.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.2.1.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.2.2.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.2.2.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
 When you try to open the package, you might encounter a security warning that states ***\"Soundflower.pkg" can't be opened because it is from an unidentified developer.***
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.2.3.png?raw=true" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.2.3.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
 In this case, you need to `right-click` the package and go to `Open With > Installer (default)`.
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.2.4.png?raw=true" alt="drawing" width="320"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.2.4.png?raw=true" alt="drawing" width="320"/>
 
 <br/>
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.2.5.png?raw=true" alt="drawing" width="240"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.2.5.png?raw=true" alt="drawing" width="240"/>
 
 <br/>
 
 Then, you will be prompted to allow it to open the package. And click on the `Open` button.
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.2.6.png?raw=true" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.2.6.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
@@ -59,13 +59,13 @@ Then, you will be prompted to allow it to open the package. And click on the `Op
 
 Click on the `Continue` button to start the installation.
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.3.1.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.3.1.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
 Click on the `Install` button to finish the installation.
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.3.2.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.3.2.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
@@ -74,77 +74,77 @@ Click on the `Install` button to finish the installation.
 ***If the installation is failed,*** you will see the error message that states ***A program tried to load new system extension(s) signed by "MATT INGALLS".*** It blocked the installation because the signer(MAT INGALLS) of the program is unknown to the system. So, we are going to see how to resolve this issue.  
 (But if the installation is ***succeeded***, you can ***just skip*** this step and ***go to step 5).***)
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.4.1.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.4.1.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.4.2.png?raw=true" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.4.2.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
 Open `Security & Privacy` settings.
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.4.3.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.4.3.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
 Click the lock to make changes and authenticate yourself to allow it.
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.4.4.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.4.4.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.4.5.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.4.5.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
 Click on the `Allow` button.
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.4.6.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.4.6.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
 Select `MATT INGALLS` and click on the `OK` button.
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.4.7.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.4.7.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
 Now you need to restart the installation.
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.4.8.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.4.8.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.4.9.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.4.9.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
 You will be prompted to authenticate yourself to allow it to continue the installation.
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.4.10.png?raw=true" alt="drawing" width="480"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.4.10.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
 It will be installed successfully this time.
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.4.11.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.4.11.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.4.12.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.4.12.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
 ### 5) Check that Soundflower is installed properly
 
-Go to `Sound` settings. And check that you have Soundflower(2ch) and Soundflower(64ch) devices installed.
+Go to `Sound` settings. And check that you have `Soundflower(2ch)` and `Soundflower(64ch)` devices installed.
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.5.1.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.5.1.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.5.2.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-2.5.2.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
@@ -154,7 +154,7 @@ You have installed `Soundflower` extension on your system. Now we are going to c
 
 ### 1) Open Audio Midi Setup
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-3.1.1.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-3.1.1.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
@@ -162,21 +162,21 @@ You have installed `Soundflower` extension on your system. Now we are going to c
 
 On Audio Midi Setup, click on the `+` button at the left bottom corner. And select `Create Aggregate Device`.
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-3.2.1.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-3.2.1.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-3.2.2.png?raw=true" alt="drawing" width="320"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-3.2.2.png?raw=true" alt="drawing" width="320"/>
 
 <br/>
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-3.2.3.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-3.2.3.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
 Rename the device to `QuickTime Player Input`. And select `Soundflower (2ch)` in the checkbox on the Audio Device list.
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-3.2.4.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-3.2.4.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
@@ -184,21 +184,21 @@ Rename the device to `QuickTime Player Input`. And select `Soundflower (2ch)` in
 
 Click on the `+` button at the left bottom corner. And select `Create Multi-Output Device`.
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-3.3.1.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-3.3.1.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-3.3.2.png?raw=true" alt="drawing" width="320"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-3.3.2.png?raw=true" alt="drawing" width="320"/>
 
 <br/>
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-3.3.3.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-3.3.3.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
 Rename the device to `Screen Record w/ Audio`. And select `Soundflower (2ch)` in the checkbox on the Audio Device list. And then set Master Device to `Built-in Output`.
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-3.3.4.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-3.3.4.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
@@ -210,7 +210,7 @@ You have created and configured audio input/output devices, and make them able t
 
 Open `Sound` settings and change `Output` device to `Screen Record w/Audio`.
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-3.4.1.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-3.4.1.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
@@ -220,7 +220,7 @@ Open `Sound` settings and change `Output` device to `Screen Record w/Audio`.
 
 Open `QuickTime Player`, and select `New Screen Recording`. And on the overlay window, select `Options > Microphone > QuickTime Player Input`. 
 
-<img src="../images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-3.5.1.png?raw=true" alt="drawing" width="720"/>
+<img src="https://github.com/architectophile/blog/blob/master/others/computer-tips/images/computer-tips-quicktime-player-screen-record-with-audio-on-mac-3.5.1.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
