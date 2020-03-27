@@ -314,7 +314,7 @@ $ npm install rimraf --save-dev
 
 <br/>
 
-위 예제를 구현한 전체 소스코드(source code)는 아래의 `Github` 리포(repository)에서 확인할 수 있다.
+위 예제를 구현한 전체 소스코드(source code)는 아래의 `Github` 리포지토리(repository)에서 확인할 수 있다.
 
 > ***Source Code:***  
 https://github.com/architectophile/node-typescript-starter
@@ -327,7 +327,7 @@ https://github.com/architectophile/node-typescript-starter
 
 ### References
 
-[1] *Khalil Stemmler. (?). [How to Setup a TypeScript + Node.js Project](https://khalilstemmler.com/blogs/typescript/node-starter-project/) [Web Blog Post]*
+\[1\] *Khalil Stemmler. (?). [How to Setup a TypeScript + Node.js Project](https://khalilstemmler.com/blogs/typescript/node-starter-project/) [Web Blog Post]*
 
 <br/>
 
