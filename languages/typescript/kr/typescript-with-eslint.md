@@ -22,7 +22,7 @@
 
 ## 3. ESLint 기본 설정 방법
 
-### (1) ESLint, 타입스크립트 파서 및 플러긴 설치
+### 1) ESLint, 타입스크립트 파서 및 플러긴 설치
 
 ```shell
 $ npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
@@ -30,7 +30,7 @@ $ npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/esl
 
 <br/>
 
-### (2) .eslintrc.json 파일 생성
+### 2) .eslintrc.json 파일 생성
 
 ```shell
 $ vim .eslintrc.json
@@ -61,7 +61,7 @@ $ vim .eslintrc.json
 
 <br/>
 
-### (3) .eslintignore 파일 생성
+### 3) .eslintignore 파일 생성
 
 ```shell
 $ vim .eslintignore
@@ -79,7 +79,7 @@ ESLint를 적용하지 않는 디렉토리를 설정한다. 노드 모듈이 설
 
 <br/>
 
-### (4) ESLint 스크립트 추가
+### 4) ESLint 스크립트 추가
 
 다음과 같이 `package.json` 파일 안에 `lint` 스크립트를 추가한다.
 
@@ -96,7 +96,7 @@ ESLint를 적용하지 않는 디렉토리를 설정한다. 노드 모듈이 설
 
 <br/>
 
-### (1) ESLint 규칙(rules)
+### 1) ESLint 규칙(rules)
 
 ESLint 규칙들은 다음의 3가지 모드를 가질 수 있다.
 
@@ -106,7 +106,7 @@ ESLint 규칙들은 다음의 3가지 모드를 가질 수 있다.
 
 <br/>
 
-### (2) 규칙 추가하기
+### 2) 규칙 추가하기
 
 추가하고 싶은 규칙이 있을 경우 설정 파일에서 `rules` 속성(attribute)에 규칙이름을 `key`로 하고 규칙모드를 `value`로 하여 규칙을 추가할 수 있다. `ESLint`의 기본 규칙들은 [List of available rules][2]에서 확인할 수 있다.
 
@@ -135,7 +135,7 @@ ESLint 규칙들은 다음의 3가지 모드를 가질 수 있다.
 
 <br/>
 
-### (3) 실제 프로젝트에서의 규칙 적용
+### 3) 실제 프로젝트에서의 규칙 적용
 
 규칙 중에서 `"off"` 모드를 사용하면 기본 설정(base configuration)에서 우리 팀에서는 중요하지 않게 생각하는 규칙이 있을 경우 해당 규칙만 비활성화할 수 있다.  
 
@@ -146,7 +146,7 @@ ESLint 규칙들은 다음의 3가지 모드를 가질 수 있다.
 
 <br/>
 
-### (4) 플러긴 추가하기
+### 4) 플러긴 추가하기
 
 ESLint에서는 플러긴을 통해 새로운 기능을 추가할 수 있다. [Awesome ESLint][6]에 가면 다양한 ESLint 플러긴들을 찾을 수 있다. 그 중에서 재밌는 한 가지가 있는데 바로 [no-loops][7]인데, 이것은 `for`, `while` statements의 사용을 금지한다. 따라서 대신 `map` 또는 `forEach` 등을 사용하도록 한다.
 
@@ -189,7 +189,7 @@ for (let i = 0; i < 100; i++) {
 <br/>
 <br/>
 
-### (5) 다른 설정으로 확장(extending)하기
+### 5) 다른 설정으로 확장(extending)하기
 
 만약 기본 설정에 [Shopify's][3] 설정을 추가하여 확장하고 싶다면 어떻게 해야할까?
 
@@ -217,7 +217,7 @@ $ npm install eslint-plugin-shopify --save-dev
 <br/>
 <br/>
 
-### (6) 자동으로 문제점 수정(fixing)하기
+### 6) 자동으로 문제점 수정(fixing)하기
 
 바로 위에서 보았던 eslint 결과 출력 로그를 확인해보면 다음과 같은 문장이 있는 것을 알 수 있다.
 
