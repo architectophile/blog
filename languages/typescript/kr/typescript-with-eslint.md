@@ -123,7 +123,6 @@ ESLint 규칙들은 다음의 3가지 모드를 가질 수 있다.
 <img src="../images/languages-typescript-typescript-with-eslint-4.2.1.png?raw=true" alt="drawing" width="840"/>
 
 <br/>
-<br/>
 
 그리고 다음과 같이 `no-console` 규칙을 `"off"`로 설정하면 더 이상 오류가 출력되지 않는 것을 알 수 있다.
 
@@ -187,7 +186,6 @@ for (let i = 0; i < 100; i++) {
 <img src="../images/languages-typescript-typescript-with-eslint-4.4.1.png?raw=true" alt="drawing" width="840"/>
 
 <br/>
-<br/>
 
 ### 5) 다른 설정으로 확장(extending)하기
 
@@ -215,7 +213,6 @@ $ npm install eslint-plugin-shopify --save-dev
 <img src="../images/languages-typescript-typescript-with-eslint-4.5.1.png?raw=true" alt="drawing" width="840"/>
 
 <br/>
-<br/>
 
 ### 6) 자동으로 문제점 수정(fixing)하기
 
@@ -238,13 +235,11 @@ $ npm install eslint-plugin-shopify --save-dev
 <img src="../images/languages-typescript-typescript-with-eslint-4.6.1.png?raw=true" alt="drawing" width="840"/>
 
 <br/>
-<br/>
 
 그리고 `src/index.ts` 파일을 살펴보면 `console.log()` 함수 호출 끝에 자동으로 `세미콜론(;)`이 추가된 것을 알 수 있다.
 
 <img src="../images/languages-typescript-typescript-with-eslint-4.6.2.png?raw=true" alt="drawing" width="584"/>
 
-<br/>
 <br/>
 
 이처럼 우리는 `ESLint`를 사용하여 코딩 스타일과 형식을 검사하고 기준에 맞게 수정할 수 있다는 것을 알게되었다. 하지만 매번 eslint 명령을 수행하여 문제점을 수정하는 것이 아니라 코딩을 하는 도중에 실시간으로 우리가 정해놓은 코딩 컨벤션 기준에 따라 자동으로 형식을 맞춰줄 수 있는 방법은 없을까?
