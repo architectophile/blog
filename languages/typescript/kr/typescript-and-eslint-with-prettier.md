@@ -195,7 +195,7 @@ $ npm install --save-dev eslint-config-prettier eslint-plugin-prettier
   ],
   "rules": {
     "no-console": "warn", // Using 'console.log()' is allowed but a 'warning' will be displayed.
-    "prettier/prettier": 2
+    "prettier/prettier": "error"
   }
 }
 ```
