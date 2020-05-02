@@ -17,7 +17,7 @@
 
 ## 3. 프로젝트 기본 설정
 
-### (1) 프로젝트 디렉토리 생성
+### 1) 프로젝트 디렉토리 생성
 
 ```shell
 $ mkdir node-typescript-starter
@@ -26,7 +26,7 @@ $ cd node-typescript-starter
 
 <br/>
 
-### (2) NPM init
+### 2) NPM init
 
 다음 명령을 실행하여 기본적인 패키지 네임 등을 설정하고 `package.json`을 생성한다.
 
@@ -36,7 +36,7 @@ $ npm init
 
 <br/>
 
-### (3) 타입스크립트 개발 디펜던시로(dev dependency) 설치
+### 3) 타입스크립트 개발 디펜던시로(dev dependency) 설치
 
 ```shell
 $ npm install typescript --save-dev
@@ -47,7 +47,7 @@ $ npm install typescript --save-dev
 
 <br/>
 
-### (4) Node.js에 대한 엠비언트 타입(ambient types) 설치
+### 4) Node.js에 대한 엠비언트 타입(ambient types) 설치
 
 ```shell
 & npm install @types/node --save-dev
@@ -55,7 +55,7 @@ $ npm install typescript --save-dev
 
 <br/>
 
-### (5) TypeScript init
+### 5) TypeScript init
 
 다음 명령을 실행하여 타입스크립트 소스 디렉토리 등을 설정하고 `tsconfig.json`을 생성한다.
 
@@ -149,7 +149,7 @@ $ npx tsc --init --rootDir src --outDir build \
 
 <br/>
 
-### (6) src 디렉토리 및 index.ts 파일 생성
+### 6) src 디렉토리 및 index.ts 파일 생성
 
 ```shell
 $ mkdir src
@@ -164,7 +164,7 @@ console.log('Hello World! This is the first TypeScript project!')
 
 <br/>
 
-### (7) 타입스크립트 코드 컴파일
+### 7) 타입스크립트 코드 컴파일
 
 타입스크립트 코드를 컴파일하기 위해 `tsc` 명령을 사용하는데, 이를 실행하기 위해 `npx`(node package executer) 명령을 함께 이용한다. 그리고 `tsc` 명령은 `tsconfig.json` 파일을 읽고 해당 설정을 적용하여 `타입스크립트(TypeScript)` 컴파일러를 실행하여 컴파일된 `자바스크립트(JavaScript)` 코드를 생성한다.
 
@@ -183,7 +183,7 @@ console.log('Hello World! This is the first TypeScript project!');
 
 ## 4. 유용한 설정 및 스크립트 작성
 
-### (1) Cold reloading
+### 1) Cold reloading
 
 `Cold reloading`은 로컬 개발 환경에서 매우 유용한 기능이다. 이를 위해 다음 명령을 실행하여 `ts-node`, `nodemon` 패키지를 설치한다.
 
@@ -233,7 +233,7 @@ $ vim nodemon.json
 
 <br/>
 
-### (2) 프로덕션(production) 빌드 스크립트 생성
+### 2) 프로덕션(production) 빌드 스크립트 생성
 
 다음 명령을 실행하여 `rimraf` 패키지를 설치한다.
 
@@ -314,7 +314,7 @@ $ npm install rimraf --save-dev
 
 <br/>
 
-위 예제를 구현한 전체 소스코드(source code)는 아래의 `Github` 리포(repository)에서 확인할 수 있다.
+위 예제를 구현한 전체 소스코드(source code)는 아래의 `Github` 리포지토리(repository)에서 확인할 수 있다.
 
 > ***Source Code:***  
 https://github.com/architectophile/node-typescript-starter
@@ -327,7 +327,7 @@ https://github.com/architectophile/node-typescript-starter
 
 ### References
 
-[1] *Khalil Stemmler. (?). [How to Setup a TypeScript + Node.js Project](https://khalilstemmler.com/blogs/typescript/node-starter-project/) [Web Blog Post]*
+\[1\] *Khalil Stemmler. (?). [How to Setup a TypeScript + Node.js Project](https://khalilstemmler.com/blogs/typescript/node-starter-project/) [Web Blog Post]*
 
 <br/>
 
