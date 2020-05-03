@@ -1,4 +1,4 @@
-# 네트워크 개론 - 2강
+# I. Introduction
 
 ## 1. 네트워크(Network)
 
