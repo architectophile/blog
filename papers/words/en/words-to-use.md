@@ -12,3 +12,16 @@ unwieldy
 susceptible
 premise
 
+assumption
+align with
+cryptocurrency specific threat categories
+accordingly
+contemplate
+rule out
+distilled
+decease
+
+
+
+
+

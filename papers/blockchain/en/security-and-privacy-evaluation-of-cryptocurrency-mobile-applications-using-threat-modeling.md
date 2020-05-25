@@ -7,6 +7,8 @@ Abstraction
 
 ## I. Introduction
 
+Cryptocurrency is one of the Blockchain applications. And it has real world value. Therefore hackers' target.[8]
+
 Since Bitcoin emerged in 2009, the market cap is increasing continuously.
 
 The blockchain is interacted using mobile applications mostly.
@@ -29,10 +31,21 @@ We analyzed cryptocurrency or blockchain related threats to elicit more specific
 We analyzed various android mobile application threats and security requirements to create a attack library.
 [6]
 
+This also involves considering collusion between several
+attackers who may cooperate on attacking the system.
+
+it does not contemplate collusion attack 
+the target is only the user's mobile phone or application.
+
+Blockchain-based financial services are different from conventional services. For instance, in blockchain, you can not cancel a transaction.
+Public blochain ledger is exposed to the public as opposed to the conventional financial services like banknig services. Severe privacy issues can occur.
+
+Therefore we need threat modeling framework for cryptocurrency specific services.
+
+
+
 
 ### The paper makes the following contributions:
-
-- 
 
 - We evaluate security and privacy of cryptocurrency applications using static code analysis and network data analysis (Section 3).
 
@@ -63,7 +76,7 @@ However, this framework is for designing blockchian or cryptocurrency. not for m
 
 [6] OWASP Mobile top 10
 [7] OWASP Mobile Security Testing Guide
-
+[8] Coin market cap
 
 
 
@@ -89,6 +102,7 @@ However, this framework is for designing blockchian or cryptocurrency. not for m
 - screen capture of keys
 - input personal information
 - request for suspicious permissions
+- two-factor auth
 
 ### mitigating functions
 - check the integrity of a user's address when sending address
@@ -96,6 +110,7 @@ However, this framework is for designing blockchian or cryptocurrency. not for m
 - check the integrity of a transaction before sign it
 - send backup keys to the server
 - check if the device is rooted
+- clipboard integrity check
 
 ### data persistence
 - key stroage in local app data

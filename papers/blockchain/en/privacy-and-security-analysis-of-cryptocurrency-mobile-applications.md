@@ -148,8 +148,6 @@ After locating the components responsible for authentication and cryptography fu
 
 ## IV. RESULTS
 
-
-
 ### A. Phase 1
 
 By following the permission-based privacy analysis model [9] we report that all the tested applications required access to the internet.
