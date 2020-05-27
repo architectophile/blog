@@ -1,0 +1,1 @@
+[](https://martinfowler.com/articles/agile-threat-modelling.html)
