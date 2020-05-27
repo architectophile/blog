@@ -72,7 +72,7 @@ Server → Client 회신
 - `may have dynamic IP addresses`: 클라이언트 IP 주소는 동적으로 변경될 수 있다. e.g. 스마트폰은 `cellular network`을 사용하는데 해당 기지국에서 새로 IP 주소를 할당해주므로 이동하면서 계속 IP 주소가 변경된다.
 - `do not communicate directly with each other`: 카카오톡 메시지는 클라이언트끼리 통신하는 것이 아니라 클라이언트가 서버에 메시지를 전송하면, 다른 클라이언트가 서버에서 메시지를 읽어온다.
 
-<img src="../images-temp/network-application-layer-2.1.1.png?raw=true" alt="drawing" width="480"/>
+<img src="../images/network-application-layer-2.1.1.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
@@ -102,7 +102,7 @@ client끼리 직접 데이터를 서로 주고 받는다.
 
 프로그램이 실행되면 해당 프로세스는 항상 메모리를 사용하게 된다.
 
-<img src="../images-temp/network-application-layer-2.1.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-application-layer-2.1.2.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
@@ -110,7 +110,7 @@ client끼리 직접 데이터를 서로 주고 받는다.
 
 프로세스끼 간에는 `socket`을 통해서 어플리케이션 `message`를 전송하고 전달받는다.
 
-<img src="../images-temp/network-application-layer-2.1.3.png?raw=true" alt="drawing" width="720"/>
+<img src="../images/network-application-layer-2.1.3.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
@@ -152,13 +152,13 @@ identifier includes both `IP address` and `port numbers`.
 
 ### Transport service requirements: common apps
 
-<img src="../images-temp/network-application-layer-2.1.4.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-application-layer-2.1.4.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
   
 ### Internet transport protocols services
 
-<img src="../images-temp/network-application-layer-2.1.5.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-application-layer-2.1.5.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
@@ -169,7 +169,7 @@ identifier includes both `IP address` and `port numbers`.
 
 ### Internet apps: application, transport protocols
 
-<img src="../images-temp/network-application-layer-2.1.6.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-application-layer-2.1.6.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
@@ -186,7 +186,7 @@ identifier includes both `IP address` and `port numbers`.
 
 각 오브젝트는 해당 `URL`을 통해서 찾을 수 있다.
 
-<img src="../images-temp/network-application-layer-2.2.1.png?raw=true" alt="drawing" width="480"/>
+<img src="../images/network-application-layer-2.2.1.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
@@ -196,7 +196,7 @@ client-server 구조에서 사용한다.
 
 - `HTTP`: hypertext transfer protocol
 
-<img src="../images-temp/network-application-layer-2.2.2.png?raw=true" alt="drawing" width="480"/>
+<img src="../images/network-application-layer-2.2.2.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
@@ -231,9 +231,9 @@ HTTP is `stateless`: 이전 상태를 저장하지 않는다. 최대한 심플�
 
 #### Non-persistent HTTP
 
-<img src="../images-temp/network-application-layer-2.2.3.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-application-layer-2.2.3.png?raw=true" alt="drawing" width="640"/>
 
-<img src="../images-temp/network-application-layer-2.2.4.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-application-layer-2.2.4.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
@@ -253,7 +253,7 @@ HTTP is `stateless`: 이전 상태를 저장하지 않는다. 최대한 심플�
 
 <br/>
 
-<img src="../images-temp/network-application-layer-2.2.5.png?raw=true" alt="drawing" width="480"/>
+<img src="../images/network-application-layer-2.2.5.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
@@ -291,11 +291,11 @@ non-persistent HTTP에서는 오브젝트 전송을 위한 기본 RTT 시간이 
 
 ### HTTP request message
 
-<img src="../images-temp/network-application-layer-2.2.6.png?raw=true" alt="drawing" width="480"/>
+<img src="../images/network-application-layer-2.2.6.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
-<img src="../images-temp/network-application-layer-2.2.7.png?raw=true" alt="drawing" width="480"/>
+<img src="../images/network-application-layer-2.2.7.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
@@ -316,7 +316,7 @@ non-persistent HTTP에서는 오브젝트 전송을 위한 기본 RTT 시간이 
 
 ### HTTP response message
 
-<img src="../images-temp/network-application-layer-2.2.8.png?raw=true" alt="drawing" width="480"/>
+<img src="../images/network-application-layer-2.2.8.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
@@ -333,35 +333,243 @@ non-persistent HTTP에서는 오브젝트 전송을 위한 기본 RTT 시간이 
 
 ### User-server state: cookies
 
+- `Client-side cookie`: 클라이언트 장치에 저장된 쿠키 e.g. 웹브라우저에서 로그인 정보 자동 입력
+- `Server-side cookie`: 서버 장치에 저장된 쿠키 e.g. 로그인 유지(세션) → 한 번 로그인하면 브라우저를 껐다가 켜도 계속 로그인되어 있음, 아마존 장바구니 아이템 목록
 
+> ***Note: ***  
+요즘에는 `Client-side cookie`와 `Server-side cookie`의 경계가 많이 없어지고 있다. e.g. 구글 계정 연동으로 여러 장치에서 쿠키를 공유하여 사용할 수 있다. 하지만 서버에 비밀번호와 같은 정보를 쿠키로 저장하는 것은 보안 문제를 일으킬 수 있다.
+
+※ 외국 사이트에 가면 사용자의 쿠키를 저장하는 것에 대한 사용자 동의를 얻는 경우가 있다.
+
+<br/>
 
 ### Cookies: keeping “state” (cont.)
 
+<img src="../images/network-application-layer-2.2.9.png?raw=true" alt="drawing" width="480"/>
+
+<br/>
+
 ### Web caches (proxy server)
+
+<img src="../images/network-application-layer-2.2.10.png?raw=true" alt="drawing" width="480"/>
+
+<br/>
+
+프로시 서버는 서버와 클라이언트 역할을 동시에 수행한다. 사용자를 대신해서 클라이언트 역할을 하여 다른 서버에 요청을 전달한다.
+
+object1     4           7           10  
+2           5           8           11  
+3           6           9           12  
+server1     server2     server3     server4  
+
+보통은 특정 서버나 특정 오브젝트에 대한 요청이 많이 몰리게 된다(`load imbalance`).
+
+프록시 서버에 캐쉬를 저장하여 자주 요청되는 데이터를 빠르게 전송할 수 있다. 이럴 경우 실제 서버까지 요청할 필요가 없다.
+
+<br/>
 
 ### More about Web caching
 
+일반적으로 cache는 ISP에 의해 제공된다.
 
+#### Why web caching?
+- 응답시간을 줄일 수 있음
+- 트래픽을 줄일 수 있음, 네트워크 자원 절약
+- 인터넷은 많은 캐쉬가 있음
 
+> ***Note: ***  
+***일단 무조건 캐쉬에 보내고 보기 때문에*** 만약에 캐쉬가 안되어 있다면 캐쉬를 방문한 요청은 `delay=손실`이 된다. → latency penalty for a cache miss(캐쉬를 사용하는 것에 대한 tradeoff)
 
+많이 요청되는 오브젝트에 대한 response time은 빠르게 되고, 덜 요청되는 오브젝트에 대한 response time은 조금 느리게 된다.
 
+<br/>
 
+## 2.3. DNS
 
+### DNS: domain name system
 
+서버1       서버2       서버3       서버4  
+cafe        blog        new        cafe
 
+서버4 = 서버1의 replica
 
+selective replication, replicated systems
 
+서버 IP주소는 영구적이어야 한다. 하지만 해당 서버는 여러개이므로 IP주소도 여러개이다.
 
+이를 해결하기 위해서 `domain name`을 사용한다. `DNS`는` hostname`을 `IP주소`로 변환해준다.
 
+#### Domain Name System
+- distributes database
+- application-layer protocol
 
-## 2.3. Electronic Mail
+<br/>
 
-## 2.4. DNS
+### DNS: services, structure
 
-## 2.5. P2P Applications
+#### DNS services
+- hostname to IP address translation
+- host aliasing(canonical, alias names)
+- mail server aliasing
+- load distribution(replicated web servers): 여러 IP 주소들을 하나의 이름으로 맵핑
 
-## 2.6. Video Streaming and Content Distribution Networks
+#### Why not centralize DNS?
+- single point of failure
+- traffic volume
+- distant centralized database
+- maintenance
 
-## 2.7. Socket Programming with UDP and TCP
+<img src="../images/network-application-layer-2.3.1.png?raw=true" alt="drawing" width="640"/>
 
+<br/>
+
+### DNS: root name servers
+
+`local name server`에 의해 접근된다. `root name servers`는 여러 국가에 replicated 되어있다.
+
+<img src="../images/network-application-layer-2.3.2.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+### TLD, authoritative servers
+
+#### Top-level domain (TLD) servers:
+- com, org, net, edu, aero, jobs, museums와 모든 top-level 국가 도메인(e.g. uk, kr, ca)
+
+#### Authoritative DNS servers:
+- organization's own DNS servers: 
+
+e.g. `portal.korea.ac.kr`를 접근할 경우 우선 다음과 같이 IP주소를 가져오게 된다.  
+`root name server` → kr `TLD server` → ac `TLD server`  → portal `authoritative DNS server`
+
+<br/>
+
+### Local DNS name server
+
+자주 접속하는 사이트 등의 hostname과 IP주소를 갖고 있다.
+
+각 ISP는 Local DNS name server를 갖고 있다.
+
+`host`가 `DNS query`를 요청하면 우선 `local DNS server`에 요청한다.
+
+> ***Note: ***  
+하지만 `local DNS server`의 정보는 ***outdated 되었을 수 있다.*** → `cache coherence` 문제, `consistency`를 보장해야 함
+
+### DNS name resolution example
+
+#### Iterated Query
+
+local DNS server가 계속 찾아가기 때문에 root DNS server에 트래픽이 많이 몰리지 않는다. local DNS server에게 load를 분산한다. 하지만 local DNS server가 많은 load를 감당해야 한다.
+
+<img src="../images/network-application-layer-2.3.3.png?raw=true" alt="drawing" width="480"/>
+
+<br/>
+
+#### Recursive Query
+
+<img src="../images/network-application-layer-2.3.4.png?raw=true" alt="drawing" width="480"/>
+
+<br/>
+
+### DNS: caching, updating records
+
+한 번 name server가 맵핑을 받으면, 이것을 캐쉬한다.
+
+- cache entires timeout after some time(TTL)
+- TLD server들은 일반적으로 local name server에 캐쉬되어 있다. 따라서 root name server를 거치지 않는 경우가 많다.
+
+cached entires는 `out of date`일 수도 있다. 왜냐하면 캐쉬된 정보가 실시간으로 업데이트되지 않기 때문이다.
+
+<br/>
+
+### DNS protocol, messages
+
+`query`와 `reply` messages는 동일한 `message format`을 갖는다.
+
+<img src="../images/network-application-layer-2.3.5.png?raw=true" alt="drawing" width="480"/>
+
+<br/>
+
+## 2.4. Socket programming with UDP and TCP
+
+### Socket programming
+
+<img src="../images/network-application-layer-2.4.1.png?raw=true" alt="drawing" width="720"/>
+
+<br/>
+
+`socket`은 호스트가 다른 장치에 있는 프로세스와 네트워크를 통해서 통신하기 위해서 사용하는 관문 역할을 한다. 
+
+- 네트워크를 통해 프로세스들을 서로 연결하는 `인터페이스(interface)`이다.
+- 여러가지 프로토콜을 위한 `generic interface`이다.
+
+<img src="../images/network-application-layer-2.4.2.png?raw=true" alt="drawing" width="720"/>
+
+<br/>
+
+### What APIs Needed?
+
+#### Connection-oriented TCP
+
+1. create socket
+2. establish connection
+3. data send/receive
+4. identify socket
+5. close socket
+
+#### Connectionless UDP
+
+1. create socket
+3. data send/receive
+4. identify socket
+5. close socket
+
+<br/>
+
+### Socket Descriptor
+
+<img src="../images/network-application-layer-2.4.3.png?raw=true" alt="drawing" width="480"/>
+
+<br/>
+
+TCP를 사용할 경우 `SOCK_STREAM`을 선택하고, UDP를 사용할 경우 `SOCK_DGRAM`을 사용한다.
+
+<br/>
+
+### Socket programming
+
+- `UDP`: unreliable datagram
+- `TCP`: reliable, byte stream-oriented
+
+<br/>
+
+### Socket programming with UDP
+
+`sender`가 `목적지 IP주소`와 `포트번호`를 ***명시적으로(explicitly) 패킷에 붙여서 전송한다.***
+
+`receiver`는 패킷의 `목적지 IP주소`와 `포트번호`를 읽어서 처리한다.
+
+`UDP`를 사용하면 `packet loss`가 발생하거나 순서가 바뀔 수 있지만 이에 대한 처리는 하지 않는다.
+
+<img src="../images/network-application-layer-2.4.4.png?raw=true" alt="drawing" width="480"/>
+
+<br/>
+
+### Socket programming with TCP
+
+`UDP`와의 가장 큰 차이점은 소켓을 생성하고 커넥션을 생성하는 과정이 있다.
+
+<img src="../images/network-application-layer-2.4.5.png?raw=true" alt="drawing" width="480"/>
+
+<br/>
+
+`TCP`에서는 커넥션을 한 번 생성하면 패킷에 `IP주소`와 `포트번호`를 붙이지 않아도 된다.
+
+<br/>
+
+### Refreshing
+
+- Host (NIC card)는 IP 주소에 의해 구분된다.
+- 네트워크 어플리케이션/프로세스는 포트번호에 의해 구분된다.
+- 네트워크 커넥션은 `5-tuple`(src ip, src port, dst ip, dst port, protocol)에 의해서 구분된다.
 
