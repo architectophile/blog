@@ -37,3 +37,25 @@
 <br/>
 
 `NSA`가 타원곡선 표준을 제정할 때 특정 타원곡선을 넣자고하여 표준으로 제정되었다. 2007년에 `Bruce Schneier`가 혹시 `NSA`가 백도어를 삽입하려는 것인가하는 의문을 제기하였다. 그리고 나중에 `Edward Snowden`이 폭로한 이후에 `Bullrun` 프로젝트가 알려졌고 실제로 알고리즘 상에 백도어를 넣은 것이 밝혀진다. 2015년에 `NSA`에서 알고리즘에 백도어를 넣은 사실을 인정하고 사과하였다.
+
+
+## Symmetric Ciphers
+
+### SPN
+
+
+
+
+### Ideal Properties of a Proof
+
+
+
+### Brief History of Provable Security
+
+1976 Diffie-Hellman: 공개키암호 개념 정립
+PKC
+
+
+
+1982 GM(IND-CPA): Design Assurance 기초 정립
+Blum, Goldwasser & Micali
