@@ -665,3 +665,140 @@ Lattice-based Model의 장단점
 
 규칙 기반 접근 통제 모델이다(e.g. 방화벽 규칙 설정).
 
+<br/>
+
+## 3. Access Control Structures
+
+### (1) Access Control Matrix
+
+<img src="../images/security-engineering-5-security-policy-modeling-3.1.1.png?raw=true" alt="drawing" width="520"/>
+
+<br/>
+
+- `Capabilities`: Access Control Matrix에서 `가로(행)`으로 자른 것
+- `Access Control Lists`: Access Control Matrix에서 `세로(열)`로 자른 것
+
+<br/>
+
+#### Capabilities e.g.) Kerberos v5
+
+<img src="../images/security-engineering-5-security-policy-modeling-3.1.2.png?raw=true" alt="drawing" width="640"/>
+
+클라이언트는 우선 `KDC`로부터 사용자 `인증(Authentication)`을 한 후 `TGT`를 받아 캐쉬에 저장한다. 다음에 `Target Server`에 접근할 때는 `KDC`에 가서 전에 전달받은 `TGT`를 보여주면서 접근하고자 하는 `Target Server`를 알려준다. `KDC`에서 `TGT`를 검사하고 해당 `Target Server`에 접근가능한 지 검사한 후 `ST`를 발급해주면 이 티켓을 이용해 클라이언트는 `Target Server`에 접근한다.
+
+이전에 사람들은 항상 `인증(Authentication)`과 `권한관리(Authorization)`이 동시에 일어난다고 생각했지만, `커버로스(Kerberos)`에서는 한 번만 한 이후에 이후에는 권한관리만 반복적으로 수행된다. 이것은 현재 사용하는 `single-sign-on`의 효시가 되었다.
+
+사용자의 티켓에는 해당 사용자가 어떤 서비스를 이용할 수 있는지 기록되어 있기 때문에 이것은 일종의 `Capability`이다.
+
+<br/>
+
+#### (Capabilities e.g.) Android
+
+<img src="../images/security-engineering-5-security-policy-modeling-3.1.3.png?raw=true" alt="drawing" width="640"/>
+
+안드로이드 앱에서 `AndroidManifest.xml` 파일은 해당 앱이 어떤 자원에 접근할 수 있는지를 기록해놓았기 때문에 이것은 일종의 `Capability`이다.
+
+<br/>
+
+## 4. Reference Monitor
+
+`time-sharing computer system` 또는 `multi-processing` 기능을 갖는 컴퓨터가 등장했을 때 초기에는 비용절감에 도움이 될 것이다라고 생각했으나, 보안 전문가의 입장에서 보았을 때는 동일한 시스템이 여러 사람이 공유하기 때문에 다른 사람이 만든 파일에 접근할 경우 심각한 보안 위협이 될 수 있기 때문에 이를 방지하기 위해서 운영체제 안에 모든 이벤트(events)를 모니터링 할 수 있는 기능이 필요하다고 생각했다. 그리고 후대에 사람들이 이것을 `Reference Monitor`라고 이름 붙였다.
+
+<br/>
+
+### (1) Execution Monitors (EM)
+
+<img src="../images/security-engineering-5-security-policy-modeling-4.1.1.png?raw=true" alt="drawing" width="520"/>
+
+`프로그램의 실행(program execution)`을 관찰하는 모니터이다. 이것에 확대되어 나중에 `Reference Monitor`가 된다.
+
+코드가 들어오면 실행을 시키고 발생한 이벤트를 `EM`가 검사한다. 규칙을 위반하는 것이 없으면 코드의 다음 라인을 실행시키고 발생한 이벤트를 다시 `EM`이 검사하는 것을 반복한다. 그러다가 만약 어떤 이벤트를 검사했을 때 규칙을 위반하는 것이 발견되면 `EM`이 프로그램 실행을 중단시킨다.
+
+이와 비슷한 것은 개발할 때 프로그램을 실행시켜 한 줄, 한 줄씩 `디버깅(debugging)`을 하는 것과 비슷하다.
+
+사람들은 `EM`을 운영체제 안에 넣었을 때 어떤 것까지 할 수 있고 어떤 것은 할 수 없는지를 연구하였다. 그 결과 `EM`은 이론적으로 `all safety properties`를 검사할 수 있지만 `liveness properties`는 잡아낼 수 없다고 `Schneider`가 증명하였다.
+
+- `Safety Properties`: 나쁜 일은 발생하지 않을 것이다. 상대적으로 검사하기 쉽다.
+- `Liveness Properties`: 언젠가 좋은 일이 발생할 것이다. 상대적으로 훨씬 어렵다. e.g. 프로그램이 언젠가 종료될 것이다. 사용자가 언젠가 금액을 지불할 것이다.
+
+<br/>
+
+#### EM이 할 수 있는(Can) 것들
+
+- `DAC`, `MAC`, `MLS` 접근 통제 정책을 위반했는 지 검사하는 것이 가능
+
+#### EM이 할 수 없는(Can Not) 것들
+
+- `Information Flow`와 관련된 것은 통제할 수 없음
+- `Liveness`/`Availability(e.g. DoS)`는 검사할 수 없음
+
+<br/>
+
+### (2) Beyond EM
+
+`EM` 기능의 한계를 인식하게 되어 `보안운영체제`를 만드는 것이 쉽지 않다고 생각하여 더 많은 연구와 예산을 쏟아붓기 시작한다.
+
+<br/>
+
+### (3) Reference Monitor
+
+70년대에는 `Execution Monitor`를 계속 개발하면 안전한 운영체제를 만들 수 있다고 생각하여 계속 연구한다.
+
+`James P. Adnerson`이 최초로 `EM`을 확장하여 `Reference Monitor`라는 개념을 만들었다.
+
+#### Reference Monitor 요구사항
+- 모든 보안 정책 관련된 이벤트를 잡아낼 수 있어야 한다.
+- Reference Monitor는 위변조가 불가능(tamper-proof)하고 우회(bypass)되어서는 안 된다.
+- 충분히 복잡도가 낮아서 수학적으로 분석할 수 있어야 한다.
+
+<br/>
+
+<img src="../images/security-engineering-5-security-policy-modeling-4.3.1.png?raw=true" alt="drawing" width="640"/>
+
+1. 커널(Kernel) 안에 들어가서 모든 이벤트를 검사하는 형태(일반적으로 `보안운영체제`에서 많이 연구하는 형태)
+2. 프로그램이 실행되면 `Interpreter` 역할을 하여 프로그램을 감싸는 형태. 프로그램이 커널에 접근할 때 `RM`이 검사하여 중간에서 통제하는 형태
+3. 프로그램 안에 넣어서 `RM`을 운영하는 형태
+
+<br/>
+
+### (4) Validity Checks
+
+`Execution Monitor` 안에 보안정책을 주입한다. 한 줄씩 실행할 때마다 주입된 보안정책을 위반하는지 검사한다. 이 모든 것을 통틀어서 `Reference Monitor`라고 한다.
+
+커널 안에 `RM`을 넣은 형태를 `보안 커널(Security Kernel)`이라고 한다.
+
+<br/>
+
+### (5) Practical Issues
+
+사람들이 처음에 생각했던 것 보다 `EM`으로 할 수 있는 것이 접근 제어 정도 밖에 없다는 것을 알게되었고, 운영체제에서 발생하는 모든 이벤트를 잡아내는 것도 쉽지 않다는 것을 알게 된다.따라서 보안운영체제를 만드는 것이 매우 어렵다는 것을 느끼게 된다.
+
+<br/>
+
+### (6) Commercial Security Kernels
+
+<br/>
+
+### (7) Summary
+
+<img src="../images/security-engineering-5-security-policy-modeling-4.7.1.png?raw=true" alt="drawing" width="720"/>
+
+<br/>
+
+1970년대에는 `Penetrate and Patch` 방법을 통해 모의해킹 팀을 이용해서 보안운영체제의 보안성을 높이려고 했지만 모의해킹 팀에 따라서 실력이 다르고 일관된 결과가 나오지 않는다는 것을 알게 되었다. 모의해킹 팀을 부르고 고치고 다시 부르고 고치는 방법은 품질 관리에 바람직한 방법이 아니라고 생각한다.
+
+수학적으로 증명을 해서 무엇은 확실히 되고 무엇은 안 되는지를 아는 것이 중요하다고 생각한다. 그래서 시스템을 Formal하게 수학적으로 증명하기 위한 시도를 한다. 그 시초가 된 것이 바로 운영체제의 아버지라고 하는 `MULTICS`이다.
+
+1980년대에는 정부에서도 평가체계를 만들기 시작하여 `Orange Book`이라는 컴퓨터 시스템과 관련된 평가기준이 만들어진다. `A1 등급`은 실제 설계가 제대로 되었는지 수학적으로 증명한 것이고, `A2 등급`은 실제 코딩까지 제대로 되었다는 것을 수학적으로 증명된 것이다.
+
+<br/>
+
+### (8) Formal Security Policy Models for Smart Card Evaluations
+
+NXP에서는 스마트카드의 보안정책을 Formal하게 표현한다.
+
+<br/>
+
+### (9) Model Checking Firewall Policy Configurations
+
+`Bell Labs`에서 자동화 도구를 이용하여 방화벽에 들어가는 보안정책의 모순을 자동검증하는 논문이다.
