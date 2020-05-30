@@ -424,7 +424,7 @@ GBN receiver쪽에 버퍼가 없기 때문에 1 2 5 3 4가 와도 3부터 재전
 
 <br/>
 
-#### 
+#### Selective repeat in action
 
 <img src="../images/network-transport-layer-3.4.8.8.png?raw=true" alt="drawing" width="720"/>
 
@@ -438,16 +438,151 @@ TCP는 GBN도 아니고 Selective repeat도 아니다.
 
 ## 3.5. connection-oriented transport: TCP
 
+<br/>
 
+### (1) TCP: Overview
 
+- point-to-point: one sender, one receiver
+- reliable, in-order byte stream: no "message" boundaries
+- pipelined: TCP `congestion control` and `flow control`
+- full duplex data: bi-directional data flow, MMS: maximum segment size(transport layer에서 한 번에 보낼 수 있는 최대 바이트)
+  - Message(application)
+  - Segment(transport)
+  - Datagram(network)
+  - Frame(link)
 
+- connection-oriented: handshaking
+- flow controlled: sender will not overwhelm receiver
 
+> Note:  
+`QUIC(HTTP/3)`는 application layer에서 TCP를 구현하고 transport layer에서는 UDP를 사용한다.
 
+- `flow control`: end-to-end(receiver의 버퍼에서 전송받을 수 있는 패킷). receiver가 알려주면 되기 때문에 컨트롤이 쉬움
+- `congestion control`: network-wide(switch의 버퍼에서 전송받을 수 있는 패킷). 수 많은 sender들이 보낸 패킷이 모이기 때문에 컨트롤하기가 훨씬 어려움. 스위치가 매우 많은 개별 sender들에게 받을 수 있는 패킷 수를 알려주면 리소스가 많이 소모되고, 또한 sender들이 여러 개의 스위치를 거치기 때문에 패킷 경로에 있는 모든 스위치끼리 통신을 해야 하는데 이것은 쉽지 않음
 
+<br/>
 
+### (2) TCP segment structure
 
+<img src="../images/network-transport-layer-3.5.2.1.png?raw=true" alt="drawing" width="720"/>
 
+<br/>
 
+반드시 source port #, dest port #를 포함해야 원격에 있는 프로세스를 찾아갈 수 있다.
+
+sequence number는 각 segment의 id라고 할 수 있다.
+
+acknowledgement number는 receiver가 다음에 받기로 예상되는 sequence number를 넣는다.
+
+`receive window`가 `flow control`할 때 사용되는 윈도우 사이즈(receiver가 받을 수 있는 바이트 수)이다.
+
+<br/>
+
+### (3) TCP seq. numbers, ACKs
+
+<img src="../images/network-transport-layer-3.5.3.1.png?raw=true" alt="drawing" width="520"/>
+
+<br/>
+
+> Note:  
+`out-of-order` segments를 처리하는 방법은 TCP의 구현에 달려있다.
+
+<br/>
+
+<img src="../images/network-transport-layer-3.5.3.2.png?raw=true" alt="drawing" width="520"/>
+
+<br/>
+
+### (4) TCP round trip time, timeout
+
+- timer를 너무 짧게 설정하면 premature timeout 문제가 발생한다.
+- timer를 너무 길게 설정하면 packet loss가 발생한 것을 빨리 알지 못해 전체 시간이 길어질 수 있다.
+  
+`timer`는 당연히 `RTT`보다는 길게 설정해야 한다. 그런데 `RTT`는 실시간 네트워크 상태에 따라서 계속해서 달라진다. 왜냐하면 경로에 있는 여러 스위치 버퍼의 상태가 계속 변동하기 때문이다. 또한 상대방 end host의 패킷을 처리하는 network stack도 랜덤하게 퍼포먼스가 동적으로 바뀐다. 이를 해결하기 위해서 `RTT estimation`을 하게 된다.
+
+<img src="../images/network-transport-layer-3.5.4.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+<img src="../images/network-transport-layer-3.5.4.2.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+Linux에서는 Retransmission Timeout(RTO)라고 한다. RTO_final = max(RTO_min, RTO)
+
+RTO_min = Base RTT = packet delay - queueing delay
+
+Linux의 timeout resolution을 하는 jiffy timer는 1ms 단위를 사용하므로 RTO_min = 1ms가 된다.
+
+그런데 데이터센터 네트워크 환경에서는 us-scale로 동작한다. e.g. base RTT = 50us일 때 RTO_min은 시스템에서 지원하는 것이 1ms이므로 RTO값이 아무리 작아도(e.g. 100us) RTO_min값인 1ms가 된다. 따라서 RTO_final 값이 항상 RTO_min 값으로 수렴된다.
+
+e.g. RTO_min=5ms, RTO=100us일 때, 데이터센터 네트워크에서는 `packet loss`가 발생하면 시간이 초과하여 timer가 발동된 후에 전송된다. 따라서 timer가 발동할 때까지 5ms가 소요되고, 추가로 100us이므로 5.1ms의 전송속도가 걸린다. 만약 packet loss가 발생하지 않았을 경우에는 100us가 소요된다. 따라서 `packet loss`가 발생하면, `packet loss`가 발생하지 않았을 때보다 50배 이상 증가하게 된다. 왜냐하면 리눅스에서는 timer resolution이 ms-scale로 조절되기 때문이다.
+
+<br/>
+
+### (5) TCP reliable data transfer
+
+- TCP creates rdt service on top of IP’s unreliable service
+- Retransmissions triggered by timeout events and duplicate acks
+- simplified TCP sender: ignore duplicate akcs, ignore flow control, and congestion control
+
+<br/>
+
+### (6) TCP sender events
+
+<br/>
+
+### (7) TCP sender (simplified)
+
+<img src="../images/network-transport-layer-3.5.7.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+### (8) TCP: retransmission scenarios
+
+<img src="../images/network-transport-layer-3.5.8.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+<br/>
+
+<img src="../images/network-transport-layer-3.5.8.2.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+### (9) TCP ACK generation
+
+<img src="../images/network-transport-layer-3.5.9.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+duplicate ACK은 받기로 한 패킷이 안오면 바로 직전에 보냈던 ACK을 다시 보낸다.
+
+<br/>
+
+### (10) TCP fast retransmit
+
+<img src="../images/network-transport-layer-3.5.10.1.png?raw=true" alt="drawing" width="320"/>
+
+<br/>
+
+ACK을 3번 동일하게 보내면 packet loss가 발생했다고 판단하고 빠르게 retransmission을 한다.
+
+<br/>
+
+<img src="../images/network-transport-layer-3.5.10.2.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+### (11) TCP flow control
+
+<img src="../images/network-transport-layer-3.5.11.1.png?raw=true" alt="drawing" width="320"/>
+
+<br/>
+
+receiver가 sender에게 버퍼에 받을 수 있는 패킷 수를 알려주기 위해서 TCP header receive window 필드에 `rwnd` 값을 넣어서 보낸다.
+
+`rwnd`는 전체 receive buffer 사이즈 중에서 현재 남아 있는 `free buffer space`를 의미한다.
 
 <br/>
 
