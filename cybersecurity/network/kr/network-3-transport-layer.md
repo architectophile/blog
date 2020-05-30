@@ -134,9 +134,320 @@
 
 ## 3.4. principles of reliable data transfer
 
+### (1) Principles of reliable data transfer
+
+<img src="../images/network-transport-layer-3.4.1.1.png?raw=true" alt="drawing" width="392"/>
+
+<br/>
+
+실제 `physical channel`은 `unreliable`하지만 `TCP`를 사용하면 `transport layer`에서 `reliable`하게 만든다.
+
+unreliable channel의 특성이 `reliable data transfer` protocol (`rdt`)의 복잡도를 결정한다. 즉 transport layer 아래에 있는 채널이 unreliable할수록 이것을 reliable하게 만들기 위해서는 더욱 복잡한 메커니즘이 필요하게 된다.
+
+<br/>
+
+<img src="../images/network-transport-layer-3.4.1.2.png?raw=true" alt="drawing" width="840"/>
+
+<br/>
+
+### (2) Reliable data transfer: getting started
+
+<img src="../images/network-transport-layer-3.4.2.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+`sender`쪽에서는 `application layer`에서 message를 생성하여 `rdt_send()`를 호출하고, `transport layer`에서 `udt_send()`를 호출하면 `unreliable channel`을 통해서 데이터가 전달된다.
+
+`receiver`쪽에서는 데이터가 도착하면 `transport layer`에서 `rdt_rcv()`를 통해 데이터를 전달받고 이를 message 만들어서 `application layer`에게 위로 전달한다.
+
+`TCP`는 `reliable data transfer protocol`의 완성본이다. 따라서 TCP는 RDT의 일종이지만, RDT는 TCP가 아니다.
+
+<img src="../images/network-transport-layer-3.4.2.2.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+FSM(finite state machines)를 사용하여 어떤 이벤트가 발생하면 state1에서 어떤 액션을 취하여 state2로 넘어가는 것으로 다양한 rdt를 설명한다.
+
+<br/>
+
+### (3) rdt1.0: reliable transfer over a reliable channel
+
+<img src="../images/network-transport-layer-3.4.3.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+`rdt1.0`은 매우 단순한 가정으로 시작한다. udt 채널이 unreliable할수록 더욱 rdt protocol이 복잡해진다. rdt1.0에서는 매우 단순화하기 위해 `underlying channel`이 ***완벽하게 reliable하다고 가정한다.***
+
+#### Sender
+
+대기하다가 application layer에서 rdt_send(data)를 호출하면 make_pkt(data)로 packet을 생성하고 udt_send(packet)을 호출하여 데이터를 전송한다.
+
+#### Receiver
+
+대기하다가 rdt_rcv(packet)을 통해 packet을 전달받고, extract를 호출하여 packet에서 data를 추출하여 deliver_data(data)를 호출하여 application layer에게 data를 전달한다.
+
+즉, sender는 대기하다가 application layer에서 데이터가 들어오면 전송하고, receiver는 대기하다가 데이터가 들어오면 application layer에게 전달한다.
+
+<br/>
+
+### (4) rdt2.0: channel with bit errors
+
+`rdt2.0`에서는 packet loss는 발생하지 않지만 대신 packet의 순서가 뒤바뀌어서 bit errors가 발생할 수 있다.
+
+`checksum`을 이용하여 `bit error detection`을 한다.
+
+`checksum`을 검사한 후 정상적이면 `acknowledgements(ACKs)`을 전송하고, 만약에 오류가 있으면 `negative acknowledgements)NAKs`을 전송한다. 
+
+<img src="../images/network-transport-layer-3.4.4.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+#### Sender
+
+application layer에서 data가 전달되면, packet을 만드는데 이 때, checksum을 함께 넣는다. 그리고 packet을 전송한 후에 state는 `Wait for ACK or NAK` 상대로 바뀐다. 이 후에 rdt_rcv(rcvpakt)을 통해 packet을 전송받고, 만약 이 때 `NAC`이 전송되었을 경우 udt_send(sndpkt)을 호출하여 packet을 재전송한 후에 다시 대기상태에서 기다린다. 하지만 만약 `ACK`을 전달받았을 경우 state는 원래 상태인 `Wait for call from above`로 바뀐다.
+
+#### Receiver
+
+rdt_rcv(rcvpkt)을 통해 packet을 전달받고, 만약 checksum 값에 오류가 있으면 `NAK`을 전송하고 state가 다시 `Wait for call from below`로 바뀐다. 하지만 만약 checksum 결과가 정상적이면 packet에서 data를 추출하여 application layer에게 전달한 후에 `ACK`를 전송하고 state가 다시 `Wait for call from below`로 바뀐다.
+
+<br/>
+
+#### rdt2.0 has a fatal flaw!
+
+- receiver가 보내는 ACK NAC에도 bit error가 발생할 수도 있다. 하지만 이를 검사하지는 않는다. 따라서 sender가 보낸 데어티가 일반 전송인지 아니면 NAC에 대한 재전송인지 확인할 수 있는 방법이 없다.
+
+<br/>
+
+### (5) rdt2.1: sender, handles garbled ACK/NAKs
+
+rdt2.1 에서는 `sequence number`를 추가하여 sender가 보낸 packet이 재전송인지 아닌지 알 수 있다.
+
+#### Sender
+
+<img src="../images/network-transport-layer-3.4.5.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+sender는 application layer에서 내려온 data를 packet으로 만들고 `checksum`과 `sequence number`를 함께 전송한다. 그리고 receiver로부터 응답받은 packet에 오류가 있거나 또는 NAC일 경우 해당 packet을 재전송한다. 그리고 다시 `Wait for ACK or NAC 0` state로 돌아온다. 그리고 receiver로부터 전달받은 packet에 오류가 없고 ACK일 경우에 `Wait for call 1 from above` state로 바뀐다.
+
+<br/>
+
+#### Receiver
+
+<img src="../images/network-transport-layer-3.4.5.2.png?raw=true" alt="drawing" width="840"/>
+
+<br/>
+
+#### `Wait for 0 from below` state일 때
+
+전송받은 packet에 오류가 없고 `sequence number`가 0이라면 data를 application layer에게 전달하고 checksum과 함께 ACK을 전달한다(***rdt2.1에서는 receiver도 packet을 전송할 때 `checksum`을 함께 전송한다.***) 그리고 `Wait for 1 from below` state로 변경된다.
+
+만약 전송받은 packet에 오류가 있을 경우 checksum과 함께 NAC을 전송한다. 그리고 만약에 packet을 받았는데 오류는 없지만 `sequence number`가 1일 경우 checksum과 함께 ACK을 전송한다.
+
+<br/>
+
+#### `Wait for 1 from below` state일 때
+
+전송받은 packet의 오류가 없고 sequence number가 1이라면 application layer에게 data를 전달한 다음, checksum과 함께 ACK을 전송한다. 그리고 `Wait for 0 from below` state로 변경된다.
+
+만약 전송받은 packet에 오류가 있을 경우 checksum과 함께 NAC을 전송한다. 그리고 만약에 packet을 받았는데 오류는 없지만 `sequence number`가 0일 경우 checksum과 함께 ACK을 전송한다.
+
+<br/>
+
+> ***Note:***  
+rdt2.0과 rdt2.1은 `stop and wait` 방식이기 때문에 sequence number가 0과 1만 있어도 충분하다. 하지만 stop and wait 방식이 아닌 여러개의 packet을 전송할 때는 sequence number가 2개로는 충분하지 않다.
+
+<br/>
+
+### (6) rdt2.2: a NAK-free protocol
+
+rdt2.1은 ACK과 NAC의 비트 오류를 해결하기 위해 디자인 되었다. 하지만 구현해본 결과 NAC이 굳이 필요없다는 것을 알게되었다.
+
+<br/>
+
+#### Sender
+
+<img src="../images/network-transport-layer-3.4.6.1.png?raw=true" alt="drawing" width="720"/>
+
+<br/>
+
+application layer에서 data를 전달받은 후 packet으로 만들어서 전송한 다음 `Wait for ACK 0` 상태로 변경된다.
+
+#### `Wait for ACK 0` state일 때
+
+전달받은 packet에 비트 오류가 있거나 또는 ACK이 아닐 경우 동일한 packet을 재전송한 다음 계속 `Wait for ACK 0` 상태로 대기한다.
+
+전달받은 packet에 비트오류가 없고, ACK일 경우에는 `Wait for call from 1 from above` 상태로 변경된다.
+
+<br/>
+
+#### `Wait for ACK 1` state일 때
+
+위의 방법과 동일하게 처리한다.
+
+<br/>
+
+#### Receiver
+
+#### `Wait for 0 from below` state일 때
+
+전달받은 packet에 비트 오류가 없고 sequence number가 0일 경우 데이터를 추출하여 application layer에게 전달한 후 ACK0을 전송하고 `Wait for 1 from below` state로 변경된다.
+
+만약 전달받은 packet에 비트 오류가 있거나 또는 sequence number가 1일 경우에는 전달받은 packet을 재전송한다.
+
+<br/>
+
+### (7) rdt3.0: channels with errors and loss
+
+`rdt3.0`에서는 `bit erros`와 `packet loss`가 발생할 수 있다고 가정한다.
+
+`timer`를 시용하여 일정시간 기다린 후에 응답이 오지 않으면 재전송을 한다.
+
+<img src="../images/network-transport-layer-3.4.7.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+#### Sender
+
+packet을 보냄과 동시에 start_time를 호출하여 timer를 실행시킨다.
+
+#### `Wait for ACK 0` state일 때
+
+packet을 응답받아서 비트 오류가 없고 sequence number가 0인 ACK일 경우에는 ***`timer`를 종료하고***, `Wait for call 1 from above` 상태로 변경된다.
+
+만약 전송받은 packet에 비트 오류가 있거나 또는 sequence number가 1인 ACK일 경우에는 재전송하고 다시 그대로 `Wait for ACK 0` 상태로 남아있는다.
+
+그리고 만약에 packet을 전송받지 않았어도 만약 `timer`가 일정시간을 초과하면 `packet loss`가 발생할 것으로 간주하고 packet을 재전송한다.
+
+<br/>
+
+#### `Wait for ACK 0` state일 때
+
+위 방법과 동일하다.
+
+<br/>
+
+#### Receiver
+
+`rdt 2.2`와 동일하다.
+
+<br/>
+
+#### rdt3.0 in action
+
+<img src="../images/network-transport-layer-3.4.7.2.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+<br/>
+
+<img src="../images/network-transport-layer-3.4.7.3.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+#### Performance of rdt3.0
+
+stop and wait 방식을 쓰기 때문에 utilization이 0.00027로 매우 떨어진다. 따라서 network protocol이 physical resources의 사용을 제한하는 것이다. Bandwidth는 충분한데 이것을 모두 사용하지 않는다.
+
+<br/>
+
+#### rdt3.0: stop-and-wait operation
+
+<img src="../images/network-transport-layer-3.4.7.4.png?raw=true" alt="drawing" width="720"/>
+
+<br/>
+
+`stop and wait` 방식을 사용할 경우 패킷을 하나 전송할 때마다 RTT 시간이 소모되는 것이 매우 비효율적이다. 패킷을 하나 전송할 때 switch output port에서 link로 bit가 올라가는 시간인 transmission time은 매우 짧지만 `RTT`가 매우 커서 `utilization`이 매우 작아져 비효율적이다.
+
+<br/>
+
+### (8) Pipelined protocols
+
+`pipelined protocols`는 utilization을 극대화하기 위해서 한 번에 여러개의 패킷을 전송하는 프로토콜이다. 대표적으로는 `Go-back-N`과 S`elective repeat` 프로토콜이 있다.
+
+<img src="../images/network-transport-layer-3.4.8.1.png?raw=true" alt="drawing" width="720"/>
+
+<br/>
+
+#### Go-back-N
+
+만약 패킷이 1 2  4 5가 전달되어 3이 로스가 발생했을 경우, 3 4 5를 재전송한다. 따라서 마지막으로 성공적으로 전송된 패킷 이후에 모든 패킷을 다시 보낸다.
+
+<br>
+
+#### Sender
+
+<img src="../images/network-transport-layer-3.4.8.2.png?raw=true" alt="drawing" width="720"/>
+
+<br/>
+
+`window size` N은 한 번에 보낼 패킷의 개수를 나타낸다. 위 예제에서는 N=14이다. 성공적으로 ACK이 수신될 때마다 window가 한 칸씩 오른쪽으로 슬라이드된다.
+
+녹색은 이미 ACK을 받은 패킷을 의미한다. 노란색은 패킷을 보냈지만 아직 ACK이 도착하지 않은 패킷을 의미한다. 파란색은 아직 전송하지 않은 패킷을 의미한다.
+
+timeout이 발생할 경우 아직 응답을 받지 못한 윈도우 안의 노란색 패킷을 모두 재전송한다.
+
+<br/>
+
+<img src="../images/network-transport-layer-3.4.8.3.png?raw=true" alt="drawing" width="720"/>
+
+<br/>
+
+#### GBN: receiver extended FSM
+
+<img src="../images/network-transport-layer-3.4.8.4.png?raw=true" alt="drawing" width="720"/>
+
+<br/>
+
+GBN receiver쪽에 버퍼가 없기 때문에 1 2 5 3 4가 와도 3부터 재전송받게 된다.
+
+<br/>
+
+#### GBN in action
+
+<img src="../images/network-transport-layer-3.4.8.5.png?raw=true" alt="drawing" width="720"/>
+
+<br/> 
+
+#### Selective Repeat
+
+만약 패킷이 1 2  4 5가 전달되어 3이 로스가 발생했을 경우, 3만 재전송한다. 따라서 로스가 발생한 패킷만 선택적으로 재전송한다.
+
+<img src="../images/network-transport-layer-3.4.8.6.png?raw=true" alt="drawing" width="720"/>
+
+<br/>
+
+- receiver 버퍼가 존재한다.
+- sender는 ACK을 받지 못한 패킷에 대해서만 재전송한다.
+
+<img src="../images/network-transport-layer-3.4.8.7.png?raw=true" alt="drawing" width="720"/>
+
+<br/>
+
+#### 
+
+<img src="../images/network-transport-layer-3.4.8.8.png?raw=true" alt="drawing" width="720"/>
+
+<br/>
+
+GBN에 비해서 Selective repeat은 receiver buffer가 필요하기 때문에 추가적인 리소스가 필요하기 때문에 trade-off가 된다.
+
+TCP는 GBN도 아니고 Selective repeat도 아니다. 
+
 <br/>
 
 ## 3.5. connection-oriented transport: TCP
+
+
+
+
+
+
+
+
+
+
+
 
 <br/>
 
