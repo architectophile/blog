@@ -1,12 +1,35 @@
 # Security Design Assurance
+
+## Why Design Assurance?
+
+MS는 많은 취약점들이 요구사항 분석 단계와 설계 단계에서 나온다고 판단하였다.
+
+SDL을 하는 목적은 보안 내재화(security by design)를 하기 위한 것이다. 하지만 
+우리나라의 보안공학은 secure coding에만 치중되어 있다. 따라서 코딩레벨에서부터 SDL이 시작되므로 정확한 SDL이 아니다.
  
-설계 오류의 중요성을 얘기할 때 `Needham-Schroeder public-key authentication protocol (1978)`을 많이 얘기한다. `Lowe`가 이 프로토콜에 설계에 오류가 있다는 것을 17년 뒤인 1995년에 발견하였다.
+설계 오류의 중요성을 얘기할 때 `Needham-Schroeder public-key authentication protocol (1978)`을 많이 얘기한다. `Gavin Lowe`가 이 프로토콜에 설계에 오류가 있다는 것을 17년 뒤인 1995년에 발견하였다.
 
  `Key Reinstallation Attacks: Forcing Nonce Reuse WPA2` 논문도 `WPA2` 프로토콜의 설계 오류를 발견하였다.
 
- `By-design Backdooring of Encryption System-Can We Trust Foreign Encryption Algorithms` 논문은 설계도 상에 백도어를 넣을 수 있다는 것을 보여준다.
+<br/>
 
- `Edward Snowden`은 `NSA`에서 운영하는 `PRISM` 프로그램을 이용하여 민간인을 사찰할 수 있다는 것을 폭로한다.
+## [Note] Black Hat EU 2017
+
+`By-design Backdooring of Encryption System-Can We Trust Foreign Encryption Algorithms` 논문은 설계도 상에도 백도어를 넣을 수 있다는 것을 보여준다.
+
+`Operational Cryptology and Virology Lab`에서 발표하였다.
+
+`Adam L. Young`과 `Moti Yung`은 주로 `Malicious Cryptography: Exposing Cryptovirology`를 연구하였는데, 이것은 어떻게 하면 암호 알고리즘 레벨에서 백도어를 넣을지 연구하는 것이다.
+
+<br/>
+
+## [Note] No Where To Hide
+
+`Edward Snowden`은 `the guardian`지에 `NSA`에서 운영하는 `PRISM` 프로그램을 이용하여 민간인을 사찰할 수 있다는 것을 폭로한다.
+
+`NSA`에서 AOL, Apple, Facebook, Google, Microsoft, Paltalk, Skype, Yahoo, and YouTube의 협조를 얻어서 각 회사에 일종의 검색엔진을 설치하였다. 이 검색엔진을 통해서 사람들의 다양한 정보를 볼 수 있다는 것을 폭로하였다.
+
+<br/>
 
 ## [Note] NSA's PRISM
 
@@ -17,6 +40,10 @@
 ## [Note] NSA's BULLRUN
 
 <img src="../images/security-engineering-6-security-design-assurance-1.0.2.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+`불런(BULLRUN)`은 암호화된 메시지를 해독하기 위한 프로젝트이다. 하드웨어 장치에 백도어를 넣으면 그 장치를 쓰지 않으면 그만이다. 하지만 알고리즘 자체에 백도어를 넣고 해당 알고리즘을 표준으로 지정하면 해당 알고리즘을 사용하는 모든 장치에 자동으로 백도어가 설치된다.
 
 <br/>
 
@@ -44,9 +71,17 @@
 
 <br/>
 
-타원곡선을 이용한 난수발생기인 `DUAL_EC_DRBG`에는 원리를 알 수 없는 알고리듬이 들어있었다. `NSA`가 타원곡선 표준을 제정할 때 특정 타원곡선을 넣자고하여 표준으로 제정되었다. 2007년에 `Bruce Schneier`가 혹시 `NSA`가 백도어를 삽입하려는 것인가하는 의문을 제기하였다. 그리고 나중에 `Edward Snowden`이 폭로한 이후에 `Bullrun` 프로젝트가 알려졌고 실제로 알고리즘 상에 백도어를 넣은 것이 밝혀진다. 2015년에 `NSA`에서 알고리즘에 백도어를 넣은 사실을 인정하고 사과하였다.
+<img src="../images/security-engineering-6-security-design-assurance-1.0.7.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+NSA가 만든 타원곡선(EC)의 파라미터에 백도어가 숨겨져 있었다. 
+
+타원곡선을 이용한 난수발생기인 `DUAL_EC_DRBG`에는 원리를 알 수 없는 알고리즘이 들어있었다. `NSA`가 타원곡선 표준을 제정할 때 특정 타원곡선을 넣자고하여 표준으로 제정되었다. 2007년에 `Bruce Schneier`가 혹시 `NSA`가 `백도어(backdoor)`를 삽입하려는 것인가하는 의문을 제기하였다. 그리고 나중에 `Edward Snowden`이 폭로한 이후에 `BULLRUN` 프로젝트가 알려졌고 실제로 알고리즘 상에 백도어를 넣은 것이 밝혀진다. ***2015년에 `NSA`에서 알고리즘에 `백도어(backdoor)`를 넣은 사실을 인정하고 사과하였다.***
 
 그 만큼 시스템 설계의 안전성을 증명하는 것은 매우 어렵다.
+
+<br/>
 
 ## [Note] DES
 
@@ -243,9 +278,9 @@ RSA 암호는 1978년 `Shamir` `Rivest` `Adleman` 세 사람에 의해 만들어
 
 <br/>
 
- 기존의 `암호해독`의 정의는 매우 애매모호했다. `Goldwasser` 박사는 암호의 `해독`의 정의에 대해서 고민하였다. 평문 전체가 아니라 평문의 일부 정보만 노출되어도 매우 심각한 문제가 발생할 수 있다. 따라서 `Goldwasser` 박사는 해독에 대한 Formal한 정의를 정립했다. `Rabin`은 모든 평문이 100% 해독되는 것을 해독이라고 정의하였다.  `Goldwasser` 박사는
+기존의 `암호해독`의 정의는 매우 애매모호했다. `Goldwasser` 박사는 암호의 `해독`의 정의에 대해서 고민하였다. 평문 전체가 아니라 평문의 일부 정보만 노출되어도 매우 심각한 문제가 발생할 수 있다. 따라서 `Goldwasser` 박사는 해독에 대한 Formal한 정의를 정립했다. `Rabin`은 모든 평문이 100% 해독되는 것을 해독이라고 정의하였다.  `Goldwasser` 박사는
 암호문으로부터 그 어떤 중요 정보도 노출되지 않는 것이 `Secure`하다고 정의하였다. 그리고 이것을 수학적 기호로 Formal하게 정의하였다.
 따라서 `Rabin`은 암호 시스템의 디자인을 수학적으로 증명하였지만 해독에 대한 정의가 `Goldwasser` 박사와는 달랐다.
 
-
+<br/>
 
