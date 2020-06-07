@@ -558,6 +558,12 @@ WPA2 프토토콜의 문제점이 발견되었다. WPA2 프로토콜은 `active 
 
 <br/>
 
+### (2) Limits of Provable Security
+
+`Provable Security`라는 말을 사용하지 않는 것이 좋다. 정확하게는 안전성이 증명되는 것이 아니라 `Security Requirements`를 만족하는지를 증명하는 것이다.
+
+<br/>
+
 ## 5. Key Management
 
 ### (1) Diffie-Hellman Key Agreement
@@ -678,6 +684,10 @@ mod를 사용하면 지수승을 구하는 것이 매우 어렵다. 즉 `이산�
 
 왼쪽에 있는 실제 `prover`는 `secret` 값을 알고 상대방과 통신을 하고 있는 앙상블이고, 오른쪽 `시뮬레이터`는 `secret` 값을 모르는 상태에서 통신하는 앙상블이다. 만약 두 개의 앙상블을 구분할 수 없다면(indistinguishable), 해당 프로토콜은 영지식성을 만족한다고 할 수 있다. 이것은 마치 `Semantic Security`에서 암호문을 알고 있는 상태와 암호문을 모르는 상태에서 노출되는 정보의 양이 차이가 없어서 구분할 수 없는 것과 비슷한 개념이다.
 
+왼쪽은 편집하지 않은 앙상블이고, 오른쪽은 편집한 앙상블이다. 두 앙상블의 확률 분포가 똑같다면 왼쪽 앙상블에서 노출되는 정보는 없다고 정의한다.
+
+Edited(Polynomially Simulated) Conversation은 빠른 시간 안에 시뮬레이션이 가능해야 한다는 것을 의미한다. 선택지가 2개일 경우에는 50번 성공을 위해 100번만 시도하면 되지만, 선택지가 10개일 경우에는 50번 성공을 위해서 500번 시도를 해야 한다. 빠른 시간 안에 시뮬레이션을 위해서 보통은 영지식성을 증명할 수 있는 프로토콜은 서버 쪽에서 오는 질문이 매우 단순한 경우가 많다.
+
 <br/>
 
 #### ZKIP for Kids
@@ -688,6 +698,130 @@ mod를 사용하면 지수승을 구하는 것이 매우 어렵다. 즉 `이산�
 
 알리바바는 자신의 프로토콜이 영지식성을 만족하는 것을 증명하기 위해서, 자신이 직접 비밀을 이용하여 문을 통과하는 장면을 모두 녹화하고, 그 다음 자신과 똑같이 분장을 한 대역이 비밀을 모르는 상태에서 찍어서 문을 통과하는 장면을 편집하여 만든 화면을 보여주고, 실제 본인이 문을 통과하는 것과 대역이 문을 통과하는 장면을 보고 둘을 구분할 수 없다는 것을 보여줌으로써 해당 프로토콜의 영지식성을 증명한다.
 
+<br/>
 
+<img src="../images/security-engineering-6-security-design-assurance-6.2.7.png?raw=true" alt="drawing" width="520"/>
 
+<br/>
+
+영지식성은 `prover`와 `verifier`가 실제로 만드는 실제 앙상블과 `가짜 prover`와 `verifier`가 만드는 편집한 앙상블 두 개가 서로 구분할 수 없다는(indistinguishable) 것을 보이는 것이다.
+
+영지식 프로토콜에서 중요한 것은 해당 프로토콜에서 정보가 노출되지 않는다는 것을 증명(prove)할 수 있어야 한다.
+
+<br/>
+
+#### ZKIP for Hamiltonian Cycle
+
+<img src="../images/security-engineering-6-security-design-assurance-6.2.8.png?raw=true" alt="drawing" width="320"/>
+
+<br/>
+
+<img src="../images/security-engineering-6-security-design-assurance-6.2.9.png?raw=true" alt="drawing" width="520"/>
+
+<br/>
+
+`Graph G`와 `Graph H`는 `동형(isomorphism)`이다. 하지만 위의 표에서 오른쪽에 있는 함수의 변환규칙을 알려주지 않으면 두 그래프가 동형인지 아닌지를 `polynomial time` 안에 계산할 수 없다.
+
+<br/>
+
+<img src="../images/security-engineering-6-security-design-assurance-6.2.10.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+위의 `Hamiltonian Cycle`에서 private input을 알려주지 않으면서 verifier에게 private 값을 알고 있음을 증명하기 위해서 동형인 그래프를 이용한다.
+
+1. `동형인 그래프 G'`를 만든 다음 해당 변형된 동형 그래프 G'를 `verifier`에게 전달한다.
+2. `Verifier`는 둘 중에 한 가지를 질문한다. (1) 원래 그래프와 바꿔서 보낸 그래프가 동형이라는 것을 증명하라. (2) 변형된 그래프 G'의 hamiltonian cycle을 증명하여라.
+
+<br/>
+
+> Note:  
+만약 한 붓그리기를 어떻게 하는지 못하는 경우 그래프를 바꿀 수는 없지만 바꾼 그래프에 대한 `Hamiltonian Cycle`을 알 수 없다.  
+만약 한 붓그리기를 알 수 있는 다른 그래프를 알고 있다면, 해당 그래프의 `Hamiltonian Cycle`은 알 수 있지만, 두 그래프는 동형이 아니다.
+
+<br/>
+
+#### Parallel composition of ZKPK
+
+평행하게 여러개의 영지식 증명을 동시에 수행할 경우 영지식성을 보장할 수 없다.
+
+컴포넌트 단위로 설계의 무결성을 증명하였다고 해서, 여러 컴포넌트를 조합하였을 때는 안전성을 보장할 수 없다. 
+
+<br/>
+
+#### Zero-Knowledge for Cryptocurrency
+
+<img src="../images/security-engineering-6-security-design-assurance-6.2.11.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+블록체인은 데이터를 삭제 또는 수정이 불가능하기 때문에 개인정보가 기록될 경우 프라이버시 문제가 발생한다. 데이터를 암호화하고 기록된 정보가 제대로 된 정보인지를 확인하기 위해 영지식성을 활용한다.
+
+하지만 블록체인의 컴퓨팅 파워가 한정되어 있어서 간결하게 만든 영지식증명 프로토콜인 `zk-SNARKs`이 `ZCash` 암호화폐에 사용된다.
+
+하지만 효율적으로 만들기 위해서 단점이 있는데 바로 초기 셋업 과정에서 절대적으로 신뢰할 수 있는 Trusted Third Party(TTP)가 있어야 한다.
+
+<br/>
+
+## 7. Multi-Party Protocols
+
+온라인 도박, 온라인 경매, 전자투표 등 참여자가 많은 Multi-Party Protocols가 있다.
+
+<br/>
+
+### (1) Secure Multi-Party Computation (MPC)
+
+***Cryptographic protocol for emulating a trusted party***
+
+전자투표 프로토콜을 쉽게 만드는 것은 절대적인 신뢰자를 한 명 두는 것이다. 하지만 이것은 현실적으로 거의 불가능하다. 따라서 암호학적으로 신뢰할 수 있는 `trusted party`를 에뮬레이팅 하는 것이 `Secure Multi-Party Computation(MPC)`의 목적이다. 이것은 `탈중앙화`를 의미하기도 한다.
+
+<img src="../images/security-engineering-6-security-design-assurance-7.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+`Secure MPC`에서는 참여자가 미리 정해져있고 참가자의 리스트가 미리 알려져있다. 하지만 `블록체인`에서는 참여자를 미리 고정되어 있지 않다.
+
+***\"Properties must be ensured even if some of the parties maliciously attack the protocol\"***
+
+`MPC`에서는 참여자가 매우 많기 때문에 나를 제외한 나머지 참여자가 모두 공격자가 될 수 있으므로 안전한 프로토콜을 설계하는 것이 `2-party protocol`일 때보다 훨씬 어렵다.
+
+<br/>
+
+***\"Permissionless blockchain can provide efficiency and scalability to MPC!\"***
+
+<br/>
+
+#### Secure Multiparty Computation
+
+#### Examples
+
+- 인증 프로토콜
+- 온라인 결제
+- 경매
+- 투표
+- Privacy Preserving 데이터 마이닝
+
+<br/>
+
+## 8. Digital Signatures
+
+### (1) Digital Signature
+
+<br/>
+
+### (2) Security Goal & Attack Model 
+
+#### Target
+
+`Goldwasser` 박사는 전자서명에 대해서 안전성의 레벨을 다음 3가지로 구분하였다.
+
+- `Total Break`: 개인키(private key)를 알아내는 것
+- `Selective Forgery`: 내가 선택한 메시지에 대해서 전자서명을 위조해낼 수 있는 것
+- `Existential Forgery`: 내가 선택한 메시지가 아니라 랜덤한 메시지에 대한 전자서명을 위조해낼 수 있는 것
+
+우리는 전자서명 알고리즘을 만들 때는 `Existential Forgery`를 막도록 설계해야 안전하다.
+
+원래는 랜덤하게 생성된 중요 메시지에 대한 전자서명을 위조할 수 없게 하려고 했지만, 중요 메시지라는 것이 수학적으로 표현할 수 없기 때문에 아예 랜덤한 모든 메시지에 대해서 전자서명을 위조할 수 없게 하는 것이 안전하다고 정의하였다.
+
+<br/>
 
