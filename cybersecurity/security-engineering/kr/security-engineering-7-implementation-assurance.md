@@ -205,7 +205,7 @@ A `Bug` is used informally.
 
 <br/>
 
-### 7. Validation & Verification (IEEE)
+### (7) Validation & Verification (IEEE)
 
 <img src="../images/security-engineering-7-implementation-assurance-1.7.1.1.png?raw=true" alt="drawing" width="640"/>
 
@@ -218,7 +218,170 @@ IV&V stands for "Independent Verification and Validation".
 
 <br/>
 
-<img src="../images/security-engineering-7-implementation-assurance-1.7.1.1.png?raw=true" alt="drawing" width="640"/>
+### (8) Testing and SW Development Lifecycle
+
+<img src="../images/security-engineering-7-implementation-assurance-1.8.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+### (9) Testing Goals Based on Test Maturity
+
+#### Beizer’s scale for test process maturity
+
+- `Level 0` – There’s no difference between testing and debugging. 테스팅과 디버깅을 구분하지 못함.
+- `Level 1` – The purpose of testing is to show that the software works. i.e. correctness. 정확성을 따지는데 집중되어 있음.
+- `Level 2` – The purpose of testing is to show that the software doesn’t work. 소프트웨어에 결함이 있다는 것을 찾아내는 것이 목적임.
+- `Level 3` – The purpose of testing is not to prove anything specific, but to reduce the risk of using the software. 테스팅이 소프트웨어의 리스크를 줄이는데 목적이 있음. 리스크 관리 관점에서 테스팅을 함. 시간이 한정되어 있기 때문에 가장 급한 것부터 문제를 해결함.
+- `Level 4` – Testing is a mental discipline that helps all IT professionals develop higher quality software. The testers should train your developers. 테스팅은 품질관리하는 직원만 하는 것이 아니고, 개발라인에 있는 모든 사람들이 테스팅을 하는 것.
+
+<br/>
+
+#### `Shift Left Testing`
+
+테스팅 업무를 왼쪽으로 옮기는 것이다. 요구사항 분석, 설계, 구현하는 사람들이 자신들이 할 수 있는 테스트를 모두 하는 것이다. 오른쪽 끝에만 몰려있던 테스팅 과정을 왼쪽에 있는 모든 사람들에게 전사적으로 퍼뜨린다. 요구사항 분석이나, 설계 단계에 문제가 있을 경우 사전에 발견할 수 있다. 보안팀에서는 개발자들이 쉽게 테스트할 수 있는 자동화 툴과 보안개발 교육을 제공해야 한다. 
+
+<br/>
+
+### (10) Cost of Not Testing
+
+Poor Program Managers might say: ***“Testing is too expensive."***
+
+Testing is the most time consuming and expensive part of software development.
+
+Not testing is even more expensive. 테스팅을 하지 않는 것이 훨씬 많은 비용을 부담하게 된다.
+
+<br/>
+
+### (11) Cost of Late Testing
+
+<img src="../images/security-engineering-7-implementation-assurance-1.11.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+<br/>
+
+<img src="../images/security-engineering-7-implementation-assurance-1.11.1.2.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+비용대비 효과 `Return Of Investment (ROI)`는 `design state`에서 결함을 발견했을 때 가장 높다.
+
+<br>
+
+## 2. Model-Driven Test Design
+
+테스트 입력 값을 도출하는데 과학적 기법을 사용한다. 적은 수의 테스트 벡터로 coverage를 극대화할 수 있다. 하지만 test coverage가 100%는 아니다.
+
+<br/>
+
+### (1) Testing & Debugging
+
+- Testing : Evaluating software by observing its execution.
+- Test Failure : Execution of a test that results in a software failure.
+- Debugging : The process of finding a fault given a failure.
+
+<br/>
+
+### (2) Fault & Failure Model (RIPR)
+
+`failure`를 발견하기 위해서는 다음의 4가지가 필요하다.
+
+1. `Reachability` : The location or locations in the program that contain the `fault` must
+be reached. 테스트 입력을 넣으면 소프트웨어의 결함이 있는 곳까지 도달해야 한다.
+2. `Infection` : Execution of the fault leads to an incorrect program state (`error`). 테스트 입력이 결함에 도달하여 프로그램을 내부적으로 incorrect한 상태로 만들어야 한다.
+3. `Propagation` : The infected state must cause some output or final state of the program to be incorrect (`failure`). 내부의 incorrect한 상태가 전이되어서 최종적으로 incorrect한 상태로 외부로 표출되어야 한다.
+4. `Reveal` : The tester must observe part of the incorrect portion of the program state. 프로그램의 최종 상태 중에서 failure가 발생한 결과를 실제 테스터가 발견해야 한다. 랜덤 샘플링 테스팅을 할 경우 failure가 발생한 상태를 관찰하지 못할 수도 있다.
+
+<img src="../images/security-engineering-7-implementation-assurance-2.2.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+위 모델을 `RIPR`모델 또는 `Fault, Error, Failure 모델`이라고도 부른다.
+
+가끔 정부에서 제품 평가 기간을 단축하기 위해서 랜덤 샘플링을 통해 문서를 검증하는 경우가 있다. 전체가 1만장이라면, 100장만 랜덤 샘플링하여 검증하는 것인데, 이것은 매우 문제가 많다. 검사하지 않은 문서에 문제가 있을 가능성이 있기 때문에 위험하다.
+
+<br/>
+
+### (3) Testing Levels and Types of Faults
+
+<img src="../images/security-engineering-7-implementation-assurance-2.3.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+### (4) Traditional Testing Levels
+
+<img src="../images/security-engineering-7-implementation-assurance-2.4.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+<img src="../images/security-engineering-7-implementation-assurance-2.4.1.2.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+- `Unit testing`
+
+- `Module testing`
+
+- `Integration testing`: 모듈과 모듈 간의 결합을 테스트한다. e.g. 미국에서 만든 모듈과 유럽에서 만든 모듈을 결합했을 때 문제가 발생했는데, 그 원인은 단위에 대한 메트릭이 달라서 발생한 것이었다. 이 때문에 `Integration test`가 필요하다.
+
+- `System testing`: 시스템 전체의 동작을 테스트한다. 각 컴포넌트의 안전성이 증명되었다고 해서 컴포넌트들을 결합했을 때도 안전성이 증명되는 것은 아니기 때문에 `security composition`에서 발생할 수 있는 문제를 찾기 위해 `System test`가 필요하다.
+
+`Unit testing`, `Module testing`, `Integration testing`, `System testing` 4단계는 `Verification` 과정이다.
+
+- `Acceptance testing`: 최종적으로 사용자를 만족시키는지 테스트한다. 이 과정은 `Validation`에 해당한다.
+
+<br/>
+
+### (5) Object-Oriented Testing Levels
+
+<img src="../images/security-engineering-7-implementation-assurance-2.5.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+- `intra-method testing`: 메소드 내 테스팅
+- `inter-method testing`: 메소드 간 테스팅
+- `intra-class testing`: 클래스 내 테스팅
+- `inter-class testing`: 클래스 간 테스팅
+
+<br/>
+
+### (6) Software Testing Limitations
+
+The problem of finding all failures in a program is undecidable. 프로그램의 모든 failure를 찾아내는 것은 현실적으로 불가능하다.
+
+Trying to find the fewest inputs that will find the most problems. 따라서 우리는 최대한 적은 입력으로 가능한 많은 문제를 찾을 수 있는 테스트 입력 값을 찾도록 해야 한다.
+
+`Coverage criteria` give structured, practical ways to search the input space. 테스트 입력을 넣었을 때 소프트웨어의 몇 %까지 점검할 수 있는가를 나타낸다. 따라서 우리는 `coverage criteria`를 극대화해야 한다. 
+
+적은 입력으로 coverage를 극대화하기 위해서는 입력값들이 테스트하는 영역이 최대한 겹치지 않는 것이 효율적인 방법이다. 이를 위해서 모델링을 통한 과학적인 테스트 입력 도출 방법이 필요하다.
+
+<br/>
+
+### (7) Test Requirements and Criteria
+
+- `Test Criterion` : A collection of rules and a process that define test requirements
+- `Test Requirements` : Specific things that must be satisfied or covered during testing
+
+<br/>
+
+<img src="../images/security-engineering-7-implementation-assurance-2.7.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+- `Coverage Criteria`: 각 기준들이 모인 것
+- `Coverage Criterion`: 테스트를 위한 기준. e.g. 모든 조건문은 테스트하여라.
+- `Test Requirements`: 각 기준을 구체화하여 테스트 요구사항을 도출
+- `Test Set`: 여러개의 test case로 이루어진 것
+- `Test Case`: test requirements를 만족하는 실제 test case
+
+<img src="../images/security-engineering-7-implementation-assurance-2.7.1.2.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+- `prefix values`: 테스트를 하기 전에 환경을 설정하는 값(테스트 환경을 언제나 똑같이 맞춰줌). 준비단계
+- `test case values`: 환경 설정이 완료되면 실제로 넣는 테스트 케이스 값
+- `postfix values`: 테스트가 끝나고 마무리 작업에 들어가는 값. 테스트 케이스 값에 의해 발생한 failure가 실제로 외부로 표출되도록 한다.
+- `expected values`: 위 준비 과정 이후에 테스트 케이스를 넣었을 때 나올 것으로 예상되는 결과 값
 
 <br/>
 
