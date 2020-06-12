@@ -718,9 +718,9 @@ sender가 receiver에게 window size 만큼의 패킷을 보낸다.
 
 `rwnd` = receive window size
 
-sender의 실제 cwnd = min(cwnd, rwnd)
+sender의 실제 `cwnd = min(cwnd, rwnd)`
 
-따라서 네트워크 스위치 상의 버퍼 크기와 receiver의 버퍼 사이즈 모두를 고려하여 더 작은 윈도우 사이즈로 패킷을 전송한다. 즉 sender는 congestion control, flow control을 모두 고려해야 한다.
+따라서 네트워크 스위치 상의 버퍼 크기와 receiver의 버퍼 사이즈 모두를 고려하여 ***더 작은 윈도우 사이즈로 패킷을 전송한다.*** 즉 sender는 congestion control, flow control을 모두 고려해야 한다.
 
 rwnd가 매우 크다면 힝상 min(cwnd, rwnd) = cwnd 이 된다.
 
@@ -868,7 +868,7 @@ long, fat pipes는 2000년 초반 개념이다. 당시에는 RTT가 길고 bandw
 - `congestion avoidance`: AIMD
 - `slow start`: exponential increase
 
-`congestion control algorithm`은 최초에는 `congestion avoidance`만 존재했으며, AIMD를 사용함으로써 공평성(fairness)과 효율성(efficiency)을 모두 가질 수 있었다. 그리고 나중에 가용한 bandwidth의 probing을 빠르게 하기 위해서 `slow start`가 추가되었다.
+`congestion control algorithm`은 최초에는 `congestion avoidance`만 존재했으며, `AIMD`를 사용함으로써 `공평성(fairness)`과 `효율성(efficiency)`을 모두 가질 수 있었다. 그리고 나중에 가용한 bandwidth의 probing을 빠르게 하기 위해서 `slow start`가 추가되었다.
 
 <br/>
 
@@ -913,7 +913,7 @@ long, fat pipes는 2000년 초반 개념이다. 당시에는 RTT가 길고 bandw
 네트워크의 도움없이 end-host가 event 발생 여부를 판단하여 대응한다.
 
 - `loss-based`: retransmission timer(RTO, timeout) 사용, fast retransmission 사용. e.g. `TCP Tahoe`, `TCP Reno`
-- `delay-based`: packet loss뿐만 아니라 queueing delay가 너무 길어져도 cwnd를 조절함. `packet loss`가 발생하기 전에 선제적으로 cwnd를 조절함. e.g. `TCP Vegas`
+- `delay-based`: packet loss뿐만 아니라 queueing delay가 너무 길어져도 cwnd를 조절함. `packet loss`가 발생하기 전에 선제적으로 cwnd를 조절함. RTT를 계속 측정하여 `queueing delay`를 확인한다. e.g. `TCP Vegas`
 
 #### Explicit
 
@@ -923,7 +923,7 @@ long, fat pipes는 2000년 초반 개념이다. 당시에는 RTT가 길고 bandw
 First-In-First-Out (FIFO)  
 First-Come-First-Served (FCFS)  
 
-- `RED`: Random Early Detection. e.g. threshold = 80이면, queue length=81부터 무작위로 패킷을 미리 드랍시킨다. 버퍼에 남는 공간이 있지만 미리 드랍시킨다. `queueing delay`가 너무 길어지는 것을 방지한다.
+- `RED`: Random Early Detection. e.g. threshold = 80이면, queue length=81부터 무작위로 패킷을 미리 드랍시킨다. 버퍼에 남는 공간이 있어 더 저장할 수도 있지만 패킷을 드랍시킨다. `queueing delay`를 짧게 유지할 수 있다. parameter들이 설정할 것들이 많아서 복잡하여 널리 사용되지 않았다.
 - `ECN`: 패킷을 드랍하지 않고 `congestion experienced`라고 기록한다. 스위치가 `ECN` 비트를 마킹하기 때문에 네트워크의 도움을 받는것이다.
 - `Rate allocation by switches`: `스위치`가 능동적으로 flow를 감시하면서 현재 가장 적절한 `cwnd`를 명시적으로 end-host들에게 직접 알려주는 것이다. 하지만 사용자 수가 많아지고, 사용자들이 다양한 스위치에 연결되면 현실적으로 사용하기가 쉽지 않다. 스위치 안에 flow table을 관리해서 per-flow state를 저장해야 하는데 실제로 인터넷 네트워크에서 모든 것을 처리하는 것은 현실적으로 불가능하다. 따라서 `scalability`에 제한이 있다.
 
@@ -937,14 +937,14 @@ First-Come-First-Served (FCFS)
 
 `ECN`을 사용하면 `packet loss`가 발생하지 않고, `queueing delay`도 매우 짧게 만들 수 있는 혁신적인 방법이다.
 
-ToS(type of service) 필드 = 8 bits
+#### ToS(type of service) 필드 = 8 bits
 
-6 bits = DSCP(differentiate service code point) field
-2 bits = ECN field
+6 bits = DSCP(differentiate service code point) field  
+2 bits = ECN field  
 
-`00` = Not-ETC(ECN-Capable Transport): ECN 사용안함
-`01`, `10` = ECT(ECN-Capable Transport): ECN 사용함
-`11` = CE(Congestion Experienced): Congestion 발생함
+`00` = Not-ETC(ECN-Capable Transport): ECN 사용안함  
+`01`, `10` = ECT(ECN-Capable Transport): ECN 사용함  
+`11` = CE(Congestion Experienced): Congestion 발생함  
 
 receiver는 만약 ECN필드가 CE일 경우 ECE=1을 전달하여 sender에게 congestion이 발생했음을 알려준다.
 이후에 sender는 윈도우 사이즈를 조절한 뒤에 TCP헤더에 CWR(Congestion Window Reduced)=1을 설정하여 전송한다.
@@ -1049,7 +1049,7 @@ N = 매우 사이즈가 큰 flow
 
 #### DCTCP:
 
-Adjust cwnd in proportion to the number of ECN-marked packets
+Adjust cwnd ***in proportion to*** the number of `ECN-marked packets`.
 
 <br/>
 
@@ -1075,11 +1075,11 @@ sender는 cwnd에서 마크된 ECN비트의 개수의 비율에 비례하여 con
 
 <br/>
 
-(1) DCTCP를 사용할 때 queue length가 매우 짧게 유지된다.
+(1) `DCTCP`를 사용할 때 `queue length`가 매우 짧게 유지된다.
 
-(2) TCP-RED에 비해서 DCTCP는 queue length가 variation이 작고 평균값이 매우 낮게 유지된다.
+(2) `TCP-RED`에 비해서 `DCTCP`는 `queue length`의 variation이 작고 평균값이 매우 낮게 유지된다.
 
-CDF = 동적 분포도
+CDF = 누적 분포도
 
 <br/>
 
@@ -1101,9 +1101,9 @@ TCP는 매우 빠르게 변동하면서 convergence되지만, DCTCP는 feedback�
 
 loss-based보다 더욱 나중에 나온 delay-based를 잘 쓰지 않는 이유는 데이터센터의 RTT가 us-scale이기 때문에 사용하기 쉽지 않다.
 
-delay-based는 RTT를 계속 정확하게 측정해야 하는데, 인터넷 네트워크에서는 RTT가 ms-scale이기 때문에 end-host의 network stack noise가 us-scale이라서 별 영향을 미치지 않아 RTT를 측정하는데 별 문제가 없지만, 데이터센터 환경에서는 end-host의 network stack의 노이즈가 us-scale이기 때문에 RTT에 차지하는 비중이 너무 커서 RTT를 신뢰할 수가 없다.
+delay-based는 RTT를 계속 정확하게 측정해야 하는데, 인터넷 네트워크에서는 RTT가 ms-scale이기 때문에 end-host의 network stack noise가 us-scale이라서 별 영향을 미치지 않아 RTT를 측정하는데 별 문제가 없지만, 데이터센터 환경에서는 end-host의 network stack의 노이즈가 us-scale인데 RTT도 매우 짧아서 RTT에서 노이즈가 차지하는 비중이 너무 커서 RTT를 신뢰할 수가 없다.
 
-하지만 TIMELY는 delay-based congestion control algorithm인데, 이제는 데이터센터에서도 RTT를 정확하게 측정할 수 있게 되었기 때문이다.
+하지만 `TIMELY`는 `delay-based congestion control algorithm`인데, 이제는 데이터센터에서도 RTT를 정확하게 측정할 수 있게 되었기 때문이다.
 
 <br/>
 
@@ -1165,7 +1165,7 @@ RTT는 `serialization delay`를 제외한 순수한 `RTT`만을 고려한다.
 
 #### Algorithm Overview
 
-RTT가 증가하는 기울기에 따라서 윈도우 사이즈를 
+RTT가 증가하는 `기울기(gradient)`에 따라서 윈도우 사이즈를 조절한다.
 
 <img src="../images/network-transport-layer-3.7.29.3.png?raw=true" alt="drawing" width="320"/>
 
