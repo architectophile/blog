@@ -393,10 +393,10 @@ Trying to find the fewest inputs that will find the most problems. 따라서 우
 
 대표적인 4개의 S/W 모델은 다음과 같다:
 
-1. `Input domains`: 성질이 비슷한 입력값들의 대표값을 넣어서 테스트 하는 것
-2. `Graphs`: 그래프를 활용하는 것. e.g. control flow graph
-3. `Logic expressions`: 조건식을 놓고 각각의 값이 true, false일 때 진리표를 만들어서 각 경우의 조건에 맞는 테스트 값을 넣는 것
-4. `Syntax descriptions`: 문법을 이용해서 테스는 하는 것. e.g. mutation 등을 생성함
+1. `Input domains`: 입력을 이용해서 모델링하는 것. 성질이 비슷한 입력값들의 대표값을 넣어서 테스트 한다.
+2. `Graphs`: 그래프를 활용하여 모델링하는 것. e.g. control flow graph
+3. `Logic expressions`: 조건문을 이용해 모델링하는 것. 조건문을 놓고 각각의 값이 true, false일 때 진리표를 만들어서 각 경우의 조건에 맞는 테스트 값을 넣는다.
+4. `Syntax descriptions`: 문법을 이용해서 모델링하는 것. e.g. mutation 등을 생성한다.
 
 <br/>
 
@@ -504,13 +504,84 @@ Test set T<sub>2</sub>는 C<sub>2</sub>을 충족하는가?
 
 <br/>
 
+1. `Test Design`: 어떤 테스트 입력을 넣어야 적은 입력으로 test coverage를 극대화할 수 있을지 고민하여 테스트 입력을 도출하는 것
+2. `Test Automation`: 테스트 실행을 자동화하는 것
+3. `Test Execution`: 테스트를 실행하는 것
+4. `Test Evaluation`: 테스트 결과를 분석하는 것
+
 테스트에서 가장 중요하고 창조적이면서 어려운 일은 `1. Test Design`이다. 즉 기준을 설정하고 어떤 테스트 입력 값을 넣어야 어떤 test requirements를 충족하는지를 결정하는 것이 매우 중요하다.
+
+그 다음으로 어려운 것은 `4. Test Evaluation`이다. 테스트 결과를 놓고 테스트 입력을 넣고 테스트한 후에 결과를 놓고 요구사항을 얼마나 만족시키는지 얼마만큼 테스트가 되었는지 분석하고 평가하여 제품을 출시할 수 있는지 결정해야 한다.
+
+<br/>
+
+### (10) Other Activities
+
+<br/>
+
+#### Test management
+
+<br/>
+
+#### Test maintenance
+
+<br/>
+
+#### Test documentation
+
+- `Test documentation` : Test Evaluation 이후에 문서작업을 하는 것이다. 어떤 테스트를 어떻게 수행했고, 그 결과는 어떻게 기준이나 테스트 요구사항을 만족하였는지 문서로 상세하게 작성한다. All parties participate
+
+문서작성을 잘 해야 하는 이유는 `추적성(traceability)`을 확보하기 위해서이다.
+
+추적성이 잘 확보되었다는 것은 어떤 제품을 출시하고 취약점이 발견되었을 때, 해당 취약점이 어느 단계에서 테스트되었는지 바로 확인할 수 있고, 어떤 입력을 넣었을 때 어떻게 결과가 나왔는지 다시 확인할 수 있다는 것이다. 그리고 해당 취약점이 어떤 단계에서 문제가 있어서 발생한 것인지 찾아낼 수 있어야 한다.(e.g. 설계단계에서 결함이 있다는 것을 찾아낼 수 있다.) 만약 테스트에는 문제가 없었다면 애초에 요구사항 분석 단계에서 결함이 있었음을 알아낼 수도 있다.
+
+따라서 개발 프로세스 상에 어떤 문제가 있는지를 찾아내고 개선하여 이후에는 같은 문제가 발생하지 않도록 할 수 있다.
+
+<br/>
+
+### (11) Model-Driven Test Design
+
+<img src="../images/security-engineering-7-implementation-assurance-2.11.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+1. `software artifact`: 분석할 대상 소프트웨어. `software artifact`는 소프트웨어 및 관련된 일체를 말함. e.g. 매뉴얼이나 기타 등등 일체를 말함
+2. `model structure`: 해당 소프트웨어를 모델링한 것 
+3. `test requirements`: Coverage Criteria를 설정하여 `test requirements`를 도출
+4. `refined requirements test specs`: 소프트웨어 모델에서 도출된 `test requirements`와 각종 규정이나 compliance로부터 도출된 `test requirements`을 하나로 합쳐서 정제된 `test requirements`를 도출한다. 또한 합칠 수 있는 요구사항들은 최대한 합쳐서 테스트 요구사항을 줄여야 테스트가 훨씬 쉬워진다.
+5. `input values`: 테스트 요구사항을 충족할 수 있는 테스트 입력값들
+6. `test cases`: 테스트 입력값들이 구체화된 것. prefix values, test case values, postfix values, expected values 등
+7. `test scripts`: 테스트 케이스들을 자동으로 테스트할 수 있도록 작성한 스크립트
+8. `test result`: 테스트 결과
+9. `pass/fail`: 테스트 결과 평가
+
+> Note:  
+위 그림에서 `modeling`을 거치지 않고 `test requirements`가 바로 도출되는 경우는 소프트에어와는 전혀 상관없이 도출해야 하는 `test requirements`가 있는데, 이것들을 보통 `compliance`라고 한다. e.g. 정부기관에 들어가는 암호모듈을 seed 또는 aria 알고리즘을 사용해야 한다. e.g. 비밀번호는 8자 이상 영문자, 숫자, 특수문자를 하나 이상 포함해야 한다. 이것들은 소프트웨어와는 직접적인 관련이 없고 각종 법, 규정이나 지침으로부터 나오는 `test requirements`이다.  
+
+<br/>
+
+<img src="../images/security-engineering-7-implementation-assurance-2.11.1.2.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+`test requirements`를 도출하고 `input value`를 생성할 때는 최대한 적은 `input values`로 모든 `test requirements`를 충족하도록 생성해야 한다.
+
+> Note:  
+`domain analysis`를 위해서는 것은 해당 소프트웨어가 사용되는 영역에 해당하는 사전지식이 필요하다. 해당 도메인에서는 어떤 규정을 따라야 하는지 등이다. `domain knowledge`가 필요하다.
+
+<br/>
+
+테스터는 테스팅 결과를 보고 제품을 출시할 수 있는지 없는지를 결정할 수 있어야 한다. 단순히 모의해킹 팀이 취약점을 찾아내는 것에서 그치는 것에 비해서 그 역할과 책임이 더 크다.
+
+<br/>
+
+<img src="../images/security-engineering-7-implementation-assurance-2.11.1.3.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
 
 <br/>
 
 ## 3. Criteria-Based Test Design
-
-<br/>
 
 ### [Note] Input Domain Model Based Testing
 
@@ -542,6 +613,12 @@ Test set T<sub>2</sub>는 C<sub>2</sub>을 충족하는가?
 
 <br/>
 
+#### Edge Coverage
+
+<img src="../images/security-engineering-7-implementation-assurance-3.0.2.2.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
 <br/>
 
 ### [Note] Logic Model Based Testing
@@ -562,6 +639,95 @@ Test set T<sub>2</sub>는 C<sub>2</sub>을 충족하는가?
 
 <br/>
 
+### (1) Coverage Criteria
 
+### (2) Benefits of Coverage Criteria
 
+### (3) Changing Notions in Testing
 
+<img src="../images/security-engineering-7-implementation-assurance-3.3.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+### (4) New : Structures and Criteria
+
+### (5) Test Coverage Criteria
+
+### (6) Model-Driven Test Design
+
+<img src="../images/security-engineering-7-implementation-assurance-3.6.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+### (7) Four Structures for Modeling S/W
+
+<img src="../images/security-engineering-7-implementation-assurance-3.7.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+### (8) Implementation of Test Criteria
+
+- `Generator` : A procedure that automatically generates values to satisfy a criterion. `coverage criteria`를 주면 자동으로 test inputs을 생성해주는 도구. generator는 만들기 어려움. 따라서 아직도 `test inputs` 도출은 대부분 사람이 해야함.
+- `Recognizer` : A procedure that decides whether a given set of test values satisfies a criterion. `test inputs` 값이 주어졌을 때 `coverage criteria`를 만족하는지 검사하는 도구. recognizer는 많이 있음.
+
+`generator`와 `recognizer` 모두 100% 자동화시키는 것은 어렵지만 그나마 상대적으로 `recognizer`(coverage analysis tools)를 만드는 것이 더욱 쉽다.
+
+<br/>
+
+### (9) Comparing Criteria
+
+<img src="../images/security-engineering-7-implementation-assurance-3.9.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+#### Criteria Subsumption
+
+A test criterion `C1` subsumes `C2` if and only if every set of test cases that satisfies criterion `C2` also satisfies `C1`.
+
+위 그림에서 `C1`은 `C2`를 포함하기 때문에 `C1` 기준을 만족하면 자동으로 `C2` 기준을 만족하게 되므로 ***C1만 충족하도록 하면 된다.*** 그래야 `coverage criteria`가 줄어들고 `test requirements`의 개수가 줄어들기 때문에 테스트가 훨씬 효율적이고 쉬워진다.
+
+따라서 `coverage criteria` 또는 `test requirements`가 도출되면 각각 포함관계를 비교하여 불필요한 중복을 없애 테스트 요구사항 개수를 최소화하는 작업이 중요하다.
+
+<br/>
+
+## 4. Input Space Partition Coverage
+
+### [Note] Input Domain Model Based Testing
+
+<img src="../images/security-engineering-7-implementation-assurance-4.0.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+`input domain modeling`에서는 동일한 성질을 갖는 입력들의 카테고리를 잘 세분화해서 정확하게 나누어서 각 대표값을 도출하는 것이 중요하다. e.g. 삼각형을 분류하는 함수에서 카테고리를 정삼각형, 이등변 삼각형, 직각삼각형, 기타 삼각형, 삼각형이 되지 않는 유효하지 않는 값들로 각각 분류하여 대표값을 도출한다.
+
+`input domain modeling`은 실제 함수의 내부 구조를 알 지 못하더라도 모델링하여 테스트 인풋을 도출할 수 있다. e.g. 라이브러리 등에서 함수형만 알고 있는 경우에도 사용할 수 있다는 장점이 있다.
+
+<br/>
+
+## 5. Graph Coverage
+
+### (1) Covering Graphs
+
+<br/>
+
+## 6. Logic Coverage
+
+### [Note] Logic Model Based Testing
+
+<img src="../images/security-engineering-7-implementation-assurance-6.0.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+### (1) Logic Predicates and Clauses
+
+<br/>
+
+<br/>
+
+## 7. Syntax Coverage
+
+### [Note] Syntax Based Testing
+
+<img src="../images/security-engineering-7-implementation-assurance-7.0.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
