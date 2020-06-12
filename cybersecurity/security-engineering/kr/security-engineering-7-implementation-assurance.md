@@ -704,9 +704,141 @@ A test criterion `C1` subsumes `C2` if and only if every set of test cases that 
 
 <br/>
 
+### (1) Input Domains
+
+아무리 간단한 프로그램도 `input domain`이 너무 크거나 무한대라서 모두 테스트해볼 수 없다.
+
+따라서 `input domain`을 각 `region(block)`으로 `partition`하여 해당 region의 `대표값`을 넣어 테스트한다.
+
+<br/>
+
+### (2) Overview : Input Space Partitioning
+
+<img src="../images/security-engineering-7-implementation-assurance-4.2.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+1. 파티션을 나눴을 때 각 block들은 겹치면 안 된다.(`disjointness`)
+2. 모든 블록을 합쳤을 때 전체 domain을 cover해야 한다.(`completeness`)
+
+<br/>
+
+### (3) Benefits of Input Space Partitioning
+
+<img src="../images/security-engineering-7-implementation-assurance-4.3.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+매우 간단하고, 직관적이고, 효과적이다.
+
+실제 소프트웨어 코드가 어떻게 구현되어 있는지 모르더라도 프로그램의 기능과 input domain 정도만 알고 있더라도 테스트할 수 있다. e.g. `legacy software` 등을 테스트할 때 유용하다.
+
+<br/>
+
+### (4) Applying Input Space Partitioning
+
+<img src="../images/security-engineering-7-implementation-assurance-4.4.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+1. `Task I`: `Model input domain` → 위에서 파란색 부분은 테스트할 input domain을 잘 partitioning하는 것이다. e.g. get_index_of() 함수 예제에서 `string`과 `letter` 입력값이 각각 `empty`인지 아닌지로 나누는 것
+2. `Task II`: `Choose combinations of values` → 함수에 여러가지 입력이 함께 들어올 때, 즉 combinations이 발생할 때, 경우의 수를 잘 만들어주는 것이다. e.g. get_index_of() 함수 예제에서 `string`과 `letter`의 각각 2개의 경우의 수를 곱하여 총 4개의 결합된(combinations) 입력을 도출하는 것
+
+<br/>
+
+### (5) Example Input Domains
+
+<img src="../images/security-engineering-7-implementation-assurance-4.5.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+get_index_of() 함수는 `string`과 `letter`를 입력받아서, 해당 `stinrg`에서 해당 `letter`가 몇 번째 `index`에 있는 지를 찾아주는 함수이다.
+
+<br/>
+
+#### Interface-Based
+
+<img src="../images/security-engineering-7-implementation-assurance-4.5.2.1.png?raw=true" alt="drawing" width="640"/>
+
+<img src="../images/security-engineering-7-implementation-assurance-4.5.2.2.png?raw=true" alt="drawing" width="640"/>
+
+<img src="../images/security-engineering-7-implementation-assurance-4.5.2.3.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+`input domain`을 가장 쉽게 나눌 수 있는 방법은 `string`과 `letter`가 `empty`이거나 아니거나로 나누는 것이다.
+
+위 테스트는 `disjointness`와 `completeness`를 만족하지만 이렇게 `input domain`을 두 개로 단순히 나누는 테스트는 의미가 없다. 
+
+따라서 `input domain`을 ***얼마나 정밀하게 나누는지가(partitioning) 중요하다.*** 즉, 모델링을 얼마나 정밀하게 하느냐에 따라서 테스트 입력의 퀄리티가 달라진다.
+
+<br/>
+
+#### Functionality-Based
+
+<img src="../images/security-engineering-7-implementation-assurance-4.5.3.1.png?raw=true" alt="drawing" width="640"/>
+
+<img src="../images/security-engineering-7-implementation-assurance-4.5.3.2.png?raw=true" alt="drawing" width="640"/>
+
+<img src="../images/security-engineering-7-implementation-assurance-4.5.3.3.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+C1 → `string`에서 `letter`가 들어있는 개수: 0개, 1개, 1개 이상
+
+C2 → `string`에서 `letter`가 첫 번째에 나오는지 아닌지: true, false
+
+`Task II` 과정에서 combinations를 만들 때, 각 경우의 수를 계산 할 때 중복되는 것끼리 합친다.
+
+<br/>
+
+### (6) Choosing Combinations of Values
+
+<img src="../images/security-engineering-7-implementation-assurance-4.6.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+### (7) ISP Coverage Criteria Subsumption
+
+<img src="../images/security-engineering-7-implementation-assurance-4.7.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
 ## 5. Graph Coverage
 
 ### (1) Covering Graphs
+
+`그래프(graph)`를 이용한 모델링은 가장 많이 사용되는 방법이다.
+
+`그래프`는 여러가지 다양한 소스로부터 생성될 수 있다. 즉 프로그램 소스코드 이외에도 스펙 문서나 설계 문서를 보고 그릴 수도 있다.
+
+- Program source → Control Flow Graphs
+- Design structure
+- FSMs and statecharts
+- Use cases
+
+<br/>
+
+#### ATM Withdraw Activity Graph (Use Case Example)
+
+<img src="../images/security-engineering-7-implementation-assurance-5.1.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+위와 같이 그래프를 구체적으로 그려야 테스트 요구사항이 정확하게 도출된다.
+
+누가 보더라도 똑같이 해석할 수 있기 때문에 그래프를 활용하면 모호성이 없어진다.
+
+`test case`를 도출할 때 굳이 소스코드가 없더라도 `activity graph`만 있더라도 `test case`를 도출할 수 있다. 즉, `software artifact`(소프트웨어 및 동반되는 문서 일체) 중에서 소스코드가 없더라도 `artifact`에 속하는 `use case 문서`를 `activity graph`로 만들어서 `test case`를 도출할 수 있다. 
+
+<br/>
+
+### (2) Testing and Covering Graphs 
+
+- `Structural Coverage Criteria`: Defined on a graph just in terms of `'nodes'` and `'edges'`
+- `Data Flow Coverage Criteria` : Requires a graph to be annotated with references to variables
+
+<img src="../images/security-engineering-7-implementation-assurance-5.2.1.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
@@ -731,3 +863,4 @@ A test criterion `C1` subsumes `C2` if and only if every set of test cases that 
 <img src="../images/security-engineering-7-implementation-assurance-7.0.1.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
+
