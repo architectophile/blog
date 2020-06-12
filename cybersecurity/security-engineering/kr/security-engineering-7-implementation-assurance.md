@@ -385,6 +385,182 @@ Trying to find the fewest inputs that will find the most problems. 따라서 우
 
 <br/>
 
+<img src="../images/security-engineering-7-implementation-assurance-2.7.1.3.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+소프트웨어를 테스트할 때 `Coverage Criteria`는 어떤 모델링 기법을 사용하느냐에 따라서 기준이 달라진다.
+
+대표적인 4개의 S/W 모델은 다음과 같다:
+
+1. `Input domains`: 성질이 비슷한 입력값들의 대표값을 넣어서 테스트 하는 것
+2. `Graphs`: 그래프를 활용하는 것. e.g. control flow graph
+3. `Logic expressions`: 조건식을 놓고 각각의 값이 true, false일 때 진리표를 만들어서 각 경우의 조건에 맞는 테스트 값을 넣는 것
+4. `Syntax descriptions`: 문법을 이용해서 테스는 하는 것. e.g. mutation 등을 생성함
+
+<br/>
+
+<img src="../images/security-engineering-7-implementation-assurance-2.7.1.4.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+- `Generator`: 기준을 주면 알아서 test case를 만들어주는 도구. 만들기 매우 어렵다.
+- `Recognizer` : test case를 주고 기준을 주면, 해당 기준을 몇 % 충족하는지 coverage를 검사하는 도구. 상대적으로 쉽다. e.g. `Coverage Analysis Tool`
+
+<br/>
+
+#### Example: Jelly Bean Coverage
+
+<img src="../images/security-engineering-7-implementation-assurance-2.7.2.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+`Jelly Bean`을 만들어서 파는 회사는 제품을 검사할 때 모든 6가지 맛과 모든 4가지의 색깔에 대해서 테스트해야 한다.
+
+이 때 가능한 기준들(`Coverage Criteria`)은 다음과 같다:
+
+1. C<sub>1</sub>: Taste one jelly bean of each flavor. 모든 맛의 젤리빈을 맛볼 것. (`Coverage Criterion 1`)
+2. C<sub>2</sub>: Taste one jelly bean of each color. 모든 색깔의 젤리빈을 맛볼 것. `(Coverage Criterion 2`)
+
+<br/>
+
+위의 기준(C<sub>1</sub>, C<sub>2</sub>)에 따라서 `test requirements`를 다음과 같이 도출한다:
+
+1. TR<sub>1</sub>: `Test requirements` for C<sub>1</sub>
+
+- tr<sub>1</sub>: Lemon
+- tr<sub>2</sub>: Pistachio
+- tr<sub>3</sub>: Cantaloupe
+- tr<sub>4</sub>: Pear
+- tr<sub>5</sub>: Tangerine
+- tr<sub>6</sub>: Apricot
+
+TR<sub>1</sub> = `{Lemon, Pistachio, Cantaloupe, Pear, Tangerine, Apricot}`
+
+<br/>
+
+2. TR<sub>2</sub>: `Test requirements` for C<sub>2</sub>
+
+- tr<sub>1</sub>: Yellow
+- tr<sub>2</sub>: Green
+- tr<sub>3</sub>: Orange
+- tr<sub>4</sub>: White
+
+TR<sub>2</sub> = `{Yellow, Green, Orange, White}`
+
+<br/>
+
+위에서 도출한 `test requirements`에 맞는 `test set`을 도출한다:
+
+T<sub>1</sub> = `{3 Lemons, 1 Pistachio, 2 Cantaloupes, 1 Pear, 1 Tangerine, 4 apricots}`
+
+Test set T<sub>1</sub>은 C<sub>1</sub>을 충족하는가?
+
+→ `Test set 1`에는 모든 맛이 포함되어 있기 때문에 T<sub>1</sub>은 C<sub>1</sub>을 충족한다.
+
+<br/>
+
+T<sub>2</sub> = `{1 Lemon, 2 Pistachios, 1 Pear, 3 Tangerines}`
+
+Test set T<sub>2</sub>는 C<sub>1</sub>을 충족하는가?
+
+→ `Test set 2`에는 모든 맛이 포함되어 있지 않기 때문에 T<sub>2</sub>는 C<sub>1</sub>을 충족하지 않는다.
+
+<br/>
+
+Test set T<sub>2</sub>는 C<sub>2</sub>을 충족하는가?
+
+→ `Test set 2`에는 모든 색깔이 포함되어 있기 때문에  T<sub>2</sub>는 C<sub>2</sub>를 충족한다.
+
+<br/>
+
+#### Coverage Level
+
+<img src="../images/security-engineering-7-implementation-assurance-2.7.2.2.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+`Coverage Level`은 전체 `Test requirements` 중에서 몇 개의 `test requirements`가 해당 테스트에 의해 충족되는가를 나타낸다.
+
+따라서 T<sub>1</sub>의 TR<sub>1</sub>에 대한 `coverage level = 6/6`이다.
+
+따라서 T<sub>2</sub>의 TR<sub>1</sub>에 대한 `coverage level = 4/6`이다.
+
+따라서 T<sub>2</sub>의 TR<sub>2</sub>에 대한 `coverage level = 4/4`이다.
+
+<br/>
+
+### (8) Model-Driven Test Design (MDTD)
+
+테스트도 수학적 방식으로 과학적으로 해야 테스트 효율을 높일 수 있다. 즉 적은 입력으로 높은 coverage를 달성할 수 있다.
+
+`Model-Driven Test Design`에서는 정적 분석, 동적 분석, 블랙박스, 화이트박스 등이 중요한 것이 아니고, 그저 `Coverage Level`을 높이는 것이 중요하다고 말한다.
+
+<br/>
+
+### (9) Software Testing Activities
+
+<img src="../images/security-engineering-7-implementation-assurance-2.9.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+테스트에서 가장 중요하고 창조적이면서 어려운 일은 `1. Test Design`이다. 즉 기준을 설정하고 어떤 테스트 입력 값을 넣어야 어떤 test requirements를 충족하는지를 결정하는 것이 매우 중요하다.
+
+<br/>
+
+## 3. Criteria-Based Test Design
+
+<br/>
+
+### [Note] Input Domain Model Based Testing
+
+<img src="../images/security-engineering-7-implementation-assurance-3.0.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+<br/>
+
+<img src="../images/security-engineering-7-implementation-assurance-3.0.1.2.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+- `Each Choice Coverage (ECC)`: 최소한 1개 이상의 test case에 각 성질을 대표하는 대표값을 각각 모두 넣는다.
+
+`정삼각형` 대표값 한 개, `이등변 삼각형` 대표값 한 개, `일반 삼각형` 대표값 한 개, `삼각형에 유효하지 않은 값` 한 개를 넣어서 테스트한다.
+
+<br/>
+
+<br/>
+
+### [Note] Graph Model Based Testing
+
+<img src="../images/security-engineering-7-implementation-assurance-3.0.2.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+- `Each All-defs coverage (ADC)`: 정의된 변수들이 모두 사용됐는지 검사하는 것이다.
+
+<br/>
+
+<br/>
+
+### [Note] Logic Model Based Testing
+
+<img src="../images/security-engineering-7-implementation-assurance-3.0.3.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+- `Clause Coverage (CC)`: 각 `clause`가 `true`일 때와 `false`일 때를 모두 검사하는 것이다.
+
+<br/>
+
+<br/>
+
+### [Note] Syntax Model Based Testing
+
+<img src="../images/security-engineering-7-implementation-assurance-3.0.4.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
 
 
 
