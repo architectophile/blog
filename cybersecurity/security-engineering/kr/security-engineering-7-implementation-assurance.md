@@ -70,7 +70,7 @@
 
 <br/>
 
-## 1. Software Testing
+## 1. Ⅰ. Software Testing
 
 <br/>
 
@@ -831,6 +831,8 @@ C2 → `string`에서 `letter`가 첫 번째에 나오는지 아닌지: true, fa
 
 `test case`를 도출할 때 굳이 소스코드가 없더라도 `activity graph`만 있더라도 `test case`를 도출할 수 있다. 즉, `software artifact`(소프트웨어 및 동반되는 문서 일체) 중에서 소스코드가 없더라도 `artifact`에 속하는 `use case 문서`를 `activity graph`로 만들어서 `test case`를 도출할 수 있다. 
 
+하지만 실제 소스코드에서 도출한 test case가 아니기 때문에 ***정밀도가 떨어질 수 있다.*** 그리고 `design spec`만 가지고 테스트를 할 때는 `coverage criteria`와 `test requirements`까지는 도출할 수 있지만 실제 대상 소스코드가 없기 때문에 `input values`를 도출해야할 때는 어떤 형태로 실제 `input values`을 넣어야할 지, 즉 `prefix values`, `test case values`, `postfix values`를 어떻게 넣어야할 지 결정하기가 어렵다.
+
 <br/>
 
 ### (2) Testing and Covering Graphs 
@@ -842,6 +844,183 @@ C2 → `string`에서 `letter`가 첫 번째에 나오는지 아닌지: true, fa
 
 <br/>
 
+### (3) Node and Edge Coverage on Graph
+
+<img src="../images/security-engineering-7-implementation-assurance-5.3.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+- `Complete Path Coverage (CPC)` : TR contains all paths in G. 하지만 만약 그래프에 루프(loop)가 있을 경우 모든 path를 cover할 수 없다. 루프 반복횟수가 매우 큰 경우에는 모두 테스트할 수 없다.
+
+- `Specified Path Coverage (SPC)` : TR contains a set S of test paths, where S is supplied as a parameter.
+
+> Note:  
+루프가 있을 경우 모두 테스트할 수 없기 때문에 제약조건을 주게 된다. 루프를 무시하거나 또는 일정 횟수만 반복하도록 하는 것이다. 이럴 경우 실제 소스코드와 `abstraction gap`이 발생하게 되고, 이 `gap`을 줄이기 위해 노력해야 한다.
+
+<br/>
+
+### (4) Structural Coverage Criteria Example
+
+<img src="../images/security-engineering-7-implementation-assurance-5.4.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+`Complete Path Coverage`는 루프 때문에 경우의 수가 너무 많아서 모든 path를 cover할 수 없다.
+
+<br/>
+
+#### Control Flow Graph Transform Example
+
+<img src="../images/security-engineering-7-implementation-assurance-5.4.2.1.png?raw=true" alt="drawing" width="462"/>
+
+<br/>
+
+<img src="../images/security-engineering-7-implementation-assurance-5.4.2.2.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+`Control flow graph`에서는 `node`는 `명령어 자체`이고, `edge`는 control을 나타낸다. e.g. 만약 조건을 모든 `edge`를 방문할 것이라고 준다면, 이 얘기는 모든 조건문을 체크하라는 얘기와 같다.
+
+> Note:  
+`3번 노드`에 매핑되는 실제 코드는 없지만 루프를 처리하기 위해 인위적으로 넣는 노드이다. 즉 `dummy node`이다.
+
+<br/>
+
+### (5) Handling Loops in Graphs
+
+If a graph contains a `loop`, it has an infinite number of paths. Thus, `CPC` is not feasible.
+
+`SPC` is not satisfactory because the results are subjective and vary with the tester.
+
+#### Attempts to “deal with” loops:
+
+<img src="../images/security-engineering-7-implementation-assurance-5.5.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+### (6) Data Flow Coverage Criteria on Graph
+
+- `Goal` : Try to ensure that values are computed and used correctly
+- `Definition (def)` : A location where a value is assigned to a variable
+- `Use` : A location where a variable’s value is used(accessed)
+
+<img src="../images/security-engineering-7-implementation-assurance-5.6.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+#### Applying Data Flow Coverage Example
+
+<img src="../images/security-engineering-7-implementation-assurance-5.6.2.1.png?raw=true" alt="drawing" width="462"/>
+
+<br/>
+
+<img src="../images/security-engineering-7-implementation-assurance-5.6.2.2.png?raw=true" alt="drawing" width="520"/>
+
+<br/>
+
+`node`는 변수가 어디에서 정의되고 어디에서 사용되는지를 나타낸다.
+
+<img src="../images/security-engineering-7-implementation-assurance-5.6.2.3.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+`Data Flow Coverage`는 선언되었지만 한 번도 사용되지 않은 변수를 찾아내거나, 또는 선언되지 않았는데 사용되는 변수가 있는지 찾아내는데 사용될 수 있다.
+
+<br/>
+
+### (7) OO Software and Design Structures
+
+객체지향 프로그래밍에서는 상속 등에 의해서 내부구조가 보기 어렵기 때문에 `control flow graph`나 `data flow graph`를 그리는 것이 쉽지 않다.
+
+<br/>
+
+### (8) How to Represent Design as Graph
+
+`Call graphs` are common and very useful ways to design integration tests.
+programing
+`OO programming`에서는 `call graph`를 사용하는 것이 유용하다.
+
+- `Nodes` : Units (in Java – methods)
+- `Edges` : Calls to units
+
+<img src="../images/security-engineering-7-implementation-assurance-5.8.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+### (9) Data Flow Criteria at the Design Level
+
+<img src="../images/security-engineering-7-implementation-assurance-5.9.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+모듈을 만든 사람이 다를 경우 integration할 때 문제가 발생할 수 있다(e.g. 서로 다른 단위를 사용하여 문제가 발생하는 예가 있었다.). 이럴 때는 모듈 간 `interface`를 잘 맞추는 것이 중요하다. 이럴 때는 `call graph`를 그려서 각 모듈간 호출을 테스트할 수 있다.
+
+<br/>
+
+#### Inter-procedural DU Pairs Example
+
+<img src="../images/security-engineering-7-implementation-assurance-5.9.2.1.png?raw=true" alt="drawing" width="320"/>
+
+<br/>
+
+### (10) Design Specifications
+
+프로그램 소스코드가 없을 경우 `design specification(artifact)`을 이용해서 그래프를 그릴 수 있다.
+
+<br/>
+
+### (11) Finite State Machine (FSM) 
+
+A `finite state machine (FSM)` is a `graph` that describes how software variables are modified during execution.
+
+- `Nodes` : States, representing sets of values for key variables
+- `Edges` : Transitions, possible changes in the state
+
+<br/>
+
+### (12) Finite State Machines are Common
+
+<br/>
+
+### (13) Annotations on FSMs
+
+<img src="../images/security-engineering-7-implementation-assurance-5.13.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+> Note:  
+보안성 평가는 제품에 취약점이 있다 없다를 말하는 것이 아니라, ***보안공학에서 말하는 개발 프로세스를 충실히 따랐는지를 평가하는 것이다.*** 내가 평가받을 대상 암호모듈에 대해서 `FSM`을 그려야 한다. 대상 암호모듈의 디자인 스펙을 정확하게 기호로 표현해야 한다는 뜻이다. ***따라서 코드를 구현하기 전에 `FSM`을 먼저 그리고 이에 맞게 코드를 짜야한다.*** 하지만 현실에서는 코드를 먼저 구현하고 `FSM`을 그리는 반대의 경우가 많이 발생한다.
+
+<br/>
+
+### (14) UML Use Cases
+
+### (15) Simple Use Case Example
+
+### (16) Covering Activity Graphs
+
+#### Node Coverage
+- Inputs to the software are derived from labels on nodes and predicates
+- Used to form test case values
+
+#### Edge Coverage
+
+#### Data flow techniques do not apply
+
+Use case를 이용해 테스트할 때는(e.g. ATM 예제), `node coverage`와 `edge coverag`e까지는 어느정도 설정할 수 있지만, ***`data flow`는 실제 소스코드의 구현 속까지 들어가야 알 수 있기 때문에 디자인 스펙의 `use case`만을 이용해 그린 그래프에서는 알 수가 없다.***
+
+<img src="../images/security-engineering-7-implementation-assurance-5.16.2.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+`use case activity graph`는 `전체적인 시나리오`를 테스트하는데 사용될 수 있다(e.g. 핀 4번 틀려보기, 훼손된 카드 넣어보기). 이것은 디테일보다는 상위 레벨에서 해당 소프트웨어가 달성해야 하는 큰 목표들에 대한 테스트라고 할 수 있다. 그리고 여기에 소스코드를 통해 각 목표에 대한 디테일을 테스트하는 것이 결합되어 전체적인 테스팅이 완성된다고 볼 수 있다. 이렇게 함으로써` 추적성(traceability)`이 잘 확보될 수 있다.
+
+정량적으로 측정가능하지 않은 것은 과학적이지 않다. 측정 불가능한 것은 개선시킬 수 없다. 개발 프로세스에서 항상 개발 작업을 측정가능한가? 증명가능한가?를 고민해야 한다.
+
+기존의 블랙박스 테스트, 화이트박스 테스트 등은 결과를 정량적으로 측정하기 어렵다. `test coverage`를 측정하기 위해서는 `Model-Driven` 테스팅을 해야 한다. 소프트웨어를 모델링하고 그 모델을 기준으로 어느정도의 coverage를 달성할 지 기준을 주면, 기준에 맞게 테스트 요구사항을 도출하고 test case를 도출하여 테스트한다.
+
+<br/>
+
 ## 6. Logic Coverage
 
 ### [Note] Logic Model Based Testing
@@ -850,9 +1029,83 @@ C2 → `string`에서 `letter`가 첫 번째에 나오는지 아닌지: true, fa
 
 <br/>
 
-### (1) Logic Predicates and Clauses
+### (1) Overview
+
+`logic coverage` 테스트는 프로그램의 내부 동작구조까지 제어할 수 있기 때문에 매우 중요하다. 미국의 항공기 등을 테스트할 때는 반드시 `logic coverage`를 테스트한다.
+
+Logical expressions can come from many sources.
+
+- Decisions in programs
+- FSMs and state charts
+- Requirements
 
 <br/>
+
+### (2) Logic Predicates and Clauses
+
+<img src="../images/security-engineering-7-implementation-assurance-6.2.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+- `Predicate`: 내포하는 `clause`들의 `true` 또는 `false`를 결합하여 결과가 `true` 또는 `false`로 나오는 것(술어(?))
+- `Clause`: `Predicate`를 구성하는 각 단위로서 각각 `true` 또는 `false`를 가짐
+
+> Note:  
+위 그림에서 아래에 `clause`가 3개인 이유는, 동일한 `(a=b)` 를 하나의 `clause`로 보기 때문이다. 
+
+<br/>
+
+#### Example : Applying PC, CC, and CoC...
+
+<img src="../images/security-engineering-7-implementation-assurance-6.2.2.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+> Note:  
+모든 `predicate`가 한 번은 `true`, 한 번은 `false`가 나오는 `test case`를 도출하라는 얘기는 ***모든 `clause`에 대해서 `true,` `false`를 테스트하라는 것과 동일한 얘기가 아니다.***
+
+### (3) Note on Predicates
+
+### (4) Short Circuit Evaluation
+
+<img src="../images/security-engineering-7-implementation-assurance-6.4.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+### (5) Logic Coverage Criteria
+
+Apply `logic coverage criteria` to derive `test requirements` and design `test cases`.
+
+- Active Clause Coverage (ACC): 실제 `predicate`의 `true` 또는 `false`를 결정하는데 영향을 미치는 중요한 `clause`
+- General Active Clause Coverage (GACC)
+- Correlated Active Clause Coverage (CACC)
+- Restricted Active Clause Coverage (RACC)
+
+<br/>
+
+### (6) Logic Coverage Criteria Subsumption
+
+<br/>
+
+### (7) Logic Expressions from Source Code
+
+Applying logic criteria to program source is hard because of `reachability` and `controllability`.
+
+소프트웨어 `소스코드`에 있는 `로직`을 `모델링`하여 테스트 케이스를 도출하는 것은 쉽지 않다. 왜냐하면 각 조건을 설정하여 `predicate`들이 true일 때와 false일 때를 따져보고, 거기에 맞기 각 `clause`들이 true인지 false인지까지 테이블을 작성하는 것은 가능하지만, 그 이후에 실제로 각 `clause`들이 true 또는 false가 되게 하는 ***실제 input values를 어떻게 넣을지를 모두 도출하는 것이 쉽지 않다.***
+
+- `Reachability` : must get to the predicate statement that we are applying the criteria on
+- `Controllability` : must find input values that indirectly assign values to the variables in the predicates
+- `Internal variables` : variables in the predicates that are not inputs to the program. input이 아니라 프로그램 내부에서 선언되는 변수들이 있음
+
+<br/>
+
+### (8) Logic Expressions from Specifications
+
+Logic coverage criteria 역시 스펙 문서에서 도출할 수 있다. 하지만 정밀도가 낮다.
+
+<br/>
+
+### (9) Logic Expressions from FSMs
 
 <br/>
 
@@ -863,4 +1116,361 @@ C2 → `string`에서 `letter`가 첫 번째에 나오는지 아닌지: true, fa
 <img src="../images/security-engineering-7-implementation-assurance-7.0.1.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
+
+### (1) Four Structures for Modeling S/W
+
+<img src="../images/security-engineering-7-implementation-assurance-7.1.1.1.png?raw=true" alt="drawing" width="240"/>
+
+<br/>
+
+소프트웨어를 모델링하고 `문법`을 이용하여 test case를 도출하는 방법이다. 
+
+`fuzzing` 테스트는 `Syntax` 기법 중에서 `Inputs`에 해당한다(`Input space`). `fuzzing`을 할때 `입력값`을 무작정 랜덤하게 주는 것이 아니라 특정 `문법`에 맞춰서 주게 된다.
+
+사실 `Syntax` 기법에서 가장 중요한 것은 `Source`를 이용하는 것이다(`program-based`).
+
+<br/>
+
+### (2) Using the Syntax to Generate Tests
+
+<br/>
+
+### (3) Syntax Based Testing
+
+<br/>
+
+### (4) Grammar : Regular Expression
+
+<img src="../images/security-engineering-7-implementation-assurance-7.4.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+### (5) Test Cases from Grammar
+
+<br/>
+
+### (6) Backus-Naur-Form (BNF) Grammars
+
+<img src="../images/security-engineering-7-implementation-assurance-7.6.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+### (7) Using Grammars
+
+<img src="../images/security-engineering-7-implementation-assurance-7.7.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+#### Example : Valid and Invalid Mutants
+
+<img src="../images/security-engineering-7-implementation-assurance-7.7.2.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+- `Ground String`: 기본적으로 주어지는 초기 seed 값
+- `Mutant`: `Ground String`을 변형한 것(변종)
+- `Valid Mutants`: 문법에 맞는 유효한 mutants
+- `Invalid Mutants`: 문법에 맞지 않는 유효하지 않은 mutants
+
+<br/>
+
+### (8) UnMutated Derivation Test Coverage
+
+<br/>
+
+### (9) Mutated Derivation Test
+
+<br/>
+
+### (10) What is Mutation Testing?
+
+<br/>
+
+### (11) Underlying Concept : Mutation Testing
+
+`Program-based`
+
+<br/>
+
+<img src="../images/security-engineering-7-implementation-assurance-7.11.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+#### Mutation Testing (9.2.2)
+
+<img src="../images/security-engineering-7-implementation-assurance-7.11.2.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+위 소스코드의 조건문에서 `i >= 0` → `i > 0`로 `mutant`를 생성한다.
+
+<br/>
+
+##### Ineffective
+
+Input: x = {1, 3, 2};
+Output original : -1
+Output mutant : -1
+
+<br/>
+
+##### Killed
+
+Input: x = {0, 1, 2};
+Output original : 0
+Output mutant : -1
+
+<br/>
+
+`subject`는 ground string에 해당한다.
+
+`Mutation Testing`은 `test case`가 잘 만들어졌는지를 테스트하는 것이다. 따라서 `killing mutant`가 많을 수록 좋은 test case가 도출된 것이다. 얼마나 많은 `mutant`를 죽이는지가 `coverage`이다.
+
+e.g. 어떤 컴파일러가 있을 때, 컴파일러를 테스트하고 싶으면, 정상적인 프로그램은 잘 테스트되어야 하고, 오류를 가진 프로그램은 오류를 잘 발견해야 한다. 이 때 `Mutation Testing`을 통해서 정상적인 프로그램을 넣었을 때와, 오류를 가진 프로그램을 넣었을 때 `mutant`를 얼마나 많이 죽이는지 확인할 수 있다.
+
+<br/>
+
+구글은 `deep fake`를 막기 위해서 집단지성을 활용하기로 하였다. `deep fake`가 된 영상과 일반 영상의 `test case`를 제공하는데 이런 `test case`를 도출할 때 `mutation testing`과 같은 테스트를 이용해서 좋은 `test case`를 도출한다.
+
+<br/>
+
+### (12) Input Space Grammars
+
+<br/>
+
+## 8. Agile Methods & Testing
+
+보안공학 기법들은 아직은 `폭포수(waterfall) 모델`에 집중되어 있다. 보안공학 프로세스를 agile 방법에 가장 잘 적용할 수 있는 회사는 `Microsoft`이다.
+
+### (1) Traditional Assumptions
+
+<br/>
+
+### (2) Why Be Agile?
+
+<br/>
+
+## 9. Ⅱ. Software Verification via Automated Reasoning (자동추론)
+
+### (1) Testing vs. Verification
+
+<img src="../images/security-engineering-7-implementation-assurance-9.1.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+`testing`을 통해서 소프트웨어에 결함이 있다는 것은 알아낼 수 있다. 하지만 `testing`을 통해서 소프트웨어에 결함이 없다는 것은 증명할 수 없다.
+
+`testing`과 다르게 `verification`은 소프트웨어의 ***결함이 없음을 증명(prove)할 수 있다.*** `Model Checking`은 소프트웨어 `verification`을 위한 `도구`이다. ***`Cyber Grand Challenge`에서 나온 `취약점 자동 분석 도구`는 `Model Checking`에서 `파생`되어 나온 도구이다.***
+
+<br/>
+
+<img src="../images/security-engineering-7-implementation-assurance-9.1.1.2.png?raw=true" alt="drawing" width="320"/>
+
+<br/>
+
+소프트웨어 `verification`을 하기 위해서는 `exhaustive state-space exploration`이 필요한데, 검사해야 할`state`수가 너무 많아서 현실적으로 불가능하다.
+
+<img src="../images/security-engineering-7-implementation-assurance-9.1.1.3.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+따라서 사람들은 처음에는 `software verification`에 대해서 회의적이었다. 하지만 나중에 사람들은 모든 프로그램을 대상으로 하는 것이 아니라, ***특정 영역의 프로그램에서는 state 수가 제한적이어서 `software verification`이 가능할 수도 있겠다고 생각했다.*** e.g. 암호화 모듈 프로그램
+
+<img src="../images/security-engineering-7-implementation-assurance-9.1.2.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+위 그래프의 세로축은 `security requirements`를 나타낸다.
+
+- `type safety`: 타입의 안전성. e.g. 변수 타입에 맞지 않는 값을 할당하지 않도록 함
+- `no runtime errors`: 프로그램 실행 중에 발생하는 오류가 없음
+- `functional correctness`: 항상 옳은 결과가 나온는가를 나타냄
+
+`strength of guarantee` = `type safety` < `no runtime errors` < `functional correctness`
+
+> Note:  
+위의 그래프에서 `seL4 microkernal (NICTA)`이 `functional correctness`를 달성할 수 있는 이유는 바로 `microkernal`의 매우 기능이 일반적인 kernal 보다 적어서 복잡하지 않기 때문이다.  
+`requirements`를 도출하고 줄이는 것이 가장 어렵다. `requirements` 도출 자체가 잘못되면 `복잡도(complexity)`를 줄일 수 없다.
+
+<br/>
+
+#### Type Safety
+
+<img src="../images/security-engineering-7-implementation-assurance-9.1.2.2.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+#### Runtime Error
+
+<img src="../images/security-engineering-7-implementation-assurance-9.1.2.3.png?raw=true" alt="drawing" width="480"/>
+
+<br/>
+
+#### Functional Correctness
+
+<img src="../images/security-engineering-7-implementation-assurance-9.1.2.4.png?raw=true" alt="drawing" width="480"/>
+
+<br/>
+
+- `Functional Completeness`: 요구되는 모든 태스크(tasks)를 cover하는가?
+- `Functional Correctness`: 항상 옳은 결과가 나온는가?
+
+<br/>
+
+### (2) Symbolic Execution
+
+<img src="../images/security-engineering-7-implementation-assurance-9.2.1.1.png?raw=true" alt="drawing" width="480"/>
+
+<br/>
+
+`symbolic execution`에서는 실제값이 아니라 `기호(symbol)`을 넣는 것이다. 이와 반대되는 개념은 `concrete execution`이다.
+
+<br/>
+
+#### Applications
+
+<img src="../images/security-engineering-7-implementation-assurance-9.2.2.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+### (3) Automatic Theorem Prover
+
+Logical deduction performed by machine
+
+<br/>
+
+<img src="../images/security-engineering-7-implementation-assurance-9.3.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+위 예제에서 2개의 정수 중에서 최대 값을 찾는 함수가 있다.
+
+- `variables`: 사용되는 변수
+- `precondition`: 전제조건
+- `postcondition`: 프로그램 실행이 끝난 후 만족해야 하는 조건
+
+<img src="../images/security-engineering-7-implementation-assurance-9.3.1.2.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+위와 같이 `variables`, `precondition`, `postcondition`을 설정하여 `automatic theorem prover`에 넣으면 해당 프로그램이 제대로 동작하는지를 증명해준다.
+
+<br/>
+
+<img src="../images/security-engineering-7-implementation-assurance-9.3.1.3.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+`precondition`과 `postcondition`은 사람이 직접 작성해야 하기 때문에 이것들이 틀리면 자동화된 증명 결과도 틀리게 된다. 그리고 `automated theorem prover`는 구간구간 별로 annotation을 넣어주고 구간별로 체크하는 것이기 때문에 완전자동화는 아니다. ***하지만 `Model Checker`는 완전자동화된 도구이다.***
+
+<br/>
+
+#### Floyd-Hoare triple
+
+<img src="../images/security-engineering-7-implementation-assurance-9.3.2.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+프로그램도 로직의 전개이기 때문에 `precondition`과 `postcondition`을 formal하게 기술해줄 수 있으면, 해당 `precondition`이 주어졌을 때 프로그램이 실행되어 결과적으로 `postcondition`에 도달하는 지를 자동으로 체크할 수 있다. ***따라서 `requirement`가 주어졌을 때 `formal`하게 기술하는 것이 매우 중요하다.***
+
+<br/>
+
+### (4) Model Checker
+
+`model checker`는 완전자동화 도구이기 때문에 제한적이어서 `automatic theorem prover`보다는 증명할 수 있는 레벨이 낮다.
+
+<br/>
+
+<img src="../images/security-engineering-7-implementation-assurance-9.4.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+1. 프로그램을 모델렝한다. `Program` → `Model`
+2. 프로그램이 달성해야 할 최종 목표(goal)를 준다. `Correctness Property`
+3. Verification(Model Checker)에게 전달한다.
+4. 해당 프로그램이 달성해야 할 최종 목표를 달성하는지(`Correct`), 아닌지(`Incorrect`)를 알려준다(달성하지 않을 경우 어떤 입력이 들어오면 오류가 발생하는지 `Counterexample`에 추가한다.)
+
+<br/>
+
+#### [Note] Counterexamples
+
+<img src="../images/security-engineering-7-implementation-assurance-9.4.1.2.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+#### [Note] Theorem Prover vs. Model Checker
+
+<img src="../images/security-engineering-7-implementation-assurance-9.4.2.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+`Theorem Prover`는 `반자동(semi-automated)`이고, `Model Checker`는 `완전자동(automatic)`이다.
+
+<br/>
+
+#### [Note] How to Create Sound Abstractions
+
+<img src="../images/security-engineering-7-implementation-assurance-9.4.3.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+실제 프로그램과 모델의 밖에 있는 오류는 문제가 없다.
+
+<br/>
+
+<img src="../images/security-engineering-7-implementation-assurance-9.4.3.2.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+Over-approximation에 의해 실제 프로그램에서는 오류가 아니지만 모델에서는 오류라고 인식하는 `abstraction gap`이 발생한다.
+
+<br/>
+
+<img src="../images/security-engineering-7-implementation-assurance-9.4.3.3.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+모델을 더욱 정교하게 만들어 실제 프로그램과 모델의 `abstraction gap`을 줄이는 것이 좋다.
+
+<br/>
+
+<img src="../images/security-engineering-7-implementation-assurance-9.4.3.4.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+모델을 만들 때는 프로그램 보다 모델의 범위를 작게 만들어서 `under-approximation`에서 시작하여 점점 늘려나가서, `over-approximation`으로 만든다. 이와 관련된 방법으로 `Lazy Abstraction Algorithm` 등이 있다.
+
+> Note:  
+`over-approximation`으로 만들어야 실제 프로그램의 오류 상태를 모델에서도 모두 잡아낼 수 있다.
+
+<br/>
+
+<img src="../images/security-engineering-7-implementation-assurance-9.4.4.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+`Model Checking`은 완전자동화된 상태에서 프로그램의 모든 state를 다 체크한다(`exhaustive testing`). `state-space exploration`
+
+<br/>
+
+#### Automated Exploit Generator
+
+<img src="../images/security-engineering-7-implementation-assurance-9.4.4.2.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+2005년에 `Model Checker`를 이용하여 해킹도구를 자동생성하는 방법을 제안하였다.
+
+해킹불가능한 특성(`un-exploitability property`)을 `Model Checker`에 넣는다. e.g. 버퍼오버플로우를 방지하기 위해서 `버퍼의 사이즈가 정확한가?`를 `un-exploitability property`로 전달한다. 만약 `Violation of Safety` 결과가 나올 경우, 어떤 입력을 넣었을 때 `Exploit`이 될 수 있는지 기록한다.
+
+<br/>
+
+### (5) The Limits of Automated Proof
+
+<img src="../images/security-engineering-7-implementation-assurance-9.5.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+암호 알고리즘을 구현한 코드들을 기본적으로 수학적인 기호를 많이 포함하고 있다. 그리고 state가 매우 한정적이다. 
+
 
