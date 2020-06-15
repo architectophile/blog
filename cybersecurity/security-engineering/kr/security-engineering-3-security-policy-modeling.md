@@ -2,117 +2,173 @@
 
 <br/>
 
-보안 요구사항을 모두 도출하였으면, `보안 요구사항(security requirements)`의 `정형화 명세(formal representation)`를 만들어야 한다.  
+`보안 요구사항(security requirements)`을 모두 도출하였으면, `보안 요구사항`의 `정형화 명세(formal representation)`를 만들어야 한다. 
 
-`정형화 명세(formal representation)`를 작성하는 것은 보안 요구사항을 수학적으로 증명가능한 형태로 바꾸는 것이며, ***수학 기호로 표현하여 누가 해석하더라도 항상 정확하고 일관된 해석이 가능하게 된다.***
+`정형화 명세(formal representation)`를 작성하는 것은 자연어 형태로 도출된 `보안 요구사항`을 ***모호하지 않은(`unambiguous`) 형태로 기술***하기 위한 것인데, 이 때 보안 요구사항을 `수학적으로 증명`이 가능하도록, ***수학 기호로 표현하여 누가 해석하더라도 항상 정확하고 일관된 해석이 가능하게 만드는 것이다.***
 
 <br/>
 
 ## 1. Introduction to Formalization
 
-<img src="../images/security-engineering-5-security-policy-modeling-1.1.1.png?raw=true" alt="drawing" width="640"/>
+### 1) Formal Methods & IT Security
+
+<img src="../images/security-engineering-5-security-policy-modeling-1.1.1.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-SPM(Security Policy Modeling)을 제대로 하기 위해서는 `소프트웨어 공학(Software Engineering)`, `정보보안(IT Security)`, `정형화 방법(Formal Methods)`에 대한 다양한 지식이 필요하다.
+`SPM(Security Policy Modeling)`을 제대로 하기 위해서는 `소프트웨어 공학(Software Engineering)`, `정보보안(IT Security)`, `정형화 방법(Formal Methods)`에 대한 다양한 지식이 필요하다.
 
-`Formal Methods`는 어떤 소프트웨어 또는 하드웨어 제품의 설계, 개발, 검증을 위한 수학적 기반의 기술이다. 이러한 수학적 분석을 통해 제품 설계의 `reliability`와 `robustness`를 증가시킬 수 있다.
+<br/>
+
+### 2) What are Formal Methods?
+
+`Formal Methods`는 어떤 소프트웨어 또는 하드웨어 제품의 설계, 개발, 검증을 위한 `수학적 기반의(mathematically-based) 기술`이다. 이러한 수학적 분석을 통해 제품 설계의 `reliability`와 `robustness`를 증가시킬 수 있다.
 
 `Formal Methods`를 잘 사용하는 곳은 미국의 NASA(로켓의 안정적인 동작이 매우 중요함), 자동차 제조업체, 원자력 발전소 설계 업체 등이 있다.
 
 <br/>
 
-### FSPM 예시
+### 3) Realization of FSPM
 
-<img src="../images/security-engineering-5-security-policy-modeling-1.1.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-1.3.1.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
+e.g. 오직 관리자만이 어떤 객체의 접근 권한(access rights)를 변경할 수 있다. → `object y`에 대한 `access 권한`이 `x`가 `y`의 권한을 수정한 이후의 `access 권한`과 다르면 `subject x`는 `admin`이다.
+
 위의 그림은 `First Order Predicate Logic` 방법을 나타낸다.
 
-자연어로 쓰여진 보안정책을 수학적 기호를 이용해 정형화 명세로 변경한다.
-
-e.g. 오직 관리자만이 어떤 객체의 접근 권한(access rights)를 변경할 수 있다. 
+`자연어`로 쓰여진 `보안정책(Security Policy(SP))`을 `수학적 기호`를 이용해 `정형화 명세(Security Policy Model)`로 변경한다.
 
 `First Order Predicate Logic`보다 풍부한 표현이 가능한 방법으로는 `High Order Predicate Logic`이 있다.
 
 <br/>
 
-### First-Order Theories가 필요한 이유
+### 4) First Order Theories
 
-`1+1 == 1+1+0` ?
+#### (1) Why need First-Order Theories?
+
+<img src="../images/security-engineering-5-security-policy-modeling-1.4.1.1.png?raw=true" alt="drawing" width="520"/>
+
+<br/>
+
+Question : `1+1 == 1+1+0` ?
 
 - 덧셈 연산자가 자연수에 대한 더하기를 나타내는 것이라면 참이다.
 - 하지만 스트링 Concatenation일 경우에는 거짓이 된다.
 
-따라서 수학적 기호의 의미를 정확하게 정의하고 나타내는 것이 중요하다.
-
-- `Propositional Logic(PL)`
-- `First Order Logic(PL)`
-- `High Order Logic Logic(PL)`
-
-`PL < FOl < HOL`
-
-HOL로 갈수록 표현성이 높아져서 다양한 표현이 가능해진다.
+따라서 어떤 것을 기술할 때 사용되는 모든 기호는 그 의미를 정확하게 정의하고 나타내는 것이 중요하다. 이를 위해서 `PL`, `FOL`, `HOL` 등이 만들어졌다.
 
 <br/>
 
-### First Order Predicate Logic
+### 5) First-Order Predicate Logic
+
+<img src="../images/security-engineering-5-security-policy-modeling-1.5.1.1.png?raw=true" alt="drawing" width="520"/>
+
+<br/>
+
+- `Propositional Logic(PL)`: 매우 제한적인 표현성을 갖고 있음
+- `First Order Logic(PL)`: PL을 확장시킨 것
+- `High Order Logic(HOL)`
+
+`PL < FOL < HOL`
+
+`HOL`로 갈수록 ***표현성이 높아져서 다양한 표현이 가능해진다.***
+
+<br/>
 
 #### (1) Relations
 
-- `properties`: 어떤 싱글 객체의 특성을 나타낸다. e.g. Round(ball), Prime(7).
-- `n-ary relations`: 두 개 이상의 객체들의 관계를 나타낸다. e.g. Married(John, Marry), Largerthan(3, 2).
-- `functions`: 또 다른 객체를 나타내는 함수. e.g. Plus(2,3), Father(Dan).
+- `properties`: 어떤 싱글 객체의 특성을 나타낸다. e.g. `Round(ball)`, `Prime(7)`.
+- `n-ary relations`: 두 개 이상의 객체들의 관계를 나타낸다. e.g. `Married(John, Marry)`, `Largerthan(3, 2)`.
+- `functions`: 또 다른 객체를 나타내는 함수. e.g. `Plus(2,3)`, `Father(Dan)`.
 
 <br/>
 
-#### Translating English to FOL
+#### (2) (e.g.) Translating English to FOL
 
-<img src="../images/security-engineering-5-security-policy-modeling-1.1.3.png?raw=true" alt="drawing" width="640"/>
-
-<br/>
-
-### Common Criteria & SPM
-
-<img src="../images/security-engineering-5-security-policy-modeling-1.1.4.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-1.5.2.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-EAL 등급이 높을 수록 높은 보안성을 나타낸다. `EAL5` 이상을 받기 위해서는 필수적으로 `formal security policy model`이 요구된다.
-    
-<img src="../images/security-engineering-5-security-policy-modeling-1.1.5.png?raw=true" alt="drawing" width="640"/>
+#### (3) [Note] Common Criteria & SPM
+
+<img src="../images/security-engineering-5-security-policy-modeling-1.5.3.1.png?raw=true" alt="drawing" width="540"/>
 
 <br/>
 
-왼쪽에 `정형화 명세(functional requirement)`를 넣고 오른쪽에 `설계 명세(functional specification)`를 넣고 `Model Checker`에게 전달하면 요구사항을 만족하는지 판별할 수 있다.
+<br/>
+
+<img src="../images/security-engineering-5-security-policy-modeling-1.5.3.2.png?raw=true" alt="drawing" width="540"/>
 
 <br/>
 
-### First Order Theories
+<br/>
+
+<img src="../images/security-engineering-5-security-policy-modeling-1.5.3.3.png?raw=true" alt="drawing" width="540"/>
+
+<br/>
+
+`EAL 등급`이 높을 수록 높은 보안성을 나타낸다. `EAL5` 이상을 받기 위해서는 필수적으로 `formal security policy model`이 요구된다.
+
+<br/>
+
+#### (4) Example
+
+<img src="../images/security-engineering-5-security-policy-modeling-1.5.4.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+왼쪽에는 `Security Policies`를 `정형화 명세`로 표현하여 넣고 오른쪽에는 `설계도`를 넣은 다음 `Model Checker`에게 전달하면 설계가 요구사항을 만족하는지 판별할 수 있다.
+
+<br/>
+
+#### (5) Model Checking Firewall Policy Configuration
+
+<img src="../images/security-engineering-5-security-policy-modeling-1.5.5.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+<br/>
+
+<img src="../images/security-engineering-5-security-policy-modeling-1.5.5.2.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+방화벽 보안정책이 제대로 설정되었는지, 보안정책 간에 모순된 점은 없는지 자동으로 검사하는 도구를 개발하는 논문
+
+<br/>
+
+#### (6) First Order Theories
 
 - `FOL(First Order Logic)`
 - `FOT(First Order Theories)`
 
 <br/>
 
-### Formal Modeling Languages
+### 6) Formal Modeling Languages
 
-- `Informal method`: English와 같은 자연어
-- `Semiformal methods`: 다이어그램이나 표를 이용해서 좀 더 정확하게 표현하는 것(e.g. database entity relationship diagrams, UML, UMLSec, SecureUML 등)
-- `Formal methods`: 
-
-<br/>
-
-### Formal Tools
-
-<img src="../images/security-engineering-5-security-policy-modeling-1.2.1.png?raw=true" alt="drawing" width="640"/>
+- `Informal methods`: English와 같은 `자연어`
+- `Semiformal methods`: 다이어그램이나 표를 이용해서 `informal method` 보다는 좀 더 정확하게 표현하는 것(e.g. database entity relationship diagrams, UML, UMLSec, SecureUML 등)
+- `Formal methods`: 수학적인 기호로 정확하게 표현하여 증명하기 쉽도록 하는 것(e.g. Finite State Machines, Petri Nets, Z, ANNA)
 
 <br/>
 
-### Basic Ideas of Formal Methods
+### 7) Formal Tools
 
-<img src="../images/security-engineering-5-security-policy-modeling-1.3.1.png?raw=true" alt="drawing" width="840"/>
+<img src="../images/security-engineering-5-security-policy-modeling-1.7.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+어떤 `security requirement`가 주어졌을 때 이것을 `정형화 기법`을 이용해서 표현하고, `설계`가 잘 되었는지 `증명`할 수 있는 `도구들(tools)`이다.
+
+그리고 이렇게 정형화 기법을 이용해 보안정책을 수학적으로 표현하고 설계가 잘 되었는지 증명하는 방법론들은 `암호(cryptography)` 분야나 `접근통제(access control)` 분야에서 많이 발달되어 있다. 그 이유는 전통적인 보안은 기밀자료를 보호하는 것이었다. 기밀자료를 보호하는 방법은 암호화시키거나(encryption) 접근통제(access control)로 관리하는 것이다. 이것을 매우 정확하게 증명하는 것이 중요했기 때문에 `암호(cryptography)` 분야나 `접근통제(access control)` 분야에서 가장 잘 발달하였다.
+
+<br/>
+
+### 8) Basic Ideas of Formal Methods
+
+<img src="../images/security-engineering-5-security-policy-modeling-1.8.1.1.png?raw=true" alt="drawing" width="840"/>
 
 <br/>
 
@@ -120,34 +176,35 @@ EAL 등급이 높을 수록 높은 보안성을 나타낸다. `EAL5` 이상을 �
 
 <br/>
 
-#### `Formal Model`의 장점
+### 9) Main Benefits of Formal Model
 
-`Formal Method`를 사용하면 내가 설계한 디자인이 보안정책을 만족하는지 수학적으로 증명할 수 있다는 것이 장점이다.
-
-<br/>
-
-#### Two Different Styles of Formal Methods
-
-- `Formal Specification`: 어떤 문장이 있을 때 수학적 기호로 바꿔 정형화 명세를 만드는 것(UK와 유럽에서 많이 연구함 → 비용이 많이 들지 않는다.)
-- `Formal Verification`: 내가 만든 정형화 명세가 제대로 만들어졌는지 검증하고, 내가 만든 제품이 정형화 명세를 만족하는지 검사하는 것이다(미국과 캐나다에서 많이 연구함 → 검증 툴이 필요하므로 비용이 많이 들어간다.)
-
-둘 중에서 `Formal Specification`이 ***더욱 창의적인 작업이다.*** 대신 `Formal Verification`은 사람이 직접 하거나 컴퓨터가 자동으로 할 수 있다. 하지만 `Formal Specification`은 자동화하기가 매우 어렵다.
-
-<img src="../images/security-engineering-5-security-policy-modeling-1.3.2.png?raw=true" alt="drawing" width="720"/>
+`Formal Method`를 사용하면 내가 설계한 디자인이 보안정책을 만족하는지 `수학적으로 증명`할 수 있다는 것이 장점이다.
 
 <br/>
 
-`Threat Modeling`을 통해 작성한 보안정책인 `Security Properties`를 `Formal Specification`을 이용해서 수학적 기호로 표현한다. 그 다음 내가 만든 실제 시스템 `Actual System`을 모델링(또는 추상화)한 다음 수학적 기호로 표현하여 `System Representation`를 작성한다. 그 다음 `Formal Verification`을 통해 실제 시스템에 보안정책을 만족하는지 검증한다.
+### 10) Two Different Styles of `Formal Methods`
 
-그리고 `Security Properties` 뿐만 아니라 내가 구현하고자 하는 기능에 대한 `Functional Properties`에 대한 검증도 가능하다.
+- `Formal Specification`: 어떤 문장이 있을 때 수학적 기호로 바꿔 `정형화 명세`를 만드는 것(UK와 유럽에서 많이 연구함 → 비용이 많이 들지 않는다.)
+- 
+- `Formal Verification`: 내가 만든 `정형화 명세`가 제대로 만들어졌는지 검증하고, 내가 만든 제품이 `정형화 명세`를 만족하는지 검사하는 것이다(미국과 캐나다에서 많이 연구함 → 검증 툴이 필요하므로 비용이 많이 들어간다.)
+
+둘 중에서 `Formal Specification`이 ***더욱 창의적인 작업이다.*** `Formal Specification`은 자동화하기가 매우 어렵다. 하지만 `Formal Verification`은 사람이 직접 하거나 컴퓨터가 자동으로 할 수 있다.
+
+<img src="../images/security-engineering-5-security-policy-modeling-1.10.1.1.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
-#### Security Properties  
+`Threat Modeling`을 통해 작성한 보안정책인 `Security Properties`를 `Formal Specification`을 이용해서 수학적 기호로 표현한다. 그 다음 내가 만든 실제 시스템(e.g. C로 만든 프로그램) `Actual System`을 모델링(또는 추상화)한 다음 수학적 기호로 표현하여 `System Representation`를 작성한다. 그 다음 `Formal Verification`을 통해 실제 시스템에 보안정책을 만족하는지 검증한다.
+
+그리고 보안 요구사항(`Security Properties`) 뿐만 아니라 내가 구현하고자 하는 기능 요구사항(`Functional Properties`)에 대한 검증도 가능하다.
+
+<br/>
+
+#### (1) Security Properties  
 
 - `Confidentiality`, `Integrity`, and `Availability`: 기밀성, 무결성, 가용성 (이 중에서 `Availability`는 증명하기가 매우 어렵다.)
 - `Non-interference`: 관리자 권한을 가진 사용자가 어떤 작업을 수행했을 때 이와 관련된 정보가 권한이 없는 일반 사용자에게 노출되면 안되다.
-- `Isolation`: 한 쪽에서 하는 일이 다른 쪽에 영향을 끼치면 안된다. `Non-interference`와 비슷하지만 `Isolation`은 동등한 권한을 가진 사용자끼리 서로 분리되어야 한다는 것이다.(e.g. CPU칩에서 Spectre, Melt Down과 같은 부채널 공격을 통해 다른 사용자의 데이터를 읽어낼 수 있다.)
+- `Isolation`: 한 쪽에서 하는 일이 다른 쪽에 영향을 끼치면 안된다. `Non-interference`와 비슷하지만 `Isolation`은 `동등한 권한`을 가진 사용자끼리 서로 분리되어야 한다는 것이다.(e.g. CPU칩에서 Spectre, Melt Down과 같은 부채널 공격을 통해 다른 사용자의 데이터를 읽어낼 수 있다.)
 - `Information Flow`: 정보의 흐름에 있어서 문제가 생기는 것을 찾는 것이다.
 - `Type and Memory Safety`: 데이터가 복사될 때 같은 타입의 변수인지 검사하는 것과 메모리 접근이 안전하게 보장되는지 검사한다(e.g. Buffer Overflow를 방지하는 것).
 - `Memory Integrity`, and `Execution and Code Integrity`: 메모리에 올라간 프로그램이 허용되지 않은 사용자에 의해 수정되는 것을 막는 것과 프로그램 실행시 코드 무결성을 보장하는 것이다.
@@ -156,9 +213,9 @@ EAL 등급이 높을 수록 높은 보안성을 나타낸다. `EAL5` 이상을 �
 
 <br/>
 
-### History
+### 11) History - Past
 
-`NSA(National Security Agency)`가 `Formal Methods`에 대한 중요성을 인식하고 ***70, 80년대에 많이 연구하고 개발하였다.*** 이 때 Operating System에 multi user 기능이 추가되면서 보안 위협에 위험성을 인식하였다. 따라서 특히 NSA는 시스템의 보안이 매우 중요한 기관이므로 OS의 `Kernel`에 대한 `Formal Methods` 연구를 많이 하게 되었다.
+`NSA(National Security Agency)`가 `Formal Methods`에 대한 중요성을 인식하고 ***70, 80년대에 많이 연구하고 개발하였다.*** 이 때 `Operating System`에 `multi user` 기능이 추가되면서 보안 위협에 위험성을 인식하였다. 따라서 특히 NSA는 시스템의 보안이 매우 중요한 기관이므로 OS의 `Kernel`에 대한 `Formal Methods` 연구를 많이 하게 되었다. 이를 이용해 보안 운영체제를 만들기 위해 노력하였다.
 
 - `Bell-LaPadula` model: `Bell`과 `LaPadula` 수학자들이 최초로 많이 연구하였다(`Information Flow` property를 주로 연구함).
 
@@ -168,7 +225,7 @@ EAL 등급이 높을 수록 높은 보안성을 나타낸다. `EAL5` 이상을 �
 
 <br/>
 
-#### The Orange Book
+#### [Note] The Orange Book
 
 최초의 `보안 운영체제`에 대한 평가 기준이다. NCSC에서 1985년에 작성하였다. 
 
@@ -182,19 +239,19 @@ D가 가장 낮은 등급이고, A2가 가장 높은 등급이다.
 
 <br/>
 
-### Model Checking
+### 12) Model Checking
 
 `SSL` 프로토콜은 설계의 안전성을 수학적으로 증명가능하다. `IKE(Internet Key Exchange)` 프로토콜과 `SET(Secure Electronic Transaction)` 프로토콜도 수학적으로 증명가능하다.
 
 <br/>
 
-### The Limits of Formal Methods
+### 13) The Limits of Formal Methods
 
-보안 요구사항을 수학적으로 증명하는 것은 ***해당 Security Property를 증명했다는 것 뿐이다.*** 따라서 나머지 증명되지 않은 Security Property에 의해서 취약점이 발생할 수 있다. 그러므로 보안 요구사항을 매우 상세하게 도출하는 것이 중요하다.
+`보안 요구사항`을 `Formal Methods`를 이용하여 `수학적으로 증명`하는 것은 ***해당 `Security Property`를 증명했다는 것 뿐이다.*** 따라서 나머지 증명되지 않은 Security Property에 의해서 취약점이 발생할 수 있다. ***그러므로 보안 요구사항을 매우 상세하게 도출하는 것이 중요하다.***
 
-보안 요구사항은 제대로 도출했지만 Formal Specification 과정에서 실수가 있으면 수학적 증명이 실패할 수도 있다. 또는 기존에 알려진 Assumption이 깨질 경우 취약점이 발생할 수 있다.
+`보안 요구사항`은 제대로 도출했지만 이를 수학적 기호로 표현하는 `Formal Specification` 과정에서 오류가 있으면 수학적 증명이 실패할 수도 있다. 또는 기존에 알려진 Assumption이 깨질 경우 취약점이 발생할 수 있다.
 
-<img src="../images/security-engineering-5-security-policy-modeling-1.4.1.png?raw=true" alt="drawing" width="720"/>
+<img src="../images/security-engineering-5-security-policy-modeling-1.13.1.1.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
@@ -204,41 +261,51 @@ D가 가장 낮은 등급이고, A2가 가장 높은 등급이다.
 
 <br/>
 
-### Security Policy Model
+## 2. Security Policy Modeling
 
-- `Security Policy`: 자연어로 적어놓은 보안 정책을 의미함
-- `Security Policy Model`: `Security Policy`을 정형화 명세 방법으로 수학적 기호 형태로 표현하는 것(넓은 의미에서는 Formal Verification 단계까지 포함)
+### 1) Security Policy
+
+어떤 것을 어떻게 지켜야하는지 자연어로 기술해놓은 요구사항들
 
 <br/>
 
-### Security Policy Assurance
+### 2) Security Policy Model (SPM)
 
-`Security Policy Assurance`는 `Security Requirements` 간에 모순이 없는지 검사하고, 제대로된 수학적 기호를 통해 표현되었는지 검사하는 것이다.
+- `Security Policy`: 자연어로 적어놓은 보안 정책을 의미함
+- `Security Policy Model`: `Security Policy`를 정형화 명세(`formal specification`) 방법으로 수학적 기호 형태로 표현하는 것(넓은 의미에서는 거기에 덧붙여서 해당 정형화 명세가 제대로 되었는지 증명하는 `formal verification` 단계까지 포함)
+
+<img src="../images/security-engineering-5-security-policy-modeling-2.2.1.1.png?raw=true" alt="drawing" width="720"/>
+
+<br/>
+
+### 3) Security Policy Assurance
+
+`Security Policy Assurance`는 `Security Requirements` 간에 ***모순이 없는지 검사***하고, 제대로된 수학적 기호를 통해 표현되었는지 검사하는 것이다.
 
 e.g. 운영체제를 접속할 수 있는 사람은 3명이다. 관리자는 2명 이상이다. 사용자는 2명이다. → `Security Requirements`에 모순이 있다.
 
 1. 보안 요구사항이 정확한지 확인한다(모순 검사).
-2. 보안 요구사항이 모두 제대로 도출되었는지(complete) 검사한다. → 검증하기가 매우 어렵다. → 체계적인 보안 요구사항 도출 방법을 사용한 것을 보임으로써 증명을 대체하곤 한다.
-3. 보안 요구사항이 테스트 가능한지 검사한다.
-4. 설계에 잘 반영되었는지 확인한다.
+2. 보안 요구사항이 모두 제대로 도출되었는지(complete) 검사한다. → 검증하기가 매우 어렵다. → 체계적인 보안 요구사항 도출 방법(e.g. `threat risk modeling`)을 사용한 것을 보임으로써 증명을 대체하곤 한다.
+3. 보안 요구사항이 완벽한 수학적 기호로 표현되어서 나중에 디자인 검증이나 코드 검증에 사용 가능한지(testable) 검사한다.
+4. 보안 요구사항이 설계까지 잘 반영되었는지 확인한다.
 
 <br/>
 
-### In 1967
+### 4) In 1967
 
-`time-sharing computer system`이 1967년에 만들어지면서 보안 운영체제에 대한 요구가 발생했다. NSA의 `Benard Peters`가 보안 운영체제에 대한 요구사항을 얘기했다.
+`time-sharing computer system`이 1967년에 만들어지면서 `보안 운영체제`에 대한 요구가 발생했다. `NSA`의 `Benard Peters`가 `보안 운영체제`에 대한 `요구사항`을 다음과 같이 얘기했다.
 
-- O/S는 모니터링 시스템이 있어서 운영체제에서 발생하는 모든 이벤트를 검사해야 한다(훗날에 감시 프로그램을 `Reference Monitor`라고 이름붙였다.)
+1. O/S는 모니터링 시스템이 있어서 운영체제에서 발생하는 모든 이벤트를 검사해야 한다(훗날에 감시 프로그램을 `Reference Monitor`라고 이름붙였다.)
 
-- 감시 프로그램(`Reference Monitor`)은 매우 중요하기 때문에 이 프로그램의 안전성이 ***수학적으로 증명되어야 한다.*** `Assurance Level`이 높아야 한다. → `Simple`하게 만들어야 한다. → `Assurance` 증가
+2. 감시 프로그램(`Reference Monitor`)은 매우 중요하기 때문에 이 프로그램의 안전성이 ***수학적으로 증명되어야 한다.*** 따라서 `Assurance Level`이 높아야 한다. → `Simple`하게 만들어야 한다. → `Assurance` 증가
 
-- 평가인증 제도를 통해서 시스템에 대한 보안성 인증을 받아야 한다.
+3. `평가인증 제도`를 통해서 시스템에 대한 보안성 인증을 받아야 한다(평가인증 제도 개념의 시작이다.)
 
 <br/>
 
-### In 1972
+### 5) In 1972
 
-`James P. Anderson`은 미국 정부의 컴퓨터 시스템에 필요한 보안 요구사항을 정립하였다(`James P. Anderson Report`).
+`James P. Anderson`은 미국 정부의 컴퓨터 시스템에 필요한 `보안 요구사항`을 정립하였다(`James P. Anderson Report`).
 
 1. 컴퓨터 시스템에는 `RVM`(Reference Validation Mechanism)이 있어서 모든 이벤트를 감시해야 한다(`complete mediation`).
 
@@ -248,51 +315,71 @@ e.g. 운영체제를 접속할 수 있는 사람은 3명이다. 관리자는 2�
 
 <br/>
 
-`Anderson Report`에서는 `small`을 사용했지만 → `TCSEC`에서는 `simple`로 바뀌었다. → 단순히 작게 만든다고 복잡도가 낮아지지 않고 오히려 복잡도가 높아질 수 있다. 따라서 시스템은 `simple`해야 분석이 잘 되어서 `complexity`가 낮아진다. → `모듈화`의 필요성
+#### [Note] Modified RVM Prescriptions
 
-<img src="../images/security-engineering-5-security-policy-modeling-1.5.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-2.5.2.1.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
-### Reference Monitor
+`Anderson Report`에서는 `small`을 사용했지만 → `TCSEC`에서는 `simple`로 바뀌었다. → 단순히 작게 만든다고 복잡도가 낮아지지 않고 오히려 복잡도가 높아질 수 있다. 따라서 시스템은 `simple`해야 분석이 잘 되어서 `complexity`가 낮아진다. → `모듈화`의 필요성
+
+<br/>
+
+### 6) Reference Monitor
+
+<img src="../images/security-engineering-5-security-policy-modeling-2.6.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+`Reference Monitor`는 사용자들이 자원에 접근할 때 중간에서 모든 것을 감시하고 관리한다(인증(`authentication`)과, 권한관리(`authorization`) 담당).
 
 - `Reference Monitor`: 접근제어 개념
-- `Security Kernel`: `Reference Monitor`을 실제 구현한 것
+- `Security Kernel`: `Reference Monitor`을 실제 구현한 것(`implementation`)
 - `TCB(Trusted Computing Base)`: `Security Kernel` + 기타 보안 메커니즘들(`Security Kernel`만으로는 부족하다는 것을 느꼈기 때문에)
 
 <br/>
 
-## 2. Access Control Policy
+## 3. Access Control Policy
 
-운영체제는 접근 통제 기능이 매우 많아서 `Access Control Policy`에 대한 보안 정책이 Formal하게 증명되기 시작했다.
+`운영체제`는 접근통제(`access control`) 기능이 매우 많고 중요하다. 따라서 여러가지 보안정책 중에서 `access control`에 대한 보안정책이 먼저 Formal하게 기술되고 증명되기 시작했다.
 
-- `Authentication`: 신원을 검증(proving)하는 것(e.g. ID, PW 로그인 인증)
-- `Identification`: 주체의 신원을 구축하는(establishing) 것(e.g. 경찰에서 증거 지문을 채취하여 범인의 신원을 알아내는 것)
-- `Authorization`: 신원이 확인된 사용자가 어떤 권한을 갖고 있는지 확인하고 그에 맞는 권한을 관리하는 것
-
-### (1) DAC Model
-
-<img src="../images/security-engineering-5-security-policy-modeling-2.1.1.png?raw=true" alt="drawing" width="640"/>
+- `Authentication`: 신원을 검증(proving)하는 것(e.g. ID, PW 로그인 인증). 1:1 매칭
+- `Identification`: 주체의 신원을 구축하는(establishing) 것(e.g. 경찰에서 증거 지문을 채취하여 범인의 신원을 알아내는 것). 1:n 매칭
+- `Authorization`: Authentication이든, Identification이든 어떤 사용자의 신원이 확인되면, 해당 사용자가 어떤 권한을 갖고 있는지 확인하고 그에 맞는 권한을 관리하는 것
 
 <br/>
 
-`DAC(Discretionary Access Control) Model`은 임의적 접근통제이며, 일반적으로 사용자의 ID, 또는 사용자의 그룹 ID에 따라 접근을 통제하는 것이다.  
-좀 더 정확하게 얘기하면, 해당 파일에 소유자의 판단에 따라서 접근 권한을 통제하는 것이다.  
+### 1) DAC Model
+
+<img src="../images/security-engineering-5-security-policy-modeling-3.1.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+`DAC(Discretionary Access Control) Model`은 `임의적 접근통제`이며, 일반적으로 사용자의 ID, 또는 사용자의 그룹 ID에 따라 접근을 통제하는 것이다.  
+좀 더 정확하게 얘기하면, ***해당 파일의 `소유자(owner)`의 판단에 따라서 임의대로 접근 권한을 통제하는 것이다.***  
 `needs-to-know` 원칙에 따라 정보를 보호한다. 누가 알아야 하는지는 파일의 `소유주(owner)`가 권한을 관리한다.
 
-대표적인 `DAC`를 사용하는 시스템은 유닉스 또는 리눅스이다.
+<br/>
 
-<img src="../images/security-engineering-5-security-policy-modeling-2.1.2.png?raw=true" alt="drawing" width="640"/>
+#### DAC Model Example
+
+대표적인 `DAC`를 사용하는 시스템은 `유닉스` 또는 `리눅스`이다.
+
+<img src="../images/security-engineering-5-security-policy-modeling-3.1.2.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-`DAC`를 사용하면 시스템의 유연성이 매우 좋다. 왜냐하면 소유주가 자유롭게 접근 권한을 변경할 수 있기 때문이다(e.g. `chmod` 명령).
+`DAC`를 사용하면 시스템의 `유연성`이 매우 좋다. 왜냐하면 `소유주`가 자유롭게 접근 권한을 변경할 수 있기 때문이다(e.g. `chmod` 명령).
 
 <br/>
 
-#### DAC 시스템의 문제
+#### DAC Model Weaknesses
 
-<img src="../images/security-engineering-5-security-policy-modeling-2.1.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.1.3.1.png?raw=true" alt="drawing" width="480"/>
+
+<br/>
+
+<img src="../images/security-engineering-5-security-policy-modeling-3.1.3.2.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
@@ -301,28 +388,28 @@ e.g. 운영체제를 접속할 수 있는 사람은 3명이다. 관리자는 2�
 
 <br/>
 
-### (2) MAC Model(Non-DAC Model)
+### 2) MAC Model(Non-DAC Model)
 
-<img src="../images/security-engineering-5-security-policy-modeling-2.2.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.0.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-`MAC(Mandatory Access Control) Model`은 주로 군에서 사용한다. `DAC`와 다르게 접근권한 레벨에 따라서 강제적 접근통제를 할 수 있다. 모든 자원에는 권한 레벨이 설정되어 있고, 해당 사용자의 신원을 인증하여 자원에 부여된 권한 레벨 이상일 때만 접근을 허용하는 방식이다. 따라서 사용자는 자신의 권한을 다른 사용자에게 양도할 수 없으므로 해당 권한이 없는 사용자는 강제적으로 접근이 통제된다.  
+`MAC(Mandatory Access Control) Model`은 주로 군에서 사용한다. `DAC`와 다르게 접근권한 레벨에 따라서 `강제적 접근통제`를 할 수 있다. 모든 자원에는 권한 레벨이 설정되어 있고, 해당 사용자의 신원을 인증하여 자원에 부여된 권한 레벨 이상일 때만 접근을 허용하는 방식이다. 따라서 ***사용자는 자신의 권한을 다른 사용자에게 양도할 수 없으므로*** 해당 권한이 없는 사용자는 `강제적으로 접근이 통제`된다.  
 이 때 각 `subject`와 `object`들은 `security label`이 붙어있어 해당하는 보안 권한 레벨을 알 수 있다.
 
 <br/>
 
-#### MAC Model의 종류
+#### (1) Types of MAC Models
 
-- `MLS(Multi-Level Security`
+- `MLS(Multi-Level Security)`
 - `BLP(Bell-LaPadula)`
 - `LBAC(Lattice-Based Access Control)`
 
 <br/>
 
-#### 전통적인 MAC
+#### (2) MAC : Traditional Model
 
-<img src="../images/security-engineering-5-security-policy-modeling-2.2.2.png?raw=true" alt="drawing" width="320"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.2.1.png?raw=true" alt="drawing" width="320"/>
 
 <br/>
 
@@ -330,47 +417,49 @@ e.g. 운영체제를 접속할 수 있는 사람은 3명이다. 관리자는 2�
 
 <br/>
 
-<img src="../images/security-engineering-5-security-policy-modeling-2.2.3.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.2.2.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-`최소 권한의 원칙`을 지키기 위해서는 `구역` 개념을 부여하여 접근 권한을 통제해야 한다는 요구가 발생한다.
+`최소 권한의 원칙`을 지키기 위해서는 접근 레벨(clearance level)뿐만 아니라 `구역(compartment)` 개념을 부여하여 접근 권한을 통제해야 한다는 요구가 발생한다.
 
 <br/>
 
-#### MLS Model
+#### (3) MAC : MLS Model
 
 `MLS(Multi-Level Security)` 방식은 `needs-to-know` 정책과 `categories(partially ordered)` 개념, 그리고 lattices의 `security levels(linearly ordered)` 개념을 결합한 것이다.  
 최최의 MLS을 시스템을 적용한 제품은 `IBM`에서 개발한 `ADEPT-50` 모델이다.
 
 `linearly ordered`: 계층적으로 보안 레벨을 나누어 접근 권한을 통제하는 것이다.
-`partially ordered`: 집합처럼 구역을 나누어서 접근 권한을 통제하는 것이다. 집합에서 부분집합과 같은 개념이다(`Category(Compartment)`의 개념).
-
-#### How to Design MLS Model?
-
-<img src="../images/security-engineering-5-security-policy-modeling-2.2.4.png?raw=true" alt="drawing" width="640"/>
+`partially ordered`: 집합처럼 구역을 나누어서 접근 권한을 통제하는 것이다. 집합에서 부분집합과 같은 개념이다(`Category(Compartment)`의 개념). 부분적으로만 순서가 정렬되어있다. subset relation
 
 <br/>
 
-하지만 위에 설계가 MLS 정책을 만족하는지 수학적으로 증명할 수 있어야 한다. 이를 위해서는 MLS 정책들이 수학적 기호로 표현되어야 한다.
+#### (4) How to Design MLS Model?
+
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.4.1.png?raw=true" alt="drawing" width="640"/>
+ 
+<br/>
+
+하지만 위에 설계가 MLS 정책을 만족하는지 `수학적으로 증명`할 수 있어야 한다. 이를 위해서는 MLS 정책들이 ***`수학적 기호`로 표현되어야 한다.***
 
 <br/>
 
-#### BLP Model of MLS
+#### (5) BLP Model of MLS
 
 1973년에 MITER의 `Bell`과 `LaPadula`는 기존의 `Tiger Teams`이 하는 모의해킹 방식(`penetrate and patch`)의 한계를 인식하고 제대로 보안성을 검증하기 위해서는 ***수학적 증명이 필요하다는 주장을 제기한다.***
 
-`BLP(Bell LaPadula Policy) Model`은 MLS 보안정책을 최초로 수학적으로 정의한 것이다. → `High Policy Assurance`를 제공한다.
+`BLP(Bell LaPadula Policy) Model`은 **MLS 보안정책을 최초로 수학적으로 정의한 것이다.** → `High Policy Assurance`를 제공한다.
 
 - `Information Flow Policy`: 정보는 덜 신뢰할 수 있는 주체로부터 더 신뢰할 수 있는 주체로만 흘러야 한다.
 
 <br/>
 
-<img src="../images/security-engineering-5-security-policy-modeling-2.2.5.png?raw=true" alt="drawing" width="640"/>
-
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.5.1.png?raw=true" alt="drawing" width="640"/>
+ 
 <br/>
 
-기존의 `MLS` 방식은 매우 정적인 방식이다. 위의 왼쪽 그림처럼 `Unclassified` 정보가 `Top Secret` 정보에 쓰여지는 것은 괜찮지만, 오른쪽 그림처럼 `Top Secret` 정보가 `Unclassified`로 흘러가는 것은 문제가 발생한다. ***하지만 MLS 방식에서는 이를 방지하지 못한다.*** → 따라서 MLS 처럼 자연어로 기술된 정책은 문제가 있으므로 수학적 기호로 표현할 수 있어야 한다고 주장한다.
+기존의 `MLS` 방식은 매우 정적인 방식이다. 위의 왼쪽 그림처럼 `Unclassified` 정보가 `Top Secret` 정보에 쓰여지는 것은 괜찮지만, 오른쪽 그림처럼 `Top Secret` 정보가 `Unclassified`로 흘러가는 것은 문제가 발생한다. ***하지만 MLS 방식에서는 이를 방지하지 못한다.*** → 따라서 MLS 처럼 자연어로 기술된 정책은 문제가 있으므로 ***수학적 기호로 표현할 수 있어야 한다고 주장했다.***
 
 <br/>
 

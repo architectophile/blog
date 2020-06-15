@@ -4,7 +4,7 @@
 
 ## 1. Threat Risk Modeling
 
-### (1) What Is Threat Modeling?
+### 1) What Is Threat Modeling?
 
 `보안공학`은 아래의 제품을 개발하는 전체 생명주기 과정을 어떻게 진행해야 하는지 배우는 학문이다.
 
@@ -21,7 +21,7 @@
 
 <br/>
 
-### (2) What Is Modeling?
+### 2) What Is Modeling?
 
 `모델링(Modeling)`이란 `추상화(Abstraction)`와 동일한 의미이다. 어떤 대상 시스템을 분석하려고 할 때 취약점은 어떤 것이 있고 어디에 위협이 발생할 수 있는지 파악하여 보안대책을 수립할 수 있어야 한다. 하지만 현실의 대상 시스템은 굉장히 복잡하거나 보안과는 상관없는 부분이 있을 수 있다. 따라서 대상 시스템에서 우리에게 ***필요한 정보만 추출하는 것을*** `추상화` 또는 `모델링`한다고 말한다. 그리고 모델링을 통해 도출된 모델을 대상으로 분석(`Model Analysis`)한다.
 
@@ -37,7 +37,7 @@
 
 <br/>
 
-### (3) Threats
+### 3) Threats
 
 - `Vulnerability`: 소프트웨어가 가진 결함
 - `Threat`: 자산에 대해 위험을 유발할 수 있는 잠재적인 위협
@@ -47,7 +47,7 @@
 
 <br/>
 
-### (4) Types of Threats
+### 4) Types of Threats
 
 - `Social Threats`: 사람에 의해 발생하는 위협
 - `Operational Threats`: 운영 정책의 실패로 인해 발생하는 위협
@@ -56,7 +56,7 @@
 
 <br/>
 
-### (5) Why Threat Modeling?
+### 5) Why Threat Modeling?
 
 일반적인 소프트웨어 공학에서는 `랜덤한 자연적인 오류`를 주로 다루지만 `보안공학`에서는 랜덤한 자연적인 오류 외에도 ***해커 등에 의한 의도적인(intentional) 공격도 다룬다.*** 
 
@@ -64,7 +64,7 @@
 
 <br/>
 
-### (6) Threat Modeling Overview
+### 6) Threat Modeling Overview
 
 일반적으로 보안 요구사항을 분석할 때 우리는 `기능적 보안 요구사항`(functional security requirements)만을 생각하는 경우가 많다(e.g. 암호화 기능, 메모리 보호 기능 등).
 
@@ -104,7 +104,7 @@
 
 <br/>
 
-### (7) Threat Modeling Steps
+### 7) Threat Modeling Steps
 
 1. 요구사항을 분석할 시스템의 `범위(Scope)`를 결정하고 `System Boundary`를 설정해야 한다.
 2. 보호해야 할 `자산(Assets)`을 식별한다.
@@ -125,7 +125,7 @@
 
 <br/>
 
-### (8) Types of Diagrams
+### 8) Types of Diagrams
 
 #### Types:
 - DFDs (Data Flow Diagrams)
@@ -155,7 +155,7 @@
 
 ## 2. Data Flow Diagrams
 
-### (1) DFD (Data Flow Diagram)
+### 1) DFD (Data Flow Diagram)
 
 By `Larry Constantine` in 1967
 
@@ -190,7 +190,7 @@ By `Larry Constantine` in 1967
 
 <br/>
 
-### (2) Basic Rules Governing DFD
+### 2) Basic Rules Governing DFD
 
 1. `DFD`를 그릴 때는 시스템의 필요한 모든 `컴포넌트(component)`가 포함되어야 한다. 이것을 `완전성(Completeness)`이라고 한다.
 
@@ -224,7 +224,7 @@ By `Larry Constantine` in 1967
 
 <br/>
 
-### (3) Control Analysis
+### 3) Control Analysis
 
 `DFD`를 그린 후에 각 컴포넌트에 대해 정리해놓는다.
 
@@ -234,7 +234,7 @@ By `Larry Constantine` in 1967
 
 ## 3. Identification of Assets
 
-### (1) Identification of Assets
+### 1) Identification of Assets
 
 <img src="../images/security-engineering-4-threat-risk-modeling-3.1.1.1.png?raw=true" alt="drawing" width="640"/>
 
@@ -246,7 +246,7 @@ By `Larry Constantine` in 1967
 
 ## 4. Determine Threats
 
-### (1) Information Assurance Threats
+### 1) Information Assurance Threats
 
 <img src="../images/security-engineering-4-threat-risk-modeling-4.1.1.1.png?raw=true" alt="drawing" width="720"/>
 
@@ -254,7 +254,7 @@ By `Larry Constantine` in 1967
 
 `Threat Modeling`에서는 `STRIDE` 기법을 통해 주로 `Intentional action or inaction`과 `Security` 부분에 중점을 두고 분석한다.
 
-### (2) Determine Threats
+### 2) Determine Threats
 
 만약 회사에 전문가들만 있다면 `brainstorming`이나 기타 `informal methods`를 이용해 위협을 식별할 수 있다.
 
@@ -264,7 +264,7 @@ By `Larry Constantine` in 1967
 
 <br/>
 
-### (3) MS’s STRIDE Threat Model
+### 3) MS’s STRIDE Threat Model
 
 `STRIDE 기법`은 `Loren Kohnfelder`에 의해 마이크로소프트에서 개발되었다. ***공격자의 입장에서*** 시스템의 공격 위협을 분석하는 방법론이다. 
 
@@ -309,13 +309,13 @@ By `Larry Constantine` in 1967
 
 <br/>
 
-### (4) Where to Start and End With
+### 4) Where to Start and End With
 
 <img src="../images/security-engineering-4-threat-risk-modeling-4.4.1.1.png?raw=true" alt="drawing" width="540"/>
 
 <br/>
 
-### (5) MS’s Threat Modeling Tool
+### 5) MS’s Threat Modeling Tool
 
 <img src="../images/security-engineering-4-threat-risk-modeling-4.5.1.1.png?raw=true" alt="drawing" width="720"/>
 
@@ -325,7 +325,7 @@ By `Larry Constantine` in 1967
 
 <br/>
 
-### (6) Attack Tree
+### 6) Attack Tree
 
 `DFD`를 그리고 `Attack Library`를 참조해 `STRIDE 기법`으로 모든 공격 위협들이 도출되었으면, `Attack Tree`를 사용하여 공격 시나리오를 체계적으로 도출하여 `위험도(Risks)`를 산정한다. 
 최상위 `Root 노드`가 공격자가 달성하고자 하는 `목표(goal)`이다.
@@ -347,7 +347,7 @@ By `Larry Constantine` in 1967
 
 ## 5. Rank Threats
 
-### (1) DREAD Risk Analysis Model
+### 1) DREAD Risk Analysis Model
 
 - `D`: Damage → 공격에 의해 얼마나 피해를 입을 것인가?
 - `R`: Reproducibility → 얼마나 공격을 재현하기 쉬운가(자주 발생하는가)? e.g. 만약 특정 시간에만 공격이 가능하다면 위험도가 낮아짐. 만약 아무때나 공격이 가능하다면 위험도가 3이다.
@@ -371,7 +371,7 @@ By `Larry Constantine` in 1967
 
 <br/>
 
-### (2) Risk Assessment
+### 2) Risk Assessment
 
 <img src="../images/security-engineering-4-threat-risk-modeling-5.2.1.1.png?raw=true" alt="drawing" width="520"/>
 
@@ -385,7 +385,7 @@ By `Larry Constantine` in 1967
 
 ## 6. LINDDUN Model
 
-### (1) LINDDUN Model
+### 1) LINDDUN Model
 
 <img src="../images/security-engineering-4-threat-risk-modeling-6.1.1.1.png?raw=true" alt="drawing" width="720"/>
 
@@ -395,7 +395,7 @@ By `Larry Constantine` in 1967
 
 <br/>
 
-### (2) LINDDUN Model
+### 2) LINDDUN Model
 
 `LINDDUN` 기법(공격자 관점)
 
@@ -409,7 +409,7 @@ By `Larry Constantine` in 1967
 
 <br/>
 
-`LINDDUN` 기법에 상반되는 기념(방어자 관점)
+`LINDDUN` 기법에 상반되는 개념(방어자 관점)
 
 - `Unlinkability`: 어떤 두 트랜잭션이 발생했을 때 두 개가 모두 동일인물이 생성한 트랜잭션인지 알 수 없게 하는 것
 - `Anonymity & Pseudonymity`: 익명성, 가명성 → 가명성은 깨질 수도 있음. 익명성은 아예 신원을 노출시키지 않아 더욱 강력함
@@ -419,7 +419,7 @@ By `Larry Constantine` in 1967
 - `Content Awareness`
 - `Policy and Consent Compliance`
 
-### (3) LINDDDUN Methodology Step
+### 3) LINDDDUN Methodology Step
 
 <br/>
 
@@ -431,11 +431,9 @@ By `Larry Constantine` in 1967
 
 <br/>
 
-### (3) 
-
 ## 7. Responses to Risk
 
-### (1) Risk Mitigation
+### 1) Risk Mitigation
 
 모든 위협을 도출하고 위험도를 분석한 이후에는 해결책을 도출해야 한다.
 
@@ -454,13 +452,13 @@ By `Larry Constantine` in 1967
 
 <br/>
 
-### (2) Risk Management
+### 2) Risk Management
 
 위험 관리 대책을 결정하기 위한 가장 쉬운 방법은 `비용(expenditure)`대비 효과를 계산하는 것이다. 4가지 방법에 대한 필요한 비용과 효과를 계산한다. 하지만 이 때 중요한 것은 4가지 방법에 대한 ***비용대비 효과를 정확하게 계산할 수 있어야 한다는 점이다.*** 이것을 `보안 경제학(security economics)`이라고 한다.
 
 <br/>
 
-### (3) Iterate
+### 3) Iterate
 
 `Risk Management`까지 완료했다고 해서 끝나는 것이 아니고, 해당 위험 대책을 적용한 후에는 ***처음으로 돌아가서 새롭게 변경된 `DFD`의 분석과 `Threat Risk Modeling`부터 다시 해야한다.*** 이러한 과정을 `반복(iterate)`해야 한다.
 
@@ -476,7 +474,7 @@ By `Larry Constantine` in 1967
 
 ## 9. Case Studies 
 
-### (1) enisa
+### 1) enisa
 
 <img src="../images/security-engineering-4-threat-risk-modeling-9.1.1.1.png?raw=true" alt="drawing" width="320"/>
 

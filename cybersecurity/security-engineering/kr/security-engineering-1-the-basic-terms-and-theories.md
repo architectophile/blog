@@ -4,7 +4,7 @@
 
 ## 1. Security Engineering
 
-### (1) Cryptographer vs. Cryptanalyst
+### 1) Cryptographer vs. Cryptanalyst
 
 <img src="../images/security-engineering-1-the-basic-terms-and-theories-1.1.1.1.png?raw=true" alt="drawing" width="480"/>
 
@@ -32,14 +32,14 @@
 
 <br/>
 
-### (2) The Limits of Penetration Testing
+### 2) The Limits of Penetration Testing
 
 `모의해킹`을 통해 취약점을 찾아낼 수 있다. 하지만 ***보안 취약점을 발견하지 못했다는 것이 제품의 보안 취약점이 없다는 것을 의미하는 것은 아니다.*** 그것은 단지 ***모의해킹 팀이 보안 취약점을 발견하지 못했음***을 나타낼 뿐이다.  
 따라서 우리는 `보안공학`, `SDL(Security Development Lifecycle)`과 같은 엄격한 개발 프로세스가 필요하다. 
 
 <br/>
 
-### (3) What Is Security Engineering?
+### 3) What Is Security Engineering?
 
 - `Security Engineer`를 양성하고 교육하기 위한 학문
 - 개발 프로세스를 어떻게 관리해야 안전한 제품을 만들 수 있는가를 연구하는 학문
@@ -51,7 +51,7 @@
 
 <br/>
 
-### (4) Then, We Don’t Need Pentesting?
+### 4) Then, We Don’t Need Pentesting?
 
 예를 들어 삼성전자에서 갤럭시 핸드폰을 만들더라도 그 안에 들어가는 어플리케이션을 삼성전자에서 모두 컨트롤할 수 없기 때문에 삼성에서는 폰을 만들 때 모든 어플리케이션이 최신의 안전한 버전으로 업데이트되었다고 조건을 전제로 제품을 만들게 된다. 하지만 출시 전에 해당 `전제 조건`이 성립하지 않아서 문제를 일으키는 경우가 있다.
 ***따라서 `보안공학`을 잘 적용하여 제품을 만들었다고 하더라도 `모의해킹`이나 `취약점 분석`도 함께 필요하다.***
@@ -62,7 +62,7 @@ Tiger Teams의 `모의해킹`을 통해 보안성을 높이려고 했지만 한�
 
 <br/>
 
-### (5) Evolution of Security Engineering
+### 5) Evolution of Security Engineering
 
 <img src="../images/security-engineering-1-the-basic-terms-and-theories-1.5.1.1.png?raw=true" alt="drawing" width="640"/>
 
@@ -78,7 +78,7 @@ Tiger Teams의 `모의해킹`을 통해 보안성을 높이려고 했지만 한�
 
 <br/>
 
-### (6) SDL (Security Development Lifecycle)
+### 6) SDL (Security Development Lifecycle)
 
 보안공학 프로세스를 실제로 도입하기 시작한 기업은 `Microsoft`와 `IBM`
 
@@ -94,7 +94,7 @@ Tiger Teams의 `모의해킹`을 통해 보안성을 높이려고 했지만 한�
 
 MS 홈페이지에 가면 SDL에 관련된 자료를 공유하고 있다.
 
-### (7) Cybersecurity and Vehicle Lifecycle
+### 7) Cybersecurity and Vehicle Lifecycle
 
 2015년 크리스 발라섹(Chris Valasek) 찰리 밀러(Charlie Miller)는 Wired 방송사에서 크라이슬러사의 체로키 자동차 해킹을 공개적으로 시연하였다.
 
@@ -104,7 +104,7 @@ MS 홈페이지에 가면 SDL에 관련된 자료를 공유하고 있다.
 
 <br/>
 
-### (8) Connected Vehicle CYbersecurity Volvo Group Trucks Technology
+### 8) Connected Vehicle CYbersecurity Volvo Group Trucks Technology
 
 <img src="../images/security-engineering-1-the-basic-terms-and-theories-1.8.1.1.png?raw=true" alt="drawing" width="640"/>
 
@@ -114,7 +114,7 @@ MS 홈페이지에 가면 SDL에 관련된 자료를 공유하고 있다.
 
 <br/>
 
-### (9) The DoD Cyber Strategy
+### 9) The DoD Cyber Strategy
 
 <br/>
 
@@ -141,7 +141,7 @@ MS 홈페이지에 가면 SDL에 관련된 자료를 공유하고 있다.
 
 <br>
 
-### (10) Lockheed Martin’s CRL Model
+### 10) Lockheed Martin’s CRL Model
 
 `Lockheed Martin`은 `무기 체계 개발 프로세스`에 `보안공학`을 적용하는 방법론을 만들어냈다.
 
@@ -149,7 +149,7 @@ MS 홈페이지에 가면 SDL에 관련된 자료를 공유하고 있다.
 
 <br/>
 
-## (11) Security Engineering Process Overview
+### 11) Security Engineering Process Overview
 
 <img src="../images/security-engineering-1-the-basic-terms-and-theories-1.11.1.1.png?raw=true" alt="drawing" width="640"/>
 
@@ -163,7 +163,7 @@ MS 홈페이지에 가면 SDL에 관련된 자료를 공유하고 있다.
 
 `보안공학(security engineering)`은 `개발 생명주기(development lifecycle) 전반`에 걸쳐 `정보 시스템 보안(information system security)`과 `위험 관리(risk management)`를 결합하는 구조화된 프로세스(`structured process`)를 제공한다.
 
-### (12) What Is Assurance?
+### 12) What Is Assurance?
 
 `Requirements(Security Policy)`
 - What? 어떤 제품을 만들 것인가? 요구사항은 무엇이 필요한가?
@@ -194,7 +194,7 @@ MS 홈페이지에 가면 SDL에 관련된 자료를 공유하고 있다.
 
 <br/>
 
-### (13) What Is Risk Management?
+### 13) What Is Risk Management?
 
 `체크리스트 기반 평가 방법`을 사용하면 10%를 달성하거나 90%를 달성하거나 둘 다 요구사항에 대해 탈락이다.
 
@@ -206,13 +206,13 @@ MS 홈페이지에 가면 SDL에 관련된 자료를 공유하고 있다.
 
 <br/>
 
-### (14) Security Engineering Activities
+### 14) Security Engineering Activities
 
 <img src="../images/security-engineering-1-the-basic-terms-and-theories-1.14.1.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-### (15) Software Testing vs. Software Verification
+### 15) Software Testing vs. Software Verification
 
 `Software Testing`
 - 일반적인 소프트웨어 테스트
@@ -225,7 +225,7 @@ MS 홈페이지에 가면 SDL에 관련된 자료를 공유하고 있다.
 
 <br/>
 
-### (16) Common Criteria
+### 16) Common Criteria
 
 `국제 공통평가 기준(Common Criteria)`
 - 해당 제품이 `보안공학`에서 말하는 `개발 프로세스`를 따라 요구하는 모든 `Assurance`를  충족하여 만들어졌는지를 평가하는 기준이다. ***어떤 취약점이 있는지 없는지를 판단하는 평가 기준이 아니다.***
@@ -236,7 +236,7 @@ MS 홈페이지에 가면 SDL에 관련된 자료를 공유하고 있다.
 
 <br/>
 
-### (1) Trustworthy란 무엇인가?
+### 1) Trustworthy란 무엇인가?
 
 `보안공학`은 `Trustworthy`한 제품을 개발하고, 검수하고, 운영하는 제품의 `생명주기 전반`에 적용되는 체계적인 개발 프레임워크에 대한 학문이다.
 
@@ -244,7 +244,7 @@ MS 홈페이지에 가면 SDL에 관련된 자료를 공유하고 있다.
 
 <br/>
 
-### (2) Information Security vs. Cybersecurity
+### 2) Information Security vs. Cybersecurity
 
 Paradigm Shifts in Security
 
@@ -307,7 +307,7 @@ Paradigm Shifts in Security
 
 <br/>
 
-### (3) Security Alone Is NOT Enough!
+### 3) Security Alone Is NOT Enough!
 
 <img src="../images/security-engineering-1-the-basic-terms-and-theories-2.3.1.1.png?raw=true" alt="drawing" width="480"/>
 
@@ -329,7 +329,7 @@ Paradigm Shifts in Security
 
 <br/>
 
-### (4) Information Assurance
+### 4) Information Assurance
 
 <img src="../images/security-engineering-1-the-basic-terms-and-theories-2.4.1.1.png?raw=true" alt="drawing" width="480"/>
 
@@ -360,7 +360,7 @@ Paradigm Shifts in Security
 
 <br/>
 
-### (5) Trustworthiness Is NOT So Easy!
+### 5) Trustworthiness Is NOT So Easy!
 
 <img src="../images/security-engineering-1-the-basic-terms-and-theories-2.5.1.1.png?raw=true" alt="drawing" width="480"/>
 
@@ -393,13 +393,13 @@ e.g. `카카오뱅크` 어플리케이션은 고성능의 보안 프로그램을
 
 <br/>
 
-### (6) Cybersecurity
+### 6) Cybersecurity
 
 `4차 산업혁명` 시대에는 초연결 시대가 될 것이다. 모든 것이 연결될 수 있다. 많은 장비들이 `임베디드` 형태로 운영될 것이다. 임베디드 시스템은 나중에 업데이트 하기 어려우므로 초기 요구사항 분석과 설계 단계부터 안전하게 설계되어야 한다.
 
 <br/>
 
-### (7) HACKING UK TRIDENT : 핵잠수함 해킹
+### 7) HACKING UK TRIDENT : 핵잠수함 해킹
 
 <img src="../images/security-engineering-1-the-basic-terms-and-theories-2.7.1.1.png?raw=true" alt="drawing" width="480"/>
 
@@ -411,7 +411,7 @@ e.g. `카카오뱅크` 어플리케이션은 고성능의 보안 프로그램을
 
 <br/>
 
-### (8) UNECE (유엔 유럽경제위원회)
+### 8) UNECE (유엔 유럽경제위원회)
 
 차량 제조사는 `Cyber Security Management System`을 운영하여 자동차를 제조해야 한다.
 
@@ -419,7 +419,7 @@ e.g. `카카오뱅크` 어플리케이션은 고성능의 보안 프로그램을
 
 <br/>
 
-### Trusted vs. Trustworthy
+### 9) Trusted vs. Trustworthy
 
 - `Trusted` : 그 기관은 신뢰할 수 있다고 가정함. 실제 신뢰할 수 있는지는 입증되지 않음(e.g. 수사당국은 trusted 해야 한다. TPM(Trusted Platform Module) 보안칩은 정말 신뢰할 수 있는지는 알 수 없음)
 - `Trustworthy` : 실제 제품이 `available`, `reliable`, `safe`, `secure`하여 신뢰할 수 있다고 수학적으로 증명됨(만약 Trustworthy Platform Module이라고 써있다면 실제 수학적으로 안전하다는 것이 증명된 보안칩임)
@@ -430,7 +430,7 @@ e.g. `카카오뱅크` 어플리케이션은 고성능의 보안 프로그램을
 
 ## 3. Threats vs. Risk
 
-### (1) The Security “Big Picture”
+### 1) The Security “Big Picture”
 
 <img src="../images/security-engineering-1-the-basic-terms-and-theories-3.1.1.1.png?raw=true" alt="drawing" width="720"/>
 
@@ -458,7 +458,7 @@ e.g. `카카오뱅크` 어플리케이션은 고성능의 보안 프로그램을
 
 <br/>
 
-### (2) Risk Treatment
+### 2) Risk Treatment
 
 <img src="../images/security-engineering-1-the-basic-terms-and-theories-3.2.1.1.png?raw=true" alt="drawing" width="720"/>
 
@@ -483,7 +483,7 @@ e.g. `카카오뱅크` 어플리케이션은 고성능의 보안 프로그램을
 
 <br/>
 
-### (3) What Is Security Engineering?
+### 3) What Is Security Engineering?
 
 `보안공학`은 실수나 자연재해와 같은 오류와 의도적인 해킹 공격으로부터 `Trustworthy(또는 Dependable)`한 시스템을 개발하는 방법론에 관한 학문이다.
 
@@ -491,7 +491,7 @@ e.g. `카카오뱅크` 어플리케이션은 고성능의 보안 프로그램을
 
 <br/>
 
-### (4) Why Is It Difficult?
+### 4) Why Is It Difficult?
 
 - 단순히 오류가 자연적으로 랜덤하게만 발생하는게 아니라 악의적인 공격자에 의해 의도적으로도 나타남
 - 공격자는 가장 취약한 부분을 찾으려고 함
@@ -500,7 +500,7 @@ e.g. `카카오뱅크` 어플리케이션은 고성능의 보안 프로그램을
 
 <br/>
 
-### (5) Security Engineering Principle
+### 5) Security Engineering Principle
 
 - 위험 기반 접근(risk based approach)  
 - 보안 요구사항은 구조화된 엔지니어링 프로세스(structured engineering process)에 의해 도출됨
@@ -523,7 +523,7 @@ e.g. `카카오뱅크` 어플리케이션은 고성능의 보안 프로그램을
 
 <br/>
 
-### (6) Assurance Levels
+### 6) Assurance Levels
 
 - `Assurance`는 시스템의 `trustworthiness`를 결정하는 매우 중요한 요소임
 - `Informal Evidence`부터 `Rigorous Mathematical Evidence`까지 다양한 레벨의 `Assurance` 가능
@@ -531,7 +531,7 @@ e.g. `카카오뱅크` 어플리케이션은 고성능의 보안 프로그램을
 
 <br/>
 
-### (7) If It is Not Provable
+### 7) If It is Not Provable
 
 물론 시스템의 보안성을 모두 ***수학적으로 증명(mathematical proofs)할 수 있으면 가장 좋지만,*** 현실적으로 불가능할 경우에는 ***잘 정의된 소프트웨어 개발 프로세스(well-defined software development processes)를 따라야 한다.***
 
@@ -543,7 +543,7 @@ e.g. `카카오뱅크` 어플리케이션은 고성능의 보안 프로그램을
 
 <br/>
 
-### (8) SDL(Secure Development Lifecycle)
+### 8) SDL(Secure Development Lifecycle)
 
 보안공학은 악의적인 공격이든 사람의 실수나 자연재해가 발생했을 때도 제품을 안전하게 만드는 방법론에 관한 학문이다.  `보안공학`을 실제 소프트웨어 개발 프로세스에 잘 녹여낸 기업이 `마이크로소프트`이다. 그리고 이것을 `Security Development Lifecycle (SDL)`이라고 부른다. 산업계에서는 `보안공학`을 `SDL`이라고 부른다.
 
@@ -561,7 +561,7 @@ e.g. `카카오뱅크` 어플리케이션은 고성능의 보안 프로그램을
 
 <br/>
 
-### (9) Basic Principles for SDL : Traceability
+### 9) Basic Principles for SDL : Traceability
 
 #### 추적성(Traceability) :  
 
@@ -595,7 +595,7 @@ e.g. `카카오뱅크` 어플리케이션은 고성능의 보안 프로그램을
 
 <br/>
 
-### (10) Secure Design Principles
+### 10) Secure Design Principles
 
 ***\"The Protection of Information in Computer Systems\"*** by Jerome Saltzer, Michael Schroeder in 1974.
 
@@ -652,7 +652,7 @@ e.g. `카카오뱅크` 어플리케이션은 고성능의 보안 프로그램을
 
 <br/>
 
-### (11) Ext.1 Defense in Depth
+### 11) Ext.1 Defense in Depth
 
 `다단계 보안`(multiple levels of security) 메커니즘 필요하다. 
 
@@ -672,7 +672,7 @@ e.g. `카카오뱅크` 어플리케이션은 고성능의 보안 프로그램을
 
 <br/>
 
-### (12) Ext.2 Design for Updating
+### 12) Ext.2 Design for Updating
 
 ***모든 시스템은 보안 취약점으로부터 평생 안전할 수 없다.*** 시스템을 개발 후에도 추가적인 업데이트가 항상 필요하다. 따라서 `안전하고(safe)` `안정적인(reliable)` `보안 업데이트` 메커니즘이 필요하다.
 
@@ -680,7 +680,7 @@ e.g. `카카오뱅크` 어플리케이션은 고성능의 보안 프로그램을
 
 <br/>
 
-### (13) Ext.3 Centralized vs. Decentralized
+### 13) Ext.3 Centralized vs. Decentralized
 
 `중앙 집중형 시스템`의 경우 한 곳만 공격하면 모든 시스템이 마비되거나 모든 정보가 파괴될 수 있다(`single point of failure`). 하지만 `분산형 시스템`의 경우 공격을 당하면 해당 공격을 당한 곳만 피해를 입으므로 피해가 분산된다.
 
