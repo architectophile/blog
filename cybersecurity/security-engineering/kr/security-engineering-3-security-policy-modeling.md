@@ -441,6 +441,8 @@ e.g. 운영체제를 접속할 수 있는 사람은 3명이다. 관리자는 2�
  
 <br/>
 
+각 `subject`와 `object`에 `clearance level(rank)`과 `category(compartment)`를 부여한다.
+
 하지만 위에 설계가 MLS 정책을 만족하는지 `수학적으로 증명`할 수 있어야 한다. 이를 위해서는 MLS 정책들이 ***`수학적 기호`로 표현되어야 한다.***
 
 <br/>
@@ -449,9 +451,11 @@ e.g. 운영체제를 접속할 수 있는 사람은 3명이다. 관리자는 2�
 
 1973년에 MITER의 `Bell`과 `LaPadula`는 기존의 `Tiger Teams`이 하는 모의해킹 방식(`penetrate and patch`)의 한계를 인식하고 제대로 보안성을 검증하기 위해서는 ***수학적 증명이 필요하다는 주장을 제기한다.***
 
-`BLP(Bell LaPadula Policy) Model`은 **MLS 보안정책을 최초로 수학적으로 정의한 것이다.** → `High Policy Assurance`를 제공한다.
+- `BLP(Bell LaPadula Policy) Model`:  ***MLS 보안정책을 최초로 수학적으로 정의한 것이다.*** → `High Policy Assurance`를 제공한다.
 
 - `Information Flow Policy`: 정보는 덜 신뢰할 수 있는 주체로부터 더 신뢰할 수 있는 주체로만 흘러야 한다.
+
+- 기존의 `MLS` 보안정책은 오직 `simple security property`만 만족하고, `*-property`는 만족하지 못함을 수학적으로 증명한다. → 수학적인 기호로 표현하여 증명하면 어떤 것은 요구사항을 만족하고, 어떤 것은 요구사항을 만족하지 못하는지 명확하게 알 수 있다.
 
 <br/>
 
@@ -463,57 +467,95 @@ e.g. 운영체제를 접속할 수 있는 사람은 3명이다. 관리자는 2�
 
 <br/>
 
-#### BLP Model in Formal
+#### (6) BLP Model in Formal
 
-<img src="../images/security-engineering-5-security-policy-modeling-2.2.6.png?raw=true" alt="drawing" width="640"/>
-
-<br/>
-
-`s`는 `subject 집합(사용자 또는 프로세스)`을 의미한다. `o`는 `object 집합(파일 등)`을 의미한다. `a`는 `access operation(execute, read, append, and write)`을 의미한다.
-
-`write`와 `append`의 차이점은 `write`는 문서를 볼 수 있어야 가능하지만, `append`는 문서를 읽지 않아도 덧붙일 수 있다. 따라서 `write`에는 문서를 본다는 것이 포함되어 있다. `l`은 `security level`을 의미한다.
-
-<img src="../images/security-engineering-5-security-policy-modeling-2.2.7.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.6.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-표시할 수 있는 `상태(state)`는 3가지의 `b`, `M`, `f`로 나뉜다. 
+`S`는 `subject 집합(사용자 또는 프로세스)`을 의미한다. `O`는 `object 집합(파일 등)`을 의미한다. `A`는 `access operation(execute, read, append, and write)`을 의미한다.
 
-- `b`는 subject와 object, 그리고 subject가 object에게 하는 access operation이다.
+`write`와 `append`의 차이점은 `write`는 문서를 볼 수 있어야 가능하지만, `append`는 문서를 읽지 않아도 덧붙일 수 있다. 따라서 `write`에는 문서를 본다는 것이 포함되어 있다.
 
-- `M`은 matrix를 나타낸다. 행(row)이 `subject`이고 열(column)이 `object`이다. 이것을 `access control matrix`라고 한다. 이것을 행으로 자르는 것을 `access control capability`라고 하고, 열로 자르는 것을 `access control list`라고 한다.
-
-- `f`는 `security level`을 의미한다. `clearance level`과 `classification level`을 의미한다. f<sub>s</sub>는 `subject`가 가질 수 있는 `최대의(maximal) security level`을 의미한다. 그리고 f<sub>c</sub>는 `subject`가 갖는 `현재의(current) security level`을 의미한다. f<sub>o</sub>는 `object`의 `security level`을 의미한다.
-
-<img src="../images/security-engineering-5-security-policy-modeling-2.2.8.png?raw=true" alt="drawing" width="640"/>
+ `L`은 `security level`을 의미한다.
 
 <br/>
 
-Simple Security Property (SS-Property – No “Read Up”)
-
-<img src="../images/security-engineering-5-security-policy-modeling-2.2.9.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.6.2.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-<img src="../images/security-engineering-5-security-policy-modeling-2.2.10.png?raw=true" alt="drawing" width="480"/>
+`Access control` 시스템이 표시할 수 있는 `상태(state)`는 3가지의 `b`, `M`, `f`로 구성된다.
+
+- `b`는 현재 사용 중인 `access operations`를 나타내며, `subject`와 `object`, 그리고 `subject`가 `object`에게 하는 `access operation`으로 구성되어 있다.
+
+- `M`은 `matrix`를 나타낸다. `행(row)`이 `subject`이고 `열(column)`이 `object`이다. 이것을 `access control matrix`라고 한다. 이것을 행으로 자르는 것을 `access control capability`라고 하고, 열로 자르는 것을 `access control list`라고 한다.
+
+- `f`는 `security level`을 의미한다. `clearance level`과 `classification level`을 의미한다.     
+    - f<sub>s</sub>는 `subject`가 가질 수 있는 `최대의(maximal) security level`을 의미한다.
+    - f<sub>c</sub>는 `subject`가 갖는 `현재의(current) security level`을 의미한다. 
+    - f<sub>o</sub>는 `object`의 `security level`을 의미한다.
+
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.6.3.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-*-Property (Star-Property – No “Write Down”)
-
-<img src="../images/security-engineering-5-security-policy-modeling-2.2.11.png?raw=true" alt="drawing" width="640"/>
+> Note:  
+일반적으로 `access control matrix`는 중앙서버에 저장되어 관리되는데, 중앙 서버가 다운되거나 공격당하면 서비스 거부 공격을 당할 수 있다.  
+matrix를 행으로 잘라서 `access control capability`를 각 사용자 카드에 넣고 접근제어를 하게 되면 내가 카드를 분실해도 나만 문제가 되고 나머지 사람들은 문제가 없다(가용성 확보). 하지만 퇴직자 처리하는 것이 쉽지 않다.
+matrix를 열로 잘라서 `access control list`를 각 방에 있는 리더기에 넣고 접근제어를 하면 퇴직자처리할 때 해당 리더기에서 삭제만 해주면 된다. 하지만 설정 한 번을 바꾸려면 모든 리더기를 업데이트해야 하므로 신속하게 업데이트가 쉽지 않다.
 
 <br/>
 
-<img src="../images/security-engineering-5-security-policy-modeling-2.2.12.png?raw=true" alt="drawing" width="640"/>
+#### (7) Simple Security Property (SS-Property – No “Read Up”)
+
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.7.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+`subject`가 `object`에게 `read` 또는 `write`만 하는 모든 `access operation`에 대해서 `subject`의 최대 `security level`은 `object`의 `security level`보다 크거나 같아야 한다.
+
+<br/>
+
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.7.2.png?raw=true" alt="drawing" width="480"/>
+
+<br/>
+
+<br/>
+
+#### (8) *-Property (Star-Property – No “Write Down”)
+
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.8.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+`subject`가 `object`에게 `append` 또는 `write`만 하는 모든 `access operation`에 대해서 `subject`의 현재 `security level`은 `object`의 `security level`보다 작거나 같아야 한다.
+
+그리고 만약 `subject`가 `object`에게 `append` 또는 `write`를 하는 상태가 존재한다면, 해당 `subject`는 모든 `object'`에 대해서 `read` 또는 `write`만 하는데, 이 때 `object'`의 `security level`은 `object`의 `security level`보다 작거나 같다.
+
+<br/>
+
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.8.2.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
 `information flow security`를 나타낸다.
 
-`current security level`을 사용하는 것은 subject의 권한을 일시적으로 낮춰서 아래에 있는 프로세스와도 통신을 할 수 있도록 하기 위함이다.
+`current security level`을 사용하는 것은 `subject`의 권한을 일시적으로 낮춰서 등급이 높은 프로세스가 등급이 낮은 프로세스와 통신할 수 있도록 하기 위함이다.
 
-<img src="../images/security-engineering-5-security-policy-modeling-2.2.13.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.8.3.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+#### (9) Real World Examples Built on BLP
+
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.9.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+#### [Note] MULTICS
+
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.9.2.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
@@ -523,34 +565,46 @@ Simple Security Property (SS-Property – No “Read Up”)
 
 <br/>
 
-#### The Criticism of McLean
+#### (10) The Criticism of McLean
 
-`McLean`은 BLP Model에서 `current security level`을 사용해서 일시적으로 권한을 낮춰서 높은 등급의 정보를 낮은 등급의 subject에게 전달할 수 있다면 이것은 안전하지 않다고 주장했다.
-
-이에 대해 Bell과 LaPadula는 자신들의 `전제조건(assumption)`을 위반한 것이기 때문에 그것은 고려대상이 아니라고 했다.
-
-assumptions의 개수를 최소화하는 것이 좋다. 하지만 처음부터 그것은 쉽지 않기 때문에 하나하나씩 assumption을 줄여나가게 된다.
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.10.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
-#### BLP Model in a Nutshell
+`McLean`은 `BLP Model`에서 `current security level`을 사용해서 일시적으로 권한을 낮춰서 높은 등급의 정보를 낮은 등급의 subject에게 전달할 수 있다면 이것은 안전하지 않다고 주장했다.
 
-<img src="../images/security-engineering-5-security-policy-modeling-2.2.14.png?raw=true" alt="drawing" width="720"/>
+이에 대해 `Bell`과 `LaPadula`는 임시로 긴급통신을 위해 `current security level`을 사용하는 것이지 기밀자료를 몰래 전송하기 위해 사용하는 것은 아니라고 말했다.
+
+따라서 이것은 자신들의 `전제조건(assumption)`을 위반한 것이기 때문에 이것은 고려대상이 아니라고 했다.
+
+`assumptions`의 개수를 최소화하는 것이 좋다. 하지만 처음부터 그것은 쉽지 않기 때문에 하나하나씩 assumption을 줄여나가게 된다.
 
 <br/>
 
-### (3) Covert Channels
+#### (11) BLP Model in a Nutshell
 
-`은닉채널(Covert Channels)`은 보이지 않는 채널을 이용해서 데이터를 전달하는 채널이다.
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.11.1.png?raw=true" alt="drawing" width="720"/>
+
+<br/>
+
+BLP Model이 제대로 적용되었다면 모든 `subject`와 object에 대해서 위에서 아래로 내려오는 정보의 흐름(`information flow`)이 없어야 한다.
+
+<br/>
+
+#### (12) Covert Channels
+
+`은닉채널(Covert Channels)`은 보이지 않는 채널을 이용해서 데이터를 전달하는 채널이다. `은닉채널(Covert Channels)`를 통해 데이터가 유출되는 것은 `*-property`로 막을 수 없다.
 e.g. 높은 등급의 사람이 높은 보안 레벨의 정보를 읽어서 스마트폰으로 사진을 찍어서 낮은 등급의 사람에게 사진을 전송하는 것을 막을 수 없다.
 
 `부채널(Side Channel)`은 `은닉채널(Covert Channels)`은 다른 개념이다. `부채널(Side Channel)`은 CPU의 전력소비를 측정해서 비밀 정보를 알아내는 것과 같은 공격이다.
 
 `은닉채널(Covert Channels)`에서는 전송자와 수신자가 서로 협력해야만 가능하다. `부채널(Side Channel)`은 전송자의 도움이 필요없으며, 외부에서 측정하여 정보를 빼내는 것이다.
 
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.12.1.png?raw=true" alt="drawing" width="480"/>
+
 <br/>
 
-### (4) Biba Model
+#### (13) Biba Model
 
 `Biba Model`은 `BLP Model`에 대한 Counterpart(Logical Dual) 또는 쌍대개념이다.
 
@@ -568,13 +622,13 @@ e.g. 높은 등급의 사람이 높은 보안 레벨의 정보를 읽어서 스�
 
 <br/>
 
-#### Biba Model in a Nutshell
+#### (1) Biba Model in a Nutshell
 
 <img src="../images/security-engineering-5-security-policy-modeling-2.4.2.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-### (5) Clark-Wilson Model
+### 6) Clark-Wilson Model
 
 `military` 영역에서는 `Confidentiality`가 중요하지만 `commercial` 영역에서는 `Integrity`가 매우 중요하다고 주장하였다. `Biba Model`을 확장하여 `Clark-Wilson Model`을 제시하였다.
 
@@ -591,7 +645,7 @@ e.g. 높은 등급의 사람이 높은 보안 레벨의 정보를 읽어서 스�
 
 <br/>
 
-### (6) HRU Model
+### 7) HRU Model
 
 `BLP Model`과는 다르게 `HRU Model`는 변하는 `access rights`에 대한 방법을 제시하였다. 새로운 권한을 추가하고 삭제하기 위한 `creation`과 `deletion` 기능이 추가되었다.
 
@@ -608,7 +662,7 @@ System이 safe한 상태를 유지할 수 있으면 `access rights` 변경을 �
 
 <br/>
 
-### (7) Chinese Wall Model
+### 8) Chinese Wall Model
 
 현재 허용된 데이터 셋에 기반해서 다음 접근할 수 있는 데이터 셋을 결정한다. 서로 이해 충돌 관계에 있는 데이터에 접근하는 것을 방지한다.
 
@@ -630,7 +684,7 @@ subject가 이해충돌이 발생하는 곳에 접근하는 것을 방지한다.
 
 <br/>
 
-### (8) RBAC Model (Non-DAC Model)
+### 9) RBAC Model (Non-DAC Model)
 
 `임의적 접근통제(DAC)`와 `강제적 접근통제(MAC)`와는 다르게 `Role-Based Access Control(RBAC)`은 사용자의 역할(role)에 기반하여 데이터 접근을 통제한다. 현실에서는 일반적으로 직급(role)에 따라 접근 권한이 부여되는 경우가 많다. 그리고 실제 현장에서는 한 사용자가 ***여러가지 역할(roles)을 갖고 있을 수 있다.***
 
