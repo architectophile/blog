@@ -4,12 +4,12 @@
 
 MS는 많은 취약점들이 요구사항 분석 단계와 설계 단계에서 나온다고 판단하였다.
 
-SDL을 하는 목적은 보안 내재화(security by design)를 하기 위한 것이다. 하지만 
-우리나라의 보안공학은 secure coding에만 치중되어 있다. 따라서 코딩레벨에서부터 SDL이 시작되므로 정확한 SDL이 아니다.
+`SDL`을 하는 목적은 `보안 내재화(security by design)`를 하기 위한 것이다. 하지만 
+우리나라의 보안공학은 `secure coding`에만 치중되어 있다. 따라서 코딩레벨에서부터 SDL이 시작되므로 정확한 SDL이 아니다.
  
-설계 오류의 중요성을 얘기할 때 `Needham-Schroeder public-key authentication protocol (1978)`을 많이 얘기한다. `Gavin Lowe`가 이 프로토콜에 설계에 오류가 있다는 것을 17년 뒤인 1995년에 발견하였다.
+`설계(design) 오류`의 중요성을 얘기할 때 `Needham-Schroeder public-key authentication protocol (1978)`을 많이 얘기한다. ***`Gavin Lowe`가 이 프로토콜에 `설계에 오류`가 있다는 것을 17년 뒤인 1995년에 발견하였다.***
 
-`Key Reinstallation Attacks: Forcing Nonce Reuse WPA2` 논문도 `WPA2` 프로토콜의 설계 오류를 발견하였다.
+`Key Reinstallation Attacks: Forcing Nonce Reuse WPA2` 논문도 `WPA2` 프로토콜의 `설계 오류`를 발견하였다.
 
 <br/>
 
@@ -27,7 +27,7 @@ SDL을 하는 목적은 보안 내재화(security by design)를 하기 위한 �
 
 `Edward Snowden`은 `the guardian`지에 `NSA`에서 운영하는 `PRISM` 프로그램을 이용하여 민간인을 사찰할 수 있다는 것을 폭로한다.
 
-`NSA`에서 AOL, Apple, Facebook, Google, Microsoft, Paltalk, Skype, Yahoo, and YouTube의 협조를 얻어서 각 회사에 일종의 검색엔진을 설치하였다. 이 검색엔진을 통해서 사람들의 다양한 정보를 볼 수 있다는 것을 폭로하였다.
+`NSA`에서 AOL, Apple, Facebook, Google, Microsoft, Paltalk, Skype, Yahoo, and YouTube의 협조를 얻어서 각 회사에 일종의 검색엔진인 `PRISM` 프로그램을 설치하였다. 이 검색엔진을 통해서 사람들의 다양한 정보를 볼 수 있다는 것을 폭로하였다.
 
 <br/>
 
@@ -75,7 +75,7 @@ SDL을 하는 목적은 보안 내재화(security by design)를 하기 위한 �
 
 <br/>
 
-NSA가 만든 타원곡선(EC)의 파라미터에 백도어가 숨겨져 있었다. 
+`NSA`가 만든 `타원곡선(EC)`의 파라미터에 `백도어`가 숨겨져 있었다. 
 
 타원곡선을 이용한 난수발생기인 `DUAL_EC_DRBG`에는 원리를 알 수 없는 알고리즘이 들어있었다. `NSA`가 타원곡선 표준을 제정할 때 특정 타원곡선을 넣자고하여 표준으로 제정되었다. 2007년에 `Bruce Schneier`가 혹시 `NSA`가 `백도어(backdoor)`를 삽입하려는 것인가하는 의문을 제기하였다. 그리고 나중에 `Edward Snowden`이 폭로한 이후에 `BULLRUN` 프로젝트가 알려졌고 실제로 알고리즘 상에 백도어를 넣은 것이 밝혀진다. ***2015년에 `NSA`에서 알고리즘에 `백도어(backdoor)`를 넣은 사실을 인정하고 사과하였다.***
 
