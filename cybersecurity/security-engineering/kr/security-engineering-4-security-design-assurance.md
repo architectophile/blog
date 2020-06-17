@@ -1,6 +1,8 @@
 # Security Design Assurance
 
-## Why Design Assurance?
+## 1. Cryptography & Design Assurance
+
+### Why Design Assurance?
 
 MS는 많은 취약점들이 요구사항 분석 단계와 설계 단계에서 나온다고 판단하였다.
 
@@ -13,7 +15,7 @@ MS는 많은 취약점들이 요구사항 분석 단계와 설계 단계에서 �
 
 <br/>
 
-## [Note] Black Hat EU 2017
+### [Note] Black Hat EU 2017
 
 `By-design Backdooring of Encryption System-Can We Trust Foreign Encryption Algorithms` 논문은 설계도 상에도 백도어를 넣을 수 있다는 것을 보여준다.
 
@@ -23,7 +25,7 @@ MS는 많은 취약점들이 요구사항 분석 단계와 설계 단계에서 �
 
 <br/>
 
-## [Note] No Where To Hide
+### [Note] No Where To Hide
 
 `Edward Snowden`은 `the guardian`지에 `NSA`에서 운영하는 `PRISM` 프로그램을 이용하여 민간인을 사찰할 수 있다는 것을 폭로한다.
 
@@ -31,15 +33,15 @@ MS는 많은 취약점들이 요구사항 분석 단계와 설계 단계에서 �
 
 <br/>
 
-## [Note] NSA's PRISM
+### [Note] NSA's PRISM
 
-<img src="../images/security-engineering-6-security-design-assurance-1.0.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-1.0.1.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-## [Note] NSA's BULLRUN
+### [Note] NSA's BULLRUN
 
-<img src="../images/security-engineering-6-security-design-assurance-1.0.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-1.0.2.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
@@ -47,9 +49,9 @@ MS는 많은 취약점들이 요구사항 분석 단계와 설계 단계에서 �
 
 <br/>
 
-## [Note] 타원곡선암호(Elliptic Curve Crypto)
+### [Note] 타원곡선암호(Elliptic Curve Crypto)
 
-<img src="../images/security-engineering-6-security-design-assurance-1.0.3.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-1.0.3.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
@@ -57,21 +59,21 @@ MS는 많은 취약점들이 요구사항 분석 단계와 설계 단계에서 �
 
 <br/>
 
-## [Note] DUAL_EC_DRBG - The Beginning
+### [Note] DUAL_EC_DRBG - The Beginning
 
-<img src="../images/security-engineering-6-security-design-assurance-1.0.4.png?raw=true" alt="drawing" width="640"/>
-
-<br/>
-
-<img src="../images/security-engineering-6-security-design-assurance-1.0.5.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-1.0.4.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-1.0.6.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-1.0.4.2.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-1.0.7.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-1.0.4.3.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+<img src="../images/security-engineering-6-security-design-assurance-1.0.4.4.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
@@ -83,68 +85,63 @@ MS는 많은 취약점들이 요구사항 분석 단계와 설계 단계에서 �
 
 <br/>
 
-## [Note] DES
+### [Note] DES
 
-S-box와 P-box의 원리를 알 수 없었다. DES 알고리즘이 나온 후에 차분해독법이 나오게 된다. DES를 모방해서 만든 다른 알고리듬들은 차분해독법에 깨졌지만 DES만 깨지지 않았다. DES를 설계한 사람들은 이미 차분해독법을 알고 있었다.
+DES 알고리즘의 대부분의 substitution과 permutation의 원리를 알 수 있었지만 몇 가지는 이유를 찾아내지 못했다. DES 알고리즘이 나온 후 약 10년 후에 차분해독법이 나오게 된다. DES를 모방해서 만든 다른 알고리듬들은 차분해독법에 깨졌지만 DES만 깨지지 않았다. ***DES를 설계한 사람들은 이미 `차분해독법`을 알고 있었다.***
 
 <br/>
 
-## 1. Cryptography & Design Assurance
-
-### (1) Emphases of Modern Cryptography
+### 1) Emphases of Modern Cryptography
 
 현대 암호학은 엄밀한 정의(definitions)와, 정확한 전제조건(assumptions), 엄밀한 보안 증명(proofs)을 바탕으로 한다.
 
 <br/>
 
-### (2) Protocol Design Verification Steps
+### 2) Protocol Design Verification Steps
 
-1. Assumption Building: 기본 전제조건 설정
-
-2. Security Policy Modeling: Security Policies를 Formal하게 만든다.
-
-3. Security Design: 시스템을 디자인한다.
-
-4. Design Assurance Verification: 설계가 Security Policies를 만족하는지 증명한다.
+<img src="../images/security-engineering-6-security-design-assurance-1.2.1.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-1.2.1.png?raw=true" alt="drawing" width="640"/>
+- `Assumption Building`: 기본 전제조건 설정
+- `Attacker Modeling`: `Threat Modeling`할 때 생각했던 공격자를 수학적 기호로 표현한 것
+- `Security Policy Modeling`: `Security Requirements`를 `정형화 명세(Formal Specification)`로 표현하는 것
+- `Design Assurance Verification`: 내가 만든 알고리즘이나 프로토콜 설계가 `Attacker Model` 조건 하에 `Security Policy Model`을 충족하는지 증명하는 것(`Symbolic Method`, `Computational Method`)
+  - `Symbolic Method`: 자동화가 쉬움, 증명의 정밀도(assurance)가 낮음.
+  - `Computational Method`: 증명의 정밀도(assurance)는 올라감. 자동화는 어려움. 하지만 이제는 도구의 수준이 높아져서 어느 정도 자동화가 가능해졌음.
 
-<br/>
+우리가 설계한 알고리즘이 `Security Requirements`를 만족하는지 증명하기 위해서는 `공격자(Attacker)`를 수학적으로 정형화해야 한다. 따라서 `Attacker Modeling`을 통해서 증명하는 것을 `Design Assurance`라고 한다. 이 방법에는 크게 `Symbolic Method`와 `Computational Method`이다. 마지막으로 `Design Assurance` 이후에 실제 설계대로 구현(코딩)을 한 이후에 실제 구현이 설계된 대로 만들어졌는지를 증명하는 것을 `Code Assurance`라고 한다.
 
-우리가 설계한 알고리듬이 `Security Requirements`를 만족하는지 증명하기 위해서는 공격자(Attacker)를 수학적으로 정형화해야 한다. 따라서 `Attacker Modeling`을 통해서 증명하는 것을 `Design Assurance`라고 한다. 이 방법에는 크게 `Symbolic Method`와 `Computational Method`이다. 마지막으로 `Design Assurance` 이후에 실제 설계대로 구현(코딩)을 한 이후에 실제 구현이 설계된 대로 만들어졌는지를 증명하는 것을 `Code Assurance`라고 한다.
-
-- `Symbolic Method`: 자동화가 쉬움, 증명의 정밀도(assurance)가 낮음.
-- `Computational Method`: 증명의 정밀도(assurance)는 올라감. 자동화는 어려움. 하지만 이제는 도구의 수준이 높아져서 어느 정도 자동화가 가능해졌음.
 
 우리가 어떤 실제 제품(real world)를 분석할 때, 실제 대상을 `DFD` 등으로 모델링을 한다. 왜냐하면 실제 타겟을 그대로 하면 쓸데없는 정보가 너무 많아서 효율성이 떨어진다. 따라서 반드시 필요한 정보를 바탕으로 모델링하는 것이 중요하다.
 
-표준문서를 놓고 `SPM`를 충족하는지 증명하는 것은 매우 어렵다. e.g. `RFC2246(SSL)` 문서는 80페이지가 되는데, 이 중에서 필요한 정보만 뽑아서 모델링하면 매우 양이 줄어든다. 표준문서는 양이 많아지는 이유는 프로토콜에서 암호의 비트수 등을 모두 적어놓기 때문에 양이 많아진다. 이렇게 표준문서에서 쓸데없는 정보를 없앤 것을 `Algorithm/Protocol Model`이라고 한다.
+우리가 어떤 알고리즘이나 프로토콜을 구현(implement)할 때는 표준문서(standard)를 놓고 구현한다. 따라서 해당 표준 문서가 `SPM`을 충족하는지 증명해야 한다.
+
+하지만 표준문서를 놓고 `SPM`를 충족하는지 증명하는 것은 매우 어렵다. e.g. `RFC2246(SSL)` 문서는 80페이지가 되는데, 이 중에서 필요한 정보만 뽑아서 모델링하면 매우 양이 줄어든다. 표준문서는 양이 많아지는 이유는 프로토콜에서 암호의 비트수 등을 모두 적어놓기 때문에 양이 많아진다. 이렇게 ***표준문서에서 쓸데없는 정보는 빼고 증명에 필요한 핵심 정보만 추출한 것을 `Algorithm/Protocol Model`이라고 한다.***
 
 <br/>
 
-## (3) Standard, Model, Implementation
+### 3) Standard, Model, Implementation
 
-### Protocol Model:
+#### Protocol Model:
 
-- 표준 프로토콜에서 코어 메시지만 추려낸 것
-
-<br/>
-
-## (4) Models of Security Protocol Verification
-
-### Symbolic Model(Dolev-Yao Model)
-
-### Computational Model
+- 프로토콜 표준 문서에서 코어 메시지만 추려낸 것
 
 <br/>
 
-## (5) Symbolic Method(Dolev-Yao Model)
+### 4) Models of Security Protocol Verification
 
-### Basic Operations:
+#### Symbolic Model(Dolev-Yao Model)
 
-<img src="../images/security-engineering-6-security-design-assurance-1.5.1.png?raw=true" alt="drawing" width="520"/>
+#### Computational Model
+
+<br/>
+
+### 5) Symbolic Method(Dolev-Yao Model)
+
+#### (1) Basic Operations:
+
+<img src="../images/security-engineering-6-security-design-assurance-1.5.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -152,53 +149,57 @@ S-box와 P-box의 원리를 알 수 없었다. DES 알고리즘이 나온 후에
 
 <br/>
 
-### Rules:
+#### (2) Rules:
 
-<img src="../images/security-engineering-6-security-design-assurance-1.5.2.png?raw=true" alt="drawing" width="520"/>
-
-<br/>
-
-### Examples:
-
-<img src="../images/security-engineering-6-security-design-assurance-1.5.3.png?raw=true" alt="drawing" width="520"/>
+<img src="../images/security-engineering-6-security-design-assurance-1.5.2.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-1.5.4.png?raw=true" alt="drawing" width="520"/>
+#### (3) Examples:
+
+<img src="../images/security-engineering-6-security-design-assurance-1.5.3.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
-### Formal Execution Model
+<br/>
 
-`DY`는 실제로 각 오퍼레이션을 기호로 표현하여 자동화하면 어느 정도 단순한 프로토콜은 문제를 발견할 수 있다는 것을 밝혀냈다. e.g. replay attack 등을 찾아낼 수 있었다. 하지만 좀 더 복잡한 문제들은 자동화하기 어렵다고 생각했다. 따라서 더욱 정확하게 분석하려면 `Computational Method`를 사용하여 손으로 직접 증명해야 한다고 생각했다.
+<img src="../images/security-engineering-6-security-design-assurance-1.5.3.2.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
-### Machine-Assisted Verification
+#### (4) Formal Execution Model
+
+<img src="../images/security-engineering-6-security-design-assurance-1.5.4.1.png?raw=true" alt="drawing" width="520"/>
+
+<br/>
+
+`Dolev`, `Yao`는 실제로 각 오퍼레이션을 기호로 표현하여 자동화하면 어느 정도 단순한 프로토콜은 문제를 발견할 수 있다는 것을 밝혀냈다. e.g. replay attack 등을 찾아낼 수 있었다. 하지만 좀 더 복잡한 문제들은 자동화하기 어렵다고 생각했다. 따라서 더욱 정확하게 분석하려면 `Computational Method`를 사용하여 손으로 직접 증명해야 한다고 생각했다.
+
+<br/>
+
+#### (5) Machine-Assisted Verification
 
 - `ISO/IEC 29128`: 암호 프로토콜의 설계 무결성을 검증하는 표준. Protocol Assurance Level. PAL1, PAL2, PAL3로 나뉜다. 레벨이 올라갈 수록 많은 것이 `Formal`하게 기술되어야 한다. 레벨2 이상부터는 도구를 사용한 `Tool-aided`가 요구된다.
 
-전세계적인 추세는 design assurance 증명을 할 때 손으로 직접 하는 것보다는 되도록이면 자동화도구를 사용할 것을 추천한다. 그 이유는 사람에 따라 달라지지 않고 항상 일정한 증명 결과가 나오기 때문이다. 편차가 생기지 않는 것이 중요하다.
-
-그리고 자동화도구를 사용하면 분석을 빠르게 할 수 있다.
+전세계적인 추세는 `design assurance` 증명을 할 때 손으로 직접 하는 것보다는 ***되도록이면 `자동화 도구`를 사용할 것을 추천한다.*** 그 이유는 우선 ***사람의 실수가 줄어들고,*** ***사람에 따라 달라지지 않고 항상 `일정한` 증명 결과가 나오기 때문이다.*** 편차가 생기지 않는 것이 중요하다. 그리고 `자동화 도구`를 사용하면 ***분석도 `빠르게` 할 수 있어 효율적이다.***
 
 <br/>
 
-## (6) Computational Method
+### 6) Computational Method
 
-1980년대에 Goldwasser, Micali, Rivest가 제안하였다. 정밀도는 매우 높지만 아직도 여전히 많은 것을 수작업(manual)으로 해야한다.
-
-<br/>
-
-### DP-3T
-
-Decentralized Privacy-Preserving Proximity Tracing(DP-3T) 프로토콜을 자동화도구를 이용하여 증명하였다.
+1980년대에 Goldwasser, Micali, Rivest가 제안하였다. `Computational Method` 기법은 ***`정밀도`는 매우 높지만*** 아직도 여전히 많은 것을 `수작업(manual)`으로 해야한다.
 
 <br/>
 
-### Pedersen Commitment Scheme
+#### (1) DP-3T
 
-<img src="../images/security-engineering-6-security-design-assurance-1.6.1.png?raw=true" alt="drawing" width="520"/>
+Decentralized Privacy-Preserving Proximity Tracing(DP-3T) 프로토콜을 `자동화 도구`를 이용하여 증명하였다.
+
+<br/>
+
+#### (2) Pedersen Commitment Scheme
+
+<img src="../images/security-engineering-6-security-design-assurance-1.6.2.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -206,17 +207,55 @@ Decentralized Privacy-Preserving Proximity Tracing(DP-3T) 프로토콜을 자동
 
 <br/>
 
-## 2. Symmetric Ciphers
-
-`Design Assurance`는 대칭키 암호보다는 공개키 암호 쪽에 더욱 발달되었다.
+<img src="../images/security-engineering-6-security-design-assurance-1.6.2.2.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
-### (1) SPN
+<br/>
 
-#### Shannon's Proposal
+<img src="../images/security-engineering-6-security-design-assurance-1.6.2.3.png?raw=true" alt="drawing" width="520"/>
 
-`Shannon`이 `비트(bit)`의 개념을 만들어 정보의 양을 측정할 수 있게 되었다. `Shannon`은 어떻게 하면 한정된 대역폭에서 데이터를 많이 보낼 수 있을까 고민하여 데이터 압축을 고민했고, 또한 어떻게 하면 정보를 비밀리에 보낼 수 있는지 고민하였다. 무한대의 컴퓨팅 파워를 가진 공격자에게도 안전한 암호시스템을 고민하여 `One-time pad` 시스템을 생각해냈다. `One-time pad` 시스템에서 키의 길이와 메시지의 길이는 같아야 하고, 키는 서로 미리 교환한 난수를 사용해야 하며, 한 번 사용한 키는 재사용하지 않는다. 하지만 `One-time pad` 실생활에서 쓰기에는 실용적이지 않았다(impractical). 따라서 `Perfect Secure`가 아니라 암호를 깨는데 시간이 매우 오래 걸려서 공격의 의미가 없는 `Computational Secure`한 암호를 만들어야 한다고 생각했다. 이를 위해서는 `Confusion` 효과와 `Diffusion` 효과가 필요하다고 생각해냈다.
+<br/>
+
+<img src="../images/security-engineering-6-security-design-assurance-1.6.2.4.png?raw=true" alt="drawing" width="520"/>
+
+<br/>
+
+맨 위에 있는 해당 `설계`가 `Correctness`, `Hiding`, `Binding` 3가지의 `security properties`를 충족하는지 직접 손으로 써서 수학적으로 증명하였었다.
+
+<br/>
+
+<img src="../images/security-engineering-6-security-design-assurance-1.6.2.5.png?raw=true" alt="drawing" width="520"/>
+
+<br/>
+
+<br/>
+
+<img src="../images/security-engineering-6-security-design-assurance-1.6.2.6.png?raw=true" alt="drawing" width="520"/>
+
+<br/>
+
+<br/>
+
+<img src="../images/security-engineering-6-security-design-assurance-1.6.2.7.png?raw=true" alt="drawing" width="520"/>
+
+<br/>
+
+위 그림처럼 `EasyCrypt`라는 `자동화 도구`를 이용해서 `Pedersen Commitment`를 증명할 수도 있다.
+
+<br/>
+
+## 2. Symmetric Ciphers
+
+`Design Assurance`는 대칭키 암호보다는 ***`공개키 암호` 쪽에 더욱 발달되었다.***
+
+<br/>
+
+### 1) SPN
+
+#### (1) Shannon's Proposal
+
+`Shannon`이 `비트(bit)`의 개념을 만들어 `정보의 양`을 측정할 수 있게 되었다. `Shannon`은 어떻게 하면 한정된 대역폭에서 데이터를 많이 보낼 수 있을까 고민하여 데이터 압축을 고민했고, 또한 어떻게 하면 정보를 비밀리에 보낼 수 있는지 고민하였다. 무한대의 컴퓨팅 파워를 가진 공격자에게도 안전한 암호시스템을 고민하여 `One-time pad` 시스템을 생각해냈다. `One-time pad` 시스템에서 키의 길이와 메시지의 길이는 같아야 하고, 키는 서로 미리 교환한 난수를 사용해야 하며, 한 번 사용한 키는 재사용하지 않는다. 하지만 `One-time pad` 실생활에서 쓰기에는 실용적이지 않았다(impractical). 따라서 `Perfect Secure`가 아니라 암호를 깨는데 시간이 매우 오래 걸려서 공격의 의미가 없는 `Computational Secure`한 암호를 만들어야 한다고 생각했다. 이를 위해서는 `Confusion` 효과와 `Diffusion` 효과가 필요하다고 생각해냈다.
 
 <img src="../images/security-engineering-6-security-design-assurance-2.1.1.png?raw=true" alt="drawing" width="520"/>
 
@@ -229,13 +268,15 @@ Decentralized Privacy-Preserving Proximity Tracing(DP-3T) 프로토콜을 자동
 
 `SPN` 구조는 블록을 반으로 나누지 않고 블록 전체에 대해서 환자암호화 전치암호 처리를 하므로 라운드 수가 적다.
 
+<br/>
+
 ## 3. Asymmetric Ciphers
 
-### (2) Ideal Properties of a Proof
+### 1) Ideal Properties of a Proof
 
 <br/>
 
-### (3) Brief History of Provable Security
+### 3) Brief History of Provable Security
 
 `Design Assurance`에 대한 연구는 1982년 GM(IND-CPA)에 의해 기초가 정립되어 본격적으로 시작되었다.
 
@@ -247,14 +288,14 @@ Decentralized Privacy-Preserving Proximity Tracing(DP-3T) 프로토콜을 자동
 
 <br/>
 
-### (4) Symmetric vs. Asymmetric
+### 4) Symmetric vs. Asymmetric
 
 - `대칭키암호(Symmetric Cipher)`: 암호화 키와 복호화 키가 동일함. secret key
 - `공개키암호(Asymmetric Cipher)`: 암호화 키와 복호화 키가 다름. public key, private key
 
 <br/>
 
-### (5) The Origin of PKC
+### 5) The Origin of PKC
 
 공개키 암호는 1976년 `Diffie`와 `Hellman`에 의해 개념이 생겨났다. → `New Directions in Cryptography`.
 
@@ -262,13 +303,13 @@ Decentralized Privacy-Preserving Proximity Tracing(DP-3T) 프로토콜을 자동
 
 <br/>
 
-### (6) PKC in Formal
+### 6) PKC in Formal
 
 <img src="../images/security-engineering-6-security-design-assurance-2.3.2.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-### (7) RSA in a Nutshell
+### 7) RSA in a Nutshell
 
 RSA 암호는 1978년 `Rivest`, `Shamir`, `Adleman` 세 사람에 의해 만들어졌다. RSA는 소인수분해 문제가 깨지면 RSA 암호가 깨진다. 하지만 RSA를 해독하는 방법이 소인수분해 문제를 푸는 것 말고도 다양한 방법들이 있다. 이를 보완하기 위해 Textbook RSA에 다양한 방법들을 추가하여 사용한다. 하지만 새로운 RSA 공격 방법이 나올지는 아직 알 수 없다.
 
@@ -294,7 +335,7 @@ RSA 암호는 1978년 `Rivest`, `Shamir`, `Adleman` 세 사람에 의해 만들�
 
 <br/>
 
-### (8) OW-CPA Example: Rabin Scheme
+### 8) OW-CPA Example: Rabin Scheme
 
 <img src="../images/security-engineering-6-security-design-assurance-2.8.1.png?raw=true" alt="drawing" width="640"/>
 
@@ -304,7 +345,7 @@ RSA 암호는 1978년 `Rivest`, `Shamir`, `Adleman` 세 사람에 의해 만들�
 
 <br/>
 
-### (9) Semantic Security
+### 9) Semantic Security
 
 <img src="../images/security-engineering-6-security-design-assurance-2.9.1.png?raw=true" alt="drawing" width="640"/>
 
@@ -358,7 +399,7 @@ RSA 암호는 1978년 `Rivest`, `Shamir`, `Adleman` 세 사람에 의해 만들�
 
 <br/>
 
-### (10) Polynomial Security (IND-CPA)
+### 10) Polynomial Security (IND-CPA)
 
 Security Goal: Polynomial Security
 
@@ -420,7 +461,7 @@ Shannon은 박사학위 논문에서 다음과 같이 증명하였다.
 
 <br/>
 
-### (11) Chosen Ciphertext Attack
+### 11) Chosen Ciphertext Attack
 
 하지만 기존의 Goldwasser 박사가 생각했던 Semantic Security 개념은 CPA 공격을 하는 도청만하는 `passive attacker`만 생각했던 개념이다. 따라서 `active attacker`가 있을 때를 생각하게 되었다.
 
@@ -450,7 +491,7 @@ Shannon은 박사학위 논문에서 다음과 같이 증명하였다.
 
 <br/>
 
-### (12) Non-Malleability
+### 12) Non-Malleability
 
 <img src="../images/security-engineering-6-security-design-assurance-2.12.1.png?raw=true" alt="drawing" width="640"/>
 
@@ -470,7 +511,7 @@ Shannon은 박사학위 논문에서 다음과 같이 증명하였다.
 
 <br/>
 
-### (13) How to Make IND/NM-CCA Cipher?
+### 13) How to Make IND/NM-CCA Cipher?
 
 <img src="../images/security-engineering-6-security-design-assurance-2.13.1.png?raw=true" alt="drawing" width="640"/>
 
@@ -512,7 +553,7 @@ e.g. `WPA2` 프로토콜이 깨진 것도 합성보안에 문제가 발생한 �
 
 <br/>
 
-### (14) OAEP
+### 14) OAEP
 
 <img src="../images/security-engineering-6-security-design-assurance-2.14.1.png?raw=true" alt="drawing" width="640"/>
 
@@ -546,7 +587,7 @@ e.g. `WPA2` 프로토콜이 깨진 것도 합성보안에 문제가 발생한 �
 
 ## 4. Machine-Assisted Verification
 
-### (1) Machine-Assisted Verification 
+### 1) Machine-Assisted Verification 
 
 <img src="../images/security-engineering-6-security-design-assurance-4.1.1.png?raw=true" alt="drawing" width="640"/>
 
@@ -558,7 +599,7 @@ WPA2 프토토콜의 문제점이 발견되었다. WPA2 프로토콜은 `active 
 
 <br/>
 
-### (2) Limits of Provable Security
+### 2) Limits of Provable Security
 
 `Provable Security`라는 말을 사용하지 않는 것이 좋다. 정확하게는 안전성이 증명되는 것이 아니라 `Security Requirements`를 만족하는지를 증명하는 것이다.
 
@@ -566,7 +607,7 @@ WPA2 프토토콜의 문제점이 발견되었다. WPA2 프로토콜은 `active 
 
 ## 5. Key Management
 
-### (1) Diffie-Hellman Key Agreement
+### 1) Diffie-Hellman Key Agreement
 
 `Diffie`와 `Hellman`은 서로 멀리 떨어진 두 사람이 키를 분배하는 방법을 제안하였다.
 
@@ -594,7 +635,7 @@ mod를 사용하면 지수승을 구하는 것이 매우 어렵다. 즉 `이산�
 
 <br/>
 
-### (1) Interactive Protocol
+### 1) Interactive Protocol
 
 <br/>
 
@@ -618,7 +659,7 @@ mod를 사용하면 지수승을 구하는 것이 매우 어렵다. 즉 `이산�
 
 <br/>
 
-### (2) Zero-Knowledge Proofs
+### 2) Zero-Knowledge Proofs
 
 프로토콜에서 `Semantic Security` 개념을 적용한다면, A, B가 서로 데이터를 주고받는 동안 두 사용자의 정보가 한 비트도 노출되면 안된다. 이것을 `영지식성(Zero-Knowledge)`라고 한다.
 
@@ -769,7 +810,7 @@ Edited(Polynomially Simulated) Conversation은 빠른 시간 안에 시뮬레이
 
 <br/>
 
-### (1) Secure Multi-Party Computation (MPC)
+### 1) Secure Multi-Party Computation (MPC)
 
 ***Cryptographic protocol for emulating a trusted party***
 
@@ -805,11 +846,11 @@ Edited(Polynomially Simulated) Conversation은 빠른 시간 안에 시뮬레이
 
 ## 8. Digital Signatures
 
-### (1) Digital Signature
+### 1) Digital Signature
 
 <br/>
 
-### (2) Security Goal & Attack Model 
+### 2) Security Goal & Attack Model 
 
 #### Target
 
