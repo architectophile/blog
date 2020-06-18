@@ -285,7 +285,7 @@ Decentralized Privacy-Preserving Proximity Tracing(DP-3T) 프로토콜을 `자�
 ### 2) Brief History of Provable Security
 
 `Design Assurance`에 대한 연구는 1982년 GM(IND-CPA)에 의해 기초가 정립되어 본격적으로 시작되었다.
-
+ 
 <img src="../images/security-engineering-6-security-design-assurance-3.2.1.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
@@ -629,7 +629,9 @@ e.g. `WPA2` 프로토콜이 깨진 것도 `합성보안`에 결함이 있어 발
 
 ### 2) Limits of Provable Security
 
-`Provable Security`라는 말을 사용하지 않는 것이 좋다. 정확하게는 안전성이 증명되는 것이 아니라 `Security Requirements`를 만족하는지를 증명하는 것이다.
+예전에는 `design assurance`와 같은 안전성을 증명하는 것을 `Provable Security`라고 불렀다.
+
+하지만 `Provable Security`라는 말을 사용하지 않는 것이 좋다. 정확하게는 해당 `Security Requirements`를 만족하는지를 증명하였다고 말해야 한다. 
 
 <br/>
 
@@ -669,7 +671,7 @@ e.g. `WPA2` 프로토콜이 깨진 것도 `합성보안`에 결함이 있어 발
 
 ## 6. 2-Party Protocols
 
-알고리즘과 프로토콜이 차이는 알고리즘은 컴퓨터 한 대로 가능한 것이고, 프로토콜은 서로 데이터를 주고 받아야 하기 때문에 컴퓨터 두 대 이상이 필요하다.
+`알고리즘(algorithm)`과 `프로토콜(protocol)`이 차이는 알고리즘은 컴퓨터 한 대로 연산 가능한 것이고, 프로토콜은 서로 데이터를 주고 받아야 하기 때문에 컴퓨터 두 대 이상이 필요하다.
 
 <br/>
 
@@ -679,45 +681,43 @@ e.g. `WPA2` 프로토콜이 깨진 것도 `합성보안`에 결함이 있어 발
 
 #### (1) Interactive Turing Machine
 
-<img src="../images/security-engineering-6-security-design-assurance-6.1.1.png?raw=true" alt="drawing" width="520"/>
+<img src="../images/security-engineering-6-security-design-assurance-6.1.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
-위 그림의 turing machine 하나를 컴퓨터 한 대라고 생각할 수 있으며, 컴퓨터 한 대에서 처리할 수 있는 것은 `알고리즘(algorithm)`이라고 한다.
+위 그림의 `turing machine` 하나를 `컴퓨터 한 대`라고 생각할 수 있으며, 컴퓨터 한 대에서 처리할 수 있는 것은 `알고리즘(algorithm)`이라고 한다.
 
 <br/>
 
 #### (2) Interactive Turing Machines
 
-<img src="../images/security-engineering-6-security-design-assurance-6.1.2.png?raw=true" alt="drawing" width="720"/>
+<img src="../images/security-engineering-6-security-design-assurance-6.1.2.1.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
-위 그림의 turing machine 두 대는 서로 다른 컴퓨터 두 대를 의미하며, 공통의 목적을 달성해야 하기 때문에 쌍방이 Input을 공유하며, 한 쪽에서 write하면 다른 한 쪽에서 read하는 것은 통신채널을 의미한다. 이런 상호 간에 통신하면서 공동의 목표를 처리하는 것은 `프로토콜(protocol)`이다.
+위 그림의 `turing machine` 두 대는 서로 `다른 컴퓨터 두 대`를 의미하며, 공통의 목적을 달성해야 하기 때문에 쌍방이 Input을 공유하며, 한 쪽에서 write하면 다른 한 쪽에서 read하는 것은 통신채널을 의미한다. 이런 상호 간에 통신하면서 공동의 목표를 처리하는 것은 `프로토콜(protocol)`이다.
 
 <br/>
 
 ### 2) Zero-Knowledge Proofs
 
-프로토콜에서 `Semantic Security` 개념을 적용한다면, A, B가 서로 데이터를 주고받는 동안 두 사용자의 정보가 한 비트도 노출되면 안된다. 이것을 `영지식성(Zero-Knowledge)`라고 한다.
+`프로토콜(protocol)`에서 `Semantic Security` 개념을 적용한다면, A, B가 서로 데이터를 주고받는 동안 ***두 사용자의 정보가 한 비트도 노출되면 안 된다.*** 이것을 `영지식성(Zero-Knowledge)`라고 한다.
 
-만약 사용자 인증 프로토콜이라고 한다면, 사용자의 비밀정보에 대해서 한 비트도 노출되서는 안 된다.
+만약 `사용자 인증` 프로토콜이라고 한다면, ***사용자의 `비밀정보`에 대해서 한 비트도 노출되서는 안 된다.***
 
-<br/>
+어떤 프로토콜이 `영지식성`을 만족하는지 증명하기 위해서는 ***영지식성이라는 개념을 수학적으로 정의하는 것이 필요하다.***
 
-어떤 프로토콜이 영지식성을 만족하는지 증명하기 위해서는 영지식성이라는 개념을 수학적으로 정의하는 것이 필요하다.
+`Zero-Knowledge` 에서는 A, B가 통신채널을 통해서 데이터를 주고받을 때, A가 B에게 `사용자 인증`을 한다고 가정했을 때, 데이터를 노출시키지 않기 위해서는 데이터를 암호화하면 되지만, ***`영지식 증명`에서는 A는 B에게도 `비밀정보`를 한 비트도 알려주지 않아야 한다.***
 
-<br/>
+두 개체가 통신을 할 때는 공격자가 2명이다. 통신채널을 들여다보고 있는 `공격자(passive attacker)`와, 다른 한 명은 `통신하는 상대방`(e.g. 네이버 웹사이트)이다.
 
-`Zero-Knowledge` 에서는 A, B가 통신채널을 통해서 데이터를 주고받을 때, A가 B에게 사용자인증을 한다고 가정했을 때, 데이터를 노출시키지 않기 위해서는 데이터를 암호화하면 되지만, 영지식증명에서는 A는 B에게도 비밀정보를 한 비트도 알려주지 않아야 한다.
+`passive attacker`만 생각한다면 데이터를 암호화만 하면 비밀정보를 노출시키지 않을 수 있지만, 문제는 사용자 인증을 하는 상대방에게도 비밀정보를 노출시키지 않는 것은 쉽지 않다.
 
-통신을 할 때는 공격자가 2명이다. 통신채널을 들여다보고 있는 공격자와, 다른 한 명은 통신하는 상대방(e.g. naver)이다.
-
-현재 네이버 등에서 사용하는 사용자인증 프로토콜은 영지식성을 만족하지 않는다.
+현재 네이버 등에서 사용하는 사용자인증 프로토콜은 `영지식성`을 만족하지 않는다(네이버가 나의 비밀정보를 확인함). 
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-6.2.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-6.2.0.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
@@ -727,7 +727,7 @@ e.g. `WPA2` 프로토콜이 깨진 것도 `합성보안`에 결함이 있어 발
 
 #### (1) Indistinguishability
 
-<img src="../images/security-engineering-6-security-design-assurance-6.2.2.png?raw=true" alt="drawing" width="480"/>
+<img src="../images/security-engineering-6-security-design-assurance-6.2.1.1.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
@@ -735,7 +735,7 @@ e.g. `WPA2` 프로토콜이 깨진 것도 `합성보안`에 결함이 있어 발
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-6.2.3.png?raw=true" alt="drawing" width="480"/>
+<img src="../images/security-engineering-6-security-design-assurance-6.2.1.2.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
@@ -745,11 +745,11 @@ e.g. `WPA2` 프로토콜이 깨진 것도 `합성보안`에 결함이 있어 발
 
 컴퓨터가 가위, 바위, 보 중에서 랜덤하게 값을 출력하고 그에 따라 결과가 결정되는데, 이렇게 모든 것들이 변수와 그에 따른 확률로 결정이 된다.
 
-앙상블이라는 것은 모든 값들의 경우를 확률로 표시해서, 그 확률 분포를 비교하는 것을 말한다.
+`앙상블`이라는 것은 ***두 프로그램의 모든 값들의 경우를 확률로 표시해서, 그 `확률 분포를 비교`하는 것을 말한다.***
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-6.2.4.png?raw=true" alt="drawing" width="480"/>
+<img src="../images/security-engineering-6-security-design-assurance-6.2.1.3.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
@@ -757,21 +757,23 @@ e.g. `WPA2` 프로토콜이 깨진 것도 `합성보안`에 결함이 있어 발
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-6.2.5.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-6.2.1.4.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-왼쪽에 있는 실제 `prover`는 `secret` 값을 알고 상대방과 통신을 하고 있는 앙상블이고, 오른쪽 `시뮬레이터`는 `secret` 값을 모르는 상태에서 통신하는 앙상블이다. 만약 두 개의 앙상블을 구분할 수 없다면(indistinguishable), 해당 프로토콜은 영지식성을 만족한다고 할 수 있다. 이것은 마치 `Semantic Security`에서 암호문을 알고 있는 상태와 암호문을 모르는 상태에서 노출되는 정보의 양이 차이가 없어서 구분할 수 없는 것과 비슷한 개념이다.
+우리가 인터넷뱅킹을 할 때, 사용자 인증을 위해서 OTP를 입력한다. 이 값은 매번 랜덤하게 다른 값을 입력해야 한다. 위 그림에서 왼쪽을 사용자 인증 과정이라고 본다면, `prover`와 `verifier` 있을 때, `prover`가 접속할 때마다 `verifier`가 묻는 질문은 계속 다르다. 왼쪽을 앙상블 A라고 하고, 전체 통신 데이터를 모두 모아보면, 데이터 값은 주사위를 던진 것처럼 고른 확률분포를 나타낼 것이다. 그리고 위의 오른쪽에 있는 시뮬레이터(fake)는 비밀정보를 모르는 상태에서 통신하는 앙상블 B이다.
+
+왼쪽에 있는 실제 `prover`는 `secret` 값을 알고 상대방과 통신을 하고 있는 앙상블 A이고, 오른쪽 `시뮬레이터`는 `secret` 값을 모르는 상태에서 통신하는 앙상블 B이다. 만약 두 개의 앙상블 A, B를 구분할 수 없다면(`indistinguishable`), ***앙상블 A에서 유출되는 정보(secret information 포함)가 없다는 뜻이며,*** 이것은 해당 프로토콜은 `영지식성`을 만족한다고 할 수 있다. 이것은 마치 `Semantic Security`에서 암호문을 알고 있는 상태와 암호문을 모르는 상태에서 노출되는 정보의 양이 차이가 없어서 구분할 수 없는 것과 비슷한 개념이다.
 
 왼쪽은 편집하지 않은 앙상블이고, 오른쪽은 편집한 앙상블이다. 두 앙상블의 확률 분포가 똑같다면 왼쪽 앙상블에서 노출되는 정보는 없다고 정의한다.
 
-Edited(Polynomially Simulated) Conversation은 빠른 시간 안에 시뮬레이션이 가능해야 한다는 것을 의미한다. 선택지가 2개일 경우에는 50번 성공을 위해 100번만 시도하면 되지만, 선택지가 10개일 경우에는 50번 성공을 위해서 500번 시도를 해야 한다. 빠른 시간 안에 시뮬레이션을 위해서 보통은 영지식성을 증명할 수 있는 프로토콜은 서버 쪽에서 오는 질문이 매우 단순한 경우가 많다.
+Edited(`Polynomially Simulated`) Conversation은 ***빠른 시간 안에 `시뮬레이션`이 가능해야 한다.*** 선택지가 2개일 경우에는 50번 성공을 위해 100번만 시도하면 되지만, 선택지가 10개일 경우에는 50번 성공을 위해서 500번 시도를 해야 한다. 따라서 빠른 시간 안에 시뮬레이션을 위해서 보통은 영지식성을 증명할 수 있는 프로토콜은 `verifier` 쪽에서 오는 질문이 매우 단순한 경우가 많다.
 
 <br/>
 
-#### ZKIP for Kids
+#### (2) ZKIP for Kids
 
-<img src="../images/security-engineering-6-security-design-assurance-6.2.6.png?raw=true" alt="drawing" width="520"/>
+<img src="../images/security-engineering-6-security-design-assurance-6.2.2.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -779,23 +781,23 @@ Edited(Polynomially Simulated) Conversation은 빠른 시간 안에 시뮬레이
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-6.2.7.png?raw=true" alt="drawing" width="520"/>
+<img src="../images/security-engineering-6-security-design-assurance-6.2.2.2.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
-영지식성은 `prover`와 `verifier`가 실제로 만드는 실제 앙상블과 `가짜 prover`와 `verifier`가 만드는 편집한 앙상블 두 개가 서로 구분할 수 없다는(indistinguishable) 것을 보이는 것이다.
+영지식성은 `prover`와 `verifier`가 실제로 만드는 실제 앙상블과 `가짜 prover`와 `verifier`가 만드는 편집한 앙상블 두 개가 서로 구분할 수 없다는(`indistinguishable`) 것을 보이는 것이다.
 
-영지식 프로토콜에서 중요한 것은 해당 프로토콜에서 정보가 노출되지 않는다는 것을 증명(prove)할 수 있어야 한다.
-
-<br/>
-
-#### ZKIP for Hamiltonian Cycle
-
-<img src="../images/security-engineering-6-security-design-assurance-6.2.8.png?raw=true" alt="drawing" width="320"/>
+`영지식 프로토콜`에서 중요한 것은 ***해당 프로토콜에서 정보가 노출되지 않는다는 것을 반드시 증명(prove)할 수 있어야 한다.***
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-6.2.9.png?raw=true" alt="drawing" width="520"/>
+#### (3) ZKIP for Hamiltonian Cycle
+
+<img src="../images/security-engineering-6-security-design-assurance-6.2.3.1.png?raw=true" alt="drawing" width="320"/>
+
+<br/>
+
+<img src="../images/security-engineering-6-security-design-assurance-6.2.3.2.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -803,7 +805,7 @@ Edited(Polynomially Simulated) Conversation은 빠른 시간 안에 시뮬레이
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-6.2.10.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-6.2.3.3.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
@@ -820,47 +822,55 @@ Edited(Polynomially Simulated) Conversation은 빠른 시간 안에 시뮬레이
 
 <br/>
 
-#### Parallel composition of ZKPK
+#### (4) Parallel composition of ZKPK
 
 평행하게 여러개의 영지식 증명을 동시에 수행할 경우 영지식성을 보장할 수 없다.
 
-컴포넌트 단위로 설계의 무결성을 증명하였다고 해서, 여러 컴포넌트를 조합하였을 때는 안전성을 보장할 수 없다. 
+컴포넌트 단위로 설계의 무결성을 증명하였다고 해서, 여러 컴포넌트를 조합하였을 때는 안전성을 보장할 수 없다. 이것은 `composition security` 문제이다.
 
 <br/>
 
-#### Zero-Knowledge for Cryptocurrency
+#### (5) Applications
 
-<img src="../images/security-engineering-6-security-design-assurance-6.2.11.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-6.2.5.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+모든 NP Statements는 영지식 증명으로 바꿀 수 있다.
+
+<br/>
+
+#### (6) Zero-Knowledge for Cryptocurrency
+
+<img src="../images/security-engineering-6-security-design-assurance-6.2.6.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
 블록체인은 데이터를 삭제 또는 수정이 불가능하기 때문에 개인정보가 기록될 경우 프라이버시 문제가 발생한다. 데이터를 암호화하고 기록된 정보가 제대로 된 정보인지를 확인하기 위해 영지식성을 활용한다.
 
-하지만 블록체인의 컴퓨팅 파워가 한정되어 있어서 간결하게 만든 영지식증명 프로토콜인 `zk-SNARKs`이 `ZCash` 암호화폐에 사용된다.
+하지만 블록체인의 컴퓨팅 파워가 한정되어 있어서 `간결하게(succinct)` 만든 영지식증명 프로토콜인 `zk-SNARKs`이 `ZCash` 암호화폐에 사용된다.
 
-하지만 효율적으로 만들기 위해서 단점이 있는데 바로 초기 셋업 과정에서 절대적으로 신뢰할 수 있는 Trusted Third Party(TTP)가 있어야 한다.
+하지만 효율적으로 만들기 위해서 단점이 있는데 바로 초기 셋업 과정에서 절대적으로 신뢰할 수 있는 Trusted Third Party(TTP)가 있어야 한다. 이것은 블록체인의 탈중앙화 정신에 위배되는 문제가 있다.
 
 <br/>
 
 ## 7. Multi-Party Protocols
 
-온라인 도박, 온라인 경매, 전자투표 등 참여자가 많은 Multi-Party Protocols가 있다.
+온라인 도박, 온라인 경매, 전자투표 등 참여자가 많은 `Multi-Party Protocols`가 있다.
+ 
+### 1) Secure Multi-Party Computation (MPC)
+
+<img src="../images/security-engineering-6-security-design-assurance-7.1.1.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-### 1) Secure Multi-Party Computation (MPC)
-
-***Cryptographic protocol for emulating a trusted party***
+***\"Cryptographic protocol for emulating a trusted party\"***
 
 전자투표 프로토콜을 쉽게 만드는 것은 절대적인 신뢰자를 한 명 두는 것이다. 하지만 이것은 현실적으로 거의 불가능하다. 따라서 암호학적으로 신뢰할 수 있는 `trusted party`를 에뮬레이팅 하는 것이 `Secure Multi-Party Computation(MPC)`의 목적이다. 이것은 `탈중앙화`를 의미하기도 한다.
 
-<img src="../images/security-engineering-6-security-design-assurance-7.1.1.png?raw=true" alt="drawing" width="640"/>
-
 <br/>
 
-`Secure MPC`에서는 참여자가 미리 정해져있고 참가자의 리스트가 미리 알려져있다. 하지만 `블록체인`에서는 참여자를 미리 고정되어 있지 않다.
-
-***\"Properties must be ensured even if some of the parties maliciously attack the protocol\"***
+***\"Properties must be ensured even if some of the parties maliciously attack the protocol.\"***
 
 `MPC`에서는 참여자가 매우 많기 때문에 나를 제외한 나머지 참여자가 모두 공격자가 될 수 있으므로 안전한 프로토콜을 설계하는 것이 `2-party protocol`일 때보다 훨씬 어렵다.
 
@@ -868,17 +878,20 @@ Edited(Polynomially Simulated) Conversation은 빠른 시간 안에 시뮬레이
 
 ***\"Permissionless blockchain can provide efficiency and scalability to MPC!\"***
 
+`Secure MPC`에서는 참여자가 미리 정해져있고 참가자의 리스트가 미리 알려져 있다. `Public Blockchain`에서는 참여자가 미리 고정되어 있지 않아서 참여자의 `확장성(scalability)`을 제공한다.
+
 <br/>
 
-#### Secure Multiparty Computation
+#### (1) Secure Multiparty Computation
 
-#### Examples
-
-- 인증 프로토콜
-- 온라인 결제
-- 경매
-- 투표
-- Privacy Preserving 데이터 마이닝
+- Examples:
+  - 인증 프로토콜
+  - 온라인 결제
+  - 경매
+  - 투표
+  - Privacy Preserving 데이터 마이닝
+  
+e.g. `privacy`롤 보호하기 위해 구글에 검색 쿼리를 보낼 때 쿼리의 내용은 숨기면서 결과는 정확한 값을 얻을 수 있는 연구를 하는 곳도 있다.
 
 <br/>
 
@@ -886,11 +899,13 @@ Edited(Polynomially Simulated) Conversation은 빠른 시간 안에 시뮬레이
 
 ### 1) Digital Signature
 
+<img src="../images/security-engineering-6-security-design-assurance-8.1.1.1.png?raw=true" alt="drawing" width="480"/>
+
 <br/>
 
 ### 2) Security Goal & Attack Model 
 
-#### Target
+#### (1) Target
 
 `Goldwasser` 박사는 전자서명에 대해서 안전성의 레벨을 다음 3가지로 구분하였다.
 
