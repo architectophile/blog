@@ -29,7 +29,7 @@ MS는 많은 취약점들이 요구사항 분석 단계와 설계 단계에서 �
 
 `Edward Snowden`은 `the guardian`지에 `NSA`에서 운영하는 `PRISM` 프로그램을 이용하여 민간인을 사찰할 수 있다는 것을 폭로한다.
 
-`NSA`에서 AOL, Apple, Facebook, Google, Microsoft, Paltalk, Skype, Yahoo, and YouTube의 협조를 얻어서 각 회사에 일종의 검색엔진인 `PRISM` 프로그램을 설치하였다. 이 검색엔진을 통해서 사람들의 다양한 정보를 볼 수 있다는 것을 폭로하였다.
+`NSA`에서 AOL, Apple, Facebook, Google, Microsoft, Paltalk, Skype, Yahoo, and YouTube의 협조를 얻어서 각 회사에 일종의 검색엔진을 설치하였다. 이 검색엔진을 통해서 사람들의 다양한 정보를 볼 수 있다는 것을 폭로하였다.
 
 <br/>
 
@@ -91,7 +91,7 @@ DES 알고리즘의 대부분의 substitution과 permutation의 원리를 알 �
 
 <br/>
 
-### 1) Emphases of Modern Cryptography
+### 1) Emphasis of Modern Cryptography
 
 현대 암호학은 엄밀한 정의(definitions)와, 정확한 전제조건(assumptions), 엄밀한 보안 증명(proofs)을 바탕으로 한다.
 
@@ -123,17 +123,15 @@ DES 알고리즘의 대부분의 substitution과 permutation의 원리를 알 �
 
 ### 3) Standard, Model, Implementation
 
-#### Protocol Model:
-
-- 프로토콜 표준 문서에서 코어 메시지만 추려낸 것
+- `Protocol Model`: 프로토콜 표준 문서에서 코어 메시지만 추려낸 것
 
 <br/>
 
 ### 4) Models of Security Protocol Verification
 
-#### Symbolic Model(Dolev-Yao Model)
+#### (1) Symbolic Model(Dolev-Yao Model)
 
-#### Computational Model
+#### (2) Computational Model
 
 <br/>
 
@@ -179,13 +177,21 @@ DES 알고리즘의 대부분의 substitution과 permutation의 원리를 알 �
 
 #### (5) Machine-Assisted Verification
 
-- `ISO/IEC 29128`: 암호 프로토콜의 설계 무결성을 검증하는 표준. Protocol Assurance Level. PAL1, PAL2, PAL3로 나뉜다. 레벨이 올라갈 수록 많은 것이 `Formal`하게 기술되어야 한다. 레벨2 이상부터는 도구를 사용한 `Tool-aided`가 요구된다.
+<img src="../images/security-engineering-6-security-design-assurance-1.5.5.1.png?raw=true" alt="drawing" width="520"/>
 
-전세계적인 추세는 `design assurance` 증명을 할 때 손으로 직접 하는 것보다는 ***되도록이면 `자동화 도구`를 사용할 것을 추천한다.*** 그 이유는 우선 ***사람의 실수가 줄어들고,*** ***사람에 따라 달라지지 않고 항상 `일정한` 증명 결과가 나오기 때문이다.*** 편차가 생기지 않는 것이 중요하다. 그리고 `자동화 도구`를 사용하면 ***분석도 `빠르게` 할 수 있어 효율적이다.***
+<br/>
+
+컴퓨터를 이용해 메시지 M을 만들 수 있는 다양한 조합을 만들어내고, 그 중에서 원래 프로토콜에서 사용되는 메시지가 들어가는 것을 찾아낸다.
+
+위 그림에서 원래 프로토콜 메시지인 빨간 부분이 나오면, 나머지 연산을 조합하여 메시지 M을 만들어낼 수 있다.
 
 <br/>
 
 ### 6) Computational Method
+
+<img src="../images/security-engineering-6-security-design-assurance-1.6.0.1.png?raw=true" alt="drawing" width="520"/>
+
+<br/>
 
 1980년대에 Goldwasser, Micali, Rivest가 제안하였다. `Computational Method` 기법은 ***`정밀도`는 매우 높지만*** 아직도 여전히 많은 것을 `수작업(manual)`으로 해야한다.
 
@@ -255,14 +261,14 @@ Decentralized Privacy-Preserving Proximity Tracing(DP-3T) 프로토콜을 `자�
 
 #### (1) Shannon's Proposal
 
-`Shannon`이 `비트(bit)`의 개념을 만들어 `정보의 양`을 측정할 수 있게 되었다. `Shannon`은 어떻게 하면 한정된 대역폭에서 데이터를 많이 보낼 수 있을까 고민하여 데이터 압축을 고민했고, 또한 어떻게 하면 정보를 비밀리에 보낼 수 있는지 고민하였다. 무한대의 컴퓨팅 파워를 가진 공격자에게도 안전한 암호시스템을 고민하여 `One-time pad` 시스템을 생각해냈다. `One-time pad` 시스템에서 키의 길이와 메시지의 길이는 같아야 하고, 키는 서로 미리 교환한 난수를 사용해야 하며, 한 번 사용한 키는 재사용하지 않는다. 하지만 `One-time pad` 실생활에서 쓰기에는 실용적이지 않았다(impractical). 따라서 `Perfect Secure`가 아니라 암호를 깨는데 시간이 매우 오래 걸려서 공격의 의미가 없는 `Computational Secure`한 암호를 만들어야 한다고 생각했다. 이를 위해서는 `Confusion` 효과와 `Diffusion` 효과가 필요하다고 생각해냈다.
+`Shannon`이 `비트(bit)`의 개념을 만들어 `정보의 양`을 측정할 수 있게 되었다. `Shannon`은 어떻게 하면 한정된 대역폭에서 데이터를 많이 보낼 수 있을까 고민하여 데이터 압축을 고민했고, 또한 어떻게 하면 정보를 비밀리에 보낼 수 있는지 고민하였다. 무한대의 컴퓨팅 파워를 가진 공격자에게도 안전한(`Perfect Secure`) 암호시스템을 고민하여 `One-time pad` 시스템을 생각해냈다. `One-time pad` 시스템에서 키의 길이와 메시지의 길이는 같아야 하고, 키는 서로 미리 교환한 난수를 사용해야 하며, 한 번 사용한 키는 재사용하지 않는다. 하지만 `One-time pad` 실생활에서 쓰기에는 실용적이지 않았다(impractical). 따라서 `Perfect Secure`가 아니라 암호를 깨는데 시간이 매우 오래 걸려서 공격의 의미가 없는 `Computational Secure`한 암호를 만들어야 한다고 생각했다. 이를 위해서는 `Confusion` 효과와 `Diffusion` 효과가 필요하다고 생각해냈다.
 
-<img src="../images/security-engineering-6-security-design-assurance-2.1.1.png?raw=true" alt="drawing" width="520"/>
+<img src="../images/security-engineering-6-security-design-assurance-2.1.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
-- `Confusion`: 메시지와 키의 관계를 감춘는 것을 말함. 환자암호(Substitution Cipher)
-- `Diffusion`: 평문과 암호문의 관계를 감추는 것을 말함. 전치암호(Permutation Cipher)
+- `Confusion`: `암호문`과 `키`의 관계를 감춘는 것을 말함. 환자암호(`Substitution` Cipher)
+- `Diffusion`: `평문`과 `암호문`의 관계를 감추는 것을 말함. 전치암호(`Permutation` Cipher)
 
 `Feistel` 구조는 블록을 반으로 나눠서 한 쪽에 대해서만 환자암호 전치암호 처리를 한다.
 
@@ -276,15 +282,21 @@ Decentralized Privacy-Preserving Proximity Tracing(DP-3T) 프로토콜을 `자�
 
 <br/>
 
-### 3) Brief History of Provable Security
+### 2) Brief History of Provable Security
 
 `Design Assurance`에 대한 연구는 1982년 GM(IND-CPA)에 의해 기초가 정립되어 본격적으로 시작되었다.
 
-<img src="../images/security-engineering-6-security-design-assurance-2.3.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.2.1.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
 설계의 무결성을 수학적으로 증명하는 것은 대칭키암호보다는 공개키암호 분야에서 더욱 발전되어 있다.
+
+<br/>
+
+### 3) [Note] Security Goals & Attacker Models
+
+<img src="../images/security-engineering-6-security-design-assurance-3.3.1.1.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
@@ -297,15 +309,19 @@ Decentralized Privacy-Preserving Proximity Tracing(DP-3T) 프로토콜을 `자�
 
 ### 5) The Origin of PKC
 
-공개키 암호는 1976년 `Diffie`와 `Hellman`에 의해 개념이 생겨났다. → `New Directions in Cryptography`.
+<img src="../images/security-engineering-6-security-design-assurance-3.5.1.1.png?raw=true" alt="drawing" width="640"/>
 
-전자상거래의 도입으로 인해 민간에서도 암호의 사용이 필요해졌다.
+<br/>
+
+`공개키 암호`는 1976년 `Diffie`와 `Hellman`에 의해 개념이 생겨났다. → `New Directions in Cryptography`.
+
+`전자상거래`의 도입으로 인해 민간에서도 암호의 사용이 필요해졌다. 전자상거래에서는 모르는 사람에게 온라인으로 데이터를 전송해야 한다. 암호화키와 복호화키를 다르게 해서 전자상거래에 편리하게 사용할 수 있게 하기 위해 공개키암호가 탄생한다. e.g. 상점주인의 공개키로 암호화해서 카드 비밀정보를 전송한다.
 
 <br/>
 
 ### 6) PKC in Formal
 
-<img src="../images/security-engineering-6-security-design-assurance-2.3.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.6.1.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
@@ -313,55 +329,57 @@ Decentralized Privacy-Preserving Proximity Tracing(DP-3T) 프로토콜을 `자�
 
 RSA 암호는 1978년 `Rivest`, `Shamir`, `Adleman` 세 사람에 의해 만들어졌다. RSA는 소인수분해 문제가 깨지면 RSA 암호가 깨진다. 하지만 RSA를 해독하는 방법이 소인수분해 문제를 푸는 것 말고도 다양한 방법들이 있다. 이를 보완하기 위해 Textbook RSA에 다양한 방법들을 추가하여 사용한다. 하지만 새로운 RSA 공격 방법이 나올지는 아직 알 수 없다.
 
-<img src="../images/security-engineering-6-security-design-assurance-2.7.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.7.1.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
 위 그림에서 암호화 시스템은 암호 숫자가 너무 커지고, 역원을 구하기가 쉽기 때문에 안전하지 않다.
 
-<img src="../images/security-engineering-6-security-design-assurance-2.7.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.7.1.2.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-컴퓨터로 쉽게 계산할 수 없는 NP문제를 이용하여 암호 시스템을 안전하게 만들었다.
+컴퓨터로 쉽게 계산할 수 없는 `NP문제`를 이용하여 암호 시스템을 안전하게 만들었다.
 
-<img src="../images/security-engineering-6-security-design-assurance-2.7.3.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.7.1.3.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-이전 그림에서 유클리드 함수(e의 역원 d를 계산하는 함수)를 적용하여 RSA 암호를 완성하였다.
+이전 그림에서 `유클리드 함수(e의 역원 d를 계산하는 함수)`를 적용하여 `RSA` 암호를 완성하였다.
 
-소수 2개를 모르는 상태에서 소인수 분해를 하는 것은 NP문제이므로 매우 오랜 시간이 걸리지만, 반대로 p × q = N를 구하는 것은 P문제이므로 쉽다. 따라서 키를 생성하고 암호화하는 것은 매우 쉽지만 해킹하기는 매우 시간이 오래걸리므로 안전하다.
+`소수 2개`를 모르는 상태에서 두 값의 곱을 `소인수 분해`를 하는 것은 `NP문제`이므로 매우 오랜 시간이 걸리지만, 반대로 `p × q = N`를 구하는 것은 `P문제`이므로 쉽다. 따라서 키를 생성하고 암호화하는 것은 매우 쉽지만 해킹하기는 매우 시간이 오래걸리므로 안전하다.
 
 <br/>
 
 ### 8) OW-CPA Example: Rabin Scheme
 
-<img src="../images/security-engineering-6-security-design-assurance-2.8.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.8.1.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-`RSA 암호`는 소인수분해 문제를 풀지 않아도 다른 공격 방법들이 있다. 따라서 문제가 발견될 때마다 계속 RSA 암호를 보완해왔다. 반면에 ***`Rabin` 암호 시스템을 깨기 위한 방법은 오직 소인수분해 문제 밖에 없다는 것이 수학적으로 증명되었다.*** 따라서 완성도로 보면 `RSA` 보다 `Rabin` 암호가 훨씬 설계적으로 훌륭하다.
+`RSA 암호`는 소인수분해 문제를 풀지 않아도 다른 공격 방법들이 있다. 따라서 문제가 발견될 때마다 계속 RSA 암호를 보완해왔다. 반면에 ***`Rabin 암호 시스템`을 깨기 위한 방법은 오직 소인수분해 문제 밖에 없다는 것이 `수학적으로 증명`되었다.*** 따라서 완성도로 보면 `RSA` 보다 `Rabin` 암호가 훨씬 설계적으로 훌륭하다.
+
+하지만 `RSA`는 최초의 공개키암호라는 상징성 때문에 더욱 널리 쓰이고 있다.
 
 <br/>
 
 ### 9) Semantic Security
 
-<img src="../images/security-engineering-6-security-design-assurance-2.9.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.9.0.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
-기존의 `암호해독`의 정의는 매우 애매모호했다. `Goldwasser` 박사는 암호의 `해독`의 정의에 대해서 고민하였다. 평문 전체가 아니라 평문의 일부 정보만 노출되어도 매우 심각한 문제가 발생할 수 있다. 따라서 `Goldwasser` 박사는 해독에 대한 Formal한 정의를 정립했다. `Rabin`은 모든 평문이 100% 해독되는 것을 해독이라고 정의하였다.
+기존의 `암호해독`의 정의는 매우 애매모호했다. `Goldwasser` 박사는 암호의 `해독`의 정의에 대해서 고민하였다. 평문 전체가 아니라 평문의 일부 정보만 노출되어도 매우 심각한 문제가 발생할 수 있다. 따라서 `Goldwasser` 박사는 해독에 대한 Formal한 정의를 정립했다. ***`Rabin`은 모든 평문이 100% 해독되는 것을 해독이라고 정의하였다.***
 
-하지만 `Goldwasser` 박사는 암호문으로부터 평문의 그 어떤 중요 정보도 노출되지 않는 것이 `Secure`하다고 정의하였다. 그런데 이렇게 새롭게 정의된 security requirement를 formal하게 정형화명세로 나타내려고 하였더니 `"중요한"` 정보라는 것을 정성적인 개념으로서 수학적으로 정의하기가 불가능했다. 따라서 정형 명세로 바꾸기 위해 더욱 엄밀한 정의로 바꿔서 `암호문으로부터 평문의 한 비트의 정보도 노출되어서는 안 된다`라는 것을 secure한 것으로 정의하였다. 그리고 이것을 `Semantic Security` property로 정의하였다.
+하지만 ***`Goldwasser` 박사는 암호문으로부터 평문의 그 어떤 중요 정보도 노출되지 않는 것이 `Secure`하다고 정의하였다.*** 그런데 이렇게 새롭게 정의된 security requirement를 formal하게 정형화명세로 나타내려고 하였더니 `"중요한"` 정보라는 것을 정성적인 개념으로서 수학적으로 정의하기가 불가능했다. 따라서 정형 명세로 바꾸기 위해 더욱 엄밀한 정의로 바꿔서 `암호문으로부터 평문의 한 비트의 정보도 노출되어서는 안 된다`라는 것을 secure한 것으로 정의하였다. 그리고 이것을 `Semantic Security` property로 정의하였다.
 
 따라서 `Rabin`은 암호 시스템의 디자인을 수학적으로 증명하였지만 해독에 대한 정의가 `Goldwasser` 박사와는 달랐다.
 
 <br/>
 
-#### What Is "Nothing Is Learned"?
+#### (1) What Is "Nothing Is Learned"?
 
-<img src="../images/security-engineering-6-security-design-assurance-2.9.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.9.1.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
@@ -369,87 +387,85 @@ RSA 암호는 1978년 `Rivest`, `Shamir`, `Adleman` 세 사람에 의해 만들�
 
 <br/>
 
-#### Semantic Security in Formal
+#### (2) Semantic Security in Formal
 
 정형 기법에는 `formal specification`과 `formal verification`이 있는데, 어떤 requirement가 있을 때 이것을 정형명세(formal specification)로 바꾸는 것이 훨씬 어렵고, 자동화시키는 도구도 없고, 매우 창조적인 작업이다.
 
 <br/>
 
-#### Turing's Test
-
-<img src="../images/security-engineering-6-security-design-assurance-2.9.4.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.9.2.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-2.9.5.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.9.2.2.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-위의 그림에서 passive attacker가 왼쪽에 보이는 암호문을 갖은 상태에서 공개키와 나머지 기존이 모든 정보를 동원하여 암호문으로부터 얻어낸 정보와 오른쪽 그림의 암호문 없이 공개키와 기존의 모든 정보를 활용하여 얻어낸 정보의 양이 같거나 그 차이가 무시할 수 있을 정도로 매우 작아서 컴퓨터가 이 두 집단이 얻어낸 정보에 대해서 indistinguishable 하다면 이 때는 암호문으로부터 어떠한 정보도 노출되지 않는다고 말할 수 있다. 그리고 이것을 `Semantic Security(= Polynomial Security)` property라고 한다.
+위의 그림에서 `passive attacker`가 왼쪽에 보이는 암호문을 갖은 상태에서 공개키와 나머지 기존이 모든 정보를 동원하여 암호문으로부터 얻어낸 정보와 오른쪽 그림의 암호문 없이 공개키와 기존의 모든 정보를 활용하여 얻어낸 정보의 양이 같거나 그 차이가 무시할 수 있을 정도로 매우 작아서 컴퓨터가 이 두 집단이 얻어낸 정보에 대해서 `indistinguishable` 하다면 이 때는 암호문으로부터 어떠한 정보도 노출되지 않는다고 말할 수 있다. 그리고 이것을 `Semantic Security(= Polynomial Security)` property라고 한다.
 
 그리고 이것을 `Computational version of Shannon's perfect secrecy`라고도 한다.
 
-<img src="../images/security-engineering-6-security-design-assurance-2.9.3.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.9.2.3.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-- `Perfect secrecy`: `Shannon`은 passive adversary인 무한대(infinite)의 컴퓨팅 파워를 가진 공격자가 해독할 수 없는 암호시스템을 만들 수 있다면 `perfect secrecy`라고 정의하였다. 이것을 만들기는 했지만 비효율적이었다.
+- `Perfect secrecy`: `Shannon`은 passive adversary인 `무한대`(infinite)의 컴퓨팅 파워를 가진 공격자가 해독할 수 없는 암호시스템을 만들 수 있다면 `perfect secrecy`라고 정의하였다. 이것을 만들기는 했지만 비효율적이었다.
 
-- `Semantic security`: 하지만 공개키 알고리즘에서는 공개키가 공개되어 있기 때문에 무한한 컴퓨팅 파워를 가진 공격자는 공개키를 보고 개인키를 찾아낼 수 있다. 따라서 passive attacker가 유한한 컴퓨팅 파워(polynomially bounded computational resources)를 갖고 있을 때, 평문의 한 비트의 정보도 없을 수 없다면 `semantic security`라고 한다. 따라서 `semantic security`를 `perfect secrecy`의 computational version이라고 부른다.
+- `Semantic security`: 하지만 공개키 알고리즘에서는 공개키가 공개되어 있기 때문에 무한한 컴퓨팅 파워를 가진 공격자는 공개키를 보고 개인키를 찾아낼 수 있다. 따라서 `passive attacker`가 `유한한` 컴퓨팅 파워(polynomially bounded computational resources)를 갖고 있을 때, 평문의 한 비트의 정보도 없을 수 없다면 `semantic security`라고 한다. 따라서 `semantic security`를 `perfect secrecy`의 computational version이라고 부른다.
 
 <br/>
 
 ### 10) Polynomial Security (IND-CPA)
 
-Security Goal: Polynomial Security
-
-Can not distinguish 2 ciphertexts(indistinguishability)
+- `Polynomial Security`: Can not distinguish 2 ciphertexts(`indistinguishability`)
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-2.10.1.png?raw=true" alt="drawing" width="480"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.10.0.1.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
-공개키와, 암호문, 메시지 M0, M1을 주었을 때 passive attacker는 어떤 메시지를 암호화한 것인지 알아낸다. 하지만 공개키 암호에서는 공개키가 공개되어 있기 때문에 공격자가 직접 공개키로 암호화를 해보면 쉽게 M0, M1 둘 중에 어떤 것을 암호화했는 지 알 수 있다.
+위 그림에서 `passive attacker`는 공개키와, 암호문, 메시지 M<sub>0</sub>, M<sub>1</sub>을 주었을 때 어떤 메시지를 암호화한 것인지 알아낸다. 하지만 공개키 암호에서는 공개키가 공개되어 있기 때문에 공격자가 직접 공개키로 암호화를 해보면 쉽게 M<sub>0</sub>, M<sub>1</sub> 둘 중에 어떤 것을 암호화했는지 알 수 있다.
 
-이처럼 메시지가 2개 밖에 없는 msg space가 작은 경우에는 쉽게 맞출 수가 있지만 RSA 등에서 사용하는 1024비트 크기에서는 현실적으로 어떤 것을 암호화했는지 찾아낼 수 없다.
+대칭키암호에서는 키와 관련된 정보 자체가 노출되지 않는다. 하지만 공개키암호 시스템에서는 항상 공개키는 누구에게나 노출되어있기 때문에 공격자가 직접 공개키로 암호화해보면 어떤 메시지를 암호화한 것인지 알 수 있다.
+
+이처럼 메시지가 2개 밖에 없는 msg space가 작은 경우에는 쉽게 맞출 수가 있지만 일반적으로 RSA 등에서 사용하는 1024비트 이상의 msg space에서는 현실적으로 어떤 것을 암호화했는지 찾아낼 수 없다.
 
 e.g. 비밀 투표 시스템에서 후보자가 5명 밖에 안 될 때는 5명만 공개키고 암호화해보면 알 수 있기 때문에 공개키 암호시스템은 msg space가 작은 경우에는 안전도가 매우 떨어진다.
 
 <br/>
 
-#### Probabilistic Encryption
+#### (1) Probabilistic Encryption
 
-<img src="../images/security-engineering-6-security-design-assurance-2.10.2.png?raw=true" alt="drawing" width="480"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.10.1.1.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
 일반적인 RSA를 쓸 경우에는 동일한 메시지에 대해서 같은 공개키로 암호화하면 동일한 암호문이 생성된다. 따라서 msg space가 작은 경우에는 안전도가 매우 떨어진다.
 
-이를 막기 위해서 랜덤값을 메시지에 붙여서 보내주면 동일한 메시지와 동일한 공개키에 대해서 매번 랜덤하게 다른 암호문이 생성된다.
+이를 막기 위해서 `랜덤값`을 메시지에 붙여서 보내주면 동일한 메시지와 동일한 공개키에 대해서 ***매번 랜덤하게 다른 암호문이 생성된다.***
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-2.10.3.png?raw=true" alt="drawing" width="480"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.10.1.2.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
-임의의 메시지 x0, x1 중에서 랜덤하게 선택하여 공개키로 암호화하고 암호문을 생성하여 공격자에게 주었을 때 x0, x1 중에서 어떤 것을 암호화한 것인지 맞출 확률이 50%라면 이것은 `Polynomial Security property`를 충족한다고 말한다.
+임의의 메시지 x<sub>0</sub>, x<sub>1</sub> 중에서 랜덤하게 선택하여 공개키로 암호화하고 암호문을 생성하여 공격자에게 주었을 때 x<sub>0</sub>, x<sub>1</sub> 중에서 ***어떤 것을 암호화한 것인지 맞출 확률이 50%라면 이것은 `Polynomial Security property`를 충족한다고 말한다.***
 
-Shannon은 박사학위 논문에서 다음과 같이 증명하였다.
+`Shannon`은 박사학위 논문에서 다음과 같이 증명하였다.
 
 `Semantic Security property` -> `Polynomial Security property` 임을 증명하고,
 
 `Polynomial Security property` -> `Semantic Security property`임을 증명한다.
 
-따라서 `Semantic Security property`와 `Polynomial Security property`는 동치임을 증명한다.
+따라서 ***`Semantic Security property`와 `Polynomial Security property`는 `동치`임을 증명한다.***
 
 <br/>
 
-#### Relationships
+#### (2) Relationships
 
-<img src="../images/security-engineering-6-security-design-assurance-2.10.4.png?raw=true" alt="drawing" width="480"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.10.2.1.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
@@ -457,63 +473,65 @@ Shannon은 박사학위 논문에서 다음과 같이 증명하였다.
 
 `Polynomial Security(IND-CPA) property`와 `Semantic Security property`는 동치이다.
 
-`Semantic Security property`를 만족하면 CPA 공격에 대해서 암호문으로부터 한 비트의 정보도 노출되지 않는다.
+`Semantic Security property`를 만족하면 `CPA 공격(passive attacker)`에 대해서 ***암호문으로부터 한 비트의 정보도 노출되지 않는다.***
 
 <br/>
 
 ### 11) Chosen Ciphertext Attack
 
-하지만 기존의 Goldwasser 박사가 생각했던 Semantic Security 개념은 CPA 공격을 하는 도청만하는 `passive attacker`만 생각했던 개념이다. 따라서 `active attacker`가 있을 때를 생각하게 되었다.
+하지만 기존의 `Goldwasser` 박사가 생각했던 `Semantic Security` 개념은 `CPA 공격`을 하는, 즉 도청만하는 `passive attacker`만 생각했던 개념이다. 이후에 사람들은 `active attacker`가 있을 때도 안전한 암호 시스템 고민하게 되었다.
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-2.11.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.11.1.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-`IND-CCA1`에서는 암호문을 조작할 수 있는 공격자가 있을 때도 암호문으로부터 평문의 한 비트의 정보도 알아낼 수 없는 것이다. 즉 active attacker가 있을 때의 semantic security라고 할 수 있다.
+`IND-CCA1`에서는 암호문을 조작할 수 있는 공격자(active attacker)가 있을 때도 암호문으로부터 평문의 한 비트의 정보도 알아낼 수 없는 것이다. 즉 `active attacker`가 있을 때의 `semantic security`라고 할 수 있다.
 
-<img src="../images/security-engineering-6-security-design-assurance-2.11.2.png?raw=true" alt="drawing" width="640"/>
-
-<br/>
-
-<img src="../images/security-engineering-6-security-design-assurance-2.11.3.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.11.1.2.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-`active attacker`는 실제 메시지 75에 암호화된 메시지에 3의 19승을 곱하여 전달하고 225를 알아낸 다음 3을 나눠보면 원래 메시지가 75임을 알 수 있다.
+<img src="../images/security-engineering-6-security-design-assurance-3.11.1.3.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+`active attacker`는 실제 메시지 75에 암호화된 메시지에 3의 19승을 곱하여 전달하고, 복호화된 225를 알아낸 다음 3을 나눠보면 원래 메시지가 75임을 알 수 있다.
 
 <br/>
 
 `active attacker`를 막기 위해서는 전자서명을 할 수 있지만 시스템이 너무 무거워진다. MAC을 붙이기 위해서도 키를 공유해야하는 문제가 있다.
 
-가장 쉬운 방법은 고정된 형태의 패딩을 붙이는 것이다.
+***가장 쉬운 방법은 `고정된 형태의 패딩`을 붙이는 것이다.***
 
 <br/>
 
 ### 12) Non-Malleability
 
-<img src="../images/security-engineering-6-security-design-assurance-2.12.1.png?raw=true" alt="drawing" width="640"/>
+암호문을 임의로 조작할 수 없어야 한다는 요구사항이다.
+
+<img src="../images/security-engineering-6-security-design-assurance-3.12.1.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-위 그림을 경매시스템이라고 생각하면, 암호문을 조작하여 암호문의 실제 값은 알지 못하더라도 0.9의 19승을 곱함으로써 실제 가격의 10%를 낮출 수 있다.
+위 그림을 입찰 시스템이라고 생각하면, 암호문을 `조작`하여(manipulate) 암호문의 실제 값은 알지 못하더라도 0.9의 19승을 곱함으로써 실제 가격의 10%를 낮출 수 있다.
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-2.12.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.12.1.2.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
  
-따라서 `Non-Malleability`는 `해독` 뿐만 아니라 `조작`까지 불가능해야 한다는 새로운 요구사항 개념이다. 
+기존에는 암호가 `해독`되지 않아야 한다는 요구사항만 있었는데, 여기에 더해 `Non-Malleability`는 암호문의 `조작`까지 불가능해야 한다는 새로운 요구사항 개념이다.
 
-이를 위해서는 MAC이나 전자서명을 추가해야 한다.
+`NM`을 만족하기 위해서는 MAC이나 전자서명을 추가해야 하는 방법을 생각해 볼 수 있다.
 
 <br/>
 
 ### 13) How to Make IND/NM-CCA Cipher?
 
-<img src="../images/security-engineering-6-security-design-assurance-2.13.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.13.0.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
  
@@ -521,27 +539,27 @@ Shannon은 박사학위 논문에서 다음과 같이 증명하였다.
 
 결과적으로 `NM-CCA2`와 `IND-CCA2`는 동치인 것이 밝혀졌다. 따라서 한 가지만 만족하면 나머지 한 가지도 만족한다. 따라서 `Semantic Security`를 만족하도록 만들면 `Non-Malleability`도 만족하게 된다.
 
-이것이 바로 정형명세의 힘이다. 서로 모순되거나 중복되는 Security Requirement를 찾아낼 수 있다. 따라서 정형명세를 통해서 Security Requirement를 compact하게 만들 수 있다.
+이것이 바로 정형명세의 힘이다. 서로 모순되거나 중복되는 `Security Requirement`를 찾아낼 수 있다. 따라서 ***정형명세를 통해서 `Security Requirement`를 `compact`하게 만들 수 있다.***
 
 <br/>
 
-#### Authenticated Encryption
+#### (1) Authenticated Encryption
 
-<img src="../images/security-engineering-6-security-design-assurance-2.13.2.png?raw=true" alt="drawing" width="320"/>
-
-<br/>
-
-`active attacker` 하에서 `semantic security`를 만족하기 위해서는 `랜덤패딩`과 `고정패딩`을 쓰거나 또는 `랜덤패딩`과 `MAC`을 사용할 수 있다(전자서명은 너무 무겁다).
+<img src="../images/security-engineering-6-security-design-assurance-3.13.1.1.png?raw=true" alt="drawing" width="320"/>
 
 <br/>
 
-#### Generic Composition Methods
-
-<img src="../images/security-engineering-6-security-design-assurance-2.13.3.png?raw=true" alt="drawing" width="384"/>
+- `Authenticated Encryption`: 암호문과 MAC을 함께 사용하는 것
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-2.13.4.png?raw=true" alt="drawing" width="520"/>
+#### (2) Generic Composition Methods
+
+<img src="../images/security-engineering-6-security-design-assurance-3.13.2.1.png?raw=true" alt="drawing" width="384"/>
+
+<br/>
+
+<img src="../images/security-engineering-6-security-design-assurance-3.13.2.2.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -549,27 +567,29 @@ Shannon은 박사학위 논문에서 다음과 같이 증명하였다.
 
 이렇게 여러개의 암호 알고리즘을 조합하는 것에 대한 연구를 `합성보안(composition security)`이라고 한다.
 
-e.g. `WPA2` 프로토콜이 깨진 것도 합성보안에 문제가 발생한 것이다. 
+e.g. `WPA2` 프로토콜이 깨진 것도 `합성보안`에 결함이 있어 발생한 것이다. 
 
 <br/>
 
 ### 14) OAEP
 
-<img src="../images/security-engineering-6-security-design-assurance-2.14.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.14.0.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
 `passive attacker` 하에서 `semantic security`를 만족하려면 `랜덤 패딩`을 붙여야 했는데, `active attacker` 하에서는 `semantic security`를 만족하기 위해서는 `고정 패딩`을 붙여야 한다. 따라서 어떻게 패딩을 붙여야 하는지 고민하였다.
 
-<br/>
-
-`Optimal Asymmetric Encryption Padding`은 랜덤 패딩과 고정 패딩을 동시에 붙이는 방법을 제안한 것이다.
+`active attacker` 하에서 `semantic security`를 만족하기 위해서는 `랜덤패딩`과 `고정패딩`을 쓰거나 또는 `랜덤패딩`과 `MAC`을 사용할 수 있다(전자서명은 너무 무겁다).
 
 <br/>
 
-#### RSA-OAEP
+`Optimal Asymmetric Encryption Padding (OAEP)`은 랜덤 패딩과 고정 패딩을 동시에 붙이는 방법을 제안한 것이다.
 
-<img src="../images/security-engineering-6-security-design-assurance-2.14.2.png?raw=true" alt="drawing" width="640"/>
+<br/>
+
+#### (1) RSA-OAEP
+
+<img src="../images/security-engineering-6-security-design-assurance-3.14.1.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
@@ -579,23 +599,31 @@ e.g. `WPA2` 프로토콜이 깨진 것도 합성보안에 문제가 발생한 �
 
 하지만 `OAEP`를 만들 때의 전제조건은 G함수와 H함수가 안전하다는 전제가 있다. 왜냐하면 해쉬 함수는 충분히 연구되었기 때문에 깨질 가능성이 없다고 전제한 것이다. 이것은 무리한 가정이 아니라고 받아들였다. 이것을 우리는 `random oracle model` 하에서 증명되었다고 말한다.
 
-하지만 2005년도에 산동대학교 수학과의 왕샤오윤(Wang Xiaoyun) 교수가 SHA1 함수의 충돌쌍을 찾아냈다. SHA-1의 해독 작업량을 2^69까지 낮췄다.
+하지만 2005년도에 산동대학교 수학과의 `왕샤오윤(Wang Xiaoyun)` 교수가 `SHA1` 함수의 충돌쌍을 찾아냈다. SHA-1의 해독 작업량을 2<sup>69</sup>까지 낮췄다.
 
-따라서 이 이후에 `random oracle model` 전제조건 하에서 증명한 것은 안전하지 않다는 것으로 생각이 바뀌었다.
+따라서 이 이후에는 `random oracle model` 전제조건 하에서 증명한 것은 안전하지 않다는 것으로 생각이 바뀌었다.
 
 <br/>
 
 ## 4. Machine-Assisted Verification
 
-### 1) Machine-Assisted Verification 
-
-<img src="../images/security-engineering-6-security-design-assurance-4.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-4.0.1.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-WPA2 프토토콜의 문제점이 발견되었다. WPA2 프로토콜은 `active attacker` 하에서 IND-CCA 공격에 대한 `design assurance`가 증명된 프로토콜이었기 때문에 사람들은 놀랐다. `Matthew Green`은 해당 문제에 대해서 설명하였다. 키 분배 프로토콜과 암호통신 프로토콜을 따로 증명하였기 때문에 두 가지를 결합했을 때 문제가 발생하였다. 따라서 합성보안(composition security)에 있어 문제가 발생한 것이다. 그리고 그는 자동화 도구를 사용하여 증명하는 것의 중요성을 강조하였다.
+- `ISO/IEC 29128`: 암호 프로토콜의 설계 무결성을 검증하는 표준. Protocol Assurance Level. PAL1, PAL2, PAL3로 나뉜다. 레벨이 올라갈 수록 많은 것이 `Formal`하게 기술되어야 한다. `PAL2` 이상부터는 도구를 사용한 `Tool-aided`가 요구된다.
 
-자동화 도구를 이용하여 증명하는 것이 사람의 실수를 줄일 수 있다.
+전세계적인 추세는 `design assurance` 증명을 할 때 손으로 직접 하는 것보다는 ***되도록이면 `자동화 도구`를 사용할 것을 추천한다.*** 그 이유는 우선 ***사람의 실수가 줄어들고,*** ***사람에 따라 달라지지 않고 항상 `일정한` 증명 결과가 나오기 때문에*** 사람에 따라서 결과의 편차가 발생하지 않는다. 그리고 `자동화 도구`를 사용하면 ***분석도 `빠르게` 할 수 있어 효율적이다.***
+
+<br/>
+
+### 1) Machine-Assisted Verification 
+
+<img src="../images/security-engineering-6-security-design-assurance-4.1.1.1.png?raw=true" alt="drawing" width="640"/>
+
+<br/>
+
+`WPA2` 프토토콜의 문제점이 발견되었다. WPA2 프로토콜은 `active attacker` 하에서 `IND-CCA 공격`에 대한 `design assurance`가 증명된 프로토콜이었기 때문에 사람들은 놀랐다. `Matthew Green`은 해당 문제에 대해서 설명하였다. 키 분배 프로토콜과 암호통신 프로토콜을 따로 독립적으로 증명하였기 때문에 두 가지를 결합했을 때 문제가 발생하였다. 따라서 `합성보안(composition security)`에 있어 문제가 발생한 것이다. 따라서 그는 합성보안의 중요성을 강조하였고 그러면서 그는 `자동화 도구`를 사용하여 증명하는 것의 중요성을 강조하였다. 왜냐하면 자동화 도구를 이용하여 증명하는 것이 사람의 실수를 줄일 수 있기 때문이다.
 
 <br/>
 
@@ -609,11 +637,13 @@ WPA2 프토토콜의 문제점이 발견되었다. WPA2 프로토콜은 `active 
 
 ### 1) Diffie-Hellman Key Agreement
 
-`Diffie`와 `Hellman`은 서로 멀리 떨어진 두 사람이 키를 분배하는 방법을 제안하였다.
+#### (1) Concept of Diffie-Hellman Key Agreement
+
+`Diffie`와 `Hellman`은 서로 멀리 떨어진 두 사람이 키를 교환하는 방법을 제안하였다.
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-5.1.1.png?raw=true" alt="drawing" width="520"/>
+<img src="../images/security-engineering-6-security-design-assurance-5.1.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -621,11 +651,19 @@ WPA2 프토토콜의 문제점이 발견되었다. WPA2 프로토콜은 `active 
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-5.1.2.png?raw=true" alt="drawing" width="520"/>
+#### (2) [Note] Discrete Logarithm Problem
+
+<img src="../images/security-engineering-6-security-design-assurance-5.1.2.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
-mod를 사용하면 지수승을 구하는 것이 매우 어렵다. 즉 `이산대수 문제`의 어려움에 기반한다. Diffie-Hellman 키 분배를 통해 대칭키를 교환하고 대칭키로 암호화하는 것은 Hybrid Encryption의 일종이다.
+#### (3) Diffie-Hellman Key Agreement
+
+<img src="../images/security-engineering-6-security-design-assurance-5.1.2.2.png?raw=true" alt="drawing" width="520"/>
+
+<br/>
+
+`mod`를 사용하면 지수승을 구하는 것이 매우 어렵다. 즉 `이산대수 문제`의 어려움에 기반한다. `Diffie-Hellman` 키 교환을 통해 대칭키를 교환하고, 실제 메시지는 대칭키로 암호화하는 것은 `Hybrid Encryption`의 일종이다.
 
 <br/>
 
@@ -639,7 +677,7 @@ mod를 사용하면 지수승을 구하는 것이 매우 어렵다. 즉 `이산�
 
 <br/>
 
-#### Interactive Turing Machine
+#### (1) Interactive Turing Machine
 
 <img src="../images/security-engineering-6-security-design-assurance-6.1.1.png?raw=true" alt="drawing" width="520"/>
 
@@ -649,7 +687,7 @@ mod를 사용하면 지수승을 구하는 것이 매우 어렵다. 즉 `이산�
 
 <br/>
 
-#### Interactive Turing Machines
+#### (2) Interactive Turing Machines
 
 <img src="../images/security-engineering-6-security-design-assurance-6.1.2.png?raw=true" alt="drawing" width="720"/>
 
@@ -687,7 +725,7 @@ mod를 사용하면 지수승을 구하는 것이 매우 어렵다. 즉 `이산�
 
 <br/>
 
-#### Indistinguishability
+#### (1) Indistinguishability
 
 <img src="../images/security-engineering-6-security-design-assurance-6.2.2.png?raw=true" alt="drawing" width="480"/>
 
