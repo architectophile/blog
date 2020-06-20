@@ -156,12 +156,16 @@ MS 홈페이지에 가면 SDL에 관련된 자료를 공유하고 있다.
 <br/>
 
 - `Engineering Process`: 보안 제품 개발과 관련된 프로세스
-- `Assurance Process`: 각 개발 프로세스가 제대로 이루어져 보안 요구사항을 얼마나 충족했는가의 정도를 나타낸다. 일반적으로 수학적인 증명을 통해 그 정밀도를 높인다.
-- `Risk Process`: 제품의 위험을 분석하여 우선순위를 따져 보안 요구사항을 도출하고, `risk management`를 통해 위험을 측정하고 관리하는 프로세스
+- `Assurance Process`: 각 개발 프로세스가 제대로 이루어져 보안 요구사항을 얼마나 충족했는가를 평가하는 프로세스. 일반적으로 수학적인 증명을 통해 그 정밀도를 높인다. 모든 것을 수학적으로 증명하지 못할 경우에는 SDLC와 같은 최대한 체계적인 개발 프로세스를 따름으로써 보증(assurance)의 정밀도를 높이도록 한다.
+- `Risk Process`: 취약점이나 위협이 자산에 미치는 위험도를 분석하여 해결해야 할 보안 요구사항의 우선순위를 정하고, 제품 개발과 운영 전반에 걸쳐 지속적인 `risk management`를 통해 위험을 측정하고 관리하는 프로세스
 
 <br/>
 
-`보안공학(security engineering)`은 `개발 생명주기(development lifecycle) 전반`에 걸쳐 `정보 시스템 보안(information system security)`과 `위험 관리(risk management)`를 결합하는 구조화된 프로세스(`structured process`)를 제공한다.
+<img src="../images/security-engineering-1-the-basic-terms-and-theories-1.11.1.2.png?raw=true" alt="drawing" width="480"/>
+
+<br/>
+
+`보안공학(security engineering)`은 `시스템 개발 생명주기(system development lifecycle)` 안에 `정보 시스템 보안(information system security)`과 `위험 관리(risk management)`를 결합하고, 그리고 해당 제품이 잘 만들어졌는지 평가한 후에 인증하는 것을 제공하는 구조화된 프로세스(`structured process`)를 제공한다.
 
 ### 12) What Is Assurance?
 
