@@ -1,4 +1,4 @@
-# The Basic Terms & Theories
+#  I. The Basic Terms & Theories
 
 <br/>
 
@@ -151,7 +151,7 @@ MS 홈페이지에 가면 SDL에 관련된 자료를 공유하고 있다.
 
 ### 11) Security Engineering Process Overview
 
-<img src="../images/security-engineering-1-the-basic-terms-and-theories-1.11.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-1-the-basic-terms-and-theories-1.11.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -664,7 +664,7 @@ e.g. `카카오뱅크` 어플리케이션은 고성능의 보안 프로그램을
 
 대표적인 것으로 `Onion Model of Protection`이 있다.
 
-<img src="../images/security-engineering-1-the-basic-terms-and-theories-3.11.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-1-the-basic-terms-and-theories-3.11.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 

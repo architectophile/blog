@@ -1,4 +1,4 @@
-# Security Assessment and Authorization
+# VI. Security Assessment and Authorization
 
 ## 1. What Is Security Engineering?
 
@@ -681,7 +681,7 @@ CC 용어
 
 ### 12) But Testing Is Still Required
 
-<img src="../images/security-engineering-6-security-assessment-and-authorization-3.12.0.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-assessment-and-authorization-3.12.0.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 

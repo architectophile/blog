@@ -1,4 +1,4 @@
-# Threat Risk Modeling to Establish Design Requirements
+#  II. Threat Risk Modeling to Establish Design Requirements
 
 <br/>
 
@@ -114,7 +114,7 @@
 
 <br/>
 
-<img src="../images/security-engineering-4-threat-risk-modeling-1.7.1.1.png?raw=true" alt="drawing" width="540"/>
+<img src="../images/security-engineering-4-threat-risk-modeling-1.7.1.1.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
@@ -143,7 +143,7 @@
 
 #### Swim Lane Diagram
 
-<img src="../images/security-engineering-4-threat-risk-modeling-1.8.2.1.png?raw=true" alt="drawing" width="320"/>
+<img src="../images/security-engineering-4-threat-risk-modeling-1.8.2.1.png?raw=true" alt="drawing" width="280"/>
 
 <br/>
 
@@ -161,15 +161,15 @@ By `Larry Constantine` in 1967
 
 `DFD`는 `데이터 흐름(data flow)`에 따라서 다이어그램을 그리는 것으로, 위협분석을 하는데 가장 많이 쓰이는 다이어그램이다. 공격자의 공격 포인트를 도출하기 쉽다.
 
-<img src="../images/security-engineering-4-threat-risk-modeling-2.1.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-4-threat-risk-modeling-2.1.1.1.png?raw=true" alt="drawing" width="520"/>
 
-<img src="../images/security-engineering-4-threat-risk-modeling-2.1.1.2.png?raw=true" alt="drawing" width="640"/>
-
-<br/>
+<img src="../images/security-engineering-4-threat-risk-modeling-2.1.1.2.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
-<img src="../images/security-engineering-4-threat-risk-modeling-2.1.2.1.png?raw=true" alt="drawing" width="640"/>
+<br/>
+
+<img src="../images/security-engineering-4-threat-risk-modeling-2.1.2.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -186,7 +186,7 @@ By `Larry Constantine` in 1967
 
 `DFD`의 모든 계층을 `Level 3`까지 다 그리기 위해서는 ***전체 시스템을 함수 레벨까지 다 알고 있어야 한다.*** 그리고 `DFD`가 구체적으로 그려져야 가능한 많은 올바른 위협들이 도출될 수 있다. 그리고 위협이 제대로 도출되었는지 알기 위해서는 `건전성(Soundness)`을 만족하는지 확인해봐야 한다. 따라서 모델에서 발생하지 않는 공격은 실제 시스템에서도 발생해서는 안된다.
 
-<img src="../images/security-engineering-4-threat-risk-modeling-2.1.3.1.png?raw=true" alt="drawing" width="840"/>
+<img src="../images/security-engineering-4-threat-risk-modeling-2.1.3.1.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
@@ -236,7 +236,7 @@ By `Larry Constantine` in 1967
 
 ### 1) Identification of Assets
 
-<img src="../images/security-engineering-4-threat-risk-modeling-3.1.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-4-threat-risk-modeling-3.1.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -248,7 +248,7 @@ By `Larry Constantine` in 1967
 
 ### 1) Information Assurance Threats
 
-<img src="../images/security-engineering-4-threat-risk-modeling-4.1.1.1.png?raw=true" alt="drawing" width="720"/>
+<img src="../images/security-engineering-4-threat-risk-modeling-4.1.1.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
@@ -286,7 +286,7 @@ By `Larry Constantine` in 1967
 
 #### STRIDE-per-Element
 
-<img src="../images/security-engineering-4-threat-risk-modeling-4.3.1.1.png?raw=true" alt="drawing" width="720"/>
+<img src="../images/security-engineering-4-threat-risk-modeling-4.3.1.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
@@ -311,17 +311,17 @@ By `Larry Constantine` in 1967
 
 ### 4) Where to Start and End With
 
-<img src="../images/security-engineering-4-threat-risk-modeling-4.4.1.1.png?raw=true" alt="drawing" width="540"/>
+<img src="../images/security-engineering-4-threat-risk-modeling-4.4.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
 ### 5) MS’s Threat Modeling Tool
 
-<img src="../images/security-engineering-4-threat-risk-modeling-4.5.1.1.png?raw=true" alt="drawing" width="720"/>
+<img src="../images/security-engineering-4-threat-risk-modeling-4.5.1.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
-<img src="../images/security-engineering-4-threat-risk-modeling-4.5.1.2.png?raw=true" alt="drawing" width="720"/>
+<img src="../images/security-engineering-4-threat-risk-modeling-4.5.1.2.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
@@ -335,13 +335,13 @@ By `Larry Constantine` in 1967
 > Note:  
 `Bruce Schneier`는 "Security is a process, not a product."라는 말을 남겼다. 보안이라는 것은 제품 한 두개를 사서 설치한다고 안전해지는 것이 아니고, 관련된 모든 프로세스가 안전해야 제대로 된 보안을 할 수 있다는 의미이다.
 
-<img src="../images/security-engineering-4-threat-risk-modeling-4.6.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-4-threat-risk-modeling-4.6.1.1.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
 <br/>
 
-<img src="../images/security-engineering-4-threat-risk-modeling-4.6.2.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-4-threat-risk-modeling-4.6.2.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -355,11 +355,11 @@ By `Larry Constantine` in 1967
 - `A`: Affected users → 얼마나 많은 사람들이 영향을 받을 것인가?
 - `D`: Discoverability → 얼마나 취약점을 발견하기 쉬운가?
 
-<img src="../images/security-engineering-4-threat-risk-modeling-5.1.1.1.png?raw=true" alt="drawing" width="720"/>
+<img src="../images/security-engineering-4-threat-risk-modeling-5.1.1.1.png?raw=true" alt="drawing" width="596"/>
 
 <br/>
 
-<img src="../images/security-engineering-4-threat-risk-modeling-5.1.1.2.png?raw=true" alt="drawing" width="768"/>
+<img src="../images/security-engineering-4-threat-risk-modeling-5.1.1.2.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
@@ -437,7 +437,7 @@ By `Larry Constantine` in 1967
 
 모든 위협을 도출하고 위험도를 분석한 이후에는 해결책을 도출해야 한다.
 
-<img src="../images/security-engineering-4-threat-risk-modeling-7.1.1.1.png?raw=true" alt="drawing" width="520"/>
+<img src="../images/security-engineering-4-threat-risk-modeling-7.1.1.1.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 

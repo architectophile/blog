@@ -1,4 +1,4 @@
-# Security Policy Modeling - Formal Representation of the Security Requirements
+#  III. Security Policy Modeling - Formal Representation of the Security Requirements
 
 <br/>
 
@@ -12,7 +12,7 @@
 
 ### 1) Formal Methods & IT Security
 
-<img src="../images/security-engineering-5-security-policy-modeling-1.1.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-1.1.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -30,7 +30,7 @@
 
 ### 3) Realization of FSPM
 
-<img src="../images/security-engineering-5-security-policy-modeling-1.3.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-1.3.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -87,25 +87,25 @@ Question : `1+1 == 1+1+0` ?
 
 #### (2) (e.g.) Translating English to FOL
 
-<img src="../images/security-engineering-5-security-policy-modeling-1.5.2.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-1.5.2.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
 #### (3) [Note] Common Criteria & SPM
 
-<img src="../images/security-engineering-5-security-policy-modeling-1.5.3.1.png?raw=true" alt="drawing" width="540"/>
+<img src="../images/security-engineering-5-security-policy-modeling-1.5.3.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
 <br/>
 
-<img src="../images/security-engineering-5-security-policy-modeling-1.5.3.2.png?raw=true" alt="drawing" width="540"/>
+<img src="../images/security-engineering-5-security-policy-modeling-1.5.3.2.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
 <br/>
 
-<img src="../images/security-engineering-5-security-policy-modeling-1.5.3.3.png?raw=true" alt="drawing" width="540"/>
+<img src="../images/security-engineering-5-security-policy-modeling-1.5.3.3.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -115,7 +115,7 @@ Question : `1+1 == 1+1+0` ?
 
 #### (4) Example
 
-<img src="../images/security-engineering-5-security-policy-modeling-1.5.4.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-1.5.4.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -125,13 +125,13 @@ Question : `1+1 == 1+1+0` ?
 
 #### (5) Model Checking Firewall Policy Configuration
 
-<img src="../images/security-engineering-5-security-policy-modeling-1.5.5.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-1.5.5.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
 <br/>
 
-<img src="../images/security-engineering-5-security-policy-modeling-1.5.5.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-1.5.5.2.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -168,7 +168,7 @@ Question : `1+1 == 1+1+0` ?
 
 ### 8) Basic Ideas of Formal Methods
 
-<img src="../images/security-engineering-5-security-policy-modeling-1.8.1.1.png?raw=true" alt="drawing" width="840"/>
+<img src="../images/security-engineering-5-security-policy-modeling-1.8.1.1.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
@@ -190,7 +190,7 @@ Question : `1+1 == 1+1+0` ?
 
 둘 중에서 `Formal Specification`이 ***더욱 창의적인 작업이다.*** `Formal Specification`은 자동화하기가 매우 어렵다. 하지만 `Formal Verification`은 사람이 직접 하거나 컴퓨터가 자동으로 할 수 있다.
 
-<img src="../images/security-engineering-5-security-policy-modeling-1.10.1.1.png?raw=true" alt="drawing" width="720"/>
+<img src="../images/security-engineering-5-security-policy-modeling-1.10.1.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
@@ -251,7 +251,7 @@ D가 가장 낮은 등급이고, A2가 가장 높은 등급이다.
 
 `보안 요구사항`은 제대로 도출했지만 이를 수학적 기호로 표현하는 `Formal Specification` 과정에서 오류가 있으면 수학적 증명이 실패할 수도 있다. 또는 기존에 알려진 Assumption이 깨질 경우 취약점이 발생할 수 있다.
 
-<img src="../images/security-engineering-5-security-policy-modeling-1.13.1.1.png?raw=true" alt="drawing" width="720"/>
+<img src="../images/security-engineering-5-security-policy-modeling-1.13.1.1.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
@@ -274,7 +274,7 @@ D가 가장 낮은 등급이고, A2가 가장 높은 등급이다.
 - `Security Policy`: 자연어로 적어놓은 보안 정책을 의미함
 - `Security Policy Model`: `Security Policy`를 정형화 명세(`formal specification`) 방법으로 수학적 기호 형태로 표현하는 것(넓은 의미에서는 거기에 덧붙여서 해당 정형화 명세가 제대로 되었는지 증명하는 `formal verification` 단계까지 포함)
 
-<img src="../images/security-engineering-5-security-policy-modeling-2.2.1.1.png?raw=true" alt="drawing" width="720"/>
+<img src="../images/security-engineering-5-security-policy-modeling-2.2.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -327,7 +327,7 @@ e.g. 운영체제를 접속할 수 있는 사람은 3명이다. 관리자는 2�
 
 ### 6) Reference Monitor
 
-<img src="../images/security-engineering-5-security-policy-modeling-2.6.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-2.6.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -351,7 +351,7 @@ e.g. 운영체제를 접속할 수 있는 사람은 3명이다. 관리자는 2�
 
 ### 1) DAC Model
 
-<img src="../images/security-engineering-5-security-policy-modeling-3.1.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.1.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -379,7 +379,7 @@ e.g. 운영체제를 접속할 수 있는 사람은 3명이다. 관리자는 2�
 
 <br/>
 
-<img src="../images/security-engineering-5-security-policy-modeling-3.1.3.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.1.3.2.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -390,7 +390,7 @@ e.g. 운영체제를 접속할 수 있는 사람은 3명이다. 관리자는 2�
 
 ### 2) MAC Model(Non-DAC Model)
 
-<img src="../images/security-engineering-5-security-policy-modeling-3.2.0.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.0.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -409,7 +409,7 @@ e.g. 운영체제를 접속할 수 있는 사람은 3명이다. 관리자는 2�
 
 #### (2) MAC : Traditional Model
 
-<img src="../images/security-engineering-5-security-policy-modeling-3.2.2.1.png?raw=true" alt="drawing" width="320"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.2.1.png?raw=true" alt="drawing" width="280"/>
 
 <br/>
 
@@ -417,7 +417,7 @@ e.g. 운영체제를 접속할 수 있는 사람은 3명이다. 관리자는 2�
 
 <br/>
 
-<img src="../images/security-engineering-5-security-policy-modeling-3.2.2.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.2.2.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -437,7 +437,7 @@ e.g. 운영체제를 접속할 수 있는 사람은 3명이다. 관리자는 2�
 
 #### (4) How to Design MLS Model?
 
-<img src="../images/security-engineering-5-security-policy-modeling-3.2.4.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.4.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -459,7 +459,7 @@ e.g. 운영체제를 접속할 수 있는 사람은 3명이다. 관리자는 2�
 
 <br/>
 
-<img src="../images/security-engineering-5-security-policy-modeling-3.2.5.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.5.1.png?raw=true" alt="drawing" width="520"/>
  
 <br/>
 
@@ -469,7 +469,7 @@ e.g. 운영체제를 접속할 수 있는 사람은 3명이다. 관리자는 2�
 
 #### (6) BLP Model in Formal
 
-<img src="../images/security-engineering-5-security-policy-modeling-3.2.6.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.6.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -481,7 +481,7 @@ e.g. 운영체제를 접속할 수 있는 사람은 3명이다. 관리자는 2�
 
 <br/>
 
-<img src="../images/security-engineering-5-security-policy-modeling-3.2.6.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.6.2.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -496,7 +496,7 @@ e.g. 운영체제를 접속할 수 있는 사람은 3명이다. 관리자는 2�
     - f<sub>c</sub>는 `subject`가 갖는 `현재의(current) security level`을 의미한다. 
     - f<sub>o</sub>는 `object`의 `security level`을 의미한다.
 
-<img src="../images/security-engineering-5-security-policy-modeling-3.2.6.3.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.6.3.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -549,13 +549,13 @@ matrix를 열로 잘라서 `access control list`를 각 방에 있는 리더기�
 
 #### (7) Real World Examples Built on BLP
 
-<img src="../images/security-engineering-5-security-policy-modeling-3.2.7.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.7.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
 #### [Note] MULTICS
 
-<img src="../images/security-engineering-5-security-policy-modeling-3.2.7.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.7.2.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -583,7 +583,7 @@ matrix를 열로 잘라서 `access control list`를 각 방에 있는 리더기�
 
 #### (9) BLP Model in a Nutshell
 
-<img src="../images/security-engineering-5-security-policy-modeling-3.2.9.1.png?raw=true" alt="drawing" width="720"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.9.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
@@ -612,7 +612,7 @@ e.g. 높은 등급의 사람이 높은 보안 레벨의 정보를 읽어서 스�
 
 `Biba Model`은 `무결성(Integrity)`을 보장하기 위해 만든 것이다.
 
-<img src="../images/security-engineering-5-security-policy-modeling-3.2.11.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.11.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -647,7 +647,7 @@ e.g. 높은 등급의 사람이 높은 보안 레벨의 정보를 읽어서 스�
 
 `Well Formed Transaction` 개념을 제시하였다.
 
-<img src="../images/security-engineering-5-security-policy-modeling-3.2.13.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.2.13.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -725,7 +725,7 @@ e.g. 높은 등급의 사람이 높은 보안 레벨의 정보를 읽어서 스�
 
 ### 3) RBAC Model (Non-DAC Model)
 
-<img src="../images/security-engineering-5-security-policy-modeling-3.3.0.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.3.0.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -737,7 +737,7 @@ e.g. 높은 등급의 사람이 높은 보안 레벨의 정보를 읽어서 스�
 
 #### (1) Core RBAC
 
-<img src="../images/security-engineering-5-security-policy-modeling-3.3.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.3.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -751,7 +751,7 @@ e.g. 높은 등급의 사람이 높은 보안 레벨의 정보를 읽어서 스�
 
 #### (2) Hierarchical RBAC
 
-<img src="../images/security-engineering-5-security-policy-modeling-3.3.2.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.3.2.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -769,7 +769,7 @@ Role 간의 계층을 명시한다. e.g. 사장은 부사장보다 높다. 따�
 
 #### (3) SSD with Hierarchical RBAC 
 
-<img src="../images/security-engineering-5-security-policy-modeling-3.3.3.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.3.3.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -781,13 +781,13 @@ Role 간의 계층을 명시한다. e.g. 사장은 부사장보다 높다. 따�
 
 - `Dynamic Separation of Duty`: 사용자는 동시에 두 개의 역할로 행동할 수 없다(e.g. 은행 창구의 직원이면서 동시에 은행 창구에 고객으로 있을 수 없다.) 실시간으로 동시간대에 발생하는 역할을 감시하기 위해 Session을 감시한다.
 
-<img src="../images/security-engineering-5-security-policy-modeling-3.3.4.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.3.4.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
 #### (5) [Note] SELinux
 
-<img src="../images/security-engineering-5-security-policy-modeling-3.3.5.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-3.3.5.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -820,7 +820,7 @@ Hybrid Access-Control Model
   - `explicit`: assignment operation(e.g. y = x). 매우 명확한 information flow
   - `implicit`: conditional assignment(e.g. if x then y = z). 쉽게 보이지 않는 information flow
 
-<img src="../images/security-engineering-5-security-policy-modeling-4.0.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-4.0.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -904,11 +904,11 @@ Hybrid Access-Control Model
 
 <br/>
 
-<img src="../images/security-engineering-5-security-policy-modeling-2.10.5.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-2.10.5.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
-<img src="../images/security-engineering-5-security-policy-modeling-2.10.6.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-2.10.6.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -916,7 +916,7 @@ Hybrid Access-Control Model
 
 <br/>
 
-<img src="../images/security-engineering-5-security-policy-modeling-2.10.7.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-2.10.7.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -964,7 +964,7 @@ Hybrid Access-Control Model
 
 #### (1) Capabilities e.g.) Kerberos v5
 
-<img src="../images/security-engineering-5-security-policy-modeling-5.2.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-5.2.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -1066,7 +1066,7 @@ Hybrid Access-Control Model
 
 ### 6) Commercial Security Kernels
 
-<img src="../images/security-engineering-5-security-policy-modeling-6.6.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-5-security-policy-modeling-6.6.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 

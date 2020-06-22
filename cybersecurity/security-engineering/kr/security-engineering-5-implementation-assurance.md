@@ -1,4 +1,4 @@
-# Implementation Assurance
+#  V. Implementation Assurance
 
 ## Introduction to Code Assurance
 
@@ -8,11 +8,11 @@
 
 <br>
 
-<img src="../images/security-engineering-7-implementation-assurance-1.0.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-1.0.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
-<img src="../images/security-engineering-7-implementation-assurance-1.0.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-1.0.2.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -20,7 +20,7 @@
 
 <br/>
 
-<img src="../images/security-engineering-7-implementation-assurance-1.0.3.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-1.0.3.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -80,7 +80,7 @@
 
 A `Bug` is used informally.
 
-<img src="../images/security-engineering-7-implementation-assurance-1.1.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-1.1.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -159,25 +159,25 @@ A `Bug` is used informally.
 
 `Directed Automated Random Testing`
 
-<img src="../images/security-engineering-7-implementation-assurance-1.6.2.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-1.6.2.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
-<img src="../images/security-engineering-7-implementation-assurance-1.6.2.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-1.6.2.2.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
 ##### (2)-2 DART Example
 
-<img src="../images/security-engineering-7-implementation-assurance-1.6.2.3.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-1.6.2.3.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
-<img src="../images/security-engineering-7-implementation-assurance-1.6.2.4.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-1.6.2.4.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
-<img src="../images/security-engineering-7-implementation-assurance-1.6.2.5.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-1.6.2.5.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -209,7 +209,7 @@ A `Bug` is used informally.
 
 ### 7) Validation & Verification (IEEE)
 
-<img src="../images/security-engineering-7-implementation-assurance-1.7.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-1.7.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -366,7 +366,7 @@ Trying to find the fewest inputs that will find the most problems. 따라서 우
 
 <br/>
 
-<img src="../images/security-engineering-7-implementation-assurance-2.7.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-2.7.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -376,7 +376,7 @@ Trying to find the fewest inputs that will find the most problems. 따라서 우
 - `Test Set`: 여러개의 test case로 이루어진 것
 - `Test Case`: test requirements를 만족하는 실제 test case
 
-<img src="../images/security-engineering-7-implementation-assurance-2.7.1.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-2.7.1.2.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -387,7 +387,7 @@ Trying to find the fewest inputs that will find the most problems. 따라서 우
 
 <br/>
 
-<img src="../images/security-engineering-7-implementation-assurance-2.7.1.3.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-2.7.1.3.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -402,7 +402,7 @@ Trying to find the fewest inputs that will find the most problems. 따라서 우
 
 <br/>
 
-<img src="../images/security-engineering-7-implementation-assurance-2.7.1.4.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-2.7.1.4.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -413,7 +413,7 @@ Trying to find the fewest inputs that will find the most problems. 따라서 우
 
 #### (1) Example: Jelly Bean Coverage
 
-<img src="../images/security-engineering-7-implementation-assurance-2.7.2.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-2.7.2.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -478,11 +478,11 @@ Test set T<sub>2</sub>는 C<sub>2</sub>을 충족하는가?
 
 #### (2) Coverage Level
 
-<img src="../images/security-engineering-7-implementation-assurance-2.7.2.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-2.7.2.2.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
-`Coverage Level`은 전체 `Test requirements` 중에서 몇 개의 `test requirements`가 해당 테스트에 의해 충족되는가를 나타낸다.
+`Coverage Level`은 전체 `test requirements` 중에서 몇 개의 `test requirements`가 해당 테스트에 의해 충족되는가를 나타낸다.
 
 따라서 T<sub>1</sub>의 TR<sub>1</sub>에 대한 `coverage level = 6/6`이다.
 
@@ -617,7 +617,7 @@ Test set T<sub>2</sub>는 C<sub>2</sub>을 충족하는가?
 
 #### Edge Coverage
 
-<img src="../images/security-engineering-7-implementation-assurance-3.0.2.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-3.0.2.2.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -625,7 +625,7 @@ Test set T<sub>2</sub>는 C<sub>2</sub>을 충족하는가?
 
 ### [Note] Logic Model Based Testing
 
-<img src="../images/security-engineering-7-implementation-assurance-3.0.3.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-3.0.3.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -727,11 +727,11 @@ A test criterion `C1` subsumes `C2` if and only if every set of test cases that 
 
 ### 3) Benefits of Input Space Partitioning
 
-<img src="../images/security-engineering-7-implementation-assurance-4.3.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-4.3.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
-매우 간단하고, 직관적이고, 효과적이다.
+매우 `간단`하고, `직관적`이고, `효과적`이다.
 
 실제 소프트웨어 코드가 어떻게 구현되어 있는지 모르더라도 프로그램의 기능과 input domain 정도만 알고 있더라도 테스트할 수 있다. e.g. `legacy software` 등을 테스트할 때 유용하다.
 
@@ -796,13 +796,13 @@ C2 → `string`에서 `letter`가 첫 번째에 나오는지 아닌지: true, fa
 
 ### 6) Choosing Combinations of Values
 
-<img src="../images/security-engineering-7-implementation-assurance-4.6.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-4.6.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
 ### 7) ISP Coverage Criteria Subsumption
 
-<img src="../images/security-engineering-7-implementation-assurance-4.7.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-4.7.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -848,7 +848,7 @@ C2 → `string`에서 `letter`가 첫 번째에 나오는지 아닌지: true, fa
 
 ### 3) Node and Edge Coverage on Graph
 
-<img src="../images/security-engineering-7-implementation-assurance-5.3.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-5.3.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -896,7 +896,7 @@ If a graph contains a `loop`, it has an infinite number of paths. Thus, `CPC` is
 
 #### Attempts to “deal with” loops:
 
-<img src="../images/security-engineering-7-implementation-assurance-5.5.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-5.5.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -906,7 +906,7 @@ If a graph contains a `loop`, it has an infinite number of paths. Thus, `CPC` is
 - `Definition (def)` : A location where a value is assigned to a variable
 - `Use` : A location where a variable’s value is used(accessed)
 
-<img src="../images/security-engineering-7-implementation-assurance-5.6.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-5.6.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -945,13 +945,13 @@ programing
 - `Nodes` : Units (in Java – methods)
 - `Edges` : Calls to units
 
-<img src="../images/security-engineering-7-implementation-assurance-5.8.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-5.8.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
 ### 9) Data Flow Criteria at the Design Level
 
-<img src="../images/security-engineering-7-implementation-assurance-5.9.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-5.9.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -1015,7 +1015,7 @@ A `finite state machine (FSM)` is a `graph` that describes how software variable
 
 Use case를 이용해 테스트할 때는(e.g. ATM 예제), `node coverage`와 `edge coverag`e까지는 어느정도 설정할 수 있지만, ***`data flow`는 실제 소스코드의 구현 속까지 들어가야 알 수 있기 때문에 디자인 스펙의 `use case`만을 이용해 그린 그래프에서는 알 수가 없다.***
 
-<img src="../images/security-engineering-7-implementation-assurance-5.16.2.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-5.16.2.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -1151,7 +1151,7 @@ Logic coverage criteria 역시 스펙 문서에서 도출할 수 있다. 하지�
 
 ### 4) Grammar : Regular Expression
 
-<img src="../images/security-engineering-7-implementation-assurance-7.4.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-7.4.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -1161,19 +1161,19 @@ Logic coverage criteria 역시 스펙 문서에서 도출할 수 있다. 하지�
 
 ### 6) Backus-Naur-Form (BNF) Grammars
 
-<img src="../images/security-engineering-7-implementation-assurance-7.6.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-7.6.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
 ### 7) Using Grammars
 
-<img src="../images/security-engineering-7-implementation-assurance-7.7.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-7.7.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
 #### Example : Valid and Invalid Mutants
 
-<img src="../images/security-engineering-7-implementation-assurance-7.7.2.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-7.7.2.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -1246,7 +1246,7 @@ e.g. 어떤 컴파일러가 있을 때, 컴파일러를 테스트하고 싶으�
 
 ### 12) Input Space Grammars
 
-<img src="../images/security-engineering-7-implementation-assurance-7.12.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-7.12.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -1275,7 +1275,7 @@ Syntax model based testing은 크게 다음 2가지 이다.
 
 ### 1) Testing vs. Verification
 
-<img src="../images/security-engineering-7-implementation-assurance-9.1.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-9.1.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -1291,7 +1291,7 @@ Syntax model based testing은 크게 다음 2가지 이다.
 
 소프트웨어 `verification`을 하기 위해서는 `exhaustive state-space exploration`로 가능한 모든 state 검사가 필요한데, 검사해야 할 프로그램의 `state` 수가 너무 많아서 현실적으로 불가능하다.
 
-<img src="../images/security-engineering-7-implementation-assurance-9.1.1.3.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-9.1.1.3.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -1317,7 +1317,7 @@ Syntax model based testing은 크게 다음 2가지 이다.
 
 #### Type Safety
 
-<img src="../images/security-engineering-7-implementation-assurance-9.1.2.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-9.1.2.2.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -1390,7 +1390,7 @@ Logical deduction performed by machine
 
 #### Floyd-Hoare triple
 
-<img src="../images/security-engineering-7-implementation-assurance-9.3.2.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-9.3.2.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -1423,7 +1423,7 @@ Logical deduction performed by machine
 
 #### [Note] Theorem Prover vs. Model Checker
 
-<img src="../images/security-engineering-7-implementation-assurance-9.4.2.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-9.4.2.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -1433,7 +1433,7 @@ Logical deduction performed by machine
 
 #### [Note] How to Create Sound Abstractions
 
-<img src="../images/security-engineering-7-implementation-assurance-9.4.3.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-9.4.3.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -1441,7 +1441,7 @@ Logical deduction performed by machine
 
 <br/>
 
-<img src="../images/security-engineering-7-implementation-assurance-9.4.3.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-9.4.3.2.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -1449,7 +1449,7 @@ Over-approximation에 의해 실제 프로그램에서는 오류가 아니지만
 
 <br/>
 
-<img src="../images/security-engineering-7-implementation-assurance-9.4.3.3.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-9.4.3.3.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -1457,7 +1457,7 @@ Over-approximation에 의해 실제 프로그램에서는 오류가 아니지만
 
 <br/>
 
-<img src="../images/security-engineering-7-implementation-assurance-9.4.3.4.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-9.4.3.4.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -1468,7 +1468,7 @@ Over-approximation에 의해 실제 프로그램에서는 오류가 아니지만
 
 <br/>
 
-<img src="../images/security-engineering-7-implementation-assurance-9.4.4.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-9.4.4.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -1490,7 +1490,7 @@ Over-approximation에 의해 실제 프로그램에서는 오류가 아니지만
 
 ### 5) The Limits of Automated Proof
 
-<img src="../images/security-engineering-7-implementation-assurance-9.5.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-9.5.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -1504,7 +1504,7 @@ Over-approximation에 의해 실제 프로그램에서는 오류가 아니지만
 
 ### 1) Symbolic Execution
 
-<img src="../images/security-engineering-7-implementation-assurance-10.1.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-7-implementation-assurance-10.1.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 

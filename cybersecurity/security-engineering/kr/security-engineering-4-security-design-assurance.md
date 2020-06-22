@@ -1,4 +1,4 @@
-# Security Design Assurance
+# IV. Security Design Assurance
 
 ## 1. Cryptography & Design Assurance
 
@@ -17,9 +17,7 @@ MS는 많은 취약점들이 요구사항 분석 단계와 설계 단계에서 �
 
 ### [Note] Black Hat EU 2017
 
-`By-design Backdooring of Encryption System-Can We Trust Foreign Encryption Algorithms` 논문은 설계도 상에도 백도어를 넣을 수 있다는 것을 보여준다.
-
-`Operational Cryptology and Virology Lab`에서 발표하였다.
+`By-design Backdooring of Encryption System-Can We Trust Foreign Encryption Algorithms` 논문은 설계도 상에도 백도어를 넣을 수 있다는 것을 보여준다. `Operational Cryptology and Virology Lab`에서 발표하였다.
 
 `Adam L. Young`과 `Moti Yung`은 주로 `Malicious Cryptography: Exposing Cryptovirology`를 연구하였는데, 이것은 어떻게 하면 암호 알고리즘 레벨에서 백도어를 넣을지 연구하는 것이다. `Cryptovirology`는 암호 알고즘에 백도어를 숨겨서 마치 바이러스처럼 백도어를 전파시키는 것을 연구한다.
 
@@ -27,7 +25,7 @@ MS는 많은 취약점들이 요구사항 분석 단계와 설계 단계에서 �
 
 ### [Note] No Where To Hide
 
-`Edward Snowden`은 `the guardian`지에 `NSA`에서 운영하는 `PRISM` 프로그램을 이용하여 민간인을 사찰할 수 있다는 것을 폭로한다.
+`Edward Snowden`은 `the guardian`지에 `NSA`에서 운영하는 `PRISM` 프로그램을 이용하여 민간인을 사찰할 수 있다는 것을 폭로한다. 
 
 `NSA`에서 AOL, Apple, Facebook, Google, Microsoft, Paltalk, Skype, Yahoo, and YouTube의 협조를 얻어서 각 회사에 일종의 검색엔진을 설치하였다. 이 검색엔진을 통해서 사람들의 다양한 정보를 볼 수 있다는 것을 폭로하였다.
 
@@ -35,13 +33,13 @@ MS는 많은 취약점들이 요구사항 분석 단계와 설계 단계에서 �
 
 ### [Note] NSA's PRISM
 
-<img src="../images/security-engineering-6-security-design-assurance-1.0.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-1.0.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
 ### [Note] NSA's BULLRUN
 
-<img src="../images/security-engineering-6-security-design-assurance-1.0.2.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-1.0.2.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -51,7 +49,7 @@ MS는 많은 취약점들이 요구사항 분석 단계와 설계 단계에서 �
 
 ### [Note] 타원곡선암호(Elliptic Curve Crypto)
 
-<img src="../images/security-engineering-6-security-design-assurance-1.0.3.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-1.0.3.1.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
@@ -61,19 +59,19 @@ MS는 많은 취약점들이 요구사항 분석 단계와 설계 단계에서 �
 
 ### [Note] DUAL_EC_DRBG - The Beginning
 
-<img src="../images/security-engineering-6-security-design-assurance-1.0.4.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-1.0.4.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-1.0.4.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-1.0.4.2.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-1.0.4.3.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-1.0.4.3.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-1.0.4.4.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-1.0.4.4.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -309,7 +307,7 @@ Decentralized Privacy-Preserving Proximity Tracing(DP-3T) 프로토콜을 `자�
 
 ### 5) The Origin of PKC
 
-<img src="../images/security-engineering-6-security-design-assurance-3.5.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.5.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -321,7 +319,7 @@ Decentralized Privacy-Preserving Proximity Tracing(DP-3T) 프로토콜을 `자�
 
 ### 6) PKC in Formal
 
-<img src="../images/security-engineering-6-security-design-assurance-3.6.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.6.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -329,19 +327,19 @@ Decentralized Privacy-Preserving Proximity Tracing(DP-3T) 프로토콜을 `자�
 
 RSA 암호는 1978년 `Rivest`, `Shamir`, `Adleman` 세 사람에 의해 만들어졌다. RSA는 소인수분해 문제가 깨지면 RSA 암호가 깨진다. 하지만 RSA를 해독하는 방법이 소인수분해 문제를 푸는 것 말고도 다양한 방법들이 있다. 이를 보완하기 위해 Textbook RSA에 다양한 방법들을 추가하여 사용한다. 하지만 새로운 RSA 공격 방법이 나올지는 아직 알 수 없다.
 
-<img src="../images/security-engineering-6-security-design-assurance-3.7.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.7.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
 위 그림에서 암호화 시스템은 암호 숫자가 너무 커지고, 역원을 구하기가 쉽기 때문에 안전하지 않다.
 
-<img src="../images/security-engineering-6-security-design-assurance-3.7.1.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.7.1.2.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
 컴퓨터로 쉽게 계산할 수 없는 `NP문제`를 이용하여 암호 시스템을 안전하게 만들었다.
 
-<img src="../images/security-engineering-6-security-design-assurance-3.7.1.3.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.7.1.3.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -353,7 +351,7 @@ RSA 암호는 1978년 `Rivest`, `Shamir`, `Adleman` 세 사람에 의해 만들�
 
 ### 8) OW-CPA Example: Rabin Scheme
 
-<img src="../images/security-engineering-6-security-design-assurance-3.8.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.8.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -393,11 +391,11 @@ RSA 암호는 1978년 `Rivest`, `Shamir`, `Adleman` 세 사람에 의해 만들�
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-3.9.2.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.9.2.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-3.9.2.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.9.2.2.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -405,7 +403,7 @@ RSA 암호는 1978년 `Rivest`, `Shamir`, `Adleman` 세 사람에 의해 만들�
 
 그리고 이것을 `Computational version of Shannon's perfect secrecy`라고도 한다.
 
-<img src="../images/security-engineering-6-security-design-assurance-3.9.2.3.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.9.2.3.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -489,11 +487,11 @@ e.g. 비밀 투표 시스템에서 후보자가 5명 밖에 안 될 때는 5명�
 
 `IND-CCA1`에서는 암호문을 조작할 수 있는 공격자(active attacker)가 있을 때도 암호문으로부터 평문의 한 비트의 정보도 알아낼 수 없는 것이다. 즉 `active attacker`가 있을 때의 `semantic security`라고 할 수 있다.
 
-<img src="../images/security-engineering-6-security-design-assurance-3.11.1.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.11.1.2.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-3.11.1.3.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.11.1.3.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -511,7 +509,7 @@ e.g. 비밀 투표 시스템에서 후보자가 5명 밖에 안 될 때는 5명�
 
 암호문을 임의로 조작할 수 없어야 한다는 요구사항이다.
 
-<img src="../images/security-engineering-6-security-design-assurance-3.12.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.12.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -519,7 +517,7 @@ e.g. 비밀 투표 시스템에서 후보자가 5명 밖에 안 될 때는 5명�
 
 <br/>
 
-<img src="../images/security-engineering-6-security-design-assurance-3.12.1.2.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.12.1.2.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
  
@@ -531,7 +529,7 @@ e.g. 비밀 투표 시스템에서 후보자가 5명 밖에 안 될 때는 5명�
 
 ### 13) How to Make IND/NM-CCA Cipher?
 
-<img src="../images/security-engineering-6-security-design-assurance-3.13.0.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-3.13.0.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
  
@@ -655,7 +653,7 @@ e.g. `WPA2` 프로토콜이 깨진 것도 `합성보안`에 결함이 있어 발
 
 #### (2) [Note] Discrete Logarithm Problem
 
-<img src="../images/security-engineering-6-security-design-assurance-5.1.2.1.png?raw=true" alt="drawing" width="520"/>
+<img src="../images/security-engineering-6-security-design-assurance-5.1.2.1.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
@@ -681,7 +679,7 @@ e.g. `WPA2` 프로토콜이 깨진 것도 `합성보안`에 결함이 있어 발
 
 #### (1) Interactive Turing Machine
 
-<img src="../images/security-engineering-6-security-design-assurance-6.1.1.1.png?raw=true" alt="drawing" width="520"/>
+<img src="../images/security-engineering-6-security-design-assurance-6.1.1.1.png?raw=true" alt="drawing" width="480"/>
 
 <br/>
 
@@ -691,7 +689,7 @@ e.g. `WPA2` 프로토콜이 깨진 것도 `합성보안`에 결함이 있어 발
 
 #### (2) Interactive Turing Machines
 
-<img src="../images/security-engineering-6-security-design-assurance-6.1.2.1.png?raw=true" alt="drawing" width="720"/>
+<img src="../images/security-engineering-6-security-design-assurance-6.1.2.1.png?raw=true" alt="drawing" width="640"/>
 
 <br/>
 
@@ -832,7 +830,7 @@ Edited(`Polynomially Simulated`) Conversation은 ***빠른 시간 안에 `시뮬
 
 #### (5) Applications
 
-<img src="../images/security-engineering-6-security-design-assurance-6.2.5.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-6.2.5.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -842,7 +840,7 @@ Edited(`Polynomially Simulated`) Conversation은 ***빠른 시간 안에 `시뮬
 
 #### (6) Zero-Knowledge for Cryptocurrency
 
-<img src="../images/security-engineering-6-security-design-assurance-6.2.6.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-6.2.6.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -860,7 +858,7 @@ Edited(`Polynomially Simulated`) Conversation은 ***빠른 시간 안에 `시뮬
  
 ### 1) Secure Multi-Party Computation (MPC)
 
-<img src="../images/security-engineering-6-security-design-assurance-7.1.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/security-engineering-6-security-design-assurance-7.1.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
