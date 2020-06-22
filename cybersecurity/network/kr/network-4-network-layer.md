@@ -6,7 +6,7 @@
 
 ### 1) Network Layer
 
-<img src="../images/network-4-network-layer-1.1.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-1.1.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -55,7 +55,7 @@ switch `A - B - C` 가 있을 때, `A → B`까지 `1 hop`이고, `A → C`까�
 
 ### 2) Two key network-layer functions
 
-<img src="../images/network-4-network-layer-1.2.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-1.2.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -75,7 +75,7 @@ switch `A - B - C` 가 있을 때, `A → B`까지 `1 hop`이고, `A → C`까�
 
 ### 3) Network layer: data plane, control plane
 
-<img src="../images/network-4-network-layer-1.3.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-1.3.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -88,7 +88,7 @@ switch `A - B - C` 가 있을 때, `A → B`까지 `1 hop`이고, `A → C`까�
 
 ### 4) Per-router control plane
 
-<img src="../images/network-4-network-layer-1.4.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-1.4.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -102,7 +102,7 @@ switch `A - B - C` 가 있을 때, `A → B`까지 `1 hop`이고, `A → C`까�
 
 ### 5) Logically centralized control plane
 
-<img src="../images/network-4-network-layer-1.5.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-1.5.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -124,13 +124,13 @@ switch `A - B - C` 가 있을 때, `A → B`까지 `1 hop`이고, `A → C`까�
 
 ### 6) Network service model
 
-<img src="../images/network-4-network-layer-1.6.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-1.6.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
 ### 7) Network layer service models:
 
-<img src="../images/network-4-network-layer-1.7.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-1.7.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -143,7 +143,7 @@ switch `A - B - C` 가 있을 때, `A → B`까지 `1 hop`이고, `A → C`까�
 
 ### 8) Router architecture overview
 
-<img src="../images/network-4-network-layer-1.8.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-1.8.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -169,7 +169,7 @@ router의 `input port`와 `output port`는 logical한 개념이다.
 
 ### 9) Input port functions
 
-<img src="../images/network-4-network-layer-1.9.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-1.9.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -186,7 +186,7 @@ router의 `input port`와 `output port`는 logical한 개념이다.
 
 ### 10) Destination-based forwarding
 
-<img src="../images/network-4-network-layer-1.10.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-1.10.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -196,7 +196,7 @@ router의 `input port`와 `output port`는 logical한 개념이다.
 
 ### 11) Longest prefix matching
 
-<img src="../images/network-4-network-layer-1.11.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-1.11.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -204,7 +204,7 @@ router의 `input port`와 `output port`는 logical한 개념이다.
 
 <br/>
 
-<img src="../images/network-4-network-layer-1.11.2.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-1.11.2.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -216,7 +216,7 @@ router의 `input port`와 `output port`는 logical한 개념이다.
 
 ### 12) Switching fabrics
 
-<img src="../images/network-4-network-layer-1.12.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-1.12.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -230,7 +230,7 @@ router의 `input port`와 `output port`는 logical한 개념이다.
 
 ### 13) Output ports
 
-<img src="../images/network-4-network-layer-1.13.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-1.13.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -269,13 +269,13 @@ router의 `input port`와 `output port`는 logical한 개념이다.
 
 ### 14) Output port queueing
 
-<img src="../images/network-4-network-layer-1.14.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-1.14.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
 ### 15) Programmable switch ASICs
 
-<img src="../images/network-4-network-layer-1.15.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-1.15.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -299,7 +299,7 @@ router의 `input port`와 `output port`는 logical한 개념이다.
 
 ### 16) How much buffering?
 
-<img src="../images/network-4-network-layer-1.16.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-1.16.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -311,7 +311,7 @@ router의 `input port`와 `output port`는 logical한 개념이다.
 
 ### 17) Scheduling mechanisms
 
-<img src="../images/network-4-network-layer-1.17.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-1.17.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -327,7 +327,7 @@ router의 `input port`와 `output port`는 logical한 개념이다.
 
 ### 18) Scheduling vs. Buffer management
 
-<img src="../images/network-4-network-layer-1.18.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-1.18.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -338,7 +338,7 @@ router의 `input port`와 `output port`는 logical한 개념이다.
 
 ### 19) Scheduling policies: priority
 
-<img src="../images/network-4-network-layer-1.19.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-1.19.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -350,7 +350,7 @@ e.g. 이마트 소액전용 계산대
 
 #### (1) Round Robin (RR) scheduling
 
-<img src="../images/network-4-network-layer-1.20.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-1.20.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -372,7 +372,7 @@ e.g. 이마트 소액전용 계산대
 
 #### (2) Weighted Round Robin (WRR) scheduling
 
-<img src="../images/network-4-network-layer-1.20.2.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-1.20.2.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -390,7 +390,7 @@ e.g. 이마트 소액전용 계산대
 
 ### 21) Put them together
 
-<img src="../images/network-4-network-layer-1.21.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-1.21.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -408,7 +408,7 @@ e.g. 이마트 소액전용 계산대
 
 ### 22) Relationship between buffer sharing and bandwidth
 
-<img src="../images/network-4-network-layer-1.22.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-1.22.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -420,7 +420,7 @@ queue 1에는 flow가 8개가 몰리고 있고, queue 2에는 32개의 flow가 �
 
 ### 1) IP datagram format
 
-<img src="../images/network-4-network-layer-2.1.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-2.1.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -436,7 +436,7 @@ ToS (Type of Service)
 
 ### 2) IP fragmentation, reassembly
 
-<img src="../images/network-4-network-layer-2.2.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-2.2.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -446,7 +446,7 @@ network link마다 한 번에 보낼 수 있는 `최대 패킷`의 크기인 `MT
 
 <br/>
 
-<img src="../images/network-4-network-layer-2.2.2.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-2.2.2.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -473,7 +473,7 @@ MTU = 1500 bytes
 
 ### 3) IP addressing: introduction
 
-<img src="../images/network-4-network-layer-2.3.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-2.3.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -487,13 +487,13 @@ MTU = 1500 bytes
 
 ### 4) IP addressing: introduction
 
-<img src="../images/network-4-network-layer-2.4.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-2.4.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
 ### 5) Subnets
 
-<img src="../images/network-4-network-layer-2.5.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-2.5.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -513,13 +513,13 @@ subnet이 다르면 직접 통신이 불가능하고, 반드시 라우터를 거
 
 <br/>
 
-<img src="../images/network-4-network-layer-2.5.2.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-2.5.2.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
 ### 6) IPv6: motivation
 
-<img src="../images/network-4-network-layer-2.6.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-2.6.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -527,13 +527,13 @@ subnet이 다르면 직접 통신이 불가능하고, 반드시 라우터를 거
 
 ### 7) IPv6 datagram format
 
-<img src="../images/network-4-network-layer-2.7.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-2.7.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
 ### 8) Transition from IPv4 to IPv6
 
-<img src="../images/network-4-network-layer-2.8.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-2.8.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -547,7 +547,7 @@ IPv6는 deployment 문제 때문에 확산되지 못했다. IPv6를 지원하는
 
 ### 9) IPv6: adoption
 
-<img src="../images/network-4-network-layer-2.9.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-2.9.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -559,7 +559,7 @@ IPv6는 deployment 문제 때문에 확산되지 못했다. IPv6를 지원하는
 
 ### 1) Network-layer functions
 
-<img src="../images/network-4-network-layer-3.1.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-3.1.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -568,7 +568,7 @@ IPv6는 deployment 문제 때문에 확산되지 못했다. IPv6를 지원하는
 
 ### 2) Routing protocols
 
-<img src="../images/network-4-network-layer-3.2.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-3.2.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -578,13 +578,13 @@ IPv6는 deployment 문제 때문에 확산되지 못했다. IPv6를 지원하는
 
 ### 3) Graph abstraction of the network
 
-<img src="../images/network-4-network-layer-3.3.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-3.3.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
 ### 4) Graph abstraction: costs
 
-<img src="../images/network-4-network-layer-3.4.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-3.4.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -598,7 +598,7 @@ IPv6는 deployment 문제 때문에 확산되지 못했다. IPv6를 지원하는
 
 ### 5) Routing algorithm classification
 
-<img src="../images/network-4-network-layer-3.5.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-3.5.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -614,7 +614,7 @@ IPv6는 deployment 문제 때문에 확산되지 못했다. IPv6를 지원하는
 
 ### 6) A link-state routing algorithm
 
-<img src="../images/network-4-network-layer-3.6.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-3.6.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -630,7 +630,7 @@ iteration이 돌아가면서 가장 작은 cost의 해당하는 경로들을 순
 
 ### 7) Routing protocols (More)
 
-<img src="../images/network-4-network-layer-3.7.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-3.7.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
 
@@ -659,6 +659,6 @@ A       D
 
 ### 8) Last words
 
-<img src="../images/network-4-network-layer-3.8.1.1.png?raw=true" alt="drawing" width="640"/>
+<img src="../images/network-4-network-layer-3.8.1.1.png?raw=true" alt="drawing" width="520"/>
 
 <br/>
