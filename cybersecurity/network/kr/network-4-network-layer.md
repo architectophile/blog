@@ -96,7 +96,7 @@ switch `A - B - C` 가 있을 때, `A → B`까지 `1 hop`이고, `A → C`까�
 
 `control plane`에서 `local forwarding table`을 계산한다.
 
-전통적인 `per-route control plane` 방식에서는 `local forwarding table`을 계산할 때 각 라우터들이 직접 계산하였다. 각자 라우터가 개별적으로 `routing algorithm`을 계산하고 정보를 인접한 라우터끼리 공유하여 싱크를 맞추었다.
+전통적인 `per-router control plane` 방식에서는 `local forwarding table`을 계산할 때 각 라우터들이 직접 계산하였다. 각자 라우터가 개별적으로 `routing algorithm`을 계산하고 정보를 인접한 라우터끼리 공유하여 싱크를 맞추었다.
 
 <br/>
 
@@ -331,8 +331,8 @@ router의 `input port`와 `output port`는 logical한 개념이다.
 
 <br/>
 
-`Buffer Management`: 어떤 패킷이 버퍼링될 것인가? 어떤 flow가 얼마만큼의 공간을 차지할 것인가? e.g. 클라우드 백업 트래픽은 90 패킷까지만 버퍼링할 수 있다. 아직 10개의 버퍼 여유 공간이 있더라도 91번째 클라우드 백업 패킷은 드랍된다. 
-`Packet Scheduling`: 패킷 버퍼 안의 어떤 패킷을 먼저 전송할 것인가?
+- `Buffer Management`: 어떤 패킷이 버퍼링될 것인가? 어떤 flow가 얼마만큼의 공간을 차지할 것인가? e.g. 클라우드 백업 트래픽은 90 패킷까지만 버퍼링할 수 있다. 아직 10개의 버퍼 여유 공간이 있더라도 91번째 클라우드 백업 패킷은 드랍된다. 
+- `Packet Scheduling`: 패킷 버퍼 안의 어떤 패킷을 먼저 전송할 것인가?
 
 <br/>
 
