@@ -36,7 +36,7 @@
 
 <br/>
 
-따라서 장치에서 생성된 mnemonic seed 값은 전체 2<sup>256</sup>개의 가능한 mnemonic seed 중에서 한 개의 seed가 생성되는 것이다. 여기서 24개의 단어 중에서 마지막 단어는 3비트의 랜덤값과 8비트의 해쉬값이 더해져 생성되는데, 이것은 checksum과 같으 역할을 하게 된다.
+따라서 장치에서 생성된 `mnemonic seed` 값은 전체 2<sup>256</sup>개의 가능한 `mnemonic seed` 중에서 한 개의 `seed`가 생성되는 것이다. 여기서 24개의 단어 중에서 마지막 단어는 3비트의 랜덤값과 8비트의 해쉬값이 더해져 생성되는데, 이것은 `checksum`과 같은 역할을 하게 된다.
 
 <br/>
 
@@ -46,7 +46,7 @@
 
 ## 4. HD Key Generation
 
-앞에서 생성한 24개 단어의 mnemonic seed로부터 이론적으로 무한개의 키를 생성하기 위해서 `hierarchical deterministic (HD) key generation` 방법을 사용한다. 레저 장치에서 사용하는 `HD kye generation` 프로세스는 [BIP 32][2] 표준에 정의되어 있다.
+앞에서 생성한 24개 단어의 `mnemonic seed`로부터 이론적으로 무한개의 키를 생성하기 위해서 `hierarchical deterministic (HD) key generation` 방법을 사용한다. 레저 장치에서 사용하는 `HD kye generation` 프로세스는 [BIP 32][2] 표준에 정의되어 있다.
 
 <br>
 
@@ -63,7 +63,7 @@
 
 ### 2) Passphrase
 
-passphrase는 [BIP 39][3] 표준에서 정의하는 기능이다. passphrase는 HD wallet에서 `master node`를 추출하기 전에 `master seed`에 추가적인 데이터를 더할 수 있는 옵션 기능이다. 같은 `master seed`라도 서로 다른 passphrase를 추가함에 따라 완전히 서로 다른 `master node`가 생성된다. 이러한 방식으로 당신은 동일한 `master seed`에 대해서 서로 다른 passphrase를 여러개 관리함으로써 완전히 다른 지갑들을 여러개 관리할 수 있다.
+`passphrase`는 [BIP 39][3] 표준에서 정의하는 기능이다. `passphrase`는 `HD wallet`에서 `master node`를 추출하기 전에 `master seed`에 추가적인 데이터를 더할 수 있는 옵션 기능이다. 같은 `master seed`라도 서로 다른 `passphrase`를 추가함에 따라 완전히 서로 다른 `master node`가 생성된다. 이러한 방식으로 당신은 동일한 `master seed`에 대해서 서로 다른 `passphrase`를 여러개 관리함으로써 완전히 다른 지갑들을 여러개 관리할 수 있다.
 
 <br/>
 
@@ -75,9 +75,9 @@ passphrase는 [BIP 39][3] 표준에서 정의하는 기능이다. passphrase는 
 
 ### 4) Child Key Derivation Function
 
-CKD function을 이용하면 하나의 `부모(parent) node`로부터 여러개의 `자식(child) nodes`를 추출할 수 있다. 각 node는 중요한 정보 3가지를 갖고 있다. `개인키(private key)`, `공개키(public key)`, 그리고 `체인코드(chain code)`이다. 암호화폐 지갑에서 개인키는 전자서명을 생성하기 위해 사용되고, 공개키는 암호화폐의 주소를 생성하기 위해 사용된다. 그리고 체인코드는 해당 개인키와 공개키만을 가지고 다른 누군가가 child nodes를 생성하는 것을 방지하기 위한 추가 정보이다.
+`CKD function`을 이용하면 하나의 `부모(parent) node`로부터 여러개의 `자식(child) nodes`를 추출할 수 있다. 각 `node`는 중요한 정보 3가지를 갖고 있다. `개인키(private key)`, `공개키(public key)`, 그리고 `체인코드(chain code)`이다. 암호화폐 지갑에서 개인키는 전자서명을 생성하기 위해 사용되고, 공개키는 암호화폐의 주소를 생성하기 위해 사용된다. 그리고 체인코드는 해당 개인키와 공개키만을 가지고 다른 누군가가 child nodes를 생성하는 것을 방지하기 위한 추가 정보이다.
 
-CKD function은 유연성을 갖고 있어서 public key와 chain code만 있으면 private key가 없어도 child public keys를 생성할 수 있으며, private key와 chain code만 있으면 child private keys를 생성할 수 있다. 또한 [BIP 32][2]에는 ***`hardened`*** child node 개념이 있는데, 이 `hardened child nodes`의 public keys는 parent public key로부터 생성될 수 없다.
+`CKD function`은 유연성을 갖고 있어서 `public key`와 `chain code`만 있으면 `private key`가 없어도 `child public keys`를 생성할 수 있으며, `private key`와 `chain code`만 있으면 `child private keys`를 생성할 수 있다. 또한 [BIP 32][2]에는 ***`hardened`*** child node 개념이 있는데, 이 `hardened child nodes`의 `public keys`는 `parent public key`로부터 생성될 수 없다.
 
 <br/>
 
@@ -128,7 +128,7 @@ HD 트리 안에서 서로 다른 암호화폐들은 각자 고유의 child key 
 
 ## 6. Application Isolation
 
-레저 장치는 악성코드와 해커의 공격으로부터 비밀정보를 보호하기 위해서 `Secure Element` 안의 `application isolation technology`를 사용한다. 이를 위해서 `ARM`의 `Memory Protection Unit`과 `Operating Modes`를 활용한다. `Memory Protection Unit`은 각 `앱(app)`이 자신이 할당받은 메모리 공간에서만 natively isolate 되도록 보호하며, 각 `앱(app)`은 `User mode`에서 동작하고 `Operating System`은 `Supervisor mode`에서 동작한다. 이 장치는 `single-task model`로 동작하도록 제한되는데 즉, 한 번에 오직 한 개의 `앱(app)`만 실행될 수 있으며, 각 앱은 명시적으로 권한을 부여받지 않는 이상 `Secure Element`에 보관된 `비밀정보(cryptographic secrets)`에 직접 접근할 수 없다.
+레저 장치는 악성코드와 해커의 공격으로부터 비밀정보를 보호하기 위해서 `Secure Element` 안의 `application isolation technology`를 사용한다. 이를 위해서 `ARM`의 `Memory Protection Unit`과 `Operating Modes`를 활용한다. `Memory Protection Unit`은 각 `앱(app)`이 자신이 할당받은 메모리 공간에서만 natively isolated 되도록 보호하며, 각 `앱(app)`은 `User mode`에서 동작하고 `Operating System`은 `Supervisor mode`에서 동작한다. 이 장치는 `single-task model`로 동작하도록 제한되는데 즉, 한 번에 오직 한 개의 `앱(app)`만 실행될 수 있으며, 각 앱은 명시적으로 권한을 부여받지 않는 이상 `Secure Element`에 보관된 `비밀정보(cryptographic secrets)`에 직접 접근할 수 없다.
 
 운영체제에 의해 관리되는 키와 비밀정보에 대한 앱의 접근권한은 각 앱을 장치에 로드할 때 설정할 수 있다. 장치에 저장된 `master seed`에 직접 접근하는 대신 각 앱은 해당 앱이 사용하는 키의 `node`를 `master seed`로부터 추출하여 전달받도록 `운영체제`에 해당 `node`의 `path`를 전달하여 요청한다. 각 앱(app)이 장치에서 로드될 때, 각 앱에서 사용하는 `node`를 추출할 수 있는 `BIP 32` `path`가 설정된다. 그리고 이후에 만약 해당 `앱(app)`에서 사용하도록 허용되지 않은 `path`에 대해서 운영체제에게 요청할 경우 해당 요청은 거절된다. 이러한 방식으로 서로 다른 앱들은 장치에 로드되어서 `HD tree` 안에서 서로 다른 각각의 특정 `subtree`로 접근이 제한된다. 그리고 이처럼 `운영체제`에게 Supervisor로서 특정 `연산(operation)`을 `요청(request)`하는 것을 ***`syscall`***이라고 부른다.
 
