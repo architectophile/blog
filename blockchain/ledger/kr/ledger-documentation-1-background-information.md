@@ -56,7 +56,7 @@
 
 ### 1) The Master Node
 
-`HD key generation` 방법은 이론적으로 무한한 길이의 `암호키 트리(tree of cryptographic secrets)`를 생성하는 것이다. 이 트리에서 모든 것이 생성되는 최초의 뿌리에 해당하는 노드를 ***`master node`***라고 부른다.
+`HD key generation` 방법은 이론적으로 무한한 길이의 `암호키 트리(tree of cryptographic secrets)`를 생성하는 것이다. 이 트리에서 모든 것이 생성되는 최초의 뿌리에 해당하는 노드를 `master node`라고 부른다.
 이 `master node`는 이전에 생성한 `master binary seed`로부터 `HMAC-SHA512` 연산을 통해 직접 추출된다. 그리고 이 `master node`는 당신의 모든 개인키를 접근하는데 필요한 모든 정보를 담고 있다. 따라서 당신은 `mnemonic seed`를 매우 안전하게 보관해야 한다.
 
 <br/>
@@ -77,7 +77,7 @@
 
 `CKD function`을 이용하면 하나의 `부모(parent) node`로부터 여러개의 `자식(child) nodes`를 추출할 수 있다. 각 `node`는 중요한 정보 3가지를 갖고 있다. `개인키(private key)`, `공개키(public key)`, 그리고 `체인코드(chain code)`이다. 암호화폐 지갑에서 개인키는 전자서명을 생성하기 위해 사용되고, 공개키는 암호화폐의 주소를 생성하기 위해 사용된다. 그리고 체인코드는 해당 개인키와 공개키만을 가지고 다른 누군가가 child nodes를 생성하는 것을 방지하기 위한 추가 정보이다.
 
-`CKD function`은 유연성을 갖고 있어서 `public key`와 `chain code`만 있으면 `private key`가 없어도 `child public keys`를 생성할 수 있으며, `private key`와 `chain code`만 있으면 `child private keys`를 생성할 수 있다. 또한 [BIP 32][2]에는 ***`hardened`*** child node 개념이 있는데, 이 `hardened child nodes`의 `public keys`는 `parent public key`로부터 생성될 수 없다.
+`CKD function`은 유연성을 갖고 있어서 `public key`와 `chain code`만 있으면 `private key`가 없어도 `child public keys`를 생성할 수 있으며, `private key`와 `chain code`만 있으면 `child private keys`를 생성할 수 있다. 또한 [BIP 32][2]에는 `hardened` child node 개념이 있는데, 이 `hardened child nodes`의 `public keys`는 `parent public key`로부터 생성될 수 없다.
 
 <br/>
 
@@ -130,7 +130,7 @@ HD 트리 안에서 서로 다른 암호화폐들은 각자 고유의 child key 
 
 레저 장치는 악성코드와 해커의 공격으로부터 비밀정보를 보호하기 위해서 `Secure Element` 안의 `application isolation technology`를 사용한다. 이를 위해서 `ARM`의 `Memory Protection Unit`과 `Operating Modes`를 활용한다. `Memory Protection Unit`은 각 `앱(app)`이 자신이 할당받은 메모리 공간에서만 natively isolated 되도록 보호하며, 각 `앱(app)`은 `User mode`에서 동작하고 `Operating System`은 `Supervisor mode`에서 동작한다. 이 장치는 `single-task model`로 동작하도록 제한되는데 즉, 한 번에 오직 한 개의 `앱(app)`만 실행될 수 있으며, 각 앱은 명시적으로 권한을 부여받지 않는 이상 `Secure Element`에 보관된 `비밀정보(cryptographic secrets)`에 직접 접근할 수 없다.
 
-운영체제에 의해 관리되는 키와 비밀정보에 대한 앱의 접근권한은 각 앱을 장치에 로드할 때 설정할 수 있다. 장치에 저장된 `master seed`에 직접 접근하는 대신 각 앱은 해당 앱이 사용하는 키의 `node`를 `master seed`로부터 추출하여 전달받도록 `운영체제`에 해당 `node`의 `path`를 전달하여 요청한다. 각 앱(app)이 장치에서 로드될 때, 각 앱에서 사용하는 `node`를 추출할 수 있는 `BIP 32` `path`가 설정된다. 그리고 이후에 만약 해당 `앱(app)`에서 사용하도록 허용되지 않은 `path`에 대해서 운영체제에게 요청할 경우 해당 요청은 거절된다. 이러한 방식으로 서로 다른 앱들은 장치에 로드되어서 `HD tree` 안에서 서로 다른 각각의 특정 `subtree`로 접근이 제한된다. 그리고 이처럼 `운영체제`에게 Supervisor로서 특정 `연산(operation)`을 `요청(request)`하는 것을 ***`syscall`***이라고 부른다.
+운영체제에 의해 관리되는 키와 비밀정보에 대한 앱의 접근권한은 각 앱을 장치에 로드할 때 설정할 수 있다. 장치에 저장된 `master seed`에 직접 접근하는 대신 각 앱은 해당 앱이 사용하는 키의 `node`를 `master seed`로부터 추출하여 전달받도록 `운영체제`에 해당 `node`의 `path`를 전달하여 요청한다. 각 앱(app)이 장치에서 로드될 때, 각 앱에서 사용하는 `node`를 추출할 수 있는 `BIP 32` `path`가 설정된다. 그리고 이후에 만약 해당 `앱(app)`에서 사용하도록 허용되지 않은 `path`에 대해서 운영체제에게 요청할 경우 해당 요청은 거절된다. 이러한 방식으로 서로 다른 앱들은 장치에 로드되어서 `HD tree` 안에서 서로 다른 각각의 특정 `subtree`로 접근이 제한된다. 그리고 이처럼 `운영체제`에게 Supervisor로서 특정 `연산(operation)`을 `요청(request)`하는 것을 `syscall`이라고 부른다.
 
 다음 챕터에서는 장치에 설치하려는 앱의 무결성을 검증하기 위해서 `운영체제`에서 제공하는 `attestation feature`에 대해서 알아보도록 할 것이다. 이를 위해서는 앱이 장치에 로드될 때 앱에서 제공하는 전자서명을 검증한다. 또한 레저 플랫폼이 얼마나 `open-source friendly`한지에 대해서 알아보고, 이러한 특성으로 인해 레저 장치에 설치되는 자산관리 앱을 당신이 직접 리뷰하고 검사할 수 있다.
 
