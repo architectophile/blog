@@ -27,7 +27,7 @@
 
 ### 1) The Dashboard
 
-모든 `BOLOS` 장치들은 특정 권한에서만 OS에서 동작하는 특별한 어플리케이션(special app)이 한 개설치되어 있는데, 이것은 `Dashboard application` 또는 `PSD Content Manager`라고 불린다. 이 `dashboard app`은 사용자가 다른 앱을 열지 않았을 때 보이는 `메인 GUI`를 제공한다. 이 `dashboard app`을 이용하여 사용자는 `master seed`를 입력하고, 다른 앱을 실행시킬 수 있다. 또한 이 `dashboard app`은 사용자의 `host computer`와 통신하며 장치에 다른 앱을 로드하거나 삭제할 때 사용된다.
+모든 `BOLOS` 장치는 특정 권한에서만 OS에서 동작하는 `특별한 어플리케이션(special app)`이 한 개 설치되어 있는데, 이것은 `Dashboard application` 또는 `PSD Content Manager`라고 불린다. 이 `dashboard app`은 사용자가 다른 앱을 열지 않았을 때 보이는 `메인 GUI`를 제공한다. 이 `dashboard app`을 이용하여 사용자는 `master seed`를 입력하고, 다른 앱을 실행시킬 수 있다. 또한 이 `dashboard app`은 사용자의 `host computer`와 통신하며 장치에 다른 앱을 로드하거나 삭제할 때 사용된다.
 
 `dashboard`의 중요 컴포넌트는 바로 `BOLOS UX`이다. `BOLOS UX`는 장치 전반에 사용되는 사용자 인터페이스를 구현하며, 다른 어플리케이션들은 이를 이용하여 사용자와 상호작용할 수 있다. Nano S 펌웨어에 빌드되어 들어가는 `dashboard app`의 기본 UI는 `external application`을 로드하여 사용자가 원하는 UI로 변경하여 사용할 수도 있다.
 
@@ -41,7 +41,7 @@
 
 ### 1) Management of Cryptographic Secrets
 
-`BOLOS`에 의해 관리되는 가장 중요한 두 개의 암호키가 있는데, 하나는 `Device keypair`(공장에서 생성됨)이고, 두 번째는 `BIP 32 master node`(BIP 39 mnemonic seed로부터 생성됨)이다. 이 두 가지의 키는 모두 `BOLOS`에 의해 저장되며, 어플리케이션들은 보안을 위해 직접 접근할 수 없다. `Device keypair`는 어플리케이션 증명(`application attestation`)을 위해 간접적으로 접근될 수 있다. 그리고 어플리케이션들은 `BOLOS`에 시스템 호출(system call)을 통해 `BIP 32 master node`로부터 필요한 키를 추출(`derive`)받을 수 있다(해당 앱이 장치에 로드될 때 적절한 권한(permissions)을 부여받았을 경우에만 가능).
+`BOLOS`에 의해 관리되는 가장 중요한 두 개의 암호키가 있는데, 하나는 `Device keypair`(공장에서 생성됨)이고, 두 번째는 `BIP 32 master node`(BIP 39 mnemonic seed로부터 생성됨)이다. 이 두 가지의 키는 모두 `BOLOS`에 의해 저장되며, 어플리케이션들은 보안을 위해 직접 접근할 수 없다. `Device keypair`는 어플리케이션 증명(`application attestation`)을 위해 간접적으로 접근될 수 있다. 그리고 어플리케이션들은 `BOLOS`에 시스템 `호출(system call)`을 통해 `BIP 32 master node`로부터 필요한 키를 추출(`derive`)받을 수 있다(해당 앱이 장치에 로드될 때 적절한 권한(permissions)을 부여받았을 경우에만 가능).
 
 <br/>
 
