@@ -1,4 +1,4 @@
-# Raspberry Pi 패스워드 변경 방법
+# [Raspberry Pi] 패스워드 변경 방법
 
 <br/>
 
