@@ -25,15 +25,15 @@
 
 <br/>
 
-## 3. The Dashboard
+### 1) The Dashboard
 
-모든 `BOLOS` 장치들은 특정 권한에서만 OS에서 동작하는 특별한 어플리케이션(special app)이 한 개설치되어 있는데, 이것은 `Dashboard application` 또는 `PSD Content Manager`라고 불린다. 이 `dashboard app`은 사용자가 다른 앱을 열지 않았을 때 보이는 `메인 GUI`를 제공한다. 이 `dashboard app`을 이용하여 사용자는 `master seed`를 입력하고, 다른 앱을 실행시킬 수 있다. 또한 이 `dashboard app`은 사용자의 `host computer`와 통신하며 장치에 다른 앱을 로드하거나 삭제할 때 사용된다.
+모든 `BOLOS` 장치는 특정 권한에서만 OS에서 동작하는 `특별한 어플리케이션(special app)`이 한 개 설치되어 있는데, 이것은 `Dashboard application` 또는 `PSD Content Manager`라고 불린다. 이 `dashboard app`은 사용자가 다른 앱을 열지 않았을 때 보이는 `메인 GUI`를 제공한다. 이 `dashboard app`을 이용하여 사용자는 `master seed`를 입력하고, 다른 앱을 실행시킬 수 있다. 또한 이 `dashboard app`은 사용자의 `host computer`와 통신하며 장치에 다른 앱을 로드하거나 삭제할 때 사용된다.
 
 `dashboard`의 중요 컴포넌트는 바로 `BOLOS UX`이다. `BOLOS UX`는 장치 전반에 사용되는 사용자 인터페이스를 구현하며, 다른 어플리케이션들은 이를 이용하여 사용자와 상호작용할 수 있다. Nano S 펌웨어에 빌드되어 들어가는 `dashboard app`의 기본 UI는 `external application`을 로드하여 사용자가 원하는 UI로 변경하여 사용할 수도 있다.
 
 <br/>
 
-## 4. BOLOS Features
+## 3. BOLOS Features
 
 이번 섹션에서는, 우리는 `BOLOS`에 내장된 몇몇 기능들에 대해서 알아볼 것이다. 이러한 기능들은 `dashboard app` 또는 사용자공간 어플리케이션(`userspace applications`)에서 사용될 수 있다.
 
@@ -41,7 +41,7 @@
 
 ### 1) Management of Cryptographic Secrets
 
-`BOLOS`에 의해 관리되는 가장 중요한 두 개의 암호키가 있는데, 하나는 `Device keypair`(공장에서 생성됨)이고, 두 번째는 `BIP 32 master node`(BIP 39 mnemonic seed로부터 생성됨)이다. 이 두 가지의 키는 모두 `BOLOS`에 의해 저장되며, 어플리케이션들은 보안을 위해 직접 접근할 수 없다. `Device keypair`는 어플리케이션 증명(`application attestation`)을 위해 간접적으로 접근될 수 있다. 그리고 어플리케이션들은 `BOLOS`에 시스템 호출(system call)을 통해 `BIP 32 master node`로부터 필요한 키를 추출(`derive`)받을 수 있다(해당 앱이 장치에 로드될 때 적절한 권한(permissions)을 부여받았을 경우에만 가능).
+`BOLOS`에 의해 관리되는 가장 중요한 두 개의 암호키가 있는데, 하나는 `Device keypair`(공장에서 생성됨)이고, 두 번째는 `BIP 32 master node`(BIP 39 mnemonic seed로부터 생성됨)이다. 이 두 가지의 키는 모두 `BOLOS`에 의해 저장되며, 어플리케이션들은 보안을 위해 직접 접근할 수 없다. `Device keypair`는 어플리케이션 증명(`application attestation`)을 위해 간접적으로 접근될 수 있다. 그리고 어플리케이션들은 `BOLOS`에 시스템 `호출(system call)`을 통해 `BIP 32 master node`로부터 필요한 키를 추출(`derive`)받을 수 있다(해당 앱이 장치에 로드될 때 적절한 권한(permissions)을 부여받았을 경우에만 가능).
 
 <br/>
 
@@ -89,7 +89,7 @@ Ledger 장치가 크롬 어플리케이션에 연결되었을 때, 장치는 `Is
 
 #### (3) Attestation Chain of Trust
 
-<img src="../images/ledger-documentation-2-bolos-platform-4.3.3.1.png?raw=true" alt="drawing" width="840"/>
+<img src="../images/ledger-documentation-2-bolos-platform-3.3.3.1.png?raw=true" alt="drawing" width="840"/>
 
 <br/>
 
@@ -115,7 +115,7 @@ Ledger 장치가 크롬 어플리케이션에 연결되었을 때, 장치는 `Is
 
 아래의 다이어그램은 `Secure Channel`을 형성하는 과정을 보여준다.
 
-<img src="../images/ledger-documentation-2-bolos-platform-4.0.0.1.png?raw=true" alt="drawing" width="840"/>
+<img src="../images/ledger-documentation-2-bolos-platform-3.4.0.1.png?raw=true" alt="drawing" width="840"/>
 
 <br/>
 
@@ -182,7 +182,7 @@ Ledger 장치가 크롬 어플리케이션에 연결되었을 때, 장치는 `Is
 
 ### 1) Multiple Processors: Secure Element Proxy
 
-<img src="../images/ledger-documentation-2-bolos-platform-5.1.1.1.png?raw=true" alt="drawing" width="840"/>
+<img src="../images/ledger-documentation-2-bolos-platform-4.1.1.1.png?raw=true" alt="drawing" width="840"/>
 
 <br/>
 
@@ -206,10 +206,69 @@ Ledger 장치가 크롬 어플리케이션에 연결되었을 때, 장치는 `Is
 2. `SE`는 해당 `Event`에 대해서 0개 또는 여러개의 `Commands` 리스트를 응답으로 전송한다.
 3. `SE`는 해당 `Event`의 처리가 완전히 완료되었다는 상태를 나타내는 `Status`를 전송한다.
 
-<img src="../images/ledger-documentation-2-bolos-platform-5.2.1.1.png?raw=true" alt="drawing" width="720"/>
+<img src="../images/ledger-documentation-2-bolos-platform-4.2.1.1.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
 
 사실 버퍼 사이즈 때문에 어떤 것을 스크린에 표시하는 요청은 `Status`를 이용하여 전달된다. `MCU`가 `Display Status` 처리를 완료했을 때는 `Display Processed Event`를 `SE`에 전달하여 또 다른 `Display Status`를 받을 준비가 되었다는 것을 알려준다. 따라서 완전한 사용자 인터페이스를 구축하기 위해 여러개의 elements를 스크린에 보여주는 것은 core application logic으로부터 비동기적으로(asynchronously) 이루어져야 한다. 이 프로세스는 `SDK`에 구현되어 있는 `UX helper`에 의해 용이해진다.
 
 `SE`는 만약 어플리케이션이 두 개 이상의 `Statuses`를 연속으로 전송하려고 할 경우 exception을 throw한다. 따라서 반드시 각 `Status` 사이에는 적절한 `Event`가 전송되어야 한다. 
+
+<br/>
+
+## 5. Application Environment
+
+`Secure Element`의 제한된 `RAM` 용량 때문에 `Secure Element`는 한 번에 한 개의 어플리케이션만 실행하도록 설계되었다. 따라서 한 어플리케이션이 실행되고 있을 때는 다른 어플리케이션들은 `SE-MCU` link에 개입할 수 없다. 이것은 `BOLOS`가 현재 실행 중인 어플리케이션에게 `주변장치(peripherals)`와의 `입출력(I/O)`에 대한 `full control`을 부여할 수 있다는 얘기이다. 이러한 모델은 `BOLOS`가 어플리케이션에게 가능한 많은 `control` 권한을 부여할 수 있도록 만들어준다. 근본적으로 각 어플리케이션은 `virtual device` 위에서 실행되며, 각자 원하는대로 하드웨어를 `reconfigure`할 수 있다. `BOLOS`는 각 어플리케이션을 다른 어플리케이션들로부터 분리시키고, 해당 앱에게 할당된 구역 외에는 나머지 플래쉬 메모리 영역에는 접근하지 못하도록 제한한다.
+
+이러한 모델은 어플리케이션이 할 수 있는 것을 제한하지 않는다는 커다란 장점을 가지고 있지만, 한편으로는 각 어플리케이션이 `SE` 외부 세계와 통신하기 위해 필요한 전송 프로콜의 모든 레이어를 직접 관리해야 한다는 부담을 주기도 한다.  
+다행히 `SDK`는 일반적인 어플리케이션들이 해야 하는 모든 `I/O` 처리에 대한 것을 구현하고 있다. 게다가 개발자들은 원할 경우 각 어플리케이션에 맞게 I/O 프로토콜을 커스터마이즈하여 사용할 수도 있다.
+
+<img src="../images/ledger-documentation-2-bolos-platform-5.0.1.1.png?raw=true" alt="drawing" width="720"/>
+
+<br/>
+
+위의 다이어그램은 어플리케이션의 입장에서 바라본 시스템에 대한 구조이다. 어플리케이션은 다양한 주변장치(peripherals)에 직접 접근할 수 있으며, 앱이 실행되는 동안에는 장치의 실질적인 brain 역할을 한다. 각 박스 안의 주변장치들은 어플리케이션의 직접적인 명령 하에 있는 `coprocessors`로 볼 수 있다.
+
+몇몇의 주변장치들은 `SE`로부터 `commands`를 전달받을 뿐만 아니라 `event`를 트리거할 수 있으며, 이것은 `MCU`에서 릴레이되어 `SE`에게 전달된다. 예를 들면, 사용자가 버튼을 눌렀을 때 발생하는 이벤트나 또는 백그라운드 통신을 수행하는 USB 컨트롤러나 또는 어플리케이션이 처리해야 하는 요청을 전달하는 `I/O` 주변장치 같은 경우에 해당한다.
+
+이 모델에서는 어플리케이션이 중심에 있으며, 다른 어떠한 embedded co-applications에 의존하지 않는다.
+
+<br/>
+
+### 1) Delegation Model
+
+
+<img src="../images/ledger-documentation-2-bolos-platform-5.1.1.1.png?raw=true" alt="drawing" width="720"/>
+
+<br/>
+
+`BOLOS`가 어플리케이션을 한 번 부팅하면, `BOLOS`는 더 이상 접근할 수 없다. 앱이 실행되는 동안 `BOLOS`는 오직 `시스템 호출(system calls)`을 통해서 `기본적인 서비스(basic services)`만 어플리케이션에게 제공한다.  
+그 결과, `BOLOS`는 주변장치(e.g. USB)로부터 전달된 `commands`를 처리하지 않으며, 따라서 `BOLOS`는 `I/O`를 처리하는 역할을 하지 않는다.
+
+이러한 두 가지 키 포인트로 인해서 어플리케이션은 장치에 대한 책임을 맡게 된다. 이것은 어플리케이션이 직접 디스플레이를 커스터마이즈하는 것 뿐만 아니라 사용자 입력에 대한 액션과 USB에서 장치가 enumerated 되는 방식도 변경할 수 있다. 만약 어플리케이션이 `Mass Storage emulation`이 필요하거나 `WinUSB` 주변장치로 보이게 하고 싶으면 그저 적절하게 `event`만 처리해주면 된다.
+
+<br/>
+
+<br/>
+
+---
+
+### References
+
+\[1\] *Ledger. (2019). [Ledger Documentation Hub][1] [Web Document]*
+
+[1]: https://ledger.readthedocs.io/en/latest/bolos/introduction.html
+
+<br/>
+
+---
+
+### Hashtags
+
+`#Ledger` `#Crpytocurrency` `#Bitcoin` `#Blockchain` `#Crypto Wallet` `#Hardware Wallet` `#레저` `#암호화폐` `#암호화폐 지갑` `#블록체인` `#레저 지갑` `#콜드월렛` `#하드웨어 월렛` `#Secure Element` `#비트코인`
+
+<br/>
+
+<br/>
+
+© 2020, Byeongcheol Yoo. All rights reserved.
