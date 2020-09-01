@@ -83,7 +83,7 @@ dir1	file1	file2
 하지만 만약 `mv` 명령을 잘못 사용할 경우에는 다음과 같이 오류가 발생하여 stderr를 통해 출력될 것이다.
  
 ```shell
-foo@bar:~$ $ mv
+foo@bar:~$ mv
 mv: missing file operand
 Try 'mv --help' for more information.
 ```
