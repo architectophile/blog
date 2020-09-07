@@ -62,7 +62,7 @@
 ```scala
 intrinsic gas = (Gtxdatazero * Nzeros) 
                + (Gtxdatanonzero * Nnonzeros)
-               +  Gtxcreate 
+               + Gtxcreate 
                + Gtransaction
 ```
 
