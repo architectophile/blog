@@ -127,21 +127,21 @@ upfront cost = (gasLimit * gasPrice) + value
 
 ### (3) 사용가능한 gas 계산
 
-트랜잭션을 실행하기 사용할 수 있는 gas를 계산한다. 최대 사용가능한 `gasLimit`에서 `intrinsic gas`을 차감하여 트랜잭션 실행에 사용할 수 있는 gas를 계산한다.
+트랜잭션을 실행하기 전에 사용가능한 gas를 먼저 계산한다. 최대 사용가능한 `gasLimit`에서 `intrinsic gas`을 차감하여 트랜잭션 실행에 사용할 수 있는 gas를 계산한다.
 
 <br/>
 
 ### (4) 트랜잭션 실행(Transaction Execution)
 
-기본적인 `value transfer` 또는 스마트 컨트랙트를 위한 `EVM operations`를 실행한다. `EVM operation` 마다 소모되는 gas가 정해져 있으며, 이 값에 따라 각 `operation`을 실행하며 소모되는 gas를 이전에 계산했던 사용가능한 gas에서 차감한다. 이 때 만약 사용가능한 gas가 부족할 경우 트랜잭션 실행에 실패한다.
+기본적인 `value transfer` 또는 스마트 컨트랙트를 위한 `EVM operations`를 실행한다. `EVM operation` 마다 소모되는 gas가 정해져 있으며, 이 값에 따라 각 `operation`을 실행하며 소모되는 gas를 `단계(3)`에서 계산해두었던 사용가능한 gas로부터 차감한다. 이 때 만약 사용가능한 gas가 더 이상 부족할 경우 트랜잭션 실행에 실패한다.
 
 <br/>
 
 ### (5) `SELFDESTRUCT`, `SSTORE` 연산에 대한 gas 환불
 
-스마트 컨트랙트가 `SELFDESTRUCT` 연산을 실행하여 컨트랙트를 삭제하였을 경우 `storage` 공간 반환에 대한 보상으로 24000 gas를 호출자에게 환불해준다.
+스마트 컨트랙트가 `SELFDESTRUCT` 연산을 실행하여 컨트랙트를 삭제하였을 경우 `storage` 공간 반환에 대한 보상으로 24000 gas를 전송자에게 환불해준다.
 
-또한 만약 `SSTORE` 연산으로 `storage` 공간에 0를 입력할 경우에도 마찬가지로 15000 gas를 환불해준다.
+또한 만약 `SSTORE` 연산으로 `storage` 공간에 `0(zero)`를 저장할 경우에도 마찬가지로 15000 gas를 전송자에게 환불해준다.
 
 <br/>
 
