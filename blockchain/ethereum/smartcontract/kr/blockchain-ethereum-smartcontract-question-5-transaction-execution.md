@@ -246,12 +246,6 @@ const handleTransaction = (trasaction) => {
 }
 ```
 
-
-
-
-
-
-
 <br/>
 
 <br/>
@@ -267,9 +261,6 @@ const handleTransaction = (trasaction) => {
 \[2\] *Dr. Gavin Wood. (2020, Sep 5). [ETHEREUM: A SECURE DECENTRALISED GENERALISED TRANSACTION LEDGER PETERSBURG VERSION][1] [Ethereum]*
 
 [2]: https://ethereum.github.io/yellowpaper/paper.pdf
-
-
-
 
 <br/>
 
