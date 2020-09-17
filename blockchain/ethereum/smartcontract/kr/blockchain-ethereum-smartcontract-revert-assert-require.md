@@ -26,7 +26,7 @@ contract OwnableContract {
 
 <br/>
 
-위의 컨트랙트에서 `criticalAction` 함수는 오직 `owner`만 호출할 수 있으며, 만약 그렇지 않은 경우 이 함수는 `throw`를 통해 `invalid opcode` 오류를 출력할 것입니다. 이 때 모든 변경된 `state`는 다시 원래 값으로 복원되며, 남아있는 모든 gas를 소모해버리게 됩니다.
+위의 컨트랙트에서 `criticalAction` 함수는 오직 `owner`만 호출할 수 있으며, 만약 그렇지 않은 경우 이 함수는 `throw`를 통해 `invalid opcode` 오류를 출력할 것입니다. 이 때 모든 변경된 `state`는 다시 원래 값으로 복원되며, 남아있는 모든 `gas`를 소모해버리게 됩니다.
 
 하지만 이제 `throw` 키워드는 `deprecated`되었습니다. 대신에 `revert()`, `assert()`, `require()` 함수들이 비슷한 기능을 제공하며 훨씬 깔끔한 문법을 제공합니다.
 
@@ -60,7 +60,7 @@ require(msg.sender == owner);
 
 ## 3. 차이점
 
-기존의 `throw` 키워드는 오류를 출력하면서 남아 있는 모든 gas를 소모했습니다. 하지만 `revert()`, `require()` 함수들은 변경된 `state`는 복원하고, 남아 있는 gas는 다시 사용자에게 돌려줍니다. 반면에 `assert()` 함수는 기존의 `throw` 키워드와 같이 변경된 `state`를 복원하고, 사용자의 남아 있는 모든 `gas`를 소모하여 `miner`에게 전달합니다.
+기존의 `throw` 키워드는 오류를 출력하면서 남아 있는 모든 `gas`를 소모했습니다. 하지만 `revert()`, `require()` 함수들은 변경된 `state`는 복원하고, 남아 있는 `gas`는 다시 사용자에게 돌려줍니다. 반면에 `assert()` 함수는 기존의 `throw` 키워드와 같이 변경된 `state`를 복원하고, 사용자의 남아 있는 모든 `gas`를 소모하여 `miner`에게 전달합니다.
 
 따라서 `assert()` 함수는 상대적으로 매우 `심각한(critical)` `위험` 또는 `실패`를 야기할 수 있는 조건을 검사하게 위해 주로 사용됩니다.
 
