@@ -237,7 +237,6 @@ Ledger 장치가 크롬 어플리케이션에 연결되었을 때, 장치는 `Is
 
 ### 1) Delegation Model
 
-
 <img src="../images/ledger-documentation-2-bolos-platform-5.1.1.1.png?raw=true" alt="drawing" width="720"/>
 
 <br/>
