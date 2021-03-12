@@ -45,7 +45,7 @@ scatter-loading 설명 문법은 `Backus-Naur Form (BNF)` 표기법을 사용한
 - `name`: `링커(linker)`가 서로 다른 `로드 구역(load region)`을 식별하기 위해 사용된다.
 - `base address`: `로드뷰(load view)` 안의 `코드(code)` 또는 `데이터(data)`의 시작 주소를 나타낸다.
 - `attributes`: 해당 `로드 구역(load region)`의 `속성(properties)`을 나타낸다.
-- `optional maximum size`: 선택적인 최대 사이즈를 나타낸다.
+- `optional maximum size`: 구역의 최대 사이즈를 나타낸다(선택사항).
 - `execution region`: `로드 구역(load region)`은 한 개 이상의 `실행 구역(execution region)`을 가질 수 있다.
 
 <br/>
@@ -83,11 +83,168 @@ load_region_description ::=
 
 로드 구역은 `attribute`를 가질 수 있는데, 이를 이용하여 이미지(image)의 어느 부분들이 타겟 메모리에 로드되어야 하는지를 결정할 수 있다. 로드 구역에서 사용되는 `attribute`는 다음과 같다.
 
-- `ABSOLUTE`: 컨텐트가 링킹(linking) 이후에 변경되지 않는 고정된 주소(fixed address)에 위치하는 경우 사용된다. 해당 구역의 로드 주소는 `base designator`에 의해 명시된다. 이것은 `PI` 또는 `RELOC`를 사용하지 않는 이상 디폴트이다.
-- `ALIGN alignment`: `정렬 제한(alignment constraint)`을 4에서 해당 `alignment` 값으로 변경한다. `alignment` 값은 반드시 2의 배수인 양의 정수여야 한다. 만약 해당 로드 구역이 `base_address`를 갖고 있다면, 이 주소는 반드시 해당 `alignment` 값에 부합해야 한다. 만약 해당 로드 구역이 `+offset`을 갖고 있다면, 링커는 해당 구역의 계산된 `base address`를 정의된 `alignment` 값에 맞게 정렬한다. 이 값은 `ELF 파일` 안의 offset에도 영향을 미칠 수 있다. 예를 들어, 다음의 경우 `FOO`에 대한 데이터가 `ELF 파일` 안의 4k offset에 쓰여지도록 한다. `FOO +4 ALIGN 4096`
+- `ABSOLUTE`: 컨텐트가 링킹(linking) 이후에 변경되지 않는 `고정된 주소(fixed address)`에 위치한다. 해당 구역의 로드 주소는 `base designator`에 의해 명시된다. `ABSOLUTE`는 설정은 `PI` 또는 `RELOC`를 사용하지 않는 이상 디폴트이다.
+- `ALIGN alignment`: `정렬 제한(alignment constraint)`을 4에서 해당 `alignment` 값으로 변경한다. `alignment` 값은 반드시 2의 거듭제곱인 양의 정수여야 한다. 만약 해당 로드 구역이 `base_address`를 갖고 있다면, 이 주소는 반드시 해당 `alignment` 값에 부합해야 한다. 만약 해당 로드 구역이 `+offset`을 갖고 있다면, 링커는 해당 구역의 계산된 `base address`를 정의된 `alignment` 값에 맞게 정렬한다. 이 값은 `ELF 파일` 안의 offset에도 영향을 미칠 수 있다. 예를 들어, 다음의 경우 `FOO`에 대한 데이터가 `ELF 파일` 안의 4k offset에 쓰여지도록 한다. `FOO +4 ALIGN 4096`
 - `NOCOMPRESS`: `RW` 데이터 압축은 디폴트이다. `NOCOMPRESS` 키워드는 해당 로드 구역의 컨텐츠가 파이널 이미지(final image)에서 압축되지 않도록 한다.
 - `OVERLAY`: 동일한 주소에 여러 개의 로드 구역을 설정할 수 있도록 한다. ARM 툴은 오버레이 메커니즘을 제공하지 않는다. 동일한 주소에 여러 개의 로드 구역을 설정하기 위해서는 독자적인 `오버레이 매니저(overlay manager)`를 사용해야 한다. 컨텐트는 링킹 이후에 변경되지 않는 고정된 주소에 위치한다. 해당 컨텐트는 `OVERLAY`로 설정된 다른 구역과 오버레이될 수 있다.
 - `PI`: 이 구역은 `위치 독립적(position independent)`이다. 컨텐트는 어떠한 고정된 주소에도 의존하지 않으며, 링킹 이후에 위치가 변경될 수 있다.
+
+> ***Note***:  
+아래의 `attribute`들은 이미지(image)가 `execute-only` 섹션을 포함할 경우에는 지원되지 않는다.
+
+- `PROTECTED`: `Overlapping of load regions`, `Veneer sharing`, `String sharing with the --merge option` 세 가지를 방지한다.
+- `RELOC`: 해당 구역이 `relocatable`하다. 컨텐트는 구정된 주소에 의존한다. 출력된 `재배치(relocation)` 정보를 바탕으로 다른 툴에 의해 컨텐트가 다른 곳으로 이동될 수 있다.
+
+<br/>
+
+### 8.3.4. Inheritance rules for load region address attributes
+
+로드 구역은 이전 로드 구역의 `attributes` 상속받을 수 있다. 이전 로드 구역의 `attributes`를 상속받기 위해서는 `+offset`을 사용하여 `base address`를 명시한다. 
+
+아래의 경우에는 `attributes`를 상속받을 수 없다.
+
+- 특정 로드 구역에 명시적으로 `attribute`를 설정한 경우
+- 바로 이전 로드 구역이 `OVERLAY` `attribute`를 갖고 있는 경우
+
+로드 구역의 주소는 명시적으로 `ABSOLUTE`, `PI`, `RELOC`, `OVERLAY`로 설정될 수 있다. 만약 address attribute가 명시되어 있지 않다면 아래와 같은 상속 규칙들이 적용된다.
+
+- `OVERLAY` attribute는 상속될 수 없다. `OVERLAY` attribute를 갖는 구역은 상속받을 수 없다.
+- 로드 구역 또는 실행 구역의 `base address`는 `ABSOLUTE`가 디폴트로 설정된다.
+- `+offset`을 사용할 경우 이전 로드 구역의 address attribute를 상속받거나 만약 이전 로드 구역이 없을 경우에는 `ABSOLUTE`로 설정된다.
+
+#### Example
+
+```bash
+LR1 0x8000 PI
+{
+    …
+}
+LR2 +0             ; LR2 inherits PI from LR1
+{
+    …
+}
+LR3 0x1000         ; LR3 does not inherit because it has no relative base
+                     address, gets default of ABSOLUTE
+{
+    …
+}
+LR4 +0             ; LR4 inherits ABSOLUTE from LR3
+{
+    …
+}
+LR5 +0 RELOC       ; LR5 does not inherit because it explicitly sets RELOC
+{
+    …
+}
+LR6 +0 OVERLAY     ; LR6 does not inherit, an OVERLAY cannot inherit
+{
+    …
+}
+LR7 +0             ; LR7 cannot inherit OVERLAY, gets default of ABSOLUTE
+{
+    …
+}
+```
+
+<br/>
+
+### 8.3.5. Inheritance rules for the RELOC address attribute
+
+로드 구역에는 `RELOC` attribute를 명시적으로 설정할 수 있다. 하지만 실행 구역은 오직 부모 로드 구역으로부터만 `RELOC` attribute를 상속받을 수 있다.
+
+#### Example
+
+```bash
+LR1 0x8000 RELOC
+{ 
+    ER1 +0 ; inherits RELOC from LR1
+    {
+        …
+    }
+    ER2 +0 ; inherits RELOC from ER1
+    {
+        …
+    }
+    ER3 +0 RELOC ; Error cannot explicitly set RELOC on an execution region
+    {
+        …
+    }
+}
+```
+
+<br/>
+
+#### 8.3.6. Considerations when using a relative address +offset for a load region
+
+로드 구역에서 상대 주소(relative address)를 사용할 때는 몇 가지 고려할 사항들이 있다. 
+
+- 만약 `+offset` 로드 구역 LR2가 ZI 데이터를 갖는 로드 구역 LR1를 따를 경우 LR2는 ZI 데이터를 덮어쓰기(overlap)한다. 이를 막기 위해서는 `ImageLimit()` 함수를 사용하여 LR2의 base address를 명시해야 한다.
+- `+offset` 로드 구역 LR2는 바로 이전의 로드 구역 LR1의 attributes를 상속한다(하지만 만약 LR1이 `OVERLAY` attribute를 갖거나 LR2가 명시적인 attribute set을 갖을 경우에는 상속받지 않는다.) 그리고 만약 로드 구역이 어떤 attribute를 상속받을 수 없는 경우에는 `ABSOLUTE` attribute를 갖는다.
+- 만약 이전 로드 구역에 만약 RW 데이터 압축이 적용되었을 경우에는 ROM image에서 `+offset` 로드 구역과 이전 로드 구역 사이에 갭(gap)이 있을 수 있다. 이것은 링커(linker)가 `+offset`을 계산할 때 이전 구역의 데이터가 압축되지 않았을 때를 기준으로 계산하기 때문이다. 하지만 이 갭(gap)은 RW 데이터가 로드 타임 때 압축 해제되면서 사라진다.
+
+<br/>
+
+### 8.4. Execution region descriptions
+
+`실행 구역 설명(execution region description)`은 런타임(run-time) 때 이미지(image)의 어떤 부분들이 어느 메모리 공간에 위치하는지 명시한다.
+
+<br/>
+
+#### 8.4.1. Components of an execution region description
+
+실행 구역 설명의 컴포넌트들은 부모 로드 구역 안에서 각 실행 구역과 그 위치를 유일하게 식별하도록 한다. 그리고 ELF 파일의 어떤 부분들이 실행 구역 안에 위치할 지 결정한다.
+
+실행 구역은 아래와 같은 컴포넌트들을 가질 수 있다.
+
+- `name`: `링커(linker)`가 서로 다른 `실행 구역(execution) region)`을 식별하기 위해 사용된다.
+- `base address`: 절대주소 또는 상대주소일 수 있다.
+- `attributes`: 해당 `실행 구역(execution region)`의 `속성(properties)`을 나타낸다.
+- `optional maximum size`: 구역의 최대 사이즈를 나타낸다(선택사항).
+- `section descriptions`: 해당 실행 구역에 위치하는 `모듈들(modules)`을 나타낸다.
+
+<br/>
+
+아래의 그림은 실행 구역의 일반적인 컴포넌트들을 보여준다.
+
+<img src="../images/embedded-arm-keil-8.4.1.1.png?raw=true" alt="drawing" width="720"/>
+
+<br/>
+
+#### 8.4.2. Syntax of an execution region description
+
+`실행 구역(execution region)`은 런타임 때 `input sections`가 타겟 메모리의 어디에 위치해야 하는지를 명세한다.
+
+실행 구역 설명은 BNF 문법을 사용하여 다음과 같이 정의된다.
+
+```bash
+execution_region_description ::= 
+  exec_region_name (base_address | "+" offset) [attribute_list] [max_size | length]
+        "{" 
+            input_section_description* 
+        "}"
+```
+
+- `exec_region_name`: 해당 실행 구역의 이름이다. 만약 구역 관련된 링커 정의된 기호를 사용한다면 실행 구역의 이름은 대소문자를 구분한다.
+- `base_address`: 해당 구역 안의 `오브젝트들(objects)`이 어디에 링크될 지를 나타낸다. `base_address`는 반드시 `word-aligned` 되어야 한다.
+
+> ***Note***:  
+`실행 구역`에서 `ALIGN`를 사용할 경우 `load address`와 `execution address` 모두 align 된다.
+
+- `+offset`: 이전 실행 구역의 끝에서부터 `offset` 바이트 만큼을 상쇄한 값을 `base address`로 설정한다. `offset` 값은 반드시 4의 배수여야 한다. 만약 로드 구역에서 첫 번째 실행 구역일 경우에는 해당 로드 구역의 base address로부터 `offset` 만큼 상쇄한다. `+offset`을 사용할 경우 부모 로드 구역 또는 같은 로드 구역의 이전 실행 구역으로부터  `attributes`를 상속받을 수 있다.
+- `attribute_list`: 실행 구역 컨텐츠들의 속성을 명세한다.
+- `max_size`: `EMPTY` 또는 `FILL`로 표시된 경우에는 `max_size`는 실행 구역 길이를 나타낸다. 그렇지 않은 경우에는 실행 구역의 최대 크기를 나타낸다.
+- `[-]length`: 오직 `EMPTY`와 함께 사용되며 아래로 증가(grows down)하는 메모리의 스택을 나타낸다. 만약 길이 값이 음수일 경우에는 `base_address`가 해당 구역의 end address로 취급된다.
+- `input_section_description`: 컨텐트의 `input sections`를 명세한다.
+
+<br/>
+
+
+
+
+
+
+
+
 
 
 
