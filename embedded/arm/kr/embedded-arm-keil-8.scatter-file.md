@@ -882,20 +882,13 @@ LR2 ImageLimit(er_zi) ; Set the address of LR2 to limit of er_zi
 
 <br/>
 
-
-
-
-
-
-<br/>
-
 <br/>
 
 ---
 
 ### References
 
-\[1\] arm KEIL. (?). [Scatter File Syntax](https://www.keil.com/support/man/docs/armlink/armlink_pge1362075650322.htm) [Web Blog Post]
+\[1\] arm KEIL. (?). [Scatter File Syntax](https://www.keil.com/support/man/docs/armlink/armlink_pge1362075650322.htm) [Web Document]
 
 <br/>
 
