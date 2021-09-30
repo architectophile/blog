@@ -181,6 +181,41 @@ function Welcome(props) {
 
 <br/>
 
-#### 13. React Hook은 무엇인가요?
+#### 13. React Hooks는 무엇인가요?
+
+`Hooks`는 React 16.8에서 추가된 것으로서 함수형 컴포넌트에서 `state` 및 `side effects` 등을 사용할 수 있도록 하는 함수들이다.  
+`useState`를 사용하여 `state`를 관리할 수 있다.
+`useEffect`를 사용하여 함수 컴포넌트 내에서 `side effects`를 수행할 수 있으며, 생명주기 관련 기능을 사용할 수 있다.
+
+<br/>
+
+- (추가질문) Hook을 사용할 때 주의사항 또는 조건은 무엇인가요?
+
+>  
+`Hook`은 반드시 함수 컴포넌트의 최상위 레벨에서 호출되어야 한다. `조건문`, `반복문`, `중첩함수` 등의 내부에서는 사용해서는 안 된다. 왜냐하면 모든 `Hooks`는 함수 컴포넌트 내에서 서로 간에 항상 동일한 순서로 호출되어야 하기 때문이다.
+
+<br/>
 
 - (추가질문) useState 함수의 리턴값은 무엇인가요?
+
+>
+`useState` 함수의 리턴값은 배열이다. 리턴된 배열의 첫 번째 요소는 정의한 `state`를 나타내는 변수이고, 두 번째 요소는 해당 변수를 변경하는 함수이다.
+
+<br/>
+
+- (추가질문) useEffect 함수의 인자는 무엇인가요?
+
+>   
+`useEffect` 함수의 첫 번째 인자는 `side effects`를 수행하는 콜백함수이다. 두 번째 인자는 언제 해당 `side effects`가 수행되어야 하는 지를 결정하는데 의존하는 변수들이 담긴 `dependencies` 배열이다.  
+(※ 콜백함수의 리턴값은 `cleanup` 함수로서 다음 `side effects`가 실행되기 전에 호출되어 이전 `side effects` 수행 이후에 필요한 `cleanup` 작업 등을 수행하는데 사용된다.)
+
+```javascript
+import { useEffect, useState } from 'react';
+function MyComponent({ prop }) {
+  const [state, setState] = useState('');
+  useEffect(() => {
+    // Runs ONCE after initial rendering
+    // and after every rendering ONLY IF `prop` or `state` changes
+  }, [prop, state]);
+}
+```
