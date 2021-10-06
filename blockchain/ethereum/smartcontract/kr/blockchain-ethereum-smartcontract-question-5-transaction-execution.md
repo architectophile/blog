@@ -202,7 +202,7 @@ const handleTransaction = (trasaction) => {
     throw 'Gas limit is less than intrinsic gas!';
 
   // check upfront cost.
-  upfrontCost = tx.value + gasLimit * gasPrice;
+  upfrontCost = tx.value + tx.gasLimit * tx.gasPrice;
   if (getAccountBalance(tx.account) < upfrontCost)
     throw 'Account balance is less than upfront cost!';
 
