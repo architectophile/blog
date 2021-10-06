@@ -9,7 +9,7 @@
 
 3. 사용자들은 수수료를 지불할 때 반드시 block producers가 지정한 transaction fee token으로만 지불해야 하는가?
 
-4. Block producers는 어떻게 선발되는가? 트랜잭션이 너무 많고 서로 전파되지 않았을 경우 가장 많은 투표를 받은 계정이 서로 다르지 않나? Block producer는 자신을 뽑지 않는 트랜잭션은 빼버릴 수 있지 않는가? 혹시 이전 블록에 저장된 트랜잭션의 투표를 취합하여 다음 block producers를 선출하는가? 그렇다면 당연히 문제가 되지 않는가?
+4. Block producers는 어떻게 선발되는가? 트랜잭션이 너무 많고 서로 전파되지 않았을 경우 가장 많은 투표를 받은 계정이 서로 다르지 않나? Block producer는 자신을 뽑지 않는 트랜잭션은 빼버릴 수 있지 않는가? 혹시 이전 블록에 저장된 트랜잭션의 투표를 취합하여 다음 block producers를 선출하는가? 그렇다면 당연히 문제가 되지 않는가? 선발된 여러 block producers 중에서 블록 생성을 누가 할 지 어떻게 결정되는가? (time slot을 어떻게 배분하는가?)
    (block producers = service providers?)
 
 5. trusted entities에 의해 발행된 fiat-pegged stable token만 transaction fee token으로 선택될 수 있는가? User-created token이 transaction fee payment에 사용된다고 했는데 그렇다면 fiat-pegged stable token을 선택한다는 것은 무슨 말인가? 누구라도 생성한 커스텀 토큰을 transaction fee token으로 사용가능하다고 했는데 맞는 말인가?
@@ -32,4 +32,4 @@
 
 13. Token Backing Depository에서 새로운 token을 발생할 때 off-chain 데이터에 대한 오라클 문제 발생하지 않는가?
 
-14.
+14. 스마트 컨트랙트는 EOS와 같이 WebAssembly VM을 기반으로 하고 있는데 EOS 스마트 컨트랙트와 호환이 가능한가?
