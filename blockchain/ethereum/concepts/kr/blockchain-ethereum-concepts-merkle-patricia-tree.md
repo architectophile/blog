@@ -88,7 +88,7 @@ radix trie의 `Merkle` 부분은 바로 `node`의 `pointer`로서 결정적인 �
 
 ### 2) Specification: Compact encoding of hex sequence with optional terminator
 
-`odd` vs. `even` remaining partial path 길이에 대한 `fagging`과 `leaf` vs. `extension` node에 대한 `flagging`은 `2-item node`의 `partial path`의 첫 번째 `nibble`에 표현된다. 그 값은 다음과 같다.
+`odd` vs. `even` remaining partial path 길이에 대한 `flagging`과 `leaf` vs. `extension` node에 대한 `flagging`은 `2-item node`의 `partial path`의 첫 번째 `nibble`에 표현된다. 그 값은 다음과 같다.
 
 |hex char | bits | node type partial  | path length |
 |---------|------|--------------------|-------------|
@@ -173,7 +173,7 @@ def get(node,path):
 <64 6f> : 'verb'
 <64 6f 67> : 'puppy'
 <64 6f 67 65> : 'coin'
-<64 6f 72 73 65> : 'stallion'
+<68 6f 72 73 65> : 'stallion'
 ```
 
 <br/>
