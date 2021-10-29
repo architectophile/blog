@@ -6,6 +6,7 @@
 
 *Vitalik Buterin. (Dec 12, 2016). [Quadratic Arithmetic Programs: from Zero to Hero](https://medium.com/@VitalikButerin/quadratic-arithmetic-programs-from-zero-to-hero-f6d558cea649) [Medium Blog Post]*
 
+*Jihyeok Choy. (Mar 18, 2019). [Zero-Knowledge proof :: chapter 2. Deep Dive into zk-SNARKs](https://medium.com/decipher-media/zero-knowledge-proof-chapter-2-deep-dive-into-zk-snarks-f8b16e1b7b4c) [Medium Blog Post]*
 
 <br/>
 
