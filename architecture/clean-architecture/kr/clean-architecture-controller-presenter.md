@@ -1,0 +1,1 @@
+http://www.plainionist.net/Implementing-Clean-Architecture-Controller-Presenter/
