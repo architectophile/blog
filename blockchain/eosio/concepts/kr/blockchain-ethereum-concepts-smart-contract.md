@@ -25,7 +25,7 @@ public:
 }
 ```
 
-This will create a conflict in this file.
+The conflict in this line is resolved :)
 
 <br/>
 
