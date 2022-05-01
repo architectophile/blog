@@ -25,7 +25,7 @@ public:
 }
 ```
 
-I'm making a conflict here :)
+The conflict in this line is resolved :)
 
 <br/>
 
